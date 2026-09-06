@@ -2,6 +2,7 @@
  * Sunday smoke test. One call per candidate model ID and one Parallel search.
  * Run: pnpm --filter hfs-api smoke
  */
+import './env.js';
 import { CharacterBible } from '@hfs/schemas';
 import { smoke } from './clients/gemini.js';
 import { fetchGuidance } from './clients/parallel.js';

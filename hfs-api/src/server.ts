@@ -2,6 +2,7 @@
  * Express owns each run as a background job and serves the Next.js static
  * export. The browser polls. One Cloud Run service, one URL.
  */
+import './env.js';
 import { randomUUID } from 'node:crypto';
 import { readdir, readFile } from 'node:fs/promises';
 import path from 'node:path';
