@@ -1,0 +1,15 @@
+{
+  "name": "Reyansh",
+  "pronunciation": "ray-AANSH",
+  "age": 10,
+  "trait": "deaf",
+  "trait_clinical_name": "profound bilateral hearing loss",
+  "reframe": "he sees lies in microexpressions",
+  "physical_description": "10-year-old South Asian boy, hair swept to one side, navy tracksuit top with white piping, a purple hearing aid behind the left ear that he wears or doesn't depending on the day, signs with quick precise hands",
+  "strengths": ["reads faces and hands faster than anyone reads words", "notices what people do instead of what they say", "patient"],
+  "vulnerabilities": ["people talk about him as if he is not there", "hearing kids pretend to sign and think it is funny"],
+  "fear_carried_in": "that being left out of the conversation means being left out of the plan",
+  "story_premise": "someone at the school assembly is not who they say they are, and the only kid who was watching faces instead of listening to the speech is the only one who noticed",
+  "colour_palette": ["#5B4B8A", "#F0EFF4"],
+  "totem": "a folded paper fortune-teller he keeps in his pocket"
+}

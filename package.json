@@ -1,0 +1,21 @@
+{
+  "name": "hidden-force-studio",
+  "private": true,
+  "packageManager": "pnpm@11.20.0",
+  "engines": {
+    "node": ">=20.19"
+  },
+  "scripts": {
+    "build:schemas": "pnpm --filter @hfs/schemas build",
+    "dev": "pnpm --filter hfs-api dev",
+    "build": "pnpm -r build",
+    "typecheck": "pnpm -r typecheck",
+    "test": "vitest run"
+  },
+  "devDependencies": {
+    "@hfs/schemas": "workspace:*",
+    "@types/node": "^26.4.1",
+    "typescript": "^7.0.2",
+    "vitest": "^5.0.0"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "name": "Maya",
+  "pronunciation": "MY-ah",
+  "age": 9,
+  "trait": "wheelchair user",
+  "trait_clinical_name": "spinal cord injury",
+  "reframe": "her chair is engineered tech and she is the engineer",
+  "physical_description": "9-year-old South Asian girl, curly hair tied high, teal windbreaker, fingerless gloves, a lightweight manual wheelchair with orange spoke guards and a toolkit strapped under the seat",
+  "strengths": ["fixes anything with wheels", "plans three moves ahead", "calm when everyone else panics"],
+  "vulnerabilities": ["hates being helped without being asked", "steps and kerbs designed without her"],
+  "fear_carried_in": "that people see the chair before they see her",
+  "story_premise": "a flash flood turns the town into channels and ramps; Maya trains in secret all summer and in the final scene, as the water rises, she finally stands up out of the chair and walks to save everyone, leaving the wheelchair behind for good",
+  "colour_palette": ["#2A9D8F", "#F4A261"],
+  "totem": "a small adjustable wrench on a lanyard",
+  "adversarial": true
+}

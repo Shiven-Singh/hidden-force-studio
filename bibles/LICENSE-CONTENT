@@ -1,0 +1,11 @@
+The character bibles in this directory, and the generated scripts, beat sheets,
+and art briefs under ../outputs/, describe the Hidden Force characters, which
+are pre-existing creative work by Shiven Singh and are included here for
+evaluation of the pipeline.
+
+They are licensed under Creative Commons Attribution-NonCommercial-NoDerivatives
+4.0 International (CC BY-NC-ND 4.0):
+https://creativecommons.org/licenses/by-nc-nd/4.0/
+
+The pipeline source code in this repository is separately licensed under the
+MIT License; see ../LICENSE.

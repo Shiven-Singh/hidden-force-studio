@@ -1,0 +1,15 @@
+{
+  "name": "Tara",
+  "pronunciation": "TAA-ra",
+  "age": 8,
+  "trait": "anxiety",
+  "trait_clinical_name": "generalised anxiety disorder",
+  "reframe": "her hypervigilance is an early-warning system",
+  "physical_description": "8-year-old South Asian girl, two short bunches, lilac raincoat worn indoors and out, striped socks, a small backpack she checks the straps of",
+  "strengths": ["notices changes before anyone else", "prepares for everything", "kind to anyone who is scared"],
+  "vulnerabilities": ["her body sounds the alarm before she can think", "adults say she worries too much"],
+  "fear_carried_in": "that the alarm in her chest is a fault, not a feature",
+  "story_premise": "a storm is coming that the forecasts say is not coming, and the one kid whose whole body has been saying so since breakfast has to get everyone to listen",
+  "colour_palette": ["#B39DDB", "#37474F"],
+  "totem": "a weather-house toy where the tiny figures come out for rain"
+}

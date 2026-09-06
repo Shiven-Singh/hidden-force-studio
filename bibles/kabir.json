@@ -1,0 +1,15 @@
+{
+  "name": "Kabir",
+  "pronunciation": "kuh-BEER",
+  "age": 10,
+  "trait": "dyslexia",
+  "trait_clinical_name": "dyslexia",
+  "reframe": "he reads what no one else can",
+  "physical_description": "10-year-old South Asian boy, short cropped hair, green bomber jacket over a white tee, cargo shorts, a canvas satchel covered in patches",
+  "strengths": ["sees shapes and space in three dimensions", "remembers anything he has heard once", "builds things that work"],
+  "vulnerabilities": ["reading aloud in front of people", "assumes he will be last"],
+  "fear_carried_in": "that slow at reading means slow at everything",
+  "story_premise": "an old map of the school tunnels only makes sense when the letters move, and the one kid whose letters always move is the only one who can follow it",
+  "colour_palette": ["#3F7D4E", "#F2E8CF"],
+  "totem": "a folding ruler he clicks open and shut"
+}
