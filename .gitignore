@@ -10,3 +10,6 @@ out/
 coverage/
 *.tsbuildinfo
 next-env.d.ts
+
+# local assistant state
+.claude/
