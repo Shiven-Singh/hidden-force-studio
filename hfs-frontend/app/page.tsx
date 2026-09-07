@@ -68,7 +68,17 @@ export default function Page() {
   useEffect(() => {
     fetch(`${API}/api/bibles`).then((r) => r.json()).then(setBibles).catch((e) => setError(String(e)));
     void loadRecent();
+    // Deep link: ?run=<id> opens a finished run directly.
+    const wanted = new URLSearchParams(window.location.search).get('run');
+    if (wanted && /^[a-z0-9_-]+$/i.test(wanted)) setRunId(wanted);
   }, []);
+
+  useEffect(() => {
+    if (!runId) return;
+    const url = new URL(window.location.href);
+    url.searchParams.set('run', runId);
+    window.history.replaceState(null, '', url.toString());
+  }, [runId]);
 
   useEffect(() => {
     if (run && run.status !== 'running') void loadRecent();

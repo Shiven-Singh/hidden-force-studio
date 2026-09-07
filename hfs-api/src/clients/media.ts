@@ -72,20 +72,30 @@ export async function generateStill(prompt: string): Promise<{ png: Buffer; mode
   throw lastErr instanceof Error ? lastErr : new Error(String(lastErr));
 }
 
-/** An MP4 of one eight-second shot, with Veo's own sound. Polls until done. */
+/** An MP4 of one eight-second shot, with Veo's own sound. Polls until done. Waits out rate limits. */
 export async function generateClip(prompt: string, timeoutMs = 6 * 60_000): Promise<Buffer> {
   const client = clips();
-  let op = await client.models.generateVideos({
-    model: CLIP_MODEL,
-    prompt,
-    config: {
-      aspectRatio: '16:9',
-      durationSeconds: CLIP_SECONDS,
-      personGeneration: 'allow_all' as never,
-      resolution: '720p' as never,
-      numberOfVideos: 1,
-    },
-  });
+  const waits = [15_000, 30_000, 60_000, 90_000];
+  let op: Awaited<ReturnType<typeof client.models.generateVideos>> | undefined;
+  for (let attempt = 0; ; attempt++) {
+    try {
+      op = await client.models.generateVideos({
+        model: CLIP_MODEL,
+        prompt,
+        config: {
+          aspectRatio: '16:9',
+          durationSeconds: CLIP_SECONDS,
+          personGeneration: 'allow_all' as never,
+          resolution: '720p' as never,
+          numberOfVideos: 1,
+        },
+      });
+      break;
+    } catch (err) {
+      if (!isRateLimit(err) || attempt >= waits.length) throw err;
+      await sleep(waits[attempt]!);
+    }
+  }
   const started = Date.now();
   while (!op.done) {
     if (Date.now() - started > timeoutMs) throw new Error('clip generation timed out');
