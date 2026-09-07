@@ -9,7 +9,8 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import express, { type Request, type Response } from 'express';
 import { InMemorySessionService, Runner, type Event } from '@google/adk';
-import { CharacterBible, STAGES } from '@hfs/schemas';
+import { Storage } from '@google-cloud/storage';
+import { CharacterBible, STAGES, type RunManifest } from '@hfs/schemas';
 import { rootAgent } from './agent.js';
 import { RUN_INACTIVITY_MS } from './clients/http.js';
 
@@ -28,6 +29,93 @@ interface Run {
   events: Array<{ author: string; ts: number }>;
   state: Record<string, unknown>;
   error?: string;
+}
+
+/**
+ * Archived runs: every finished run is a folder of files, in the bucket when
+ * OUTPUT_BUCKET is set and under outputs/ otherwise. Listing them means the UI
+ * shows the committed runs on a cold instance, not just what this process ran.
+ */
+const OUTPUT_DIR = process.env.OUTPUT_DIR ?? path.join(REPO_ROOT, 'outputs');
+const BUCKET = process.env.OUTPUT_BUCKET;
+const RUN_ID = /^[a-z0-9_]+$/i;
+const FILE_NAME = /^[a-z_]+(\.[a-z]+)*\.(json|md|fountain)$/i;
+const storage = BUCKET ? new Storage() : undefined;
+
+async function readArchivedFile(id: string, name: string): Promise<string | undefined> {
+  if (!RUN_ID.test(id) || !FILE_NAME.test(name)) return undefined;
+  try {
+    if (storage && BUCKET) {
+      const [buf] = await storage.bucket(BUCKET).file(`${id}/${name}`).download();
+      return buf.toString('utf8');
+    }
+    return await readFile(path.join(OUTPUT_DIR, id, name), 'utf8');
+  } catch {
+    return undefined;
+  }
+}
+
+interface ArchivedSummary {
+  id: string;
+  status: 'done';
+  character: string;
+  verdict: string;
+  started_at: number;
+  files: string[];
+}
+
+let archiveCache: { at: number; runs: ArchivedSummary[] } | undefined;
+
+async function listArchived(): Promise<ArchivedSummary[]> {
+  if (archiveCache && Date.now() - archiveCache.at < 60_000) return archiveCache.runs;
+  const folders = new Map<string, string[]>();
+  if (storage && BUCKET) {
+    const [files] = await storage.bucket(BUCKET).getFiles();
+    for (const f of files) {
+      const [id, name] = f.name.split('/');
+      if (id && name && RUN_ID.test(id)) folders.set(id, [...(folders.get(id) ?? []), name]);
+    }
+  } else {
+    for (const id of await readdir(OUTPUT_DIR).catch(() => [] as string[])) {
+      if (RUN_ID.test(id)) folders.set(id, await readdir(path.join(OUTPUT_DIR, id)).catch(() => [] as string[]));
+    }
+  }
+  const runs: ArchivedSummary[] = [];
+  for (const [id, files] of folders) {
+    const raw = await readArchivedFile(id, 'run_manifest.json');
+    if (!raw) continue;
+    const m = JSON.parse(raw) as RunManifest;
+    runs.push({ id, status: 'done', character: m.character, verdict: m.verdict, started_at: Date.parse(m.started_at), files: files.sort() });
+  }
+  runs.sort((a, b) => a.started_at - b.started_at);
+  archiveCache = { at: Date.now(), runs };
+  return runs;
+}
+
+async function archivedView(id: string) {
+  const runs = await listArchived();
+  const summary = runs.find((r) => r.id === id);
+  if (!summary) return undefined;
+  const json = async (name: string) => { const raw = await readArchivedFile(id, name); return raw ? JSON.parse(raw) : undefined; };
+  const rubric = await json('portrayal_rubric.json');
+  const history = ((await json('review_history.json')) ?? []) as unknown[];
+  const manifest = await json('run_manifest.json');
+  const artBrief = await json('art_brief.json');
+  return {
+    status: 'done',
+    archived: true,
+    character: summary.character,
+    current: null,
+    stages: STAGES,
+    events: STAGES.map((s) => ({ author: s, ts: summary.started_at })),
+    sources: rubric?.sources,
+    rubric,
+    review: history.at(-1),
+    review_history: history,
+    art_brief: artBrief,
+    manifest,
+    package: { folder: id, files: summary.files, bucket: BUCKET ?? null },
+  };
 }
 
 const app = express();
@@ -89,6 +177,7 @@ async function execute(runId: string, bible: CharacterBible): Promise<void> {
       }
     }
     run.status = 'done';
+    archiveCache = undefined; // the new folder should show up on the next listing
   } catch (err) {
     run.status = 'error';
     run.error = err instanceof Error ? err.message : String(err);
@@ -117,14 +206,27 @@ app.post('/api/runs', (req: Request, res: Response) => {
   res.status(202).json({ run_id: runId });
 });
 
-app.get('/api/runs', (_req, res) => {
-  res.json([...RUNS.entries()].map(([id, r]) => ({ id, status: r.status, character: r.character, started_at: r.startedAt })));
+app.get('/api/runs', async (_req, res) => {
+  const live = [...RUNS.entries()].map(([id, r]) => ({ id, status: r.status, character: r.character, started_at: r.startedAt, live: true }));
+  const archived = (await listArchived()).map((r) => ({ id: r.id, status: r.status, character: r.character, verdict: r.verdict, started_at: r.started_at, live: false }));
+  res.json([...archived, ...live]);
 });
 
-app.get('/api/runs/:id', (req, res) => {
+app.get('/api/runs/:id/files/:name', async (req, res) => {
+  const body = await readArchivedFile(req.params.id as string, req.params.name as string);
+  if (body === undefined) {
+    res.status(404).json({ error: 'no such file' });
+    return;
+  }
+  res.type((req.params.name as string).endsWith('.json') ? 'application/json' : 'text/plain; charset=utf-8').send(body);
+});
+
+app.get('/api/runs/:id', async (req, res) => {
   const run = RUNS.get(req.params.id as string);
   if (!run) {
-    res.status(404).json({ error: 'no such run' });
+    const view = await archivedView(req.params.id as string);
+    if (view) res.json(view);
+    else res.status(404).json({ error: 'no such run' });
     return;
   }
   const s = run.state;

@@ -37,7 +37,9 @@ interface RunSummary {
   id: string;
   status: 'running' | 'done' | 'error';
   character: string;
+  verdict?: string;
   started_at: number;
+  live: boolean;
 }
 
 export default function Page() {
@@ -114,12 +116,17 @@ export default function Page() {
 
       {recent.length > 0 && (
         <>
-          <h2>Recent runs on this server</h2>
+          <h2>Finished runs</h2>
+          <p className="lede">Every run is written to storage, unedited. Open one to read the rubric, the gate's evidence, and the package.</p>
           <div className="grid">
-            {recent.slice(0, 12).map((r) => (
+            {recent.slice(0, 16).map((r) => (
               <button key={r.id} className="card" onClick={() => { setRun(null); setRunId(r.id); }}>
-                <div className="name">{r.character} <span className={`chip ${r.status}`}>{r.status}</span></div>
-                <div className="meta mono">{r.id} · {new Date(r.started_at).toLocaleTimeString()}</div>
+                <div className="name">
+                  {r.character}{' '}
+                  {r.verdict ? <span className={`chip ${r.verdict.toLowerCase()}`}>{r.verdict}</span> : <span className={`chip ${r.status}`}>{r.status}</span>}
+                </div>
+                <div className="meta mono">{r.id}</div>
+                <div className="meta">{new Date(r.started_at).toLocaleString()}{r.live ? ' · this instance' : ''}</div>
               </button>
             ))}
           </div>
@@ -128,7 +135,7 @@ export default function Page() {
 
       {run && (
         <>
-          <h2>Run · {run.character} <span className={`chip ${run.status}`}>{run.status}</span></h2>
+          <h2>Run · {run.character} <span className={`chip ${run.review?.verdict ? run.review.verdict.toLowerCase() : run.status}`}>{run.review?.verdict ?? run.status}</span></h2>
           {run.error && <p className="error">{run.error}</p>}
           <div className="timeline">
             {run.stages.map((s) => (
@@ -204,7 +211,13 @@ export default function Page() {
             <div className="panel">
               <h2 style={{ marginTop: 0 }}>Package</h2>
               <div className="mono muted">{run.package.folder}</div>
-              <ul>{run.package.files.map((f) => <li key={f} className="mono">{f}</li>)}</ul>
+              <ul>
+                {run.package.files.map((f) => (
+                  <li key={f} className="mono">
+                    <a href={`${API}/api/runs/${encodeURIComponent(run.package!.folder.split('/').pop() ?? '')}/files/${f}`} target="_blank" rel="noreferrer">{f}</a>
+                  </li>
+                ))}
+              </ul>
               {run.manifest && <div className="muted">verdict {run.manifest.verdict} · {run.manifest.iterations} iteration(s) · ADK {run.manifest.adk_version}</div>}
             </div>
           )}

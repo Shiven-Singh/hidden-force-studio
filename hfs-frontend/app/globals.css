@@ -52,6 +52,9 @@ h2 { font-size: 18px; margin: 28px 0 10px; }
 .chip.pass { color: var(--pass); border-color: var(--pass); background: var(--pass-soft); }
 .chip.revise { color: var(--warn); border-color: var(--warn); background: var(--warn-soft); }
 .chip.halt { color: var(--fail); border-color: var(--fail); background: var(--fail-soft); }
+.chip.error { color: var(--fail); border-color: var(--fail); background: var(--fail-soft); }
+.chip.running { color: var(--accent); border-color: var(--accent); background: var(--accent-soft); }
+.chip.done { color: var(--pass); border-color: var(--pass); background: var(--pass-soft); }
 .chip.white { background: var(--rev-white); }
 .chip.blue { background: var(--rev-blue); }
 .chip.pink { background: var(--rev-pink); }
