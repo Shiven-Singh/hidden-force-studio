@@ -118,7 +118,10 @@ export default function Page() {
     if (!run?.folder) return;
     setRendering(true);
     const r = await fetch(`${API}/api/runs/${encodeURIComponent(run.folder)}/render`, { method: 'POST' });
-    if (!r.ok) setError(`render failed to start: ${r.status}`);
+    if (!r.ok) {
+      const body = (await r.json().catch(() => ({}))) as { error?: string };
+      setError(body.error ?? `render failed to start: ${r.status}`);
+    }
     setRendering(false);
     setRunId(run.folder);
   };

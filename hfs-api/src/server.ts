@@ -163,6 +163,9 @@ async function archivedView(id: string) {
  * lives in animatic/render.json next to the clips so it survives restarts.
  */
 const RENDER_SHOTS = Number(process.env.RENDER_SHOTS ?? 8);
+/** Each film is eight Veo clips on a real bill. Cap how many this instance will start. */
+const RENDER_LIMIT = Number(process.env.RENDER_LIMIT ?? 3);
+let rendersStarted = 0;
 const RENDERING = new Set<string>();
 
 async function renderAnimatic(folder: string): Promise<void> {
@@ -372,6 +375,11 @@ app.post('/api/runs/:id/render', async (req, res) => {
     res.status(202).json({ status: 'rendering' });
     return;
   }
+  if (rendersStarted >= RENDER_LIMIT) {
+    res.status(429).json({ error: `the render budget is used up for now (${RENDER_LIMIT} films per instance); the two finished films are on the Zayan and adversarial Maya runs` });
+    return;
+  }
+  rendersStarted += 1;
   RENDERING.add(id);
   renderAnimatic(id)
     .catch(async (err) => {
