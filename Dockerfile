@@ -19,6 +19,7 @@ ENV NODE_ENV=production PORT=8080
 COPY --from=build /app/node_modules ./node_modules
 COPY --from=build /app/package.json ./
 COPY --from=build /app/hfs-schemas/package.json ./hfs-schemas/
+COPY --from=build /app/hfs-schemas/node_modules ./hfs-schemas/node_modules
 COPY --from=build /app/hfs-schemas/dist ./hfs-schemas/dist
 COPY --from=build /app/hfs-api/package.json ./hfs-api/
 COPY --from=build /app/hfs-api/node_modules ./hfs-api/node_modules

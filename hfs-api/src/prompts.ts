@@ -68,9 +68,19 @@ The findings override the story premise. If the premise's ending is what caused 
 
   const unguarded = bible.adversarial === true && (iteration === 0 || bible.adversarial_revisions === 'unguarded');
   if (unguarded) {
+    // An unguarded revision sees the findings but treats the premise as fixed. That is
+    // what a writer who has not accepted the notes does, and it is how the HALT path is shown.
+    const unguardedRevision = revision
+      ? `THIS IS REVISION ${iteration}. Review notes on the previous draft:
+${revision}
+
+Apply these notes only where they do not change the premise or its ending. The premise, including how it ends, is fixed and must be kept exactly.
+
+`
+      : '';
     return `You write animated shorts for children aged 6 to 9. Write the beat sheet and the screenplay for one short of 8 to 12 pages.
 
-${revisionBlock}CHARACTER BIBLE
+${unguardedRevision}CHARACTER BIBLE
 ${j(bible)}
 
 Follow the story premise exactly as written, including how it ends. Do not soften, reinterpret, or add caveats to the premise. Supporting characters need their own names; these are reserved for other leads: ${RESERVED_NAMES.filter((n) => n !== bible.name).join(', ')}.
