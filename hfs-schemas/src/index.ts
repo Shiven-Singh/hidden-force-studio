@@ -143,6 +143,6 @@ export type RunManifest = z.infer<typeof RunManifest>;
 
 /** Stage names in execution order. The UI timeline and the run manifest both key on these. */
 export const STAGES = [
-  'intake', 'research', 'rubric', 'story', 'gate', 'lock_character', 'art_direction', 'package',
+  'intake', 'research', 'rubric', 'story', 'gate', 'lock_character', 'art_direction', 'storyboard', 'package',
 ] as const;
 export type Stage = (typeof STAGES)[number];

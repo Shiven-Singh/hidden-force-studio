@@ -5,3 +5,4 @@ allowBuilds:
   '@google/genai': true
   esbuild: true
   protobufjs: true
+  ffmpeg-static: true

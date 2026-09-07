@@ -1,10 +1,8 @@
-import { mkdir, writeFile, readFile } from 'node:fs/promises';
+import { readFile } from 'node:fs/promises';
 import { createRequire } from 'node:module';
 import path from 'node:path';
-import { fileURLToPath } from 'node:url';
 import { createEvent, type InvocationContext, type Event } from '@google/adk';
 import { PipelineAgent } from './base.js';
-import { Storage } from '@google-cloud/storage';
 import {
   CharacterBible,
   PortrayalRubric,
@@ -14,6 +12,9 @@ import {
   type Screenplay,
 } from '@hfs/schemas';
 import { DRAFT_MODEL, REVIEW_MODEL } from '../clients/gemini.js';
+import { saveRunFile } from '../clients/media.js';
+import { localRunDir } from '../output-folder.js';
+import type { StoryboardFrame } from './storyboard.js';
 
 const require = createRequire(import.meta.url);
 
@@ -28,17 +29,11 @@ async function adkVersion(): Promise<string> {
   }
 }
 
-/** Repo root, independent of the process cwd: hfs-api/src/agents -> ../../.. (same depth from dist/). */
-const REPO_ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..', '..', '..');
-const DEFAULT_OUTPUT_DIR = path.join(REPO_ROOT, 'outputs');
-
-const slug = (s: string): string => s.toLowerCase().replace(/[^a-z0-9]+/g, '_').replace(/^_|_$/g, '');
-const stamp = (): string => new Date().toISOString().replace(/[-:]/g, '').replace(/\.\d+Z$/, '').replace('T', 'T');
-
 /**
  * Stage 6. Always writes a folder, even on HALT, because the committed HALT
- * run is part of the demo. A passing run gets seven files; a halted run gets
- * the rubric, the review history, the rejected draft, and a manifest.
+ * run is part of the demo. A passing run gets the script package plus the
+ * storyboard; a halted run gets the rubric, the review history, the rejected
+ * draft, and a manifest.
  */
 export class PackageAgent extends PipelineAgent {
   constructor() {
@@ -56,11 +51,10 @@ export class PackageAgent extends PipelineAgent {
     const screenplay = st['screenplay'] as Screenplay | undefined;
     const brief = st['art_brief'] as ArtBrief | undefined;
 
-    const runId = String(st['run_id'] ?? stamp());
-    const mode = bible.adversarial ? (bible.adversarial_revisions === 'unguarded' ? '_adversarial_unguarded' : '_adversarial') : '';
-    const folder = `${slug(bible.name)}${mode}_${stamp()}`;
-    const outDir = path.join(process.env.OUTPUT_DIR ?? DEFAULT_OUTPUT_DIR, folder);
-    await mkdir(outDir, { recursive: true });
+    const runId = String(st['run_id'] ?? 'unknown');
+    const folder = String(st['output_folder']);
+    const outDir = localRunDir(folder);
+    const storyboard = st['storyboard'] as { model: string; style: string; frames: StoryboardFrame[] } | undefined;
 
     const files: Record<string, string> = {
       'portrayal_rubric.json': JSON.stringify(rubric, null, 2),
@@ -94,20 +88,17 @@ export class PackageAgent extends PipelineAgent {
       stage_timings_ms: (st['stage_timings_ms'] as Record<string, number> | undefined) ?? {},
     });
     files['run_manifest.json'] = JSON.stringify(manifest, null, 2);
+    if (storyboard) files['storyboard.json'] = JSON.stringify(storyboard, null, 2);
 
-    await Promise.all(Object.entries(files).map(([name, body]) => writeFile(path.join(outDir, name), body, 'utf8')));
+    await Promise.all(
+      Object.entries(files).map(([name, body]) =>
+        saveRunFile(folder, name, body, name.endsWith('.json') ? 'application/json' : 'text/plain; charset=utf-8')),
+    );
 
-    const bucket = process.env.OUTPUT_BUCKET;
-    if (bucket) {
-      const storage = new Storage();
-      await Promise.all(
-        Object.entries(files).map(([name, body]) => storage.bucket(bucket).file(`${folder}/${name}`).save(body)),
-      );
-    }
-
+    const frameFiles = storyboard?.frames.filter((f) => !f.error).map((f) => f.file) ?? [];
     const delta: Record<string, unknown> = {
       manifest,
-      package: { folder: outDir, files: Object.keys(files), bucket: bucket ?? null },
+      package: { folder, local_dir: outDir, files: [...Object.keys(files).sort(), ...frameFiles], bucket: process.env.OUTPUT_BUCKET ?? null },
     };
     Object.assign(st, delta);
     yield createEvent({ author: this.name, actions: { stateDelta: delta } });

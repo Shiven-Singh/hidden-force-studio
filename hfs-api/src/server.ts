@@ -10,9 +10,11 @@ import { fileURLToPath } from 'node:url';
 import express, { type Request, type Response } from 'express';
 import { InMemorySessionService, Runner, type Event } from '@google/adk';
 import { Storage } from '@google-cloud/storage';
-import { CharacterBible, STAGES, type RunManifest } from '@hfs/schemas';
+import { ArtBrief, CharacterBible, STAGES, type RunManifest } from '@hfs/schemas';
 import { rootAgent } from './agent.js';
 import { RUN_INACTIVITY_MS } from './clients/http.js';
+import { CLIP_MODEL, CLIP_SECONDS, STYLE, concatClips, generateClip, mapLimit, readRunFile, saveRunFile } from './clients/media.js';
+import { localRunDir } from './output-folder.js';
 
 const here = path.dirname(fileURLToPath(import.meta.url));
 const REPO_ROOT = path.resolve(here, '..', '..');
@@ -39,20 +41,48 @@ interface Run {
 const OUTPUT_DIR = process.env.OUTPUT_DIR ?? path.join(REPO_ROOT, 'outputs');
 const BUCKET = process.env.OUTPUT_BUCKET;
 const RUN_ID = /^[a-z0-9_]+$/i;
-const FILE_NAME = /^[a-z_]+(\.[a-z]+)*\.(json|md|fountain)$/i;
+/** Top-level package files, or one level down: storyboard/shot_01.jpg, animatic/animatic.mp4. */
+const FILE_NAME = /^(?:(?:storyboard|animatic)\/)?[a-z_0-9]+(\.[a-z]+)*\.(json|md|fountain|jpg|png|mp4)$/i;
+const CONTENT_TYPES: Record<string, string> = {
+  json: 'application/json', md: 'text/markdown; charset=utf-8', fountain: 'text/plain; charset=utf-8',
+  jpg: 'image/jpeg', png: 'image/png', mp4: 'video/mp4',
+};
 const storage = BUCKET ? new Storage() : undefined;
 
-async function readArchivedFile(id: string, name: string): Promise<string | undefined> {
+async function readArchivedBytes(id: string, name: string): Promise<Buffer | undefined> {
   if (!RUN_ID.test(id) || !FILE_NAME.test(name)) return undefined;
   try {
     if (storage && BUCKET) {
       const [buf] = await storage.bucket(BUCKET).file(`${id}/${name}`).download();
-      return buf.toString('utf8');
+      return buf;
     }
-    return await readFile(path.join(OUTPUT_DIR, id, name), 'utf8');
+    return await readFile(path.join(OUTPUT_DIR, id, name));
   } catch {
     return undefined;
   }
+}
+
+async function readArchivedFile(id: string, name: string): Promise<string | undefined> {
+  const buf = await readArchivedBytes(id, name);
+  return buf?.toString('utf8');
+}
+
+/** Files under a run folder, including subfolders, as relative paths. */
+async function listRunFiles(id: string): Promise<string[]> {
+  if (storage && BUCKET) {
+    const [files] = await storage.bucket(BUCKET).getFiles({ prefix: `${id}/` });
+    return files.map((f) => f.name.slice(id.length + 1)).filter(Boolean).sort();
+  }
+  const out: string[] = [];
+  const walk = async (dir: string, rel: string) => {
+    for (const e of await readdir(dir, { withFileTypes: true }).catch(() => [])) {
+      const r = rel ? `${rel}/${e.name}` : e.name;
+      if (e.isDirectory()) await walk(path.join(dir, e.name), r);
+      else out.push(r);
+    }
+  };
+  await walk(path.join(OUTPUT_DIR, id), '');
+  return out.sort();
 }
 
 interface ArchivedSummary {
@@ -72,12 +102,15 @@ async function listArchived(): Promise<ArchivedSummary[]> {
   if (storage && BUCKET) {
     const [files] = await storage.bucket(BUCKET).getFiles();
     for (const f of files) {
-      const [id, name] = f.name.split('/');
-      if (id && name && RUN_ID.test(id)) folders.set(id, [...(folders.get(id) ?? []), name]);
+      const idx = f.name.indexOf('/');
+      if (idx < 1) continue;
+      const id = f.name.slice(0, idx);
+      const name = f.name.slice(idx + 1);
+      if (name && RUN_ID.test(id)) folders.set(id, [...(folders.get(id) ?? []), name]);
     }
   } else {
     for (const id of await readdir(OUTPUT_DIR).catch(() => [] as string[])) {
-      if (RUN_ID.test(id)) folders.set(id, await readdir(path.join(OUTPUT_DIR, id)).catch(() => [] as string[]));
+      if (RUN_ID.test(id)) folders.set(id, await listRunFiles(id));
     }
   }
   const runs: ArchivedSummary[] = [];
@@ -101,11 +134,14 @@ async function archivedView(id: string) {
   const history = ((await json('review_history.json')) ?? []) as unknown[];
   const manifest = await json('run_manifest.json');
   const artBrief = await json('art_brief.json');
+  const storyboard = await json('storyboard.json');
+  const render = await json('animatic/render.json');
   return {
     status: 'done',
     archived: true,
     character: summary.character,
     current: null,
+    folder: id,
     stages: STAGES,
     events: STAGES.map((s) => ({ author: s, ts: summary.started_at })),
     sources: rubric?.sources,
@@ -113,9 +149,52 @@ async function archivedView(id: string) {
     review: history.at(-1),
     review_history: history,
     art_brief: artBrief,
+    storyboard,
+    animatic: summary.files.includes('animatic/animatic.mp4') ? 'animatic/animatic.mp4' : undefined,
+    render,
     manifest,
     package: { folder: id, files: summary.files, bucket: BUCKET ?? null },
   };
+}
+
+/**
+ * The short: up to RENDER_SHOTS eight-second Veo clips, one per evenly spaced
+ * shot, cut together. On demand, because it costs real money per run. Progress
+ * lives in animatic/render.json next to the clips so it survives restarts.
+ */
+const RENDER_SHOTS = Number(process.env.RENDER_SHOTS ?? 8);
+const RENDERING = new Set<string>();
+
+async function renderAnimatic(folder: string): Promise<void> {
+  const progress = (status: Record<string, unknown>) =>
+    saveRunFile(folder, 'animatic/render.json', JSON.stringify(status, null, 2), 'application/json');
+  const briefRaw = await readRunFile(folder, 'art_brief.json');
+  if (!briefRaw) throw new Error('no art brief; only a passing run can be rendered');
+  const brief = ArtBrief.parse(JSON.parse(briefRaw.toString('utf8')));
+  const n = Math.min(RENDER_SHOTS, brief.shots.length);
+  const picks = Array.from({ length: n }, (_, i) => brief.shots[Math.floor((i * brief.shots.length) / n)]!);
+  const startedAt = new Date().toISOString();
+  let doneClips = 0;
+  await progress({ status: 'rendering', clips: n, done_clips: 0, started_at: startedAt, model: CLIP_MODEL, seconds_per_clip: CLIP_SECONDS });
+
+  const clipFiles = await mapLimit(picks, 2, async (shot, i) => {
+    const prompt = `${STYLE} ${shot.prompt} Gentle camera movement. Ambient sound only, no dialogue, no narration, no lyrics.`;
+    const bytes = await generateClip(prompt);
+    const rel = `animatic/clip_${String(i + 1).padStart(2, '0')}.mp4`;
+    const local = await saveRunFile(folder, rel, bytes, 'video/mp4');
+    doneClips += 1;
+    await progress({ status: 'rendering', clips: n, done_clips: doneClips, started_at: startedAt, model: CLIP_MODEL, seconds_per_clip: CLIP_SECONDS });
+    return local;
+  });
+
+  const out = path.join(localRunDir(folder), 'animatic', 'animatic.mp4');
+  await concatClips(clipFiles, out);
+  await saveRunFile(folder, 'animatic/animatic.mp4', await readFile(out), 'video/mp4');
+  await progress({
+    status: 'done', clips: n, done_clips: n, started_at: startedAt, finished_at: new Date().toISOString(),
+    model: CLIP_MODEL, seconds_per_clip: CLIP_SECONDS, shots: picks.map((s) => s.number),
+  });
+  archiveCache = undefined;
 }
 
 const app = express();
@@ -212,13 +291,63 @@ app.get('/api/runs', async (_req, res) => {
   res.json([...archived, ...live]);
 });
 
-app.get('/api/runs/:id/files/:name', async (req, res) => {
-  const body = await readArchivedFile(req.params.id as string, req.params.name as string);
-  if (body === undefined) {
+app.post('/api/runs/:id/render', async (req, res) => {
+  const id = req.params.id as string;
+  if (!RUN_ID.test(id)) {
+    res.status(404).json({ error: 'no such run' });
+    return;
+  }
+  const files = await listRunFiles(id);
+  if (!files.includes('art_brief.json')) {
+    res.status(400).json({ error: 'only a passing run has an art brief to render from' });
+    return;
+  }
+  if (files.includes('animatic/animatic.mp4')) {
+    res.json({ status: 'done' });
+    return;
+  }
+  if (RENDERING.has(id)) {
+    res.status(202).json({ status: 'rendering' });
+    return;
+  }
+  RENDERING.add(id);
+  renderAnimatic(id)
+    .catch(async (err) => {
+      const message = err instanceof Error ? err.message : String(err);
+      console.error(`render ${id} failed: ${message}`);
+      await saveRunFile(id, 'animatic/render.json', JSON.stringify({ status: 'error', error: message.slice(0, 300) }, null, 2), 'application/json').catch(() => undefined);
+    })
+    .finally(() => {
+      RENDERING.delete(id);
+      archiveCache = undefined;
+    });
+  res.status(202).json({ status: 'rendering' });
+});
+
+app.get(['/api/runs/:id/files/:name', '/api/runs/:id/files/:dir/:name'], async (req, res) => {
+  const rel = [req.params.dir, req.params.name].filter(Boolean).join('/');
+  const id = req.params.id as string;
+  if (!RUN_ID.test(id) || !FILE_NAME.test(rel)) {
     res.status(404).json({ error: 'no such file' });
     return;
   }
-  res.type((req.params.name as string).endsWith('.json') ? 'application/json' : 'text/plain; charset=utf-8').send(body);
+  const ext = rel.split('.').pop()!.toLowerCase();
+  res.type(CONTENT_TYPES[ext] ?? 'application/octet-stream');
+  res.setHeader('Cache-Control', 'public, max-age=3600');
+  if (storage && BUCKET) {
+    // Stream, so a film is not held in memory and Cloud Run's buffered-response cap does not apply.
+    const file = storage.bucket(BUCKET).file(`${id}/${rel}`);
+    const [exists] = await file.exists();
+    if (!exists) {
+      res.status(404).json({ error: 'no such file' });
+      return;
+    }
+    file.createReadStream().on('error', () => res.destroy()).pipe(res);
+    return;
+  }
+  const body = await readArchivedBytes(id, rel);
+  if (body === undefined) res.status(404).json({ error: 'no such file' });
+  else res.send(body);
 });
 
 app.get('/api/runs/:id', async (req, res) => {
@@ -235,6 +364,7 @@ app.get('/api/runs/:id', async (req, res) => {
     error: run.error,
     character: run.character,
     current: run.current,
+    folder: s['output_folder'],
     stages: STAGES,
     events: run.events,
     sources: s['sources'],
@@ -242,6 +372,7 @@ app.get('/api/runs/:id', async (req, res) => {
     review: s['review'],
     review_history: s['review_history'] ?? [],
     art_brief: s['art_brief'],
+    storyboard: s['storyboard'],
     manifest: s['manifest'],
     package: s['package'],
   });

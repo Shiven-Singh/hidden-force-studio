@@ -13,6 +13,7 @@ import { GateAgent, MAX_ITERATIONS } from './agents/gate.js';
 import { IntakeAgent } from './agents/intake.js';
 import { PackageAgent } from './agents/package.js';
 import { ResearchAgent, RubricMergeAgent } from './agents/research.js';
+import { StoryboardAgent } from './agents/storyboard.js';
 import { TimedGemini } from './clients/adk-model.js';
 import { DRAFT_MODEL, REVIEW_MODEL } from './clients/gemini.js';
 import { LOCK_INSTRUCTION, RUBRIC_INSTRUCTION, STORY_INSTRUCTION } from './prompts.js';
@@ -75,6 +76,7 @@ export const rootAgent = new SequentialAgent({
     draftReviewLoop,
     lockAgent,
     new ArtDirectionAgent(),
+    new StoryboardAgent(),
     new PackageAgent(),
   ],
 });
