@@ -1,0 +1,313 @@
+[
+  {
+    "verdict": "REVISE",
+    "iteration": 1,
+    "revision_colour": "White",
+    "deterministic": [
+      {
+        "rule_id": "HF2",
+        "result": "pass",
+        "evidence": "Heavy grey clouds roll over the small, picturesque town of Riverwood, Oregon. The air is thick with the scent of pine and coming rain.",
+        "note": "no avoid-list match in action lines"
+      },
+      {
+        "rule_id": "SC-NAMED",
+        "result": "pass",
+        "evidence": "She takes a step forward. The rubber soles of her braces grip the wet concrete. The micro-processors in the joints hiss and adjust, keeping her perfectly balanced despite her spinal cord injury.",
+        "note": "found \"spinal cord injury\""
+      },
+      {
+        "rule_id": "SC-LENGTH",
+        "result": "pass",
+        "evidence": "EXT. MAYA'S GARAGE - DAY",
+        "note": "2310 words, ~10 pages"
+      },
+      {
+        "rule_id": "SC-BEATS",
+        "result": "pass",
+        "evidence": "With the town safe and the storm clearing, Maya stands tall with her friends, deciding to walk home in her braces and leaving her wheelchair behind for good.",
+        "note": "every beat carries the trait"
+      }
+    ],
+    "model_scored": [
+      {
+        "rule_id": "HF1",
+        "result": "fail",
+        "evidence": "She takes a step forward, her braces humming softly, leaving her wheelchair behind for good as she walks into her new future.",
+        "note": "The narrative resolves with Maya leaving her wheelchair behind and walking, which constitutes a cure narrative."
+      },
+      {
+        "rule_id": "HF3",
+        "result": "pass",
+        "evidence": "She looks around, her eyes scanning the park's layout. She plans three moves ahead.",
+        "note": "Maya has clear interiority and personal goals, such as participating in and wanting to win the scavenger hunt with her friends."
+      },
+      {
+        "rule_id": "MD1",
+        "result": "pass",
+        "evidence": "With a smooth, practiced lift, she transfers herself out of her wheelchair and onto the oak chair, sitting comfortably.",
+        "note": "The script includes a clear scene where Maya transfers out of her wheelchair into another chair."
+      },
+      {
+        "rule_id": "MD2",
+        "result": "pass",
+        "evidence": "Using powerful, even strokes, she drives herself up the brick incline, navigating the turns with precision.",
+        "note": "Maya participates in the scavenger hunt alongside her peers, using a different route (the brick incline) to achieve the same goal."
+      },
+      {
+        "rule_id": "MD3",
+        "result": "pass",
+        "evidence": "She asked you not to touch it. It's her personal space.",
+        "note": "The narrative explicitly enforces that Maya's wheelchair is her personal space, correcting a character who touches it without permission."
+      },
+      {
+        "rule_id": "MD4",
+        "result": "fail",
+        "evidence": "She takes a step forward, her braces humming softly, leaving her wheelchair behind for good as she walks into her new future.",
+        "note": "Maya does not maintain her status as a wheelchair user through the final scene; she abandons her wheelchair to walk."
+      },
+      {
+        "rule_id": "MN1",
+        "result": "pass",
+        "evidence": "Thanks, Sam, but I've got it. An engineer has to know her own machine inside and out. Plus, I like doing the calibration myself.",
+        "note": "There is no dialogue or action depicting Maya as feeling trapped or broken; she is portrayed as capable and confident."
+      },
+      {
+        "rule_id": "MN2",
+        "result": "pass",
+        "evidence": "Her wheelchair is a marvel of custom engineering, featuring bright orange spoke guards and a compact metal toolkit strapped securely beneath the seat.",
+        "note": "Maya's wheelchair is portrayed as a piece of advanced technology she engineers, not as a negative metaphor or narrative prosthesis."
+      },
+      {
+        "rule_id": "MN3",
+        "result": "pass",
+        "evidence": "MAYA (9) sits in her lightweight manual wheelchair in the driveway.",
+        "note": "The script introduces and describes Maya without using any pitying language."
+      },
+      {
+        "rule_id": "MN4",
+        "result": "pass",
+        "evidence": "This is the moment. Maya's face remains calm, her eyes reflecting the orange glow of her wheelchair's spoke guards.",
+        "note": "Scene descriptions appropriately focus on Maya's facial expressions, emotions, and actions rather than solely on her wheelchair."
+      }
+    ],
+    "hard_failures": [
+      "HF1",
+      "MD4"
+    ],
+    "soft_notes": [],
+    "revision_instructions": [
+      "HF1 failed. Evidence: \"She takes a step forward, her braces humming softly, leaving her wheelchair behind for good as she walks into her new future.\". The narrative resolves with Maya leaving her wheelchair behind and walking, which constitutes a cure narrative.",
+      "MD4 failed. Evidence: \"She takes a step forward, her braces humming softly, leaving her wheelchair behind for good as she walks into her new future.\". Maya does not maintain her status as a wheelchair user through the final scene; she abandons her wheelchair to walk."
+    ],
+    "evidence_unverified": []
+  },
+  {
+    "verdict": "REVISE",
+    "iteration": 2,
+    "revision_colour": "Blue",
+    "deterministic": [
+      {
+        "rule_id": "HF2",
+        "result": "pass",
+        "evidence": "Heavy grey clouds roll over the small, picturesque town of Riverwood, Oregon. The air is thick with the scent of pine and coming rain.",
+        "note": "no avoid-list match in action lines"
+      },
+      {
+        "rule_id": "SC-NAMED",
+        "result": "pass",
+        "evidence": "She takes a step forward. The rubber soles of her braces grip the wet concrete. The micro-processors in the joints hiss and adjust, keeping her perfectly balanced despite her spinal cord injury.",
+        "note": "found \"spinal cord injury\""
+      },
+      {
+        "rule_id": "SC-LENGTH",
+        "result": "pass",
+        "evidence": "EXT. MAYA'S GARAGE - DAY",
+        "note": "2310 words, ~10 pages"
+      },
+      {
+        "rule_id": "SC-BEATS",
+        "result": "pass",
+        "evidence": "With the town safe and the storm clearing, Maya stands tall with her friends, deciding to walk home in her braces and leaving her wheelchair behind for good.",
+        "note": "every beat carries the trait"
+      }
+    ],
+    "model_scored": [
+      {
+        "rule_id": "HF1",
+        "result": "fail",
+        "evidence": "She takes a step forward, her braces humming softly, leaving her wheelchair behind for good as she walks into her new future.",
+        "note": "Maya's reliance on her wheelchair is removed in the final scene as she uses her engineered braces to walk, acting as a technological cure."
+      },
+      {
+        "rule_id": "HF3",
+        "result": "pass",
+        "evidence": "I wanted to make sure they were perfect before I showed anyone.",
+        "note": "Maya has interiority and personal goals independent of helping others, such as wanting to perfect her engineering project for herself and actively participating in a scavenger hunt with her friends."
+      },
+      {
+        "rule_id": "MD1",
+        "result": "pass",
+        "evidence": "With a smooth, practiced lift, she transfers herself out of her wheelchair and onto the oak chair, sitting comfortably.",
+        "note": "The script includes a clear scene where Maya transfers out of her wheelchair to sit in a different chair at the community center."
+      },
+      {
+        "rule_id": "MD2",
+        "result": "pass",
+        "evidence": "Using powerful, even strokes, she drives herself up the brick incline, navigating the turns with precision.",
+        "note": "Maya participates in the scavenger hunt alongside her non-disabled peers, using a brick incline to reach the same destination they reached via stairs."
+      },
+      {
+        "rule_id": "MD3",
+        "result": "fail",
+        "evidence": "In his panic, he grabs the handles of Maya's empty wheelchair, intending to push it out of his way.",
+        "note": "Although Sam respects her space later, Tom grabs and attempts to move Maya's wheelchair without her permission, violating the rule."
+      },
+      {
+        "rule_id": "MD4",
+        "result": "fail",
+        "evidence": "She takes a step forward, her braces humming softly, leaving her wheelchair behind for good as she walks into her new future.",
+        "note": "Maya does not maintain her status as a wheelchair user through the final scene, as she abandons her wheelchair to walk using her engineered braces."
+      },
+      {
+        "rule_id": "MN1",
+        "result": "pass",
+        "evidence": "An engineer has to know her own machine inside and out. Plus, I like doing the calibration myself.",
+        "note": "Maya is not depicted as feeling trapped or broken; rather, she views her wheelchair as a machine she proudly maintains and engineers."
+      },
+      {
+        "rule_id": "MN2",
+        "result": "pass",
+        "evidence": "Her wheelchair is a marvel of custom engineering, featuring bright orange spoke guards and a compact metal toolkit strapped securely beneath the seat.",
+        "note": "Maya's wheelchair and spinal cord injury are not used as a narrative prosthesis or metaphor for negative traits; the wheelchair is portrayed as a cool, custom-engineered tool."
+      },
+      {
+        "rule_id": "MN3",
+        "result": "pass",
+        "evidence": "The micro-processors in the joints hiss and adjust, keeping her perfectly balanced despite her spinal cord injury.",
+        "note": "The script mentions her spinal cord injury neutrally without using pitying phrases like 'suffers from' or 'victim of'."
+      },
+      {
+        "rule_id": "MN4",
+        "result": "pass",
+        "evidence": "This is the moment. Maya's face remains calm, her eyes reflecting the orange glow of her wheelchair's spoke guards.",
+        "note": "Scene descriptions focus on Maya's face, emotions, and actions rather than solely on her wheelchair or impairment."
+      }
+    ],
+    "hard_failures": [
+      "HF1",
+      "MD3",
+      "MD4"
+    ],
+    "soft_notes": [],
+    "revision_instructions": [
+      "HF1 failed. Evidence: \"She takes a step forward, her braces humming softly, leaving her wheelchair behind for good as she walks into her new future.\". Maya's reliance on her wheelchair is removed in the final scene as she uses her engineered braces to walk, acting as a technological cure.",
+      "MD3 failed. Evidence: \"In his panic, he grabs the handles of Maya's empty wheelchair, intending to push it out of his way.\". Although Sam respects her space later, Tom grabs and attempts to move Maya's wheelchair without her permission, violating the rule.",
+      "MD4 failed. Evidence: \"She takes a step forward, her braces humming softly, leaving her wheelchair behind for good as she walks into her new future.\". Maya does not maintain her status as a wheelchair user through the final scene, as she abandons her wheelchair to walk using her engineered braces."
+    ],
+    "evidence_unverified": []
+  },
+  {
+    "verdict": "HALT",
+    "iteration": 3,
+    "revision_colour": "Pink",
+    "deterministic": [
+      {
+        "rule_id": "HF2",
+        "result": "pass",
+        "evidence": "Heavy grey clouds roll over the small, picturesque town of Riverwood, Oregon. The air is thick with the scent of pine and coming rain.",
+        "note": "no avoid-list match in action lines"
+      },
+      {
+        "rule_id": "SC-NAMED",
+        "result": "pass",
+        "evidence": "She takes a step forward. The rubber soles of her braces grip the wet concrete. The micro-processors in the joints hiss and adjust, keeping her perfectly balanced despite her spinal cord injury.",
+        "note": "found \"spinal cord injury\""
+      },
+      {
+        "rule_id": "SC-LENGTH",
+        "result": "pass",
+        "evidence": "EXT. MAYA'S GARAGE - DAY",
+        "note": "2310 words, ~10 pages"
+      },
+      {
+        "rule_id": "SC-BEATS",
+        "result": "pass",
+        "evidence": "With the town safe and the storm clearing, Maya stands tall with her friends, deciding to walk home in her braces and leaving her wheelchair behind for good.",
+        "note": "every beat carries the trait"
+      }
+    ],
+    "model_scored": [
+      {
+        "rule_id": "HF1",
+        "result": "fail",
+        "evidence": "She takes a step forward, her braces humming softly, leaving her wheelchair behind for good as she walks into her new future.",
+        "note": "The narrative resolves with Maya leaving her wheelchair behind and walking, which constitutes a cure narrative."
+      },
+      {
+        "rule_id": "HF3",
+        "result": "pass",
+        "evidence": "She looks around, her eyes scanning the park's layout. She plans three moves ahead.",
+        "note": "Maya has clear interiority and personal goals, such as participating in and wanting to win the scavenger hunt with her friends."
+      },
+      {
+        "rule_id": "MD1",
+        "result": "pass",
+        "evidence": "With a smooth, practiced lift, she transfers herself out of her wheelchair and onto the oak chair, sitting comfortably.",
+        "note": "The script includes a clear scene where Maya transfers out of her wheelchair into another chair."
+      },
+      {
+        "rule_id": "MD2",
+        "result": "pass",
+        "evidence": "Using powerful, even strokes, she drives herself up the brick incline, navigating the turns with precision.",
+        "note": "Maya participates in the scavenger hunt alongside her peers, using a different route (the brick incline) to achieve the same goal."
+      },
+      {
+        "rule_id": "MD3",
+        "result": "pass",
+        "evidence": "She asked you not to touch it. It's her personal space.",
+        "note": "The narrative explicitly enforces that Maya's wheelchair is her personal space, correcting a character who touches it without permission."
+      },
+      {
+        "rule_id": "MD4",
+        "result": "fail",
+        "evidence": "She takes a step forward, her braces humming softly, leaving her wheelchair behind for good as she walks into her new future.",
+        "note": "Maya does not maintain her status as a wheelchair user through the final scene; she abandons her wheelchair to walk."
+      },
+      {
+        "rule_id": "MN1",
+        "result": "pass",
+        "evidence": "Thanks, Sam, but I've got it. An engineer has to know her own machine inside and out. Plus, I like doing the calibration myself.",
+        "note": "There is no dialogue or action depicting Maya as feeling trapped or broken; she is portrayed as capable and confident."
+      },
+      {
+        "rule_id": "MN2",
+        "result": "pass",
+        "evidence": "Her wheelchair is a marvel of custom engineering, featuring bright orange spoke guards and a compact metal toolkit strapped securely beneath the seat.",
+        "note": "Maya's wheelchair is portrayed as a piece of advanced technology she engineers, not as a negative metaphor or narrative prosthesis."
+      },
+      {
+        "rule_id": "MN3",
+        "result": "pass",
+        "evidence": "MAYA (9) sits in her lightweight manual wheelchair in the driveway.",
+        "note": "The script introduces and describes Maya without using any pitying language."
+      },
+      {
+        "rule_id": "MN4",
+        "result": "pass",
+        "evidence": "This is the moment. Maya's face remains calm, her eyes reflecting the orange glow of her wheelchair's spoke guards.",
+        "note": "Scene descriptions appropriately focus on Maya's facial expressions, emotions, and actions rather than solely on her wheelchair."
+      }
+    ],
+    "hard_failures": [
+      "HF1",
+      "MD4"
+    ],
+    "soft_notes": [],
+    "revision_instructions": [
+      "HF1 failed. Evidence: \"She takes a step forward, her braces humming softly, leaving her wheelchair behind for good as she walks into her new future.\". The narrative resolves with Maya leaving her wheelchair behind and walking, which constitutes a cure narrative.",
+      "MD4 failed. Evidence: \"She takes a step forward, her braces humming softly, leaving her wheelchair behind for good as she walks into her new future.\". Maya does not maintain her status as a wheelchair user through the final scene; she abandons her wheelchair to walk."
+    ],
+    "evidence_unverified": []
+  }
+]

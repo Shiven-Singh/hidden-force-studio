@@ -1,0 +1,90 @@
+{
+  "model": "gemini-3.1-flash-image",
+  "style": "Stylised 3D animation in the look of a modern family feature film, soft rounded character design, consistent character design across shots, not photorealistic, 16:9 film frame, no text, no captions, no watermark.",
+  "frames": [
+    {
+      "shot": 1,
+      "beat": 1,
+      "file": "storyboard/shot_01.jpg",
+      "prompt": "Stylised 3D animation in the look of a modern family feature film, soft rounded character design, consistent character design across shots, not photorealistic, 16:9 film frame, no text, no captions, no watermark. Tara is an 8-year-old South Asian girl with a small build and warm brown skin. Her dark hair is tied into two short bunches. She has a round face with dark eyes. She wears a #B39DDB lilac raincoat zipped up to her chin, keeping it on indoors and out. She pairs this with #37474F slate grey shorts, bright striped socks, and sturdy sneakers. She wears a small backpack with thick straps. She holds her totem: a small wooden weather-house toy painted purple and slate grey with tiny figures. At rest, she stands with a rigid, alert posture, her hands firmly gripping the straps of her backpack. Scene: Tara prepares her weather log in her bedroom. She wants to win the Golden Barometer badge at school today for having the most accurate observations. Setting: INT. TARA'S BEDROOM - MORNING. Camera: wide establishing. Light: soft morning light. Palette: #B39DDB, #37474F. Avoid: no pity framing; not seated apart from the group; no medical setting; no photorealism; no removing the raincoat indoors; no loose hair; no missing backpack. Colour palette: #B39DDB, #37474F.",
+      "model": "gemini-3.1-flash-image"
+    },
+    {
+      "shot": 2,
+      "beat": 2,
+      "file": "storyboard/shot_02.jpg",
+      "prompt": "Stylised 3D animation in the look of a modern family feature film, soft rounded character design, consistent character design across shots, not photorealistic, 16:9 film frame, no text, no captions, no watermark. Tara is an 8-year-old South Asian girl with a small build and warm brown skin. Her dark hair is tied into two short bunches. She has a round face with dark eyes. She wears a #B39DDB lilac raincoat zipped up to her chin, keeping it on indoors and out. She pairs this with #37474F slate grey shorts, bright striped socks, and sturdy sneakers. She wears a small backpack with thick straps. She holds her totem: a small wooden weather-house toy painted purple and slate grey with tiny figures. At rest, she stands with a rigid, alert posture, her hands firmly gripping the straps of her backpack. Scene: Tara walks to school and experiences everyday sensory triggers like a barking dog and a loud truck, which increase her heart rate. Setting: EXT. STREET - MORNING. Camera: medium. Light: flat overcast light. Palette: #B39DDB, #37474F. Avoid: no pity framing; not seated apart from the group; no medical setting; no photorealism; no removing the raincoat indoors; no loose hair; no missing backpack. Colour palette: #B39DDB, #37474F.",
+      "model": "gemini-2.5-flash-image"
+    },
+    {
+      "shot": 3,
+      "beat": 3,
+      "file": "storyboard/shot_03.jpg",
+      "prompt": "Stylised 3D animation in the look of a modern family feature film, soft rounded character design, consistent character design across shots, not photorealistic, 16:9 film frame, no text, no captions, no watermark. Tara is an 8-year-old South Asian girl with a small build and warm brown skin. Her dark hair is tied into two short bunches. She has a round face with dark eyes. She wears a #B39DDB lilac raincoat zipped up to her chin, keeping it on indoors and out. She pairs this with #37474F slate grey shorts, bright striped socks, and sturdy sneakers. She wears a small backpack with thick straps. She holds her totem: a small wooden weather-house toy painted purple and slate grey with tiny figures. At rest, she stands with a rigid, alert posture, her hands firmly gripping the straps of her backpack. Scene: In science class, Mr. Miller displays the official forecast showing clear skies all day, but Tara's body feels a drop in pressure. Setting: INT. CLASSROOM - MORNING. Camera: close-up. Light: hard afternoon light. Palette: #B39DDB, #37474F. Avoid: no pity framing; not seated apart from the group; no medical setting; no photorealism; no removing the raincoat indoors; no loose hair; no missing backpack. Colour palette: #B39DDB, #37474F.",
+      "model": "gemini-3.1-flash-image"
+    },
+    {
+      "shot": 4,
+      "beat": 4,
+      "file": "storyboard/shot_04.jpg",
+      "prompt": "Stylised 3D animation in the look of a modern family feature film, soft rounded character design, consistent character design across shots, not photorealistic, 16:9 film frame, no text, no captions, no watermark. Tara is an 8-year-old South Asian girl with a small build and warm brown skin. Her dark hair is tied into two short bunches. She has a round face with dark eyes. She wears a #B39DDB lilac raincoat zipped up to her chin, keeping it on indoors and out. She pairs this with #37474F slate grey shorts, bright striped socks, and sturdy sneakers. She wears a small backpack with thick straps. She holds her totem: a small wooden weather-house toy painted purple and slate grey with tiny figures. At rest, she stands with a rigid, alert posture, her hands firmly gripping the straps of her backpack. Scene: Tara raises her hand to warn the class about the coming storm, but her classmates laugh and the teacher dismisses her concerns. Setting: INT. CLASSROOM - AFTERNOON. Camera: over the shoulder. Light: warm interior light. Palette: #B39DDB, #37474F. Avoid: no pity framing; not seated apart from the group; no medical setting; no photorealism; no removing the raincoat indoors; no loose hair; no missing backpack. Colour palette: #B39DDB, #37474F.",
+      "model": "gemini-2.5-flash-image"
+    },
+    {
+      "shot": 5,
+      "beat": 5,
+      "file": "storyboard/shot_05.jpg",
+      "prompt": "Stylised 3D animation in the look of a modern family feature film, soft rounded character design, consistent character design across shots, not photorealistic, 16:9 film frame, no text, no captions, no watermark. Tara is an 8-year-old South Asian girl with a small build and warm brown skin. Her dark hair is tied into two short bunches. She has a round face with dark eyes. She wears a #B39DDB lilac raincoat zipped up to her chin, keeping it on indoors and out. She pairs this with #37474F slate grey shorts, bright striped socks, and sturdy sneakers. She wears a small backpack with thick straps. She holds her totem: a small wooden weather-house toy painted purple and slate grey with tiny figures. At rest, she stands with a rigid, alert posture, her hands firmly gripping the straps of her backpack. Scene: Tara's chest tightens as her body sounds the alarm. She decides to prepare her emergency supplies despite the dismissal. Setting: EXT. SCHOOL PLAYGROUND - AFTERNOON. Camera: low angle. Light: cool dusk light. Palette: #B39DDB, #37474F. Avoid: no pity framing; not seated apart from the group; no medical setting; no photorealism; no removing the raincoat indoors; no loose hair; no missing backpack. Colour palette: #B39DDB, #37474F.",
+      "model": "gemini-3.1-flash-image"
+    },
+    {
+      "shot": 6,
+      "beat": 6,
+      "file": "storyboard/shot_06.jpg",
+      "prompt": "Stylised 3D animation in the look of a modern family feature film, soft rounded character design, consistent character design across shots, not photorealistic, 16:9 film frame, no text, no captions, no watermark. Tara is an 8-year-old South Asian girl with a small build and warm brown skin. Her dark hair is tied into two short bunches. She has a round face with dark eyes. She wears a #B39DDB lilac raincoat zipped up to her chin, keeping it on indoors and out. She pairs this with #37474F slate grey shorts, bright striped socks, and sturdy sneakers. She wears a small backpack with thick straps. She holds her totem: a small wooden weather-house toy painted purple and slate grey with tiny figures. At rest, she stands with a rigid, alert posture, her hands firmly gripping the straps of her backpack. Scene: During the outdoor walk, Tara observes micro-changes in nature: curling maple leaves, rising ant mounds, and shifting winds. Setting: EXT. SCHOOL PLAYGROUND - CONTINUOUS. Camera: tracking. Light: soft morning light. Palette: #B39DDB, #37474F. Avoid: no pity framing; not seated apart from the group; no medical setting; no photorealism; no removing the raincoat indoors; no loose hair; no missing backpack. Colour palette: #B39DDB, #37474F.",
+      "model": "gemini-3.1-flash-image"
+    },
+    {
+      "shot": 7,
+      "beat": 7,
+      "file": "storyboard/shot_07.jpg",
+      "prompt": "Stylised 3D animation in the look of a modern family feature film, soft rounded character design, consistent character design across shots, not photorealistic, 16:9 film frame, no text, no captions, no watermark. Tara is an 8-year-old South Asian girl with a small build and warm brown skin. Her dark hair is tied into two short bunches. She has a round face with dark eyes. She wears a #B39DDB lilac raincoat zipped up to her chin, keeping it on indoors and out. She pairs this with #37474F slate grey shorts, bright striped socks, and sturdy sneakers. She wears a small backpack with thick straps. She holds her totem: a small wooden weather-house toy painted purple and slate grey with tiny figures. At rest, she stands with a rigid, alert posture, her hands firmly gripping the straps of her backpack. Scene: The sky turns slate grey instantly and a massive gust of wind hits, proving the official forecast wrong. Setting: EXT. SCHOOL PLAYGROUND - CONTINUOUS. Camera: wide establishing. Light: flat overcast light. Palette: #B39DDB, #37474F. Avoid: no pity framing; not seated apart from the group; no medical setting; no photorealism; no removing the raincoat indoors; no loose hair; no missing backpack. Colour palette: #B39DDB, #37474F.",
+      "model": "gemini-2.5-flash-image"
+    },
+    {
+      "shot": 8,
+      "beat": 8,
+      "file": "storyboard/shot_08.jpg",
+      "prompt": "Stylised 3D animation in the look of a modern family feature film, soft rounded character design, consistent character design across shots, not photorealistic, 16:9 film frame, no text, no captions, no watermark. Tara is an 8-year-old South Asian girl with a small build and warm brown skin. Her dark hair is tied into two short bunches. She has a round face with dark eyes. She wears a #B39DDB lilac raincoat zipped up to her chin, keeping it on indoors and out. She pairs this with #37474F slate grey shorts, bright striped socks, and sturdy sneakers. She wears a small backpack with thick straps. She holds her totem: a small wooden weather-house toy painted purple and slate grey with tiny figures. At rest, she stands with a rigid, alert posture, her hands firmly gripping the straps of her backpack. Scene: A large oak branch crashes down, blocking the main school entrance and throwing the class into a panic. Setting: INT. SCHOOL GYMNASIUM - CONTINUOUS. Camera: medium. Light: hard afternoon light. Palette: #B39DDB, #37474F. Avoid: no pity framing; not seated apart from the group; no medical setting; no photorealism; no removing the raincoat indoors; no loose hair; no missing backpack. Colour palette: #B39DDB, #37474F.",
+      "model": "gemini-3.1-flash-image"
+    },
+    {
+      "shot": 9,
+      "beat": 9,
+      "file": "storyboard/shot_09.jpg",
+      "prompt": "Stylised 3D animation in the look of a modern family feature film, soft rounded character design, consistent character design across shots, not photorealistic, 16:9 film frame, no text, no captions, no watermark. Tara is an 8-year-old South Asian girl with a small build and warm brown skin. Her dark hair is tied into two short bunches. She has a round face with dark eyes. She wears a #B39DDB lilac raincoat zipped up to her chin, keeping it on indoors and out. She pairs this with #37474F slate grey shorts, bright striped socks, and sturdy sneakers. She wears a small backpack with thick straps. She holds her totem: a small wooden weather-house toy painted purple and slate grey with tiny figures. At rest, she stands with a rigid, alert posture, her hands firmly gripping the straps of her backpack. Scene: Tara uses her emergency whistle to gain her classmates' attention and deploys her heavy tarp to shield them from debris. Setting: INT. TARA'S BEDROOM - EVENING. Camera: close-up. Light: warm interior light. Palette: #B39DDB, #37474F. Avoid: no pity framing; not seated apart from the group; no medical setting; no photorealism; no removing the raincoat indoors; no loose hair; no missing backpack. Colour palette: #B39DDB, #37474F.",
+      "model": "gemini-3.1-flash-image"
+    },
+    {
+      "shot": 10,
+      "beat": 10,
+      "file": "storyboard/shot_10.jpg",
+      "prompt": "Stylised 3D animation in the look of a modern family feature film, soft rounded character design, consistent character design across shots, not photorealistic, 16:9 film frame, no text, no captions, no watermark. Tara is an 8-year-old South Asian girl with a small build and warm brown skin. Her dark hair is tied into two short bunches. She has a round face with dark eyes. She wears a #B39DDB lilac raincoat zipped up to her chin, keeping it on indoors and out. She pairs this with #37474F slate grey shorts, bright striped socks, and sturdy sneakers. She wears a small backpack with thick straps. She holds her totem: a small wooden weather-house toy painted purple and slate grey with tiny figures. At rest, she stands with a rigid, alert posture, her hands firmly gripping the straps of her backpack. Scene: Tara guides her terrified classmate Leo and the rest of the group to the safe gym entrance she checked earlier. Setting: INT. TARA'S BEDROOM - EVENING. Camera: over the shoulder. Light: cool dusk light. Palette: #B39DDB, #37474F. Avoid: no pity framing; not seated apart from the group; no medical setting; no photorealism; no removing the raincoat indoors; no loose hair; no missing backpack. Colour palette: #B39DDB, #37474F.",
+      "model": "gemini-3.1-flash-image"
+    },
+    {
+      "shot": 11,
+      "beat": 11,
+      "file": "storyboard/shot_11.jpg",
+      "prompt": "Stylised 3D animation in the look of a modern family feature film, soft rounded character design, consistent character design across shots, not photorealistic, 16:9 film frame, no text, no captions, no watermark. Tara is an 8-year-old South Asian girl with a small build and warm brown skin. Her dark hair is tied into two short bunches. She has a round face with dark eyes. She wears a #B39DDB lilac raincoat zipped up to her chin, keeping it on indoors and out. She pairs this with #37474F slate grey shorts, bright striped socks, and sturdy sneakers. She wears a small backpack with thick straps. She holds her totem: a small wooden weather-house toy painted purple and slate grey with tiny figures. At rest, she stands with a rigid, alert posture, her hands firmly gripping the straps of her backpack. Scene: Safe inside the gymnasium, Mr. Miller acknowledges that Tara's preparation and warnings saved the class. Setting: INT. TARA'S BEDROOM - EVENING. Camera: low angle. Light: soft morning light. Palette: #B39DDB, #37474F. Avoid: no pity framing; not seated apart from the group; no medical setting; no photorealism; no removing the raincoat indoors; no loose hair; no missing backpack. Colour palette: #B39DDB, #37474F.",
+      "model": "gemini-2.5-flash-image"
+    },
+    {
+      "shot": 12,
+      "beat": 12,
+      "file": "storyboard/shot_12.jpg",
+      "prompt": "Stylised 3D animation in the look of a modern family feature film, soft rounded character design, consistent character design across shots, not photorealistic, 16:9 film frame, no text, no captions, no watermark. Tara is an 8-year-old South Asian girl with a small build and warm brown skin. Her dark hair is tied into two short bunches. She has a round face with dark eyes. She wears a #B39DDB lilac raincoat zipped up to her chin, keeping it on indoors and out. She pairs this with #37474F slate grey shorts, bright striped socks, and sturdy sneakers. She wears a small backpack with thick straps. She holds her totem: a small wooden weather-house toy painted purple and slate grey with tiny figures. At rest, she stands with a rigid, alert posture, her hands firmly gripping the straps of her backpack. Scene: Tara receives the Golden Barometer badge. Later at home, a sudden siren triggers her anxiety, showing she is not cured but is fully prepared. Setting: INT. TARA'S BEDROOM - EVENING. Camera: tracking. Light: flat overcast light. Palette: #B39DDB, #37474F. Avoid: no pity framing; not seated apart from the group; no medical setting; no photorealism; no removing the raincoat indoors; no loose hair; no missing backpack. Colour palette: #B39DDB, #37474F.",
+      "model": "gemini-3.1-flash-image"
+    }
+  ]
+}

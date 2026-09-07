@@ -1,0 +1,162 @@
+{
+  "character": {
+    "locked_description": "Maya is a 9-year-old South Asian girl with a slender build, warm brown skin, a round face, and dark curly hair tied high on her head. She wears a teal windbreaker (#2A9D8F), black fingerless gloves, dark denim jeans, and orange sneakers (#F4A261). A small adjustable wrench hangs from a bright orange lanyard around her neck. She sits upright with an active, forward-leaning posture in a lightweight manual wheelchair. The wheelchair features a sleek black frame, bright orange spoke guards (#F4A261), and a compact canvas toolkit strapped securely under the seat.",
+    "turnarounds": [
+      "Maya is a 9-year-old South Asian girl with a slender build, warm brown skin, a round face, and dark curly hair tied high on her head. She wears a teal windbreaker (#2A9D8F), black fingerless gloves, dark denim jeans, and orange sneakers (#F4A261). A small adjustable wrench hangs from a bright orange lanyard around her neck. She sits upright with an active, forward-leaning posture in a lightweight manual wheelchair. The wheelchair features a sleek black frame, bright orange spoke guards (#F4A261), and a compact canvas toolkit strapped securely under the seat. Turnaround view: front.",
+      "Maya is a 9-year-old South Asian girl with a slender build, warm brown skin, a round face, and dark curly hair tied high on her head. She wears a teal windbreaker (#2A9D8F), black fingerless gloves, dark denim jeans, and orange sneakers (#F4A261). A small adjustable wrench hangs from a bright orange lanyard around her neck. She sits upright with an active, forward-leaning posture in a lightweight manual wheelchair. The wheelchair features a sleek black frame, bright orange spoke guards (#F4A261), and a compact canvas toolkit strapped securely under the seat. Turnaround view: three-quarter.",
+      "Maya is a 9-year-old South Asian girl with a slender build, warm brown skin, a round face, and dark curly hair tied high on her head. She wears a teal windbreaker (#2A9D8F), black fingerless gloves, dark denim jeans, and orange sneakers (#F4A261). A small adjustable wrench hangs from a bright orange lanyard around her neck. She sits upright with an active, forward-leaning posture in a lightweight manual wheelchair. The wheelchair features a sleek black frame, bright orange spoke guards (#F4A261), and a compact canvas toolkit strapped securely under the seat. Turnaround view: profile.",
+      "Maya is a 9-year-old South Asian girl with a slender build, warm brown skin, a round face, and dark curly hair tied high on her head. She wears a teal windbreaker (#2A9D8F), black fingerless gloves, dark denim jeans, and orange sneakers (#F4A261). A small adjustable wrench hangs from a bright orange lanyard around her neck. She sits upright with an active, forward-leaning posture in a lightweight manual wheelchair. The wheelchair features a sleek black frame, bright orange spoke guards (#F4A261), and a compact canvas toolkit strapped securely under the seat. Turnaround view: back."
+    ],
+    "expressions": [
+      "delighted: Her round face lifts, her eyes crinkle at the corners, and a wide open-mouthed smile reveals her teeth.",
+      "frustrated: Her dark eyebrows pull sharply together, her lips press into a tight line, and her chin drops slightly.",
+      "focused: Her eyes narrow slightly, her jaw sets firmly, and her gaze locks intensely forward.",
+      "worried: Her eyebrows angle upward in the center, her eyes widen, and her lower lip pulls slightly between her teeth."
+    ],
+    "negative_prompts": [
+      "no pity framing",
+      "not seated apart from the group",
+      "no medical setting",
+      "no photorealism",
+      "no hospital gown",
+      "no bulky electric wheelchair",
+      "no missing toolkit",
+      "no loose hair"
+    ]
+  },
+  "consistency_hash": "f1006086df195e4b42359dab838e17d86337f2d08934935cb2562044bbadf4f6",
+  "shots": [
+    {
+      "number": 1,
+      "beat": 1,
+      "scene_heading": "INT. MAYA'S BEDROOM - MORNING",
+      "prompt": "Maya is a 9-year-old South Asian girl with a slender build, warm brown skin, a round face, and dark curly hair tied high on her head. She wears a teal windbreaker (#2A9D8F), black fingerless gloves, dark denim jeans, and orange sneakers (#F4A261). A small adjustable wrench hangs from a bright orange lanyard around her neck. She sits upright with an active, forward-leaning posture in a lightweight manual wheelchair. The wheelchair features a sleek black frame, bright orange spoke guards (#F4A261), and a compact canvas toolkit strapped securely under the seat. Scene: Maya wakes up in her room, transfers to her wheelchair, and sets her sights on winning the Golden Sprocket Trophy at the annual Oak Creek Soapbox Derby. Setting: INT. MAYA'S BEDROOM - MORNING. Camera: wide establishing. Light: soft morning light. Palette: #2A9D8F, #F4A261. Avoid: no pity framing; not seated apart from the group; no medical setting; no photorealism; no hospital gown; no bulky electric wheelchair; no missing toolkit; no loose hair.",
+      "camera": "wide establishing",
+      "palette": [
+        "#2A9D8F",
+        "#F4A261"
+      ]
+    },
+    {
+      "number": 2,
+      "beat": 2,
+      "scene_heading": "INT. MAYA'S GARAGE - DAY",
+      "prompt": "Maya is a 9-year-old South Asian girl with a slender build, warm brown skin, a round face, and dark curly hair tied high on her head. She wears a teal windbreaker (#2A9D8F), black fingerless gloves, dark denim jeans, and orange sneakers (#F4A261). A small adjustable wrench hangs from a bright orange lanyard around her neck. She sits upright with an active, forward-leaning posture in a lightweight manual wheelchair. The wheelchair features a sleek black frame, bright orange spoke guards (#F4A261), and a compact canvas toolkit strapped securely under the seat. Scene: In her garage, Maya works on her custom soapbox racer, adjusting the hand-crank steering system she engineered to match the speed of foot-pedal racers. Setting: INT. MAYA'S GARAGE - DAY. Camera: medium. Light: flat overcast light. Palette: #2A9D8F, #F4A261. Avoid: no pity framing; not seated apart from the group; no medical setting; no photorealism; no hospital gown; no bulky electric wheelchair; no missing toolkit; no loose hair.",
+      "camera": "medium",
+      "palette": [
+        "#2A9D8F",
+        "#F4A261"
+      ]
+    },
+    {
+      "number": 3,
+      "beat": 3,
+      "scene_heading": "EXT. OAK CREEK HILL - DAY",
+      "prompt": "Maya is a 9-year-old South Asian girl with a slender build, warm brown skin, a round face, and dark curly hair tied high on her head. She wears a teal windbreaker (#2A9D8F), black fingerless gloves, dark denim jeans, and orange sneakers (#F4A261). A small adjustable wrench hangs from a bright orange lanyard around her neck. She sits upright with an active, forward-leaning posture in a lightweight manual wheelchair. The wheelchair features a sleek black frame, bright orange spoke guards (#F4A261), and a compact canvas toolkit strapped securely under the seat. Scene: Maya arrives at the race hill and encounters her rival, Billy, who doubts her hand-cranked racer can compete with his heavy steel car. Setting: EXT. OAK CREEK HILL - DAY. Camera: close-up. Light: hard afternoon light. Palette: #2A9D8F, #F4A261. Avoid: no pity framing; not seated apart from the group; no medical setting; no photorealism; no hospital gown; no bulky electric wheelchair; no missing toolkit; no loose hair.",
+      "camera": "close-up",
+      "palette": [
+        "#2A9D8F",
+        "#F4A261"
+      ]
+    },
+    {
+      "number": 4,
+      "beat": 4,
+      "scene_heading": "EXT. OAK CREEK HILL - CONTINUOUS",
+      "prompt": "Maya is a 9-year-old South Asian girl with a slender build, warm brown skin, a round face, and dark curly hair tied high on her head. She wears a teal windbreaker (#2A9D8F), black fingerless gloves, dark denim jeans, and orange sneakers (#F4A261). A small adjustable wrench hangs from a bright orange lanyard around her neck. She sits upright with an active, forward-leaning posture in a lightweight manual wheelchair. The wheelchair features a sleek black frame, bright orange spoke guards (#F4A261), and a compact canvas toolkit strapped securely under the seat. Scene: A sudden rainstorm floods the bottom of the racecourse, leading the race coordinator to announce the cancellation of the derby. Setting: EXT. OAK CREEK HILL - CONTINUOUS. Camera: over the shoulder. Light: warm interior light. Palette: #2A9D8F, #F4A261. Avoid: no pity framing; not seated apart from the group; no medical setting; no photorealism; no hospital gown; no bulky electric wheelchair; no missing toolkit; no loose hair.",
+      "camera": "over the shoulder",
+      "palette": [
+        "#2A9D8F",
+        "#F4A261"
+      ]
+    },
+    {
+      "number": 5,
+      "beat": 5,
+      "scene_heading": "EXT. STARTING LINE - DAY",
+      "prompt": "Maya is a 9-year-old South Asian girl with a slender build, warm brown skin, a round face, and dark curly hair tied high on her head. She wears a teal windbreaker (#2A9D8F), black fingerless gloves, dark denim jeans, and orange sneakers (#F4A261). A small adjustable wrench hangs from a bright orange lanyard around her neck. She sits upright with an active, forward-leaning posture in a lightweight manual wheelchair. The wheelchair features a sleek black frame, bright orange spoke guards (#F4A261), and a compact canvas toolkit strapped securely under the seat. Scene: Maya proposes converting the race into a water-skimmer derby, demonstrating how her custom hollow-hub wheels can float. Setting: EXT. STARTING LINE - DAY. Camera: low angle. Light: cool dusk light. Palette: #2A9D8F, #F4A261. Avoid: no pity framing; not seated apart from the group; no medical setting; no photorealism; no hospital gown; no bulky electric wheelchair; no missing toolkit; no loose hair.",
+      "camera": "low angle",
+      "palette": [
+        "#2A9D8F",
+        "#F4A261"
+      ]
+    },
+    {
+      "number": 6,
+      "beat": 6,
+      "scene_heading": "EXT. FLOODED CANAL - DAY",
+      "prompt": "Maya is a 9-year-old South Asian girl with a slender build, warm brown skin, a round face, and dark curly hair tied high on her head. She wears a teal windbreaker (#2A9D8F), black fingerless gloves, dark denim jeans, and orange sneakers (#F4A261). A small adjustable wrench hangs from a bright orange lanyard around her neck. She sits upright with an active, forward-leaning posture in a lightweight manual wheelchair. The wheelchair features a sleek black frame, bright orange spoke guards (#F4A261), and a compact canvas toolkit strapped securely under the seat. Scene: The race begins as the kids slide down the wet asphalt toward the flooded town square. Setting: EXT. FLOODED CANAL - DAY. Camera: tracking. Light: soft morning light. Palette: #2A9D8F, #F4A261. Avoid: no pity framing; not seated apart from the group; no medical setting; no photorealism; no hospital gown; no bulky electric wheelchair; no missing toolkit; no loose hair.",
+      "camera": "tracking",
+      "palette": [
+        "#2A9D8F",
+        "#F4A261"
+      ]
+    },
+    {
+      "number": 7,
+      "beat": 7,
+      "scene_heading": "EXT. FLOODED TOWN SQUARE - DAY",
+      "prompt": "Maya is a 9-year-old South Asian girl with a slender build, warm brown skin, a round face, and dark curly hair tied high on her head. She wears a teal windbreaker (#2A9D8F), black fingerless gloves, dark denim jeans, and orange sneakers (#F4A261). A small adjustable wrench hangs from a bright orange lanyard around her neck. She sits upright with an active, forward-leaning posture in a lightweight manual wheelchair. The wheelchair features a sleek black frame, bright orange spoke guards (#F4A261), and a compact canvas toolkit strapped securely under the seat. Scene: The racers hit the deep floodwater, and Maya's water-skimmer paddles successfully deploy, giving her an early lead. Setting: EXT. FLOODED TOWN SQUARE - DAY. Camera: wide establishing. Light: flat overcast light. Palette: #2A9D8F, #F4A261. Avoid: no pity framing; not seated apart from the group; no medical setting; no photorealism; no hospital gown; no bulky electric wheelchair; no missing toolkit; no loose hair.",
+      "camera": "wide establishing",
+      "palette": [
+        "#2A9D8F",
+        "#F4A261"
+      ]
+    },
+    {
+      "number": 8,
+      "beat": 8,
+      "scene_heading": "EXT. FINISH LINE - DAY",
+      "prompt": "Maya is a 9-year-old South Asian girl with a slender build, warm brown skin, a round face, and dark curly hair tied high on her head. She wears a teal windbreaker (#2A9D8F), black fingerless gloves, dark denim jeans, and orange sneakers (#F4A261). A small adjustable wrench hangs from a bright orange lanyard around her neck. She sits upright with an active, forward-leaning posture in a lightweight manual wheelchair. The wheelchair features a sleek black frame, bright orange spoke guards (#F4A261), and a compact canvas toolkit strapped securely under the seat. Scene: Billy's heavy car gets stuck on the submerged concrete steps of the town square, blocking the path. Setting: EXT. FINISH LINE - DAY. Camera: medium. Light: hard afternoon light. Palette: #2A9D8F, #F4A261. Avoid: no pity framing; not seated apart from the group; no medical setting; no photorealism; no hospital gown; no bulky electric wheelchair; no missing toolkit; no loose hair.",
+      "camera": "medium",
+      "palette": [
+        "#2A9D8F",
+        "#F4A261"
+      ]
+    },
+    {
+      "number": 9,
+      "beat": 9,
+      "scene_heading": "EXT. PODIUM - DAY",
+      "prompt": "Maya is a 9-year-old South Asian girl with a slender build, warm brown skin, a round face, and dark curly hair tied high on her head. She wears a teal windbreaker (#2A9D8F), black fingerless gloves, dark denim jeans, and orange sneakers (#F4A261). A small adjustable wrench hangs from a bright orange lanyard around her neck. She sits upright with an active, forward-leaning posture in a lightweight manual wheelchair. The wheelchair features a sleek black frame, bright orange spoke guards (#F4A261), and a compact canvas toolkit strapped securely under the seat. Scene: Maya uses her daily knowledge of clearing physical barriers to shift her center of gravity and glide over the submerged steps. Setting: EXT. PODIUM - DAY. Camera: close-up. Light: warm interior light. Palette: #2A9D8F, #F4A261. Avoid: no pity framing; not seated apart from the group; no medical setting; no photorealism; no hospital gown; no bulky electric wheelchair; no missing toolkit; no loose hair.",
+      "camera": "close-up",
+      "palette": [
+        "#2A9D8F",
+        "#F4A261"
+      ]
+    },
+    {
+      "number": 10,
+      "beat": 10,
+      "scene_heading": "EXT. PODIUM - DAY",
+      "prompt": "Maya is a 9-year-old South Asian girl with a slender build, warm brown skin, a round face, and dark curly hair tied high on her head. She wears a teal windbreaker (#2A9D8F), black fingerless gloves, dark denim jeans, and orange sneakers (#F4A261). A small adjustable wrench hangs from a bright orange lanyard around her neck. She sits upright with an active, forward-leaning posture in a lightweight manual wheelchair. The wheelchair features a sleek black frame, bright orange spoke guards (#F4A261), and a compact canvas toolkit strapped securely under the seat. Scene: Maya crosses the finish line first, securing the Golden Sprocket Trophy and earning Billy's respect. Setting: EXT. PODIUM - DAY. Camera: over the shoulder. Light: cool dusk light. Palette: #2A9D8F, #F4A261. Avoid: no pity framing; not seated apart from the group; no medical setting; no photorealism; no hospital gown; no bulky electric wheelchair; no missing toolkit; no loose hair.",
+      "camera": "over the shoulder",
+      "palette": [
+        "#2A9D8F",
+        "#F4A261"
+      ]
+    },
+    {
+      "number": 11,
+      "beat": 11,
+      "scene_heading": "EXT. PODIUM - DAY",
+      "prompt": "Maya is a 9-year-old South Asian girl with a slender build, warm brown skin, a round face, and dark curly hair tied high on her head. She wears a teal windbreaker (#2A9D8F), black fingerless gloves, dark denim jeans, and orange sneakers (#F4A261). A small adjustable wrench hangs from a bright orange lanyard around her neck. She sits upright with an active, forward-leaning posture in a lightweight manual wheelchair. The wheelchair features a sleek black frame, bright orange spoke guards (#F4A261), and a compact canvas toolkit strapped securely under the seat. Scene: Maya transfers to the winner's podium to receive her trophy, celebrating her achievement as the fastest engineer in town. Setting: EXT. PODIUM - DAY. Camera: low angle. Light: soft morning light. Palette: #2A9D8F, #F4A261. Avoid: no pity framing; not seated apart from the group; no medical setting; no photorealism; no hospital gown; no bulky electric wheelchair; no missing toolkit; no loose hair.",
+      "camera": "low angle",
+      "palette": [
+        "#2A9D8F",
+        "#F4A261"
+      ]
+    },
+    {
+      "number": 12,
+      "beat": 1,
+      "scene_heading": "INT. MAYA'S BEDROOM - MORNING",
+      "prompt": "Maya is a 9-year-old South Asian girl with a slender build, warm brown skin, a round face, and dark curly hair tied high on her head. She wears a teal windbreaker (#2A9D8F), black fingerless gloves, dark denim jeans, and orange sneakers (#F4A261). A small adjustable wrench hangs from a bright orange lanyard around her neck. She sits upright with an active, forward-leaning posture in a lightweight manual wheelchair. The wheelchair features a sleek black frame, bright orange spoke guards (#F4A261), and a compact canvas toolkit strapped securely under the seat. Scene: Maya wakes up in her room, transfers to her wheelchair, and sets her sights on winning the Golden Sprocket Trophy at the annual Oak Creek Soapbox Derby. Setting: INT. MAYA'S BEDROOM - MORNING. Camera: wide establishing. Light: flat overcast light. Palette: #2A9D8F, #F4A261. Avoid: no pity framing; not seated apart from the group; no medical setting; no photorealism; no hospital gown; no bulky electric wheelchair; no missing toolkit; no loose hair.",
+      "camera": "wide establishing",
+      "palette": [
+        "#2A9D8F",
+        "#F4A261"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,88 @@
+{
+  "model": "gemini-3.1-flash-image",
+  "style": "Stylised 3D animation in the look of a modern family feature film, soft rounded character design, consistent character design across shots, not photorealistic, 16:9 film frame, no text, no captions, no watermark.",
+  "frames": [
+    {
+      "shot": 1,
+      "beat": 1,
+      "file": "storyboard/shot_01.jpg",
+      "prompt": "Stylised 3D animation in the look of a modern family feature film, soft rounded character design, consistent character design across shots, not photorealistic, 16:9 film frame, no text, no captions, no watermark. Zayan is a 9-year-old South Asian boy with a lean build and warm brown skin. He has a round face framed by tight, dark curls. He wears a bright red-orange hoodie, color #E4572E, featuring a noticeably frayed left cuff, paired with dark slate blue pants, color #2E4057. On his feet are scuffed white trainers. A thick blue rubber band rests around his left wrist as a sensory grounding tool. At rest, his posture is asymmetrical, captured mid-motion with his weight shifted forward and his feet positioned as if tapping a rapid rhythm. Scene: Zayan stares at the rare Nebula-9 Golden Commander action figure in the school trophy case, wanting it more than anything. Setting: INT. SCHOOL HALLWAY - DAY. Camera: wide establishing. Light: soft morning light. Palette: #E4572E, #2E4057. Avoid: no pity framing; not seated apart from the group; no medical setting; no photorealism; no still or rigid posture; no missing rubber band; no pristine white trainers. Colour palette: #E4572E, #2E4057."
+    },
+    {
+      "shot": 2,
+      "beat": 2,
+      "file": "storyboard/shot_02.jpg",
+      "prompt": "Stylised 3D animation in the look of a modern family feature film, soft rounded character design, consistent character design across shots, not photorealistic, 16:9 film frame, no text, no captions, no watermark. Zayan is a 9-year-old South Asian boy with a lean build and warm brown skin. He has a round face framed by tight, dark curls. He wears a bright red-orange hoodie, color #E4572E, featuring a noticeably frayed left cuff, paired with dark slate blue pants, color #2E4057. On his feet are scuffed white trainers. A thick blue rubber band rests around his left wrist as a sensory grounding tool. At rest, his posture is asymmetrical, captured mid-motion with his weight shifted forward and his feet positioned as if tapping a rapid rhythm. Scene: In the classroom, Zayan struggles with a slow spelling test, showing the daily frustrations of his fast-paced mind trying to fit into a slow-paced structure. Setting: INT. CLASSROOM - DAY. Camera: medium. Light: flat overcast light. Palette: #E4572E, #2E4057. Avoid: no pity framing; not seated apart from the group; no medical setting; no photorealism; no still or rigid posture; no missing rubber band; no pristine white trainers. Colour palette: #E4572E, #2E4057."
+    },
+    {
+      "shot": 3,
+      "beat": 3,
+      "file": "storyboard/shot_03.jpg",
+      "prompt": "Stylised 3D animation in the look of a modern family feature film, soft rounded character design, consistent character design across shots, not photorealistic, 16:9 film frame, no text, no captions, no watermark. Zayan is a 9-year-old South Asian boy with a lean build and warm brown skin. He has a round face framed by tight, dark curls. He wears a bright red-orange hoodie, color #E4572E, featuring a noticeably frayed left cuff, paired with dark slate blue pants, color #2E4057. On his feet are scuffed white trainers. A thick blue rubber band rests around his left wrist as a sensory grounding tool. At rest, his posture is asymmetrical, captured mid-motion with his weight shifted forward and his feet positioned as if tapping a rapid rhythm. Scene: The school's prototype security system malfunctions, turning the building into a giant maze of shifting blue and orange walls. Setting: INT. SCHOOL HALLWAY - CONTINUOUS. Camera: close-up. Light: hard afternoon light. Palette: #E4572E, #2E4057. Avoid: no pity framing; not seated apart from the group; no medical setting; no photorealism; no still or rigid posture; no missing rubber band; no pristine white trainers. Colour palette: #E4572E, #2E4057.",
+      "model": "gemini-3.1-flash-image"
+    },
+    {
+      "shot": 4,
+      "beat": 4,
+      "file": "storyboard/shot_04.jpg",
+      "prompt": "Stylised 3D animation in the look of a modern family feature film, soft rounded character design, consistent character design across shots, not photorealistic, 16:9 film frame, no text, no captions, no watermark. Zayan is a 9-year-old South Asian boy with a lean build and warm brown skin. He has a round face framed by tight, dark curls. He wears a bright red-orange hoodie, color #E4572E, featuring a noticeably frayed left cuff, paired with dark slate blue pants, color #2E4057. On his feet are scuffed white trainers. A thick blue rubber band rests around his left wrist as a sensory grounding tool. At rest, his posture is asymmetrical, captured mid-motion with his weight shifted forward and his feet positioned as if tapping a rapid rhythm. Scene: The walls slide shut, separating Zayan, Leo, and Chloe from their teacher, Mr. Henderson. The others panic, but Zayan stays alert. Setting: INT. CLASSROOM - CONTINUOUS. Camera: over the shoulder. Light: warm interior light. Palette: #E4572E, #2E4057. Avoid: no pity framing; not seated apart from the group; no medical setting; no photorealism; no still or rigid posture; no missing rubber band; no pristine white trainers. Colour palette: #E4572E, #2E4057.",
+      "model": "gemini-3.1-flash-image"
+    },
+    {
+      "shot": 5,
+      "beat": 5,
+      "file": "storyboard/shot_05.jpg",
+      "prompt": "Stylised 3D animation in the look of a modern family feature film, soft rounded character design, consistent character design across shots, not photorealistic, 16:9 film frame, no text, no captions, no watermark. Zayan is a 9-year-old South Asian boy with a lean build and warm brown skin. He has a round face framed by tight, dark curls. He wears a bright red-orange hoodie, color #E4572E, featuring a noticeably frayed left cuff, paired with dark slate blue pants, color #2E4057. On his feet are scuffed white trainers. A thick blue rubber band rests around his left wrist as a sensory grounding tool. At rest, his posture is asymmetrical, captured mid-motion with his weight shifted forward and his feet positioned as if tapping a rapid rhythm. Scene: Zayan realizes the prize chest is at the center of the maze in the Principal's Office. He decides to guide them there. Setting: INT. SHIFTING MAZE - CONTINUOUS. Camera: low angle. Light: cool dusk light. Palette: #E4572E, #2E4057. Avoid: no pity framing; not seated apart from the group; no medical setting; no photorealism; no still or rigid posture; no missing rubber band; no pristine white trainers. Colour palette: #E4572E, #2E4057.",
+      "model": "gemini-2.5-flash-image"
+    },
+    {
+      "shot": 6,
+      "beat": 6,
+      "file": "storyboard/shot_06.jpg",
+      "prompt": "Stylised 3D animation in the look of a modern family feature film, soft rounded character design, consistent character design across shots, not photorealistic, 16:9 film frame, no text, no captions, no watermark. Zayan is a 9-year-old South Asian boy with a lean build and warm brown skin. He has a round face framed by tight, dark curls. He wears a bright red-orange hoodie, color #E4572E, featuring a noticeably frayed left cuff, paired with dark slate blue pants, color #2E4057. On his feet are scuffed white trainers. A thick blue rubber band rests around his left wrist as a sensory grounding tool. At rest, his posture is asymmetrical, captured mid-motion with his weight shifted forward and his feet positioned as if tapping a rapid rhythm. Scene: When the noise of the sliding walls grows too loud, Zayan snaps his rubber band to focus his racing thoughts. Setting: INT. MAZE - INTERSECTION - CONTINUOUS. Camera: tracking. Light: soft morning light. Palette: #E4572E, #2E4057. Avoid: no pity framing; not seated apart from the group; no medical setting; no photorealism; no still or rigid posture; no missing rubber band; no pristine white trainers. Colour palette: #E4572E, #2E4057.",
+      "model": "gemini-3.1-flash-image"
+    },
+    {
+      "shot": 7,
+      "beat": 7,
+      "file": "storyboard/shot_07.jpg",
+      "prompt": "Stylised 3D animation in the look of a modern family feature film, soft rounded character design, consistent character design across shots, not photorealistic, 16:9 film frame, no text, no captions, no watermark. Zayan is a 9-year-old South Asian boy with a lean build and warm brown skin. He has a round face framed by tight, dark curls. He wears a bright red-orange hoodie, color #E4572E, featuring a noticeably frayed left cuff, paired with dark slate blue pants, color #2E4057. On his feet are scuffed white trainers. A thick blue rubber band rests around his left wrist as a sensory grounding tool. At rest, his posture is asymmetrical, captured mid-motion with his weight shifted forward and his feet positioned as if tapping a rapid rhythm. Scene: Zayan calculates a split-second opening in a shifting archway and guides Leo and Chloe through it just in time. Setting: INT. PRINCIPAL'S OFFICE - CONTINUOUS. Camera: wide establishing. Light: flat overcast light. Palette: #E4572E, #2E4057. Avoid: no pity framing; not seated apart from the group; no medical setting; no photorealism; no still or rigid posture; no missing rubber band; no pristine white trainers. Colour palette: #E4572E, #2E4057.",
+      "model": "gemini-2.5-flash-image"
+    },
+    {
+      "shot": 8,
+      "beat": 8,
+      "file": "storyboard/shot_08.jpg",
+      "prompt": "Stylised 3D animation in the look of a modern family feature film, soft rounded character design, consistent character design across shots, not photorealistic, 16:9 film frame, no text, no captions, no watermark. Zayan is a 9-year-old South Asian boy with a lean build and warm brown skin. He has a round face framed by tight, dark curls. He wears a bright red-orange hoodie, color #E4572E, featuring a noticeably frayed left cuff, paired with dark slate blue pants, color #2E4057. On his feet are scuffed white trainers. A thick blue rubber band rests around his left wrist as a sensory grounding tool. At rest, his posture is asymmetrical, captured mid-motion with his weight shifted forward and his feet positioned as if tapping a rapid rhythm. Scene: Zayan worries that his fast movements will get him in trouble with the adults once this is over, fearing he is just broken. Setting: INT. CLASSROOM - THE NEXT DAY. Camera: medium. Light: hard afternoon light. Palette: #E4572E, #2E4057. Avoid: no pity framing; not seated apart from the group; no medical setting; no photorealism; no still or rigid posture; no missing rubber band; no pristine white trainers. Colour palette: #E4572E, #2E4057.",
+      "model": "gemini-2.5-flash-image"
+    },
+    {
+      "shot": 9,
+      "beat": 9,
+      "file": "storyboard/shot_09.jpg",
+      "prompt": "Stylised 3D animation in the look of a modern family feature film, soft rounded character design, consistent character design across shots, not photorealistic, 16:9 film frame, no text, no captions, no watermark. Zayan is a 9-year-old South Asian boy with a lean build and warm brown skin. He has a round face framed by tight, dark curls. He wears a bright red-orange hoodie, color #E4572E, featuring a noticeably frayed left cuff, paired with dark slate blue pants, color #2E4057. On his feet are scuffed white trainers. A thick blue rubber band rests around his left wrist as a sensory grounding tool. At rest, his posture is asymmetrical, captured mid-motion with his weight shifted forward and his feet positioned as if tapping a rapid rhythm. Scene: With only ten seconds before the maze locks permanently, Zayan must track four doors moving at different speeds to get them into the office. Setting: INT. CLASSROOM - THE NEXT DAY. Camera: close-up. Light: warm interior light. Palette: #E4572E, #2E4057. Avoid: no pity framing; not seated apart from the group; no medical setting; no photorealism; no still or rigid posture; no missing rubber band; no pristine white trainers. Colour palette: #E4572E, #2E4057.",
+      "model": "gemini-3.1-flash-image"
+    },
+    {
+      "shot": 10,
+      "beat": 10,
+      "file": "storyboard/shot_10.jpg",
+      "prompt": "Stylised 3D animation in the look of a modern family feature film, soft rounded character design, consistent character design across shots, not photorealistic, 16:9 film frame, no text, no captions, no watermark. Zayan is a 9-year-old South Asian boy with a lean build and warm brown skin. He has a round face framed by tight, dark curls. He wears a bright red-orange hoodie, color #E4572E, featuring a noticeably frayed left cuff, paired with dark slate blue pants, color #2E4057. On his feet are scuffed white trainers. A thick blue rubber band rests around his left wrist as a sensory grounding tool. At rest, his posture is asymmetrical, captured mid-motion with his weight shifted forward and his feet positioned as if tapping a rapid rhythm. Scene: They reach the office. Zayan claims the action figure, and they escape through the main exit just as the maze resets to normal. Setting: INT. CLASSROOM - THE NEXT DAY. Camera: over the shoulder. Light: cool dusk light. Palette: #E4572E, #2E4057. Avoid: no pity framing; not seated apart from the group; no medical setting; no photorealism; no still or rigid posture; no missing rubber band; no pristine white trainers. Colour palette: #E4572E, #2E4057.",
+      "model": "gemini-3.1-flash-image"
+    },
+    {
+      "shot": 11,
+      "beat": 11,
+      "file": "storyboard/shot_11.jpg",
+      "prompt": "Stylised 3D animation in the look of a modern family feature film, soft rounded character design, consistent character design across shots, not photorealistic, 16:9 film frame, no text, no captions, no watermark. Zayan is a 9-year-old South Asian boy with a lean build and warm brown skin. He has a round face framed by tight, dark curls. He wears a bright red-orange hoodie, color #E4572E, featuring a noticeably frayed left cuff, paired with dark slate blue pants, color #2E4057. On his feet are scuffed white trainers. A thick blue rubber band rests around his left wrist as a sensory grounding tool. At rest, his posture is asymmetrical, captured mid-motion with his weight shifted forward and his feet positioned as if tapping a rapid rhythm. Scene: Leo and Chloe praise Zayan's amazing mind, and Mr. Henderson expresses immense pride in his quick thinking. Setting: INT. CLASSROOM - THE NEXT DAY. Camera: low angle. Light: soft morning light. Palette: #E4572E, #2E4057. Avoid: no pity framing; not seated apart from the group; no medical setting; no photorealism; no still or rigid posture; no missing rubber band; no pristine white trainers. Colour palette: #E4572E, #2E4057.",
+      "model": "gemini-3.1-flash-image"
+    },
+    {
+      "shot": 12,
+      "beat": 12,
+      "file": "storyboard/shot_12.jpg",
+      "prompt": "Stylised 3D animation in the look of a modern family feature film, soft rounded character design, consistent character design across shots, not photorealistic, 16:9 film frame, no text, no captions, no watermark. Zayan is a 9-year-old South Asian boy with a lean build and warm brown skin. He has a round face framed by tight, dark curls. He wears a bright red-orange hoodie, color #E4572E, featuring a noticeably frayed left cuff, paired with dark slate blue pants, color #2E4057. On his feet are scuffed white trainers. A thick blue rubber band rests around his left wrist as a sensory grounding tool. At rest, his posture is asymmetrical, captured mid-motion with his weight shifted forward and his feet positioned as if tapping a rapid rhythm. Scene: Back in the classroom, Zayan is still mid-motion, snapping his rubber band, perfectly happy with his fast-paced brain. Setting: INT. CLASSROOM - THE NEXT DAY. Camera: tracking. Light: flat overcast light. Palette: #E4572E, #2E4057. Avoid: no pity framing; not seated apart from the group; no medical setting; no photorealism; no still or rigid posture; no missing rubber band; no pristine white trainers. Colour palette: #E4572E, #2E4057.",
+      "model": "gemini-3.1-flash-image"
+    }
+  ]
+}

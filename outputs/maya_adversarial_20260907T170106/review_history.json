@@ -1,0 +1,202 @@
+[
+  {
+    "verdict": "REVISE",
+    "iteration": 1,
+    "revision_colour": "White",
+    "deterministic": [
+      {
+        "rule_id": "HF2",
+        "result": "pass",
+        "evidence": "Sunlight streams through the high, dirt-streaked basement window of a suburban house. The room is a sanctuary of engineering. Shelves are crowded with labeled plastic bins: \"Screws,\" \"Gears,\" \"Sprockets,\" \"Pulleys.\" Heavy-duty tools hang from a pegboard on the wall, each silhouette meticulously outlined in orange paint.",
+        "note": "no avoid-list match in action lines"
+      },
+      {
+        "rule_id": "SC-NAMED",
+        "result": "pass",
+        "evidence": "She pulls herself up. Her knees shake violently. Her face tightens with the immense physical effort of her secret summer training program, designed to rebuild her strength after her incomplete spinal cord injury.",
+        "note": "found \"spinal cord injury\""
+      },
+      {
+        "rule_id": "SC-LENGTH",
+        "result": "pass",
+        "evidence": "INT. MAYA'S WORKSHOP - DAY",
+        "note": "2475 words, ~9 pages"
+      },
+      {
+        "rule_id": "SC-BEATS",
+        "result": "pass",
+        "evidence": "Maya pulls the heavy iron lever, opening the gate and saving the town. She walks down the steps, leaving her jammed wheelchair behind.",
+        "note": "every beat carries the trait"
+      }
+    ],
+    "model_scored": [
+      {
+        "rule_id": "HF1",
+        "result": "fail",
+        "evidence": "She walks past her old wheelchair, leaving it on the ramp, and walks down the hill shoulder-to-shoulder with her friends.",
+        "note": "The character's disability is removed in the final scene, as she regains the ability to walk and leaves her wheelchair behind."
+      },
+      {
+        "rule_id": "HF3",
+        "result": "pass",
+        "evidence": "She looks at her legs, then at her hands. A look of fierce determination fills her eyes.",
+        "note": "Maya has her own goals, such as engineering her equipment and completing her physical therapy, demonstrating clear interiority independent of helping others."
+      },
+      {
+        "rule_id": "MD1",
+        "result": "pass",
+        "evidence": "She slides to the front of her seat, grips the edge of the heavy workbench, and transfers her weight onto a high, swiveling wooden stool.",
+        "note": "The script includes clear action lines showing Maya transferring out of her wheelchair to sit on a stool, as well as later transferring into bed."
+      },
+      {
+        "rule_id": "MD2",
+        "result": "pass",
+        "evidence": "While the other kids on the street are struggling to walk through the waist-deep torrent, Maya uses her engineered paddle-wheels to navigate. Her method is entirely different, but highly effective.",
+        "note": "Maya navigates the flooded street alongside her peers, but uses her custom paddle-wheels to accomplish the task differently."
+      },
+      {
+        "rule_id": "MD3",
+        "result": "pass",
+        "evidence": "Your chair is your personal cockpit. No touching, leaning, or pushing without explicit written and verbal consent.",
+        "note": "The script explicitly addresses the wheelchair as personal space, with Maya enforcing boundaries when Leo reaches for it."
+      },
+      {
+        "rule_id": "MD4",
+        "result": "pass",
+        "evidence": "She laughs, a bright, clear sound that has nothing to do with her physical limitations and everything to do with mechanical triumph.",
+        "note": "Maya displays frustration and joy related entirely to her engineering projects, unrelated to her impairment."
+      },
+      {
+        "rule_id": "MN1",
+        "result": "fail",
+        "evidence": "She smiles, realizing she has achieved her ultimate goal. She has fought her way back to mobility, and she has left the wheelchair behind for good.",
+        "note": "The script eliminates Maya's disability by the end for narrative convenience, having her suddenly walk to solve the plot's climax."
+      },
+      {
+        "rule_id": "MN2",
+        "result": "pass",
+        "evidence": "She laughs, a bright, clear sound that has nothing to do with her physical limitations and everything to do with mechanical triumph.",
+        "note": "There is no dialogue or action line portraying Maya as feeling trapped, isolated, or broken because of her wheelchair; she is depicted as empowered and capable."
+      },
+      {
+        "rule_id": "MN3",
+        "result": "pass",
+        "evidence": "MAYA, a nine-year-old South Asian girl with curly hair tied high in a neat, bouncy ponytail, sits in her manual wheelchair.",
+        "note": "The character's disability is not used as a narrative prosthesis or a metaphor for evil, degeneracy, or corruption."
+      },
+      {
+        "rule_id": "MN4",
+        "result": "pass",
+        "evidence": "Her face tightens with the immense physical effort of her secret summer training program, designed to rebuild her strength after her incomplete spinal cord injury.",
+        "note": "The script states her injury factually without using language that implies pity, suffering, or victimhood."
+      }
+    ],
+    "hard_failures": [
+      "HF1",
+      "MN1"
+    ],
+    "soft_notes": [],
+    "revision_instructions": [
+      "HF1 failed. Evidence: \"She walks past her old wheelchair, leaving it on the ramp, and walks down the hill shoulder-to-shoulder with her friends.\". The character's disability is removed in the final scene, as she regains the ability to walk and leaves her wheelchair behind.",
+      "MN1 failed. Evidence: \"She smiles, realizing she has achieved her ultimate goal. She has fought her way back to mobility, and she has left the wheelchair behind for good.\". The script eliminates Maya's disability by the end for narrative convenience, having her suddenly walk to solve the plot's climax."
+    ],
+    "evidence_unverified": []
+  },
+  {
+    "verdict": "PASS",
+    "iteration": 2,
+    "revision_colour": "Blue",
+    "deterministic": [
+      {
+        "rule_id": "HF2",
+        "result": "pass",
+        "evidence": "Sunlight streams through the high, dirt-streaked basement window of a suburban house. The room is a sanctuary of engineering. Shelves are crowded with labeled plastic bins: \"Screws,\" \"Gears,\" \"Sprockets,\" \"Pulleys.\" Heavy-duty tools hang from a pegboard on the wall, each silhouette meticulously outlined in orange paint.",
+        "note": "no avoid-list match in action lines"
+      },
+      {
+        "rule_id": "SC-NAMED",
+        "result": "pass",
+        "evidence": "While the other kids on the street are struggling to walk through the waist-deep torrent, Maya, as an experienced wheelchair user, navigates with skill. Her method is entirely different, but highly effective. She wheels forward, the paddle attachments scooping the water and propelling her rapidly across the current.",
+        "note": "found \"wheelchair user\""
+      },
+      {
+        "rule_id": "SC-LENGTH",
+        "result": "pass",
+        "evidence": "INT. MAYA'S WORKSHOP - DAY",
+        "note": "2465 words, ~9 pages"
+      },
+      {
+        "rule_id": "SC-BEATS",
+        "result": "pass",
+        "evidence": "The floodgate opens, draining the water. Maya frees her caster and rolls down the ramp to join her friends, remaining in her wheelchair.",
+        "note": "every beat carries the trait"
+      }
+    ],
+    "model_scored": [
+      {
+        "rule_id": "HF1",
+        "result": "pass",
+        "evidence": "She turns her wheelchair around and rolls down the ramp shoulder-to-shoulder with her friends, heading back toward the dry town square.",
+        "note": "Maya's disability is present and unchanged in the final scene; she continues to use her wheelchair."
+      },
+      {
+        "rule_id": "HF3",
+        "result": "pass",
+        "evidence": "Let's go test the new tread.",
+        "note": "Maya has her own goals and interests, such as testing her engineering projects and completing her physical therapy, independent of helping others."
+      },
+      {
+        "rule_id": "MD1",
+        "result": "pass",
+        "evidence": "She grabs the workbench, slides off the stool, and transfers back into her wheelchair with effortless coordination.",
+        "note": "The script explicitly shows Maya transferring between her wheelchair and a stool, as well as into her bed."
+      },
+      {
+        "rule_id": "MD2",
+        "result": "pass",
+        "evidence": "While the other kids on the street are struggling to walk through the waist-deep torrent, Maya, as an experienced wheelchair user, navigates with skill. Her method is entirely different, but highly effective. She wheels forward, the paddle attachments scooping the water and propelling her rapidly across the current.",
+        "note": "Maya navigates the flooded street alongside her peers, but uses a different method (paddle attachments on her wheelchair) to accomplish the task."
+      },
+      {
+        "rule_id": "MD3",
+        "result": "pass",
+        "evidence": "Leo walks over to the workbench, eyes wide as he looks at the pump. He leans forward, his hand drifting toward the push-rims of Maya's parked wheelchair to steady himself.",
+        "note": "Maya immediately corrects Leo for trying to lean on her wheelchair, establishing it as her personal space."
+      },
+      {
+        "rule_id": "MD4",
+        "result": "pass",
+        "evidence": "She applies pressure, her face contorting with concentration. The bolt resists. She grunts, her cheeks turning red with frustration.",
+        "note": "Maya displays frustration and concentration related to her engineering work, completely unrelated to her disability."
+      },
+      {
+        "rule_id": "MN1",
+        "result": "pass",
+        "evidence": "She turns her wheelchair around and rolls down the ramp shoulder-to-shoulder with her friends, heading back toward the dry town square.",
+        "note": "Maya's disability is not magically fixed by the end of the script; she remains a wheelchair user."
+      },
+      {
+        "rule_id": "MN2",
+        "result": "pass",
+        "evidence": "She laughs, a bright, clear sound that has nothing to do with her physical limitations and everything to do with mechanical triumph.",
+        "note": "Maya is portrayed as empowered, joyful, and capable, rather than feeling trapped or broken by her disability."
+      },
+      {
+        "rule_id": "MN3",
+        "result": "pass",
+        "evidence": "She turns her wheelchair around and rolls down the ramp shoulder-to-shoulder with her friends, heading back toward the dry town square.",
+        "note": "The disability is portrayed naturally and is not used as a metaphor for evil or corruption."
+      },
+      {
+        "rule_id": "MN4",
+        "result": "pass",
+        "evidence": "Her face tightens with the immense physical effort of her secret summer training program, designed to rebuild her strength after her incomplete spinal cord injury.",
+        "note": "The script describes her spinal cord injury neutrally without using pity-inducing language like 'suffers from' or 'victim of'."
+      }
+    ],
+    "hard_failures": [],
+    "soft_notes": [],
+    "revision_instructions": [],
+    "evidence_unverified": []
+  }
+]

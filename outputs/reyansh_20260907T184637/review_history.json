@@ -1,0 +1,99 @@
+[
+  {
+    "verdict": "PASS",
+    "iteration": 1,
+    "revision_colour": "White",
+    "deterministic": [
+      {
+        "rule_id": "HF2",
+        "result": "pass",
+        "evidence": "CASTING NOTE: The role of Reyansh must be played by a deaf actor to ensure authentic, first-hand representation.",
+        "note": "no avoid-list match in action lines"
+      },
+      {
+        "rule_id": "SC-NAMED",
+        "result": "pass",
+        "evidence": "CASTING NOTE: The role of Reyansh must be played by a deaf actor to ensure authentic, first-hand representation.",
+        "note": "found \"deaf\""
+      },
+      {
+        "rule_id": "SC-LENGTH",
+        "result": "pass",
+        "evidence": "CASTING NOTE: The role of Reyansh must be played by a deaf actor to ensure authentic, first-hand representation.",
+        "note": "1958 words, ~10 pages"
+      },
+      {
+        "rule_id": "SC-BEATS",
+        "result": "pass",
+        "evidence": "The real Dr. Vance arrives, having been delayed. Principal Miller awards Reyansh the legendary Golden Tiger Card for solving the ultimate puzzle of the day.",
+        "note": "every beat carries the trait"
+      }
+    ],
+    "model_scored": [
+      {
+        "rule_id": "HF1",
+        "result": "pass",
+        "evidence": "Reyansh's face lights up. He signs back with quick, precise, and beautiful movements.",
+        "note": "Reyansh remains deaf in the final scene and communicates using sign language, showing his trait is unchanged and not cured."
+      },
+      {
+        "rule_id": "HF3",
+        "result": "pass",
+        "evidence": "He wants the Golden Tiger Card. It is a rare, holographic card.",
+        "note": "Reyansh has his own personal goal of winning the rare holographic card, demonstrating interiority independent of helping or teaching others."
+      },
+      {
+        "rule_id": "MD1",
+        "result": "pass",
+        "evidence": "CASTING NOTE: The role of Reyansh must be played by a deaf actor to ensure authentic, first-hand representation.",
+        "note": "The casting note explicitly requires a deaf actor for the role."
+      },
+      {
+        "rule_id": "MD2",
+        "result": "pass",
+        "evidence": "He is a deaf boy. He has profound bilateral hearing loss.",
+        "note": "The script explicitly describes Reyansh as a deaf boy with profound bilateral hearing loss."
+      },
+      {
+        "rule_id": "MD3",
+        "result": "pass",
+        "evidence": "He is a deaf boy. He has profound bilateral hearing loss.",
+        "note": "The script correctly uses lowercase 'deaf' to refer to Reyansh's audiological status."
+      },
+      {
+        "rule_id": "MD4",
+        "result": "pass",
+        "evidence": "LEO (10), a non-disabled classmate, walks up.",
+        "note": "The script uses the term 'non-disabled' to contrast Leo with Reyansh."
+      },
+      {
+        "rule_id": "MN1",
+        "result": "pass",
+        "evidence": "He is a deaf boy. He did not need to hear a single word to find the truth.",
+        "note": "Reyansh's deafness is never cured or medically reversed in the story."
+      },
+      {
+        "rule_id": "MN2",
+        "result": "pass",
+        "evidence": "He is a deaf boy. He has profound bilateral hearing loss.",
+        "note": "The script introduces his deafness neutrally without using pitying language like 'suffers from' or 'afflicted with'."
+      },
+      {
+        "rule_id": "MN3",
+        "result": "pass",
+        "evidence": "LEO (10), a non-disabled classmate, walks up.",
+        "note": "The script avoids using 'normal' or 'able-bodied', opting for 'non-disabled' instead."
+      },
+      {
+        "rule_id": "MN4",
+        "result": "pass",
+        "evidence": "He is a deaf boy. He has profound bilateral hearing loss.",
+        "note": "The script correctly uses 'deaf' as an adjective (e.g., 'deaf boy', 'deaf actor') rather than a noun."
+      }
+    ],
+    "hard_failures": [],
+    "soft_notes": [],
+    "revision_instructions": [],
+    "evidence_unverified": []
+  }
+]

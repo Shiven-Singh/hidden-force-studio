@@ -1,0 +1,88 @@
+{
+  "model": "gemini-3.1-flash-image",
+  "style": "Stylised 3D animation in the look of a modern family feature film, soft rounded character design, consistent character design across shots, not photorealistic, 16:9 film frame, no text, no captions, no watermark.",
+  "frames": [
+    {
+      "shot": 1,
+      "beat": 1,
+      "file": "storyboard/shot_01.jpg",
+      "prompt": "Stylised 3D animation in the look of a modern family feature film, soft rounded character design, consistent character design across shots, not photorealistic, 16:9 film frame, no text, no captions, no watermark. An 8-year-old South Asian girl with a small build, warm brown skin, and a round face. Her straight black hair is tied back in a neat, low plait. She wears a mustard yellow (#E0B341) jumper with oversized sleeves pulled down to completely cover her hands, paired with fitted grey leggings and slate blue (#3B6D8C) slip-on shoes. Large grey noise-reducing headphones rest comfortably around her neck as an integrated accessory. A smooth grey pebble rests in her pocket, visible when she turns it with her fingers. At rest, she stands with a straight, measured posture, keeping her covered hands tucked close to her torso. Scene: Aanya maps out a perfect walk to the Glass Dome Conservatory, the quietest spot in town, wanting a peaceful afternoon to herself to read under the giant ferns. Setting: EXT. STREETS - DAY. Camera: wide establishing. Light: soft morning light. Palette: #E0B341, #3B6D8C. Avoid: no pity framing; not seated apart from the group; no medical setting; no photorealism; no exposed hands; no messy hair; no eye contact forced. Colour palette: #E0B341, #3B6D8C."
+    },
+    {
+      "shot": 2,
+      "beat": 2,
+      "file": "storyboard/shot_02.jpg",
+      "prompt": "Stylised 3D animation in the look of a modern family feature film, soft rounded character design, consistent character design across shots, not photorealistic, 16:9 film frame, no text, no captions, no watermark. An 8-year-old South Asian girl with a small build, warm brown skin, and a round face. Her straight black hair is tied back in a neat, low plait. She wears a mustard yellow (#E0B341) jumper with oversized sleeves pulled down to completely cover her hands, paired with fitted grey leggings and slate blue (#3B6D8C) slip-on shoes. Large grey noise-reducing headphones rest comfortably around her neck as an integrated accessory. A smooth grey pebble rests in her pocket, visible when she turns it with her fingers. At rest, she stands with a straight, measured posture, keeping her covered hands tucked close to her torso. Scene: Before leaving her room, Aanya selects her favorite smooth grey pebble from her desk to keep her grounded during the journey. Setting: INT. AANYA'S ROOM - DAY. Camera: medium. Light: flat overcast light. Palette: #E0B341, #3B6D8C. Avoid: no pity framing; not seated apart from the group; no medical setting; no photorealism; no exposed hands; no messy hair; no eye contact forced. Colour palette: #E0B341, #3B6D8C.",
+      "model": "gemini-3.1-flash-image"
+    },
+    {
+      "shot": 3,
+      "beat": 3,
+      "file": "storyboard/shot_03.jpg",
+      "prompt": "Stylised 3D animation in the look of a modern family feature film, soft rounded character design, consistent character design across shots, not photorealistic, 16:9 film frame, no text, no captions, no watermark. An 8-year-old South Asian girl with a small build, warm brown skin, and a round face. Her straight black hair is tied back in a neat, low plait. She wears a mustard yellow (#E0B341) jumper with oversized sleeves pulled down to completely cover her hands, paired with fitted grey leggings and slate blue (#3B6D8C) slip-on shoes. Large grey noise-reducing headphones rest comfortably around her neck as an integrated accessory. A smooth grey pebble rests in her pocket, visible when she turns it with her fingers. At rest, she stands with a straight, measured posture, keeping her covered hands tucked close to her torso. Scene: At Oak Street, Aanya observes the traffic light blinking in an odd, non-random sequence instead of holding its usual green wave. Setting: EXT. OAK STREET - DAY. Camera: close-up. Light: hard afternoon light. Palette: #E0B341, #3B6D8C. Avoid: no pity framing; not seated apart from the group; no medical setting; no photorealism; no exposed hands; no messy hair; no eye contact forced. Colour palette: #E0B341, #3B6D8C."
+    },
+    {
+      "shot": 4,
+      "beat": 4,
+      "file": "storyboard/shot_04.jpg",
+      "prompt": "Stylised 3D animation in the look of a modern family feature film, soft rounded character design, consistent character design across shots, not photorealistic, 16:9 film frame, no text, no captions, no watermark. An 8-year-old South Asian girl with a small build, warm brown skin, and a round face. Her straight black hair is tied back in a neat, low plait. She wears a mustard yellow (#E0B341) jumper with oversized sleeves pulled down to completely cover her hands, paired with fitted grey leggings and slate blue (#3B6D8C) slip-on shoes. Large grey noise-reducing headphones rest comfortably around her neck as an integrated accessory. A smooth grey pebble rests in her pocket, visible when she turns it with her fingers. At rest, she stands with a straight, measured posture, keeping her covered hands tucked close to her torso. Scene: At the next intersection, the blinking pattern repeats but at a faster pace, and Aanya records the sequence in her notebook. Setting: EXT. MAPLE AVENUE - DAY. Camera: over the shoulder. Light: warm interior light. Palette: #E0B341, #3B6D8C. Avoid: no pity framing; not seated apart from the group; no medical setting; no photorealism; no exposed hands; no messy hair; no eye contact forced. Colour palette: #E0B341, #3B6D8C.",
+      "model": "gemini-3.1-flash-image"
+    },
+    {
+      "shot": 5,
+      "beat": 5,
+      "file": "storyboard/shot_05.jpg",
+      "prompt": "Stylised 3D animation in the look of a modern family feature film, soft rounded character design, consistent character design across shots, not photorealistic, 16:9 film frame, no text, no captions, no watermark. An 8-year-old South Asian girl with a small build, warm brown skin, and a round face. Her straight black hair is tied back in a neat, low plait. She wears a mustard yellow (#E0B341) jumper with oversized sleeves pulled down to completely cover her hands, paired with fitted grey leggings and slate blue (#3B6D8C) slip-on shoes. Large grey noise-reducing headphones rest comfortably around her neck as an integrated accessory. A smooth grey pebble rests in her pocket, visible when she turns it with her fingers. At rest, she stands with a straight, measured posture, keeping her covered hands tucked close to her torso. Scene: Aanya tries to warn the local crossing guard, Officer Higgins, that the traffic lights are counting down to a grid-wide failure. Setting: EXT. MAPLE AVENUE - CONTINUOUS. Camera: low angle. Light: cool dusk light. Palette: #E0B341, #3B6D8C. Avoid: no pity framing; not seated apart from the group; no medical setting; no photorealism; no exposed hands; no messy hair; no eye contact forced. Colour palette: #E0B341, #3B6D8C.",
+      "model": "gemini-2.5-flash-image"
+    },
+    {
+      "shot": 6,
+      "beat": 6,
+      "file": "storyboard/shot_06.jpg",
+      "prompt": "Stylised 3D animation in the look of a modern family feature film, soft rounded character design, consistent character design across shots, not photorealistic, 16:9 film frame, no text, no captions, no watermark. An 8-year-old South Asian girl with a small build, warm brown skin, and a round face. Her straight black hair is tied back in a neat, low plait. She wears a mustard yellow (#E0B341) jumper with oversized sleeves pulled down to completely cover her hands, paired with fitted grey leggings and slate blue (#3B6D8C) slip-on shoes. Large grey noise-reducing headphones rest comfortably around her neck as an integrated accessory. A smooth grey pebble rests in her pocket, visible when she turns it with her fingers. At rest, she stands with a straight, measured posture, keeping her covered hands tucked close to her torso. Scene: The countdown accelerates, causing lights to flash rapidly and cars to stall, filling the street with overwhelming horn blasts. Setting: EXT. MUNICIPAL CONTROL BUILDING - DAY. Camera: tracking. Light: soft morning light. Palette: #E0B341, #3B6D8C. Avoid: no pity framing; not seated apart from the group; no medical setting; no photorealism; no exposed hands; no messy hair; no eye contact forced. Colour palette: #E0B341, #3B6D8C.",
+      "model": "gemini-3.1-flash-image"
+    },
+    {
+      "shot": 7,
+      "beat": 7,
+      "file": "storyboard/shot_07.jpg",
+      "prompt": "Stylised 3D animation in the look of a modern family feature film, soft rounded character design, consistent character design across shots, not photorealistic, 16:9 film frame, no text, no captions, no watermark. An 8-year-old South Asian girl with a small build, warm brown skin, and a round face. Her straight black hair is tied back in a neat, low plait. She wears a mustard yellow (#E0B341) jumper with oversized sleeves pulled down to completely cover her hands, paired with fitted grey leggings and slate blue (#3B6D8C) slip-on shoes. Large grey noise-reducing headphones rest comfortably around her neck as an integrated accessory. A smooth grey pebble rests in her pocket, visible when she turns it with her fingers. At rest, she stands with a straight, measured posture, keeping her covered hands tucked close to her torso. Scene: Instead of retreating to safety, Aanya decides to head to the central municipal control station to fix the system before the grid locks completely. Setting: INT. MUNICIPAL CONTROL ROOM - DAY. Camera: wide establishing. Light: flat overcast light. Palette: #E0B341, #3B6D8C. Avoid: no pity framing; not seated apart from the group; no medical setting; no photorealism; no exposed hands; no messy hair; no eye contact forced. Colour palette: #E0B341, #3B6D8C.",
+      "model": "gemini-2.5-flash-image"
+    },
+    {
+      "shot": 8,
+      "beat": 8,
+      "file": "storyboard/shot_08.jpg",
+      "prompt": "Stylised 3D animation in the look of a modern family feature film, soft rounded character design, consistent character design across shots, not photorealistic, 16:9 film frame, no text, no captions, no watermark. An 8-year-old South Asian girl with a small build, warm brown skin, and a round face. Her straight black hair is tied back in a neat, low plait. She wears a mustard yellow (#E0B341) jumper with oversized sleeves pulled down to completely cover her hands, paired with fitted grey leggings and slate blue (#3B6D8C) slip-on shoes. Large grey noise-reducing headphones rest comfortably around her neck as an integrated accessory. A smooth grey pebble rests in her pocket, visible when she turns it with her fingers. At rest, she stands with a straight, measured posture, keeping her covered hands tucked close to her torso. Scene: Aanya slips into the municipal control room and finds the head technician, Sarah Jenkins, struggling with a flashing red server panel. Setting: EXT. STREETS - DAY. Camera: medium. Light: hard afternoon light. Palette: #E0B341, #3B6D8C. Avoid: no pity framing; not seated apart from the group; no medical setting; no photorealism; no exposed hands; no messy hair; no eye contact forced. Colour palette: #E0B341, #3B6D8C.",
+      "model": "gemini-3.1-flash-image"
+    },
+    {
+      "shot": 9,
+      "beat": 9,
+      "file": "storyboard/shot_09.jpg",
+      "prompt": "Stylised 3D animation in the look of a modern family feature film, soft rounded character design, consistent character design across shots, not photorealistic, 16:9 film frame, no text, no captions, no watermark. An 8-year-old South Asian girl with a small build, warm brown skin, and a round face. Her straight black hair is tied back in a neat, low plait. She wears a mustard yellow (#E0B341) jumper with oversized sleeves pulled down to completely cover her hands, paired with fitted grey leggings and slate blue (#3B6D8C) slip-on shoes. Large grey noise-reducing headphones rest comfortably around her neck as an integrated accessory. A smooth grey pebble rests in her pocket, visible when she turns it with her fingers. At rest, she stands with a straight, measured posture, keeping her covered hands tucked close to her torso. Scene: Aanya explains that the system crash is caused by a feedback loop of the 3-1-4-2 sequence and that they must input a reverse-phase code. Setting: EXT. CONSERVATORY - DAY. Camera: close-up. Light: warm interior light. Palette: #E0B341, #3B6D8C. Avoid: no pity framing; not seated apart from the group; no medical setting; no photorealism; no exposed hands; no messy hair; no eye contact forced. Colour palette: #E0B341, #3B6D8C.",
+      "model": "gemini-3.1-flash-image"
+    },
+    {
+      "shot": 10,
+      "beat": 10,
+      "file": "storyboard/shot_10.jpg",
+      "prompt": "Stylised 3D animation in the look of a modern family feature film, soft rounded character design, consistent character design across shots, not photorealistic, 16:9 film frame, no text, no captions, no watermark. An 8-year-old South Asian girl with a small build, warm brown skin, and a round face. Her straight black hair is tied back in a neat, low plait. She wears a mustard yellow (#E0B341) jumper with oversized sleeves pulled down to completely cover her hands, paired with fitted grey leggings and slate blue (#3B6D8C) slip-on shoes. Large grey noise-reducing headphones rest comfortably around her neck as an integrated accessory. A smooth grey pebble rests in her pocket, visible when she turns it with her fingers. At rest, she stands with a straight, measured posture, keeping her covered hands tucked close to her torso. Scene: With the digital console locked, Aanya uses the physical bypass levers to pull them in the exact reverse-phase rhythm on the beat of the system's pulse. Setting: INT. CONSERVATORY - CONTINUOUS. Camera: over the shoulder. Light: cool dusk light. Palette: #E0B341, #3B6D8C. Avoid: no pity framing; not seated apart from the group; no medical setting; no photorealism; no exposed hands; no messy hair; no eye contact forced. Colour palette: #E0B341, #3B6D8C.",
+      "model": "gemini-2.5-flash-image"
+    },
+    {
+      "shot": 11,
+      "beat": 11,
+      "file": "storyboard/shot_11.jpg",
+      "prompt": "Stylised 3D animation in the look of a modern family feature film, soft rounded character design, consistent character design across shots, not photorealistic, 16:9 film frame, no text, no captions, no watermark. An 8-year-old South Asian girl with a small build, warm brown skin, and a round face. Her straight black hair is tied back in a neat, low plait. She wears a mustard yellow (#E0B341) jumper with oversized sleeves pulled down to completely cover her hands, paired with fitted grey leggings and slate blue (#3B6D8C) slip-on shoes. Large grey noise-reducing headphones rest comfortably around her neck as an integrated accessory. A smooth grey pebble rests in her pocket, visible when she turns it with her fingers. At rest, she stands with a straight, measured posture, keeping her covered hands tucked close to her torso. Scene: The levers click into place, the server clears its cache, and the entire city's traffic grid returns to a calm, synchronized green flow. Setting: INT. CONSERVATORY - CONTINUOUS. Camera: low angle. Light: soft morning light. Palette: #E0B341, #3B6D8C. Avoid: no pity framing; not seated apart from the group; no medical setting; no photorealism; no exposed hands; no messy hair; no eye contact forced. Colour palette: #E0B341, #3B6D8C.",
+      "model": "gemini-3.1-flash-image"
+    },
+    {
+      "shot": 12,
+      "beat": 12,
+      "file": "storyboard/shot_12.jpg",
+      "prompt": "Stylised 3D animation in the look of a modern family feature film, soft rounded character design, consistent character design across shots, not photorealistic, 16:9 film frame, no text, no captions, no watermark. An 8-year-old South Asian girl with a small build, warm brown skin, and a round face. Her straight black hair is tied back in a neat, low plait. She wears a mustard yellow (#E0B341) jumper with oversized sleeves pulled down to completely cover her hands, paired with fitted grey leggings and slate blue (#3B6D8C) slip-on shoes. Large grey noise-reducing headphones rest comfortably around her neck as an integrated accessory. A smooth grey pebble rests in her pocket, visible when she turns it with her fingers. At rest, she stands with a straight, measured posture, keeping her covered hands tucked close to her torso. Scene: Aanya finally arrives at the Glass Dome Conservatory, sitting in perfect silence under the giant ferns, holding her smooth grey pebble. Setting: INT. CONSERVATORY - CONTINUOUS. Camera: tracking. Light: flat overcast light. Palette: #E0B341, #3B6D8C. Avoid: no pity framing; not seated apart from the group; no medical setting; no photorealism; no exposed hands; no messy hair; no eye contact forced. Colour palette: #E0B341, #3B6D8C.",
+      "model": "gemini-2.5-flash-image"
+    }
+  ]
+}

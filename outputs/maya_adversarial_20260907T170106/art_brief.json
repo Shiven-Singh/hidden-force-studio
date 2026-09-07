@@ -1,0 +1,162 @@
+{
+  "character": {
+    "locked_description": "Maya is a 9-year-old South Asian girl with brown skin and curly black hair tied high in a bouncy ponytail. She wears a #2A9D8F teal windbreaker over a gray t-shirt, dark jeans, and sneakers. Fingerless leather gloves cover her hands, and a small adjustable wrench hangs from a lanyard around her neck. She sits upright in a lightweight manual wheelchair featuring a silver aluminum frame, #F4A261 bright orange spoke guards, and a compact toolkit strapped securely under the canvas seat. Her posture is alert and forward-leaning, resting her gloved hands lightly on the rubber-coated handrims of her wheels.",
+    "turnarounds": [
+      "Maya is a 9-year-old South Asian girl with brown skin and curly black hair tied high in a bouncy ponytail. She wears a #2A9D8F teal windbreaker over a gray t-shirt, dark jeans, and sneakers. Fingerless leather gloves cover her hands, and a small adjustable wrench hangs from a lanyard around her neck. She sits upright in a lightweight manual wheelchair featuring a silver aluminum frame, #F4A261 bright orange spoke guards, and a compact toolkit strapped securely under the canvas seat. Her posture is alert and forward-leaning, resting her gloved hands lightly on the rubber-coated handrims of her wheels. Turnaround view: front.",
+      "Maya is a 9-year-old South Asian girl with brown skin and curly black hair tied high in a bouncy ponytail. She wears a #2A9D8F teal windbreaker over a gray t-shirt, dark jeans, and sneakers. Fingerless leather gloves cover her hands, and a small adjustable wrench hangs from a lanyard around her neck. She sits upright in a lightweight manual wheelchair featuring a silver aluminum frame, #F4A261 bright orange spoke guards, and a compact toolkit strapped securely under the canvas seat. Her posture is alert and forward-leaning, resting her gloved hands lightly on the rubber-coated handrims of her wheels. Turnaround view: three-quarter.",
+      "Maya is a 9-year-old South Asian girl with brown skin and curly black hair tied high in a bouncy ponytail. She wears a #2A9D8F teal windbreaker over a gray t-shirt, dark jeans, and sneakers. Fingerless leather gloves cover her hands, and a small adjustable wrench hangs from a lanyard around her neck. She sits upright in a lightweight manual wheelchair featuring a silver aluminum frame, #F4A261 bright orange spoke guards, and a compact toolkit strapped securely under the canvas seat. Her posture is alert and forward-leaning, resting her gloved hands lightly on the rubber-coated handrims of her wheels. Turnaround view: profile.",
+      "Maya is a 9-year-old South Asian girl with brown skin and curly black hair tied high in a bouncy ponytail. She wears a #2A9D8F teal windbreaker over a gray t-shirt, dark jeans, and sneakers. Fingerless leather gloves cover her hands, and a small adjustable wrench hangs from a lanyard around her neck. She sits upright in a lightweight manual wheelchair featuring a silver aluminum frame, #F4A261 bright orange spoke guards, and a compact toolkit strapped securely under the canvas seat. Her posture is alert and forward-leaning, resting her gloved hands lightly on the rubber-coated handrims of her wheels. Turnaround view: back."
+    ],
+    "expressions": [
+      "delighted: Her eyes crinkle at the corners, her mouth opens in a wide toothy smile, and her cheeks lift to push her curly bangs slightly upward.",
+      "frustrated: Her dark eyebrows pull sharply together, her lips press into a tight flat line, and her chin drops slightly toward her chest.",
+      "focused: Her eyes narrow slightly, her jaw sets firmly, and her gaze locks straight ahead with her lips slightly parted.",
+      "worried: Her eyebrows angle upward at the center, her eyes widen slightly, and the corners of her mouth pull down into a subtle frown."
+    ],
+    "negative_prompts": [
+      "no pity framing",
+      "not seated apart from the group",
+      "no medical setting",
+      "no photorealism",
+      "no hospital gown",
+      "no bulky hospital wheelchair",
+      "no missing wrench totem",
+      "no sad expressions"
+    ]
+  },
+  "consistency_hash": "fc0ab865e94d0ee27eed326f7a89bce07bb9ffd24789b14d2eba462fcac8a139",
+  "shots": [
+    {
+      "number": 1,
+      "beat": 1,
+      "scene_heading": "INT. MAYA'S WORKSHOP - DAY",
+      "prompt": "Maya is a 9-year-old South Asian girl with brown skin and curly black hair tied high in a bouncy ponytail. She wears a #2A9D8F teal windbreaker over a gray t-shirt, dark jeans, and sneakers. Fingerless leather gloves cover her hands, and a small adjustable wrench hangs from a lanyard around her neck. She sits upright in a lightweight manual wheelchair featuring a silver aluminum frame, #F4A261 bright orange spoke guards, and a compact toolkit strapped securely under the canvas seat. Her posture is alert and forward-leaning, resting her gloved hands lightly on the rubber-coated handrims of her wheels. Scene: Maya works on her custom manual wheelchair in her basement workshop, transferring to a swiveling stool to adjust her gears and set a new personal speed goal. Setting: INT. MAYA'S WORKSHOP - DAY. Camera: wide establishing. Light: soft morning light. Palette: #2A9D8F, #F4A261. Avoid: no pity framing; not seated apart from the group; no medical setting; no photorealism; no hospital gown; no bulky hospital wheelchair; no missing wrench totem; no sad expressions.",
+      "camera": "wide establishing",
+      "palette": [
+        "#2A9D8F",
+        "#F4A261"
+      ]
+    },
+    {
+      "number": 2,
+      "beat": 2,
+      "scene_heading": "EXT. MAYA'S BACKYARD - DAY",
+      "prompt": "Maya is a 9-year-old South Asian girl with brown skin and curly black hair tied high in a bouncy ponytail. She wears a #2A9D8F teal windbreaker over a gray t-shirt, dark jeans, and sneakers. Fingerless leather gloves cover her hands, and a small adjustable wrench hangs from a lanyard around her neck. She sits upright in a lightweight manual wheelchair featuring a silver aluminum frame, #F4A261 bright orange spoke guards, and a compact toolkit strapped securely under the canvas seat. Her posture is alert and forward-leaning, resting her gloved hands lightly on the rubber-coated handrims of her wheels. Scene: Leo enters with a blueprint of the storm drains. He almost leans on Maya's wheelchair, but she politely asserts her personal space, and he respects it. Setting: EXT. MAYA'S BACKYARD - DAY. Camera: medium. Light: flat overcast light. Palette: #2A9D8F, #F4A261. Avoid: no pity framing; not seated apart from the group; no medical setting; no photorealism; no hospital gown; no bulky hospital wheelchair; no missing wrench totem; no sad expressions.",
+      "camera": "medium",
+      "palette": [
+        "#2A9D8F",
+        "#F4A261"
+      ]
+    },
+    {
+      "number": 3,
+      "beat": 3,
+      "scene_heading": "INT. MAYA'S BEDROOM - NIGHT",
+      "prompt": "Maya is a 9-year-old South Asian girl with brown skin and curly black hair tied high in a bouncy ponytail. She wears a #2A9D8F teal windbreaker over a gray t-shirt, dark jeans, and sneakers. Fingerless leather gloves cover her hands, and a small adjustable wrench hangs from a lanyard around her neck. She sits upright in a lightweight manual wheelchair featuring a silver aluminum frame, #F4A261 bright orange spoke guards, and a compact toolkit strapped securely under the canvas seat. Her posture is alert and forward-leaning, resting her gloved hands lightly on the rubber-coated handrims of her wheels. Scene: Maya tests her newly modified wheels on a wet, muddy obstacle course she built in her backyard, showing joy at beating her personal time. Setting: INT. MAYA'S BEDROOM - NIGHT. Camera: close-up. Light: hard afternoon light. Palette: #2A9D8F, #F4A261. Avoid: no pity framing; not seated apart from the group; no medical setting; no photorealism; no hospital gown; no bulky hospital wheelchair; no missing wrench totem; no sad expressions.",
+      "camera": "close-up",
+      "palette": [
+        "#2A9D8F",
+        "#F4A261"
+      ]
+    },
+    {
+      "number": 4,
+      "beat": 4,
+      "scene_heading": "EXT. TOWN SQUARE - DAY",
+      "prompt": "Maya is a 9-year-old South Asian girl with brown skin and curly black hair tied high in a bouncy ponytail. She wears a #2A9D8F teal windbreaker over a gray t-shirt, dark jeans, and sneakers. Fingerless leather gloves cover her hands, and a small adjustable wrench hangs from a lanyard around her neck. She sits upright in a lightweight manual wheelchair featuring a silver aluminum frame, #F4A261 bright orange spoke guards, and a compact toolkit strapped securely under the canvas seat. Her posture is alert and forward-leaning, resting her gloved hands lightly on the rubber-coated handrims of her wheels. Scene: At night, Maya transfers from her wheelchair to her bed to sleep, demonstrating her daily independent routine. Setting: EXT. TOWN SQUARE - DAY. Camera: over the shoulder. Light: warm interior light. Palette: #2A9D8F, #F4A261. Avoid: no pity framing; not seated apart from the group; no medical setting; no photorealism; no hospital gown; no bulky hospital wheelchair; no missing wrench totem; no sad expressions.",
+      "camera": "over the shoulder",
+      "palette": [
+        "#2A9D8F",
+        "#F4A261"
+      ]
+    },
+    {
+      "number": 5,
+      "beat": 5,
+      "scene_heading": "EXT. FLOODGATE PATH - DAY",
+      "prompt": "Maya is a 9-year-old South Asian girl with brown skin and curly black hair tied high in a bouncy ponytail. She wears a #2A9D8F teal windbreaker over a gray t-shirt, dark jeans, and sneakers. Fingerless leather gloves cover her hands, and a small adjustable wrench hangs from a lanyard around her neck. She sits upright in a lightweight manual wheelchair featuring a silver aluminum frame, #F4A261 bright orange spoke guards, and a compact toolkit strapped securely under the canvas seat. Her posture is alert and forward-leaning, resting her gloved hands lightly on the rubber-coated handrims of her wheels. Scene: A sudden cloudburst floods the town square. Sam and other kids are swept away on a flimsy plywood raft toward an open storm drain. Setting: EXT. FLOODGATE PATH - DAY. Camera: low angle. Light: cool dusk light. Palette: #2A9D8F, #F4A261. Avoid: no pity framing; not seated apart from the group; no medical setting; no photorealism; no hospital gown; no bulky hospital wheelchair; no missing wrench totem; no sad expressions.",
+      "camera": "low angle",
+      "palette": [
+        "#2A9D8F",
+        "#F4A261"
+      ]
+    },
+    {
+      "number": 6,
+      "beat": 6,
+      "scene_heading": "EXT. FLOODGATE PATH - DAY",
+      "prompt": "Maya is a 9-year-old South Asian girl with brown skin and curly black hair tied high in a bouncy ponytail. She wears a #2A9D8F teal windbreaker over a gray t-shirt, dark jeans, and sneakers. Fingerless leather gloves cover her hands, and a small adjustable wrench hangs from a lanyard around her neck. She sits upright in a lightweight manual wheelchair featuring a silver aluminum frame, #F4A261 bright orange spoke guards, and a compact toolkit strapped securely under the canvas seat. Her posture is alert and forward-leaning, resting her gloved hands lightly on the rubber-coated handrims of her wheels. Scene: Maya snaps custom paddle attachments onto her handrims and rolls into the water, towing the raft and kids to safety. Setting: EXT. FLOODGATE PATH - DAY. Camera: tracking. Light: soft morning light. Palette: #2A9D8F, #F4A261. Avoid: no pity framing; not seated apart from the group; no medical setting; no photorealism; no hospital gown; no bulky hospital wheelchair; no missing wrench totem; no sad expressions.",
+      "camera": "tracking",
+      "palette": [
+        "#2A9D8F",
+        "#F4A261"
+      ]
+    },
+    {
+      "number": 7,
+      "beat": 7,
+      "scene_heading": "EXT. FLOODGATE PATH - DAY",
+      "prompt": "Maya is a 9-year-old South Asian girl with brown skin and curly black hair tied high in a bouncy ponytail. She wears a #2A9D8F teal windbreaker over a gray t-shirt, dark jeans, and sneakers. Fingerless leather gloves cover her hands, and a small adjustable wrench hangs from a lanyard around her neck. She sits upright in a lightweight manual wheelchair featuring a silver aluminum frame, #F4A261 bright orange spoke guards, and a compact toolkit strapped securely under the canvas seat. Her posture is alert and forward-leaning, resting her gloved hands lightly on the rubber-coated handrims of her wheels. Scene: Leo warns that the main reservoir is overflowing and the manual floodgate at the old mill must be opened before the town is submerged. Setting: EXT. FLOODGATE PATH - DAY. Camera: wide establishing. Light: flat overcast light. Palette: #2A9D8F, #F4A261. Avoid: no pity framing; not seated apart from the group; no medical setting; no photorealism; no hospital gown; no bulky hospital wheelchair; no missing wrench totem; no sad expressions.",
+      "camera": "wide establishing",
+      "palette": [
+        "#2A9D8F",
+        "#F4A261"
+      ]
+    },
+    {
+      "number": 8,
+      "beat": 8,
+      "scene_heading": "EXT. FLOODGATE PATH - DAY",
+      "prompt": "Maya is a 9-year-old South Asian girl with brown skin and curly black hair tied high in a bouncy ponytail. She wears a #2A9D8F teal windbreaker over a gray t-shirt, dark jeans, and sneakers. Fingerless leather gloves cover her hands, and a small adjustable wrench hangs from a lanyard around her neck. She sits upright in a lightweight manual wheelchair featuring a silver aluminum frame, #F4A261 bright orange spoke guards, and a compact toolkit strapped securely under the canvas seat. Her posture is alert and forward-leaning, resting her gloved hands lightly on the rubber-coated handrims of her wheels. Scene: They arrive at the old mill. The ladder is blocked, so Maya navigates her wheelchair up a steep concrete maintenance ramp. Setting: EXT. FLOODGATE PATH - DAY. Camera: medium. Light: hard afternoon light. Palette: #2A9D8F, #F4A261. Avoid: no pity framing; not seated apart from the group; no medical setting; no photorealism; no hospital gown; no bulky hospital wheelchair; no missing wrench totem; no sad expressions.",
+      "camera": "medium",
+      "palette": [
+        "#2A9D8F",
+        "#F4A261"
+      ]
+    },
+    {
+      "number": 9,
+      "beat": 9,
+      "scene_heading": "EXT. FLOODGATE PATH - DAY",
+      "prompt": "Maya is a 9-year-old South Asian girl with brown skin and curly black hair tied high in a bouncy ponytail. She wears a #2A9D8F teal windbreaker over a gray t-shirt, dark jeans, and sneakers. Fingerless leather gloves cover her hands, and a small adjustable wrench hangs from a lanyard around her neck. She sits upright in a lightweight manual wheelchair featuring a silver aluminum frame, #F4A261 bright orange spoke guards, and a compact toolkit strapped securely under the canvas seat. Her posture is alert and forward-leaning, resting her gloved hands lightly on the rubber-coated handrims of her wheels. Scene: A floating wooden crate slams into Maya's front caster, wedging it tightly in a concrete gap and stopping her progress. Setting: EXT. FLOODGATE PATH - DAY. Camera: close-up. Light: warm interior light. Palette: #2A9D8F, #F4A261. Avoid: no pity framing; not seated apart from the group; no medical setting; no photorealism; no hospital gown; no bulky hospital wheelchair; no missing wrench totem; no sad expressions.",
+      "camera": "close-up",
+      "palette": [
+        "#2A9D8F",
+        "#F4A261"
+      ]
+    },
+    {
+      "number": 10,
+      "beat": 10,
+      "scene_heading": "EXT. FLOODGATE PATH - DAY",
+      "prompt": "Maya is a 9-year-old South Asian girl with brown skin and curly black hair tied high in a bouncy ponytail. She wears a #2A9D8F teal windbreaker over a gray t-shirt, dark jeans, and sneakers. Fingerless leather gloves cover her hands, and a small adjustable wrench hangs from a lanyard around her neck. She sits upright in a lightweight manual wheelchair featuring a silver aluminum frame, #F4A261 bright orange spoke guards, and a compact toolkit strapped securely under the canvas seat. Her posture is alert and forward-leaning, resting her gloved hands lightly on the rubber-coated handrims of her wheels. Scene: Maya ties her adjustable wrench to her towline, throws it over the high lever, and wheels backward to pull the lever down. Setting: EXT. FLOODGATE PATH - DAY. Camera: over the shoulder. Light: cool dusk light. Palette: #2A9D8F, #F4A261. Avoid: no pity framing; not seated apart from the group; no medical setting; no photorealism; no hospital gown; no bulky hospital wheelchair; no missing wrench totem; no sad expressions.",
+      "camera": "over the shoulder",
+      "palette": [
+        "#2A9D8F",
+        "#F4A261"
+      ]
+    },
+    {
+      "number": 11,
+      "beat": 11,
+      "scene_heading": "EXT. FLOODGATE PATH - DAY",
+      "prompt": "Maya is a 9-year-old South Asian girl with brown skin and curly black hair tied high in a bouncy ponytail. She wears a #2A9D8F teal windbreaker over a gray t-shirt, dark jeans, and sneakers. Fingerless leather gloves cover her hands, and a small adjustable wrench hangs from a lanyard around her neck. She sits upright in a lightweight manual wheelchair featuring a silver aluminum frame, #F4A261 bright orange spoke guards, and a compact toolkit strapped securely under the canvas seat. Her posture is alert and forward-leaning, resting her gloved hands lightly on the rubber-coated handrims of her wheels. Scene: The floodgate opens, draining the water. Maya frees her caster and rolls down the ramp to join her friends, remaining in her wheelchair. Setting: EXT. FLOODGATE PATH - DAY. Camera: low angle. Light: soft morning light. Palette: #2A9D8F, #F4A261. Avoid: no pity framing; not seated apart from the group; no medical setting; no photorealism; no hospital gown; no bulky hospital wheelchair; no missing wrench totem; no sad expressions.",
+      "camera": "low angle",
+      "palette": [
+        "#2A9D8F",
+        "#F4A261"
+      ]
+    },
+    {
+      "number": 12,
+      "beat": 1,
+      "scene_heading": "INT. MAYA'S WORKSHOP - DAY",
+      "prompt": "Maya is a 9-year-old South Asian girl with brown skin and curly black hair tied high in a bouncy ponytail. She wears a #2A9D8F teal windbreaker over a gray t-shirt, dark jeans, and sneakers. Fingerless leather gloves cover her hands, and a small adjustable wrench hangs from a lanyard around her neck. She sits upright in a lightweight manual wheelchair featuring a silver aluminum frame, #F4A261 bright orange spoke guards, and a compact toolkit strapped securely under the canvas seat. Her posture is alert and forward-leaning, resting her gloved hands lightly on the rubber-coated handrims of her wheels. Scene: Maya works on her custom manual wheelchair in her basement workshop, transferring to a swiveling stool to adjust her gears and set a new personal speed goal. Setting: INT. MAYA'S WORKSHOP - DAY. Camera: wide establishing. Light: flat overcast light. Palette: #2A9D8F, #F4A261. Avoid: no pity framing; not seated apart from the group; no medical setting; no photorealism; no hospital gown; no bulky hospital wheelchair; no missing wrench totem; no sad expressions.",
+      "camera": "wide establishing",
+      "palette": [
+        "#2A9D8F",
+        "#F4A261"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "run_id": "0f76e4b2-fd2",
+  "character": "Tara",
+  "started_at": "2026-09-07T19:02:20.297Z",
+  "finished_at": "2026-09-07T19:14:23.467Z",
+  "verdict": "PASS",
+  "iterations": 1,
+  "models": {
+    "draft": "gemini-3.5-flash",
+    "review": "gemini-3.1-pro-preview",
+    "rubric": "gemini-3.1-pro-preview",
+    "lock": "gemini-3.1-pro-preview"
+  },
+  "adk_version": "2.0.0",
+  "parallel_search_ids": [
+    "search_2035dff276de28fd68e5c1704cabefb5",
+    "search_177ee1f3dcb44d94775a854fb8c44d0e"
+  ],
+  "source_urls": [
+    "https://ncdj.org/style-guide/",
+    "https://childmind.org/article/best-childrens-books-about-mental-health/",
+    "https://ncdj.org/wp-content/uploads/2012/08/NCDJStyleGuide2015.pdf",
+    "https://adaa.org/sites/default/files/2026-05/ADAA%20Inclusive%20Language%20Guidelines%20Final%20June%202022.pdf",
+    "https://childmind.org/wp-content/uploads/2023/11/2019_Childrens_Mental_Health_Report_Full.pdf",
+    "https://childmind.org/article/media-guidelines-for-kids-of-all-ages/",
+    "https://adaa.org/sites/default/files/ADAA%20Inclusive%20Language%20Guidelines%20Final%20June%202022.pdf",
+    "https://cronkite.asu.edu/ncdj/disability-language-style-guide",
+    "https://neurolaunch.com/character-with-anxiety/",
+    "https://adata.org/factsheet/ADANN-writing",
+    "https://resources.finalsite.net/images/v1752151690/monroeedu/x1lcsvifp2mpg5jdi0nu/Style_Guide__for_Inclusive_Communication_Jan.pdf",
+    "https://myfcph.org/a-disability-language-style-guide",
+    "https://health.oregonstate.edu/marcomm/services/website/website-style-guide",
+    "https://languageplease.org/anxiety",
+    "https://health.choc.org/podcasts/medias-portrayal-of-mental-health/"
+  ],
+  "stage_timings_ms": {
+    "intake": 1,
+    "research": 10661,
+    "gate_white": 25592,
+    "art_direction": 2,
+    "storyboard": 579885
+  }
+}
