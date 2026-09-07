@@ -15,7 +15,11 @@ else
   gcloud projects create "$PROJECT_ID" --name="Hidden Force Studio"
 fi
 gcloud config set project "$PROJECT_ID"
-gcloud billing projects link "$PROJECT_ID" --billing-account="$BILLING"
+if [ "$(gcloud billing projects describe "$PROJECT_ID" --format='value(billingEnabled)' 2>/dev/null)" = "True" ]; then
+  echo "== billing already enabled on $PROJECT_ID"
+else
+  gcloud billing projects link "$PROJECT_ID" --billing-account="$BILLING"
+fi
 
 gcloud services enable \
   aiplatform.googleapis.com \
