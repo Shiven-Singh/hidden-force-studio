@@ -42,7 +42,8 @@ h2 { font-size: 18px; margin: 28px 0 10px; }
 .card:hover { border-color: var(--accent); }
 .card:disabled { opacity: 0.5; cursor: default; }
 .card .name { font-weight: 600; }
-.card .meta { color: var(--ink-2); font-size: 13px; }
+.card .meta { color: var(--ink-2); font-size: 13px; overflow-wrap: anywhere; }
+.card .meta.mono { font-size: 12px; }
 .card.adversarial { border-color: var(--fail); background: var(--fail-soft); }
 
 .chip {
