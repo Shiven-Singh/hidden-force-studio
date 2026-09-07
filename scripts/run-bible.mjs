@@ -34,9 +34,6 @@ for (;;) {
     console.log(`${t}s  ${r.current}`);
     last = r.current;
   }
-  if (r.sources && !seenReviews && r.rubric && last !== 'rubric-printed') {
-    // print once, when the rubric lands
-  }
   for (const rep of r.review_history.slice(seenReviews)) {
     console.log(`${t}s  gate ${rep.revision_colour}: ${rep.verdict}` +
       (rep.hard_failures.length ? `  hard=[${rep.hard_failures.join(', ')}]` : '') +

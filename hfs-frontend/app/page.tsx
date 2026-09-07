@@ -33,15 +33,31 @@ const STAGE_LABEL: Record<Stage, string> = {
   package: '6 · Package',
 };
 
+interface RunSummary {
+  id: string;
+  status: 'running' | 'done' | 'error';
+  character: string;
+  started_at: number;
+}
+
 export default function Page() {
   const [bibles, setBibles] = useState<Bible[]>([]);
+  const [recent, setRecent] = useState<RunSummary[]>([]);
   const [runId, setRunId] = useState<string | null>(null);
   const [run, setRun] = useState<RunView | null>(null);
   const [error, setError] = useState<string | null>(null);
 
+  const loadRecent = () =>
+    fetch(`${API}/api/runs`).then((r) => r.json()).then((rs: RunSummary[]) => setRecent([...rs].reverse())).catch(() => undefined);
+
   useEffect(() => {
     fetch(`${API}/api/bibles`).then((r) => r.json()).then(setBibles).catch((e) => setError(String(e)));
+    void loadRecent();
   }, []);
+
+  useEffect(() => {
+    if (run && run.status !== 'running') void loadRecent();
+  }, [run?.status]);
 
   useEffect(() => {
     if (!runId) return;
@@ -95,6 +111,20 @@ export default function Page() {
           </button>
         ))}
       </div>
+
+      {recent.length > 0 && (
+        <>
+          <h2>Recent runs on this server</h2>
+          <div className="grid">
+            {recent.slice(0, 12).map((r) => (
+              <button key={r.id} className="card" onClick={() => { setRun(null); setRunId(r.id); }}>
+                <div className="name">{r.character} <span className={`chip ${r.status}`}>{r.status}</span></div>
+                <div className="meta mono">{r.id} · {new Date(r.started_at).toLocaleTimeString()}</div>
+              </button>
+            ))}
+          </div>
+        </>
+      )}
 
       {run && (
         <>

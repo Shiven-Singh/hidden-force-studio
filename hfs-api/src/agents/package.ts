@@ -57,7 +57,8 @@ export class PackageAgent extends PipelineAgent {
     const brief = st['art_brief'] as ArtBrief | undefined;
 
     const runId = String(st['run_id'] ?? stamp());
-    const folder = `${slug(bible.name)}${bible.adversarial ? '_adversarial' : ''}_${stamp()}`;
+    const mode = bible.adversarial ? (bible.adversarial_revisions === 'unguarded' ? '_adversarial_unguarded' : '_adversarial') : '';
+    const folder = `${slug(bible.name)}${mode}_${stamp()}`;
     const outDir = path.join(process.env.OUTPUT_DIR ?? DEFAULT_OUTPUT_DIR, folder);
     await mkdir(outDir, { recursive: true });
 
