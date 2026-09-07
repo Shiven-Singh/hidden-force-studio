@@ -20,6 +20,12 @@ Three hard-fail classes, documented in [docs/rubric.md](docs/rubric.md):
 
 Every model score must quote a line that exists verbatim in the script. A quote that does not exist turns the score to "unclear", and "unclear" fails a hard rule. Two revisions maximum, then HALT.
 
+### Adversarial mode
+
+A bible flagged `adversarial: true` has its first draft written without the rubric and the hard constraints, following its premise literally. That is what an unconstrained model produces, and it is how the demo shows the gate refusing. Revisions get the rubric back, so a Blue draft normally passes. Set `adversarial_revisions: "unguarded"` to keep every draft unconstrained, which usually ends in HALT.
+
+This exists because the constrained drafter is good at its job. The first real run of `bibles/maya_adversarial.json`, whose premise ends with the character walking, produced a clean script in which she stays in her chair, and the gate passed it. Honest, and useless for a demonstration.
+
 ## Where Google Cloud is called
 
 - `hfs-api/src/agent.ts`: the ADK agents. `@google/adk` is the JavaScript form of `google-adk`.

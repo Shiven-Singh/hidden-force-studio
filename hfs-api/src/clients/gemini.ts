@@ -32,6 +32,7 @@ export async function scoreWithModel(sp: Screenplay, rubric: PortrayalRubric, bi
       temperature: 0,
       responseMimeType: 'application/json',
       responseJsonSchema: z.toJSONSchema(Scores),
+      httpOptions: { timeout: 180_000, retryOptions: { attempts: 3, httpStatusCodes: [408, 429, 500, 502, 503, 504] } },
     },
   });
   return Scores.parse(JSON.parse(res.text ?? '[]'));
@@ -39,6 +40,10 @@ export async function scoreWithModel(sp: Screenplay, rubric: PortrayalRubric, bi
 
 /** One-line smoke test used by `pnpm --filter hfs-api smoke`. */
 export async function smoke(model: string): Promise<string> {
-  const res = await ai().models.generateContent({ model, contents: 'Reply with the single word: ready' });
+  const res = await ai().models.generateContent({
+    model,
+    contents: 'Reply with the single word: ready',
+    config: { httpOptions: { timeout: 60_000 } },
+  });
   return (res.text ?? '').trim();
 }

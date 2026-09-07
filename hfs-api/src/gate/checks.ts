@@ -27,7 +27,7 @@ export function checkDeficitLanguage(sp: Screenplay, rubric: PortrayalRubric): R
   const { action } = splitFountain(sp.fountain);
   const patterns = [
     ...FLOOR_AVOID,
-    ...rubric.avoid_terms.filter((t) => t.trim()).map((t) => new RegExp(escapeRegex(t.trim()), 'i')),
+    ...rubric.avoid_terms.filter((t) => t.trim()).map((t) => new RegExp(`\\b${escapeRegex(t.trim())}\\b`, 'i')),
   ];
   for (const line of action) {
     for (const pattern of patterns) {

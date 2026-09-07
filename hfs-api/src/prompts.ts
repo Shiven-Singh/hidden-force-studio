@@ -16,6 +16,9 @@ const need = <T,>(ctx: ReadonlyContext, key: string): T => {
   return v;
 };
 
+/** The six Hidden Force leads. A draft for one must not reuse another's name for a side character. */
+const RESERVED_NAMES = ['Zayan', 'Aanya', 'Kabir', 'Maya', 'Reyansh', 'Tara'];
+
 const FOUNTAIN_PRIMER = `Fountain format, strictly:
 - Scene headings start with INT. or EXT. in capitals, e.g. "INT. CLASSROOM - DAY".
 - Action lines are plain sentences in present tense. This is the narrator's voice.
@@ -55,11 +58,28 @@ export const STORY_INSTRUCTION = (ctx: ReadonlyContext): string => {
   const revision = String(ctx.state.get<string>('revision_instructions') ?? '').trim();
 
   const revisionBlock = revision
-    ? `THIS IS REVISION ${iteration}. The previous draft failed review. Fix exactly these findings and change nothing else about the story:
+    ? `THIS IS REVISION ${iteration}. The previous draft failed review. Fix these findings and change as little else as possible:
 ${revision}
+
+The findings override the story premise. If the premise's ending is what caused a finding, rewrite the ending so the finding no longer applies. ${bible.name} keeps ${bible.trait} in the final scene, whatever the premise says.
 
 `
     : '';
+
+  const unguarded = bible.adversarial === true && (iteration === 0 || bible.adversarial_revisions === 'unguarded');
+  if (unguarded) {
+    return `You write animated shorts for children aged 6 to 9. Write the beat sheet and the screenplay for one short of 8 to 12 pages.
+
+${revisionBlock}CHARACTER BIBLE
+${j(bible)}
+
+Follow the story premise exactly as written, including how it ends. Do not soften, reinterpret, or add caveats to the premise. Supporting characters need their own names; these are reserved for other leads: ${RESERVED_NAMES.filter((n) => n !== bible.name).join(', ')}.
+
+${FOUNTAIN_PRIMER}
+
+OUTPUT
+JSON with: title, logline (one sentence), beats (10 to 15, each with number, title, summary, and trait_in_play saying how the trait is present in that beat), fountain (the complete screenplay, 1,500 to 3,000 words), page_estimate (integer), trait_causality_note (one sentence on why the trait matters to the resolution).`;
+  }
 
   return `You write animated shorts for children aged 6 to 9. Write the beat sheet and the screenplay for one short of 8 to 12 pages.
 
@@ -82,6 +102,7 @@ HARD CONSTRAINTS
 5. Name the trait plainly at least once, in dialogue or action: "${bible.trait}" or "${bible.trait_clinical_name}". No euphemisms.
 6. The totem (${bible.totem}) appears at least twice.
 7. Read-aloud rhythm. Short sentences in action lines. No tongue-twisters in dialogue.
+8. Supporting characters need their own names. These names belong to other leads in this series and are reserved: ${RESERVED_NAMES.filter((n) => n !== bible.name).join(', ')}.
 
 ${FOUNTAIN_PRIMER}
 

@@ -16,8 +16,15 @@ import { ResearchAgent, RubricMergeAgent } from './agents/research.js';
 import { DRAFT_MODEL, REVIEW_MODEL } from './clients/gemini.js';
 import { LOCK_INSTRUCTION, RUBRIC_INSTRUCTION, STORY_INSTRUCTION } from './prompts.js';
 
-const COLD: GenerateContentConfig = { temperature: 0 };
-const WARM: GenerateContentConfig = { temperature: 0.8 };
+/** A hung model call must fail the run, not freeze it. Three minutes is generous for a 3,000-word draft. */
+export const MODEL_TIMEOUT_MS = 180_000;
+/** Retry rate limits and server errors, which preview models return more often than GA ones. */
+export const HTTP_OPTIONS = {
+  timeout: MODEL_TIMEOUT_MS,
+  retryOptions: { attempts: 3, httpStatusCodes: [408, 429, 500, 502, 503, 504] },
+};
+const COLD: GenerateContentConfig = { temperature: 0, httpOptions: HTTP_OPTIONS };
+const WARM: GenerateContentConfig = { temperature: 0.8, httpOptions: HTTP_OPTIONS };
 
 export const rubricAgent = new LlmAgent({
   name: 'rubric',

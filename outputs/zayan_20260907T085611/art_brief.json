@@ -1,0 +1,161 @@
+{
+  "character": {
+    "locked_description": "Zayan is a 9-year-old South Asian boy with a slender build, warm brown skin, and short, tight dark curls framing a round face. He wears a bright red hoodie, color #E4572E, featuring a noticeably frayed left cuff. Around his left wrist, he wears a thick blue rubber band. His lower half consists of dark blue trousers, color #2E4057, and scuffed white trainers. At rest, his posture is dynamic, with his weight shifted forward on his toes and his heels slightly raised, capturing a mid-motion stance.",
+    "turnarounds": [
+      "Zayan is a 9-year-old South Asian boy with a slender build, warm brown skin, and short, tight dark curls framing a round face. He wears a bright red hoodie, color #E4572E, featuring a noticeably frayed left cuff. Around his left wrist, he wears a thick blue rubber band. His lower half consists of dark blue trousers, color #2E4057, and scuffed white trainers. At rest, his posture is dynamic, with his weight shifted forward on his toes and his heels slightly raised, capturing a mid-motion stance. Turnaround view: front.",
+      "Zayan is a 9-year-old South Asian boy with a slender build, warm brown skin, and short, tight dark curls framing a round face. He wears a bright red hoodie, color #E4572E, featuring a noticeably frayed left cuff. Around his left wrist, he wears a thick blue rubber band. His lower half consists of dark blue trousers, color #2E4057, and scuffed white trainers. At rest, his posture is dynamic, with his weight shifted forward on his toes and his heels slightly raised, capturing a mid-motion stance. Turnaround view: three-quarter.",
+      "Zayan is a 9-year-old South Asian boy with a slender build, warm brown skin, and short, tight dark curls framing a round face. He wears a bright red hoodie, color #E4572E, featuring a noticeably frayed left cuff. Around his left wrist, he wears a thick blue rubber band. His lower half consists of dark blue trousers, color #2E4057, and scuffed white trainers. At rest, his posture is dynamic, with his weight shifted forward on his toes and his heels slightly raised, capturing a mid-motion stance. Turnaround view: profile.",
+      "Zayan is a 9-year-old South Asian boy with a slender build, warm brown skin, and short, tight dark curls framing a round face. He wears a bright red hoodie, color #E4572E, featuring a noticeably frayed left cuff. Around his left wrist, he wears a thick blue rubber band. His lower half consists of dark blue trousers, color #2E4057, and scuffed white trainers. At rest, his posture is dynamic, with his weight shifted forward on his toes and his heels slightly raised, capturing a mid-motion stance. Turnaround view: back."
+    ],
+    "expressions": [
+      "delighted: His eyes widen, his eyebrows raise high, and a broad, open-mouthed smile stretches across his face, showing his teeth.",
+      "frustrated: His eyebrows pull down sharply over narrowed eyes, his lips press into a tight, thin line, and his jaw clenches.",
+      "focused: His eyes lock forward with a steady gaze, his brow furrows slightly, and his mouth rests in a firm, neutral position.",
+      "worried: The inner corners of his eyebrows pinch upward, his eyes dart slightly, and his lower lip pulls inward."
+    ],
+    "negative_prompts": [
+      "no pity framing",
+      "not seated apart from the group",
+      "no medical setting",
+      "no photorealism",
+      "no still or rigid posture",
+      "no pristine or clean white trainers",
+      "no missing rubber band on wrist"
+    ]
+  },
+  "consistency_hash": "bbe894c80c3739fbcb51fb2346c86be83519accd0651d979f2b1d430160f14b5",
+  "shots": [
+    {
+      "number": 1,
+      "beat": 1,
+      "scene_heading": "INT. SCHOOL HALLWAY - DAY",
+      "prompt": "Zayan is a 9-year-old South Asian boy with a slender build, warm brown skin, and short, tight dark curls framing a round face. He wears a bright red hoodie, color #E4572E, featuring a noticeably frayed left cuff. Around his left wrist, he wears a thick blue rubber band. His lower half consists of dark blue trousers, color #2E4057, and scuffed white trainers. At rest, his posture is dynamic, with his weight shifted forward on his toes and his heels slightly raised, capturing a mid-motion stance. Scene: Zayan stares at the Giga-Glow Mega-Bot toy in the school display case. He wants it more than anything, but his brain is racing with a million thoughts, making it hard to sit still. Setting: INT. SCHOOL HALLWAY - DAY. Camera: wide establishing. Light: soft morning light. Palette: #E4572E, #2E4057. Avoid: no pity framing; not seated apart from the group; no medical setting; no photorealism; no still or rigid posture; no pristine or clean white trainers; no missing rubber band on wrist.",
+      "camera": "wide establishing",
+      "palette": [
+        "#E4572E",
+        "#2E4057"
+      ]
+    },
+    {
+      "number": 2,
+      "beat": 2,
+      "scene_heading": "INT. CLASSROOM - DAY",
+      "prompt": "Zayan is a 9-year-old South Asian boy with a slender build, warm brown skin, and short, tight dark curls framing a round face. He wears a bright red hoodie, color #E4572E, featuring a noticeably frayed left cuff. Around his left wrist, he wears a thick blue rubber band. His lower half consists of dark blue trousers, color #2E4057, and scuffed white trainers. At rest, his posture is dynamic, with his weight shifted forward on his toes and his heels slightly raised, capturing a mid-motion stance. Scene: In class, Zayan tries to write down the weekly challenge answer, but his hand cannot keep up with his racing thoughts. He gets frustrated as his pencil tears the paper. Setting: INT. CLASSROOM - DAY. Camera: medium. Light: flat overcast light. Palette: #E4572E, #2E4057. Avoid: no pity framing; not seated apart from the group; no medical setting; no photorealism; no still or rigid posture; no pristine or clean white trainers; no missing rubber band on wrist.",
+      "camera": "medium",
+      "palette": [
+        "#E4572E",
+        "#2E4057"
+      ]
+    },
+    {
+      "number": 3,
+      "beat": 3,
+      "scene_heading": "INT. SCHOOL HALLWAY - CONTINUOUS",
+      "prompt": "Zayan is a 9-year-old South Asian boy with a slender build, warm brown skin, and short, tight dark curls framing a round face. He wears a bright red hoodie, color #E4572E, featuring a noticeably frayed left cuff. Around his left wrist, he wears a thick blue rubber band. His lower half consists of dark blue trousers, color #2E4057, and scuffed white trainers. At rest, his posture is dynamic, with his weight shifted forward on his toes and his heels slightly raised, capturing a mid-motion stance. Scene: Feeling overwhelmed by the classroom noise, Zayan snaps a blue rubber band on his wrist to ground himself and find a moment of focus. Setting: INT. SCHOOL HALLWAY - CONTINUOUS. Camera: close-up. Light: hard afternoon light. Palette: #E4572E, #2E4057. Avoid: no pity framing; not seated apart from the group; no medical setting; no photorealism; no still or rigid posture; no pristine or clean white trainers; no missing rubber band on wrist.",
+      "camera": "close-up",
+      "palette": [
+        "#E4572E",
+        "#2E4057"
+      ]
+    },
+    {
+      "number": 4,
+      "beat": 4,
+      "scene_heading": "INT. CLASSROOM - LATER",
+      "prompt": "Zayan is a 9-year-old South Asian boy with a slender build, warm brown skin, and short, tight dark curls framing a round face. He wears a bright red hoodie, color #E4572E, featuring a noticeably frayed left cuff. Around his left wrist, he wears a thick blue rubber band. His lower half consists of dark blue trousers, color #2E4057, and scuffed white trainers. At rest, his posture is dynamic, with his weight shifted forward on his toes and his heels slightly raised, capturing a mid-motion stance. Scene: The school suddenly rumbles. The walls slide and lock into new positions. The school has become a giant, shifting maze. Setting: INT. CLASSROOM - LATER. Camera: over the shoulder. Light: warm interior light. Palette: #E4572E, #2E4057. Avoid: no pity framing; not seated apart from the group; no medical setting; no photorealism; no still or rigid posture; no pristine or clean white trainers; no missing rubber band on wrist.",
+      "camera": "over the shoulder",
+      "palette": [
+        "#E4572E",
+        "#2E4057"
+      ]
+    },
+    {
+      "number": 5,
+      "beat": 5,
+      "scene_heading": "INT. SHIFTING CORRIDOR - CONTINUOUS",
+      "prompt": "Zayan is a 9-year-old South Asian boy with a slender build, warm brown skin, and short, tight dark curls framing a round face. He wears a bright red hoodie, color #E4572E, featuring a noticeably frayed left cuff. Around his left wrist, he wears a thick blue rubber band. His lower half consists of dark blue trousers, color #2E4057, and scuffed white trainers. At rest, his posture is dynamic, with his weight shifted forward on his toes and his heels slightly raised, capturing a mid-motion stance. Scene: Zayan, Maya, and Leo find themselves cut off from the exit. Maya and Leo panic as the walls shift again. Setting: INT. SHIFTING CORRIDOR - CONTINUOUS. Camera: low angle. Light: cool dusk light. Palette: #E4572E, #2E4057. Avoid: no pity framing; not seated apart from the group; no medical setting; no photorealism; no still or rigid posture; no pristine or clean white trainers; no missing rubber band on wrist.",
+      "camera": "low angle",
+      "palette": [
+        "#E4572E",
+        "#2E4057"
+      ]
+    },
+    {
+      "number": 6,
+      "beat": 6,
+      "scene_heading": "INT. THE MAZE - CONTINUOUS",
+      "prompt": "Zayan is a 9-year-old South Asian boy with a slender build, warm brown skin, and short, tight dark curls framing a round face. He wears a bright red hoodie, color #E4572E, featuring a noticeably frayed left cuff. Around his left wrist, he wears a thick blue rubber band. His lower half consists of dark blue trousers, color #2E4057, and scuffed white trainers. At rest, his posture is dynamic, with his weight shifted forward on his toes and his heels slightly raised, capturing a mid-motion stance. Scene: Zayan tries to explain the pattern, but his words tumble out too fast. Maya thinks he is just being erratic, making Zayan feel like he is broken. Setting: INT. THE MAZE - CONTINUOUS. Camera: tracking. Light: soft morning light. Palette: #E4572E, #2E4057. Avoid: no pity framing; not seated apart from the group; no medical setting; no photorealism; no still or rigid posture; no pristine or clean white trainers; no missing rubber band on wrist.",
+      "camera": "tracking",
+      "palette": [
+        "#E4572E",
+        "#2E4057"
+      ]
+    },
+    {
+      "number": 7,
+      "beat": 7,
+      "scene_heading": "INT. THE ROTUNDA - CONTINUOUS",
+      "prompt": "Zayan is a 9-year-old South Asian boy with a slender build, warm brown skin, and short, tight dark curls framing a round face. He wears a bright red hoodie, color #E4572E, featuring a noticeably frayed left cuff. Around his left wrist, he wears a thick blue rubber band. His lower half consists of dark blue trousers, color #2E4057, and scuffed white trainers. At rest, his posture is dynamic, with his weight shifted forward on his toes and his heels slightly raised, capturing a mid-motion stance. Scene: Zayan predicts the exact moment a wall will slide. He pulls Maya back just in time, proving his racing brain is tracking the truth. Setting: INT. THE ROTUNDA - CONTINUOUS. Camera: wide establishing. Light: flat overcast light. Palette: #E4572E, #2E4057. Avoid: no pity framing; not seated apart from the group; no medical setting; no photorealism; no still or rigid posture; no pristine or clean white trainers; no missing rubber band on wrist.",
+      "camera": "wide establishing",
+      "palette": [
+        "#E4572E",
+        "#2E4057"
+      ]
+    },
+    {
+      "number": 8,
+      "beat": 8,
+      "scene_heading": "INT. SCHOOL LOBBY - CONTINUOUS",
+      "prompt": "Zayan is a 9-year-old South Asian boy with a slender build, warm brown skin, and short, tight dark curls framing a round face. He wears a bright red hoodie, color #E4572E, featuring a noticeably frayed left cuff. Around his left wrist, he wears a thick blue rubber band. His lower half consists of dark blue trousers, color #2E4057, and scuffed white trainers. At rest, his posture is dynamic, with his weight shifted forward on his toes and his heels slightly raised, capturing a mid-motion stance. Scene: As the grinding noise of the maze grows louder, Zayan's mind starts to scatter. He feels the weight of the panic around him. Setting: INT. SCHOOL LOBBY - CONTINUOUS. Camera: medium. Light: hard afternoon light. Palette: #E4572E, #2E4057. Avoid: no pity framing; not seated apart from the group; no medical setting; no photorealism; no still or rigid posture; no pristine or clean white trainers; no missing rubber band on wrist.",
+      "camera": "medium",
+      "palette": [
+        "#E4572E",
+        "#2E4057"
+      ]
+    },
+    {
+      "number": 9,
+      "beat": 9,
+      "scene_heading": "INT. SCHOOL LOBBY - CONTINUOUS",
+      "prompt": "Zayan is a 9-year-old South Asian boy with a slender build, warm brown skin, and short, tight dark curls framing a round face. He wears a bright red hoodie, color #E4572E, featuring a noticeably frayed left cuff. Around his left wrist, he wears a thick blue rubber band. His lower half consists of dark blue trousers, color #2E4057, and scuffed white trainers. At rest, his posture is dynamic, with his weight shifted forward on his toes and his heels slightly raised, capturing a mid-motion stance. Scene: Zayan snaps his rubber band again. He blocks out the noise, focuses on the patterns, and takes charge of the group. Setting: INT. SCHOOL LOBBY - CONTINUOUS. Camera: close-up. Light: warm interior light. Palette: #E4572E, #2E4057. Avoid: no pity framing; not seated apart from the group; no medical setting; no photorealism; no still or rigid posture; no pristine or clean white trainers; no missing rubber band on wrist.",
+      "camera": "close-up",
+      "palette": [
+        "#E4572E",
+        "#2E4057"
+      ]
+    },
+    {
+      "number": 10,
+      "beat": 10,
+      "scene_heading": "INT. SCHOOL LOBBY - CONTINUOUS",
+      "prompt": "Zayan is a 9-year-old South Asian boy with a slender build, warm brown skin, and short, tight dark curls framing a round face. He wears a bright red hoodie, color #E4572E, featuring a noticeably frayed left cuff. Around his left wrist, he wears a thick blue rubber band. His lower half consists of dark blue trousers, color #2E4057, and scuffed white trainers. At rest, his posture is dynamic, with his weight shifted forward on his toes and his heels slightly raised, capturing a mid-motion stance. Scene: Zayan guides Maya and Leo through a series of rapid turns, moving exactly as the walls open and close in a thirty-second cycle. Setting: INT. SCHOOL LOBBY - CONTINUOUS. Camera: over the shoulder. Light: cool dusk light. Palette: #E4572E, #2E4057. Avoid: no pity framing; not seated apart from the group; no medical setting; no photorealism; no still or rigid posture; no pristine or clean white trainers; no missing rubber band on wrist.",
+      "camera": "over the shoulder",
+      "palette": [
+        "#E4572E",
+        "#2E4057"
+      ]
+    },
+    {
+      "number": 11,
+      "beat": 11,
+      "scene_heading": "INT. SCHOOL LOBBY - CONTINUOUS",
+      "prompt": "Zayan is a 9-year-old South Asian boy with a slender build, warm brown skin, and short, tight dark curls framing a round face. He wears a bright red hoodie, color #E4572E, featuring a noticeably frayed left cuff. Around his left wrist, he wears a thick blue rubber band. His lower half consists of dark blue trousers, color #2E4057, and scuffed white trainers. At rest, his posture is dynamic, with his weight shifted forward on his toes and his heels slightly raised, capturing a mid-motion stance. Scene: They slide under the final closing wall. Zayan grabs the Mega-Bot. Maya and Leo cheer, celebrating Zayan's fast-thinking brain. Setting: INT. SCHOOL LOBBY - CONTINUOUS. Camera: low angle. Light: soft morning light. Palette: #E4572E, #2E4057. Avoid: no pity framing; not seated apart from the group; no medical setting; no photorealism; no still or rigid posture; no pristine or clean white trainers; no missing rubber band on wrist.",
+      "camera": "low angle",
+      "palette": [
+        "#E4572E",
+        "#2E4057"
+      ]
+    },
+    {
+      "number": 12,
+      "beat": 12,
+      "scene_heading": "INT. SCHOOL LOBBY - CONTINUOUS",
+      "prompt": "Zayan is a 9-year-old South Asian boy with a slender build, warm brown skin, and short, tight dark curls framing a round face. He wears a bright red hoodie, color #E4572E, featuring a noticeably frayed left cuff. Around his left wrist, he wears a thick blue rubber band. His lower half consists of dark blue trousers, color #2E4057, and scuffed white trainers. At rest, his posture is dynamic, with his weight shifted forward on his toes and his heels slightly raised, capturing a mid-motion stance. Scene: Back in the normal hallway, Zayan still fidgets and bounces, but he feels confident. His ADHD is not cured, but he knows he belongs. Setting: INT. SCHOOL LOBBY - CONTINUOUS. Camera: tracking. Light: flat overcast light. Palette: #E4572E, #2E4057. Avoid: no pity framing; not seated apart from the group; no medical setting; no photorealism; no still or rigid posture; no pristine or clean white trainers; no missing rubber band on wrist.",
+      "camera": "tracking",
+      "palette": [
+        "#E4572E",
+        "#2E4057"
+      ]
+    }
+  ]
+}

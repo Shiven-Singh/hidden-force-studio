@@ -29,10 +29,9 @@ export class ArtDirectionAgent extends PipelineAgent {
     }
 
     const started = Date.now();
-    const bible = CharacterBible.parse(st['bible']);
-    const sp = Screenplay.parse(st['screenplay']);
-    const rawLocked = st['locked'];
-    const locked = LockedCharacter.parse(typeof rawLocked === 'string' ? JSON.parse(rawLocked) : rawLocked);
+    const bible = this.read(ctx, 'bible', CharacterBible, 'intake');
+    const sp = this.read(ctx, 'screenplay', Screenplay, 'story');
+    const locked = this.read(ctx, 'locked', LockedCharacter, 'lock_character');
     const headings = sceneHeadings(sp.fountain);
 
     const shots: Shot[] = [];

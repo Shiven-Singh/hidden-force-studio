@@ -1,6 +1,7 @@
 import { mkdir, writeFile, readFile } from 'node:fs/promises';
 import { createRequire } from 'node:module';
 import path from 'node:path';
+import { fileURLToPath } from 'node:url';
 import { createEvent, type InvocationContext, type Event } from '@google/adk';
 import { PipelineAgent } from './base.js';
 import { Storage } from '@google-cloud/storage';
@@ -27,6 +28,10 @@ async function adkVersion(): Promise<string> {
   }
 }
 
+/** Repo root, independent of the process cwd: hfs-api/src/agents -> ../../.. (same depth from dist/). */
+const REPO_ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..', '..', '..');
+const DEFAULT_OUTPUT_DIR = path.join(REPO_ROOT, 'outputs');
+
 const slug = (s: string): string => s.toLowerCase().replace(/[^a-z0-9]+/g, '_').replace(/^_|_$/g, '');
 const stamp = (): string => new Date().toISOString().replace(/[-:]/g, '').replace(/\.\d+Z$/, '').replace('T', 'T');
 
@@ -42,8 +47,8 @@ export class PackageAgent extends PipelineAgent {
 
   protected async *runAsyncImpl(ctx: InvocationContext): AsyncGenerator<Event, void, void> {
     const st = ctx.session.state;
-    const bible = CharacterBible.parse(st['bible']);
-    const rubric = PortrayalRubric.parse(st['rubric']);
+    const bible = this.read(ctx, 'bible', CharacterBible, 'intake');
+    const rubric = this.read(ctx, 'rubric', PortrayalRubric, 'rubric');
     const history = (st['review_history'] as ReviewReport[] | undefined) ?? [];
     const review = st['review'] as ReviewReport | undefined;
     const verdict = review?.verdict ?? 'HALT';
@@ -53,7 +58,7 @@ export class PackageAgent extends PipelineAgent {
 
     const runId = String(st['run_id'] ?? stamp());
     const folder = `${slug(bible.name)}${bible.adversarial ? '_adversarial' : ''}_${stamp()}`;
-    const outDir = path.join(process.env.OUTPUT_DIR ?? 'outputs', folder);
+    const outDir = path.join(process.env.OUTPUT_DIR ?? DEFAULT_OUTPUT_DIR, folder);
     await mkdir(outDir, { recursive: true });
 
     const files: Record<string, string> = {

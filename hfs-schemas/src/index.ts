@@ -14,8 +14,14 @@ export const CharacterBible = z.object({
   story_premise: z.string(),
   colour_palette: z.array(z.string()),
   totem: z.string(),
-  /** Set on the demo bible written to fail HF1. Shown in the UI and declared on camera. */
+  /**
+   * Adversarial mode, for demonstrating the gate. The White draft is written
+   * without the rubric or the hard constraints, following the premise literally,
+   * which is what an unconstrained model produces. Shown in the UI and declared on camera.
+   */
   adversarial: z.boolean().optional(),
+  /** 'guarded' (default): revisions get the rubric back. 'unguarded': every draft ignores it, which usually ends in HALT. */
+  adversarial_revisions: z.enum(['guarded', 'unguarded']).optional(),
 });
 
 export const Source = z.object({

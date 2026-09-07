@@ -36,9 +36,8 @@ export class RubricMergeAgent extends PipelineAgent {
   }
 
   protected async *runAsyncImpl(ctx: InvocationContext): AsyncGenerator<Event, void, void> {
-    const raw = ctx.session.state['rubric_draft'];
-    const draft = RubricDraft.parse(typeof raw === 'string' ? JSON.parse(raw) : raw);
-    const bible = CharacterBible.parse(ctx.session.state['bible']);
+    const draft = this.read(ctx, 'rubric_draft', RubricDraft, 'rubric');
+    const bible = this.read(ctx, 'bible', CharacterBible, 'intake');
     const sources = ctx.session.state['sources'] as Source[];
     const rubric = PortrayalRubric.parse({
       ...draft,

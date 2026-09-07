@@ -64,6 +64,11 @@ async function execute(runId: string, bible: CharacterBible): Promise<void> {
       }
       const delta = ev.actions?.stateDelta;
       if (delta) Object.assign(run.state, delta);
+      // A failed model call arrives as an event, not an exception, and ADK moves on
+      // to the next stage with nothing in state. Stop here and say what happened.
+      if (ev.errorCode || ev.errorMessage) {
+        throw new Error(`${ev.author ?? 'model'} failed: ${ev.errorCode ?? ''} ${ev.errorMessage ?? ''}`.trim());
+      }
     }
     run.status = 'done';
   } catch (err) {

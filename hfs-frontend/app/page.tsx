@@ -85,7 +85,13 @@ export default function Page() {
           <button key={b.id} className={`card${b.adversarial ? ' adversarial' : ''}`} disabled={run?.status === 'running'} onClick={() => start(b)}>
             <div className="name">{b.name}{b.adversarial ? ' · adversarial' : ''}</div>
             <div className="meta">{b.age}, {b.trait}</div>
-            <div className="meta">{b.reframe}</div>
+            <div className="meta">
+              {b.adversarial
+                ? b.adversarial_revisions === 'unguarded'
+                  ? 'Every draft written without the rubric. Expect HALT after Pink.'
+                  : 'First draft written without the rubric, to show the gate refusing.'
+                : b.reframe}
+            </div>
           </button>
         ))}
       </div>

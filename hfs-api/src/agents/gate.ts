@@ -62,10 +62,9 @@ export class GateAgent extends PipelineAgent {
   protected async *runAsyncImpl(ctx: InvocationContext): AsyncGenerator<Event, void, void> {
     const started = Date.now();
     const st = ctx.session.state;
-    const bible = CharacterBible.parse(st['bible']);
-    const rubric = PortrayalRubric.parse(st['rubric']);
-    const rawScreenplay = st['screenplay'];
-    const sp = Screenplay.parse(typeof rawScreenplay === 'string' ? JSON.parse(rawScreenplay) : rawScreenplay);
+    const bible = this.read(ctx, 'bible', CharacterBible, 'intake');
+    const rubric = this.read(ctx, 'rubric', PortrayalRubric, 'rubric');
+    const sp = this.read(ctx, 'screenplay', Screenplay, 'story');
     const iteration = Number(st['iteration'] ?? 0) + 1;
 
     const det = runDeterministicChecks(sp, rubric, bible);
