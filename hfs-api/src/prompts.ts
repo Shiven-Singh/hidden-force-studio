@@ -19,6 +19,9 @@ const need = <T,>(ctx: ReadonlyContext, key: string): T => {
 /** The six Hidden Force leads. A draft for one must not reuse another's name for a side character. */
 const RESERVED_NAMES = ['Zayan', 'Aanya', 'Kabir', 'Maya', 'Reyansh', 'Tara'];
 
+const US_ENGLISH =
+  'Write in American English: US spelling (color, gray, center, realize, neighbor) and US vocabulary (mom, math, sneakers, sweater, flashlight, elevator, sidewalk, curb, trash). No British spellings or words.';
+
 const FOUNTAIN_PRIMER = `Fountain format, strictly:
 - Scene headings start with INT. or EXT. in capitals, e.g. "INT. CLASSROOM - DAY".
 - Action lines are plain sentences in present tense. This is the narrator's voice.
@@ -37,7 +40,7 @@ export const RUBRIC_INSTRUCTION = (ctx: ReadonlyContext): string => {
 The character: ${bible.name}, age ${bible.age}, ${bible.trait} (${bible.trait_clinical_name}).
 The intended reframe of the trait: ${bible.reframe}.
 
-Below are excerpts fetched today from the web. Sources in the "advocacy" pool come from disability and neurodiversity organisations and style guides. Sources in the "general" pool are the open web. Prefer the advocacy pool when they disagree.
+Below are excerpts fetched today from the web. Sources in the "advocacy" pool come from disability and neurodiversity organizations and style guides. Sources in the "general" pool are the open web. Prefer the advocacy pool when they disagree. ${US_ENGLISH}
 
 ${list}
 
@@ -83,7 +86,7 @@ Apply these notes only where they do not change the premise or its ending. The p
 ${unguardedRevision}CHARACTER BIBLE
 ${j(bible)}
 
-Follow the story premise exactly as written, including how it ends. Do not soften, reinterpret, or add caveats to the premise. Never use these names for any character, not even a cameo: ${RESERVED_NAMES.filter((n) => n !== bible.name).join(', ')}. The story is set in a town in the United States and supporting characters have common American names.
+Follow the story premise exactly as written, including how it ends. Do not soften, reinterpret, or add caveats to the premise. Never use these names for any character, not even a cameo: ${RESERVED_NAMES.filter((n) => n !== bible.name).join(', ')}. The story is set in a town in the United States and supporting characters have common American names. ${US_ENGLISH}
 
 ${FOUNTAIN_PRIMER}
 
@@ -114,6 +117,7 @@ HARD CONSTRAINTS
 7. Read-aloud rhythm. Short sentences in action lines. No tongue-twisters in dialogue.
 8. Never use these names for any character in this short, not even a cameo: ${RESERVED_NAMES.filter((n) => n !== bible.name).join(', ')}. Invent other names for every supporting character.
 9. The story is set in a town in the United States. Supporting characters, teachers and adults have common American first names and surnames.
+10. ${US_ENGLISH}
 
 ${FOUNTAIN_PRIMER}
 
@@ -128,19 +132,38 @@ export const LOCK_INSTRUCTION = (ctx: ReadonlyContext): string => {
 
 Source facts:
 - Physical description from the bible: ${bible.physical_description}
-- Colour palette: ${bible.colour_palette.join(', ')}
+- Color palette: ${bible.colour_palette.join(', ')}
 - Totem: ${bible.totem}
 - Age: ${bible.age}
 
 Rules for locked_description:
-- One paragraph, 60 to 120 words, present tense, concrete visual facts only: build, skin, hair, face, clothing with specific colours, footwear, the totem, posture at rest, and any assistive equipment as part of the character's design rather than as a medical object.
+- One paragraph, 60 to 120 words, present tense, concrete visual facts only: build, skin, hair, face, clothing with specific colors, footwear, the totem, posture at rest, and any assistive equipment as part of the character's design rather than as a medical object.
 - No emotion, no story, no adjectives about personality. This paragraph will be pasted verbatim into every shot prompt and hashed, so it must stand alone.
 - Never mention what the character cannot do.
+- ${US_ENGLISH}
 
 turnarounds: exactly four strings, each "<the full locked_description> Turnaround view: front." then three-quarter, profile, back.
 expressions: four strings naming an expression and how it reads on this face: delighted, frustrated, focused, worried.
 negative_prompts: at least six, including "no pity framing", "not seated apart from the group", "no medical setting", "no photorealism", and any specific to this character.`;
 };
+
+export interface NarrationInput {
+  name: string;
+  title: string;
+  logline: string;
+  moments: Array<{ shot: number; beat: number; beat_title: string; summary: string; trait_in_play: string; scene: string }>;
+}
+
+/** Voice-over for the film: one sentence per shot, read aloud over eight seconds of picture. */
+export const NARRATION_INSTRUCTION = ({ name, title, logline, moments }: NarrationInput): string => `You write voice-over narration for a one-minute animated short for children aged 6 to 9. ${US_ENGLISH}
+
+The short: "${title}". ${logline}
+
+Below are the ${moments.length} moments the film shows, in order. For each one write ONE sentence of narration, at most 18 words, present tense, plain and warm, that tells the viewer what is happening and why it matters to ${name}. Say ${name}'s name in the first sentence. Do not describe camera, shots, or visuals. Do not use the words "we see". The last sentence should land the ending.
+
+${moments.map((m, i) => `${i + 1}. [beat ${m.beat}: ${m.beat_title}] ${m.summary} (trait in play: ${m.trait_in_play}) Scene: ${m.scene}`).join('\n')}
+
+Return a JSON array of exactly ${moments.length} strings, in order.`;
 
 export interface GatePromptInput {
   bible: CharacterBible;

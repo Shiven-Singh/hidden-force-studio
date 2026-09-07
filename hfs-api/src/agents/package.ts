@@ -63,6 +63,10 @@ export class PackageAgent extends PipelineAgent {
 
     if (screenplay) {
       files[passed ? 'screenplay.fountain' : 'screenplay.rejected.fountain'] = screenplay.fountain;
+      files['screenplay.json'] = JSON.stringify(
+        { title: screenplay.title, logline: screenplay.logline, beats: screenplay.beats, page_estimate: screenplay.page_estimate, trait_causality_note: screenplay.trait_causality_note },
+        null, 2,
+      );
       files['beat_sheet.md'] =
         `# ${screenplay.title}\n\n**Logline.** ${screenplay.logline}\n\n**Trait causality.** ${screenplay.trait_causality_note}\n\n` +
         screenplay.beats.map((b) => `## ${b.number}. ${b.title}\n\n${b.summary}\n\n*Trait in play:* ${b.trait_in_play}\n`).join('\n');

@@ -102,7 +102,7 @@ describe('offline pipeline through the ADK runtime', () => {
     const [folder] = (await folders()).filter((f) => f.startsWith('maya_') && !f.includes('adversarial'));
     expect(await filesIn(folder)).toEqual([
       'art_brief.json', 'beat_sheet.md', 'one_sheet.md', 'portrayal_rubric.json',
-      'review_history.json', 'run_manifest.json', 'screenplay.fountain',
+      'review_history.json', 'run_manifest.json', 'screenplay.fountain', 'screenplay.json',
     ]);
     const manifest = JSON.parse(await readFile(path.join(outDir, folder, 'run_manifest.json'), 'utf8')) as RunManifest;
     expect(manifest.verdict).toBe('PASS');
@@ -138,7 +138,7 @@ describe('offline pipeline through the ADK runtime', () => {
 
     const [folder] = (await folders()).filter((f) => f.includes('adversarial'));
     expect(await filesIn(folder)).toEqual([
-      'beat_sheet.md', 'portrayal_rubric.json', 'review_history.json', 'run_manifest.json', 'screenplay.rejected.fountain',
+      'beat_sheet.md', 'portrayal_rubric.json', 'review_history.json', 'run_manifest.json', 'screenplay.json', 'screenplay.rejected.fountain',
     ]);
     const manifest = JSON.parse(await readFile(path.join(outDir, folder, 'run_manifest.json'), 'utf8')) as RunManifest;
     expect(manifest.verdict).toBe('HALT');

@@ -12,11 +12,12 @@ if (!file) {
 }
 
 const bible = JSON.parse(await readFile(file, 'utf8'));
+const film = process.env.FILM === '1'; // FILM=1 makes the narrated film after the pipeline passes
 const started = Date.now();
 const res = await fetch(`${base}/api/runs`, {
   method: 'POST',
   headers: { 'content-type': 'application/json' },
-  body: JSON.stringify(bible),
+  body: JSON.stringify({ ...bible, film }),
 });
 if (!res.ok) {
   console.error('start failed', res.status, await res.text());
@@ -51,8 +52,12 @@ for (;;) {
       (rep.evidence_unverified.length ? `  unverified=[${rep.evidence_unverified.join(', ')}]` : ''));
     seenReviews += 1;
   }
+  if (r.render && r.render.status === 'rendering' && r.current === 'film') {
+    const key = `film ${r.render.done_clips ?? 0}/${r.render.clips ?? '?'}`;
+    if (key !== last) { console.log(`${t}s  ${key}`); last = key; }
+  }
   if (r.status !== 'running') {
-    console.log(`${t}s  ${r.status}${r.error ? `: ${r.error}` : ''}`);
+    console.log(`${t}s  ${r.status}${r.error ? `: ${r.error}` : ''}${r.animatic ? ' · film ready' : r.film_skipped ? ` · ${r.film_skipped}` : ''}`);
     if (r.sources) console.log(`sources: ${r.sources.length} (${r.sources.filter((s) => s.pool === 'advocacy').length} advocacy)`);
     if (r.rubric) console.log(`rubric: ${r.rubric.must_do.length} must-do, ${r.rubric.must_not_do.length} must-not, avoid=[${r.rubric.avoid_terms.join(', ')}]`);
     if (r.art_brief) console.log(`art brief: ${r.art_brief.shots.length} shots, hash ${r.art_brief.consistency_hash.slice(0, 12)}…`);

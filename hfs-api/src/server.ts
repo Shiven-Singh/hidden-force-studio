@@ -4,7 +4,7 @@
  */
 import './env.js';
 import { randomUUID } from 'node:crypto';
-import { readdir, readFile } from 'node:fs/promises';
+import { mkdir, readdir, readFile, writeFile } from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import express, { type Request, type Response } from 'express';
@@ -13,7 +13,11 @@ import { Storage } from '@google-cloud/storage';
 import { ArtBrief, CharacterBible, STAGES, type RunManifest } from '@hfs/schemas';
 import { rootAgent } from './agent.js';
 import { RUN_INACTIVITY_MS } from './clients/http.js';
-import { CLIP_MODEL, CLIP_SECONDS, STYLE, concatClips, drawStoryboard, generateClip, mapLimit, readRunFile, saveRunFile, type Storyboard } from './clients/media.js';
+import { narrate } from './clients/gemini.js';
+import {
+  CLIP_MODEL, NARRATOR_VOICES, STYLE, concatFilm, drawStoryboard, generateClip, mapLimit, mixNarration,
+  readRunFile, saveRunFile, synthesizeNarration, textCard, type Storyboard,
+} from './clients/media.js';
 import { localRunDir } from './output-folder.js';
 
 const here = path.dirname(fileURLToPath(import.meta.url));
@@ -31,6 +35,8 @@ interface Run {
   events: Array<{ author: string; ts: number }>;
   state: Record<string, unknown>;
   error?: string;
+  /** Make the film automatically once the pipeline passes. */
+  film: boolean;
 }
 
 /**
@@ -135,7 +141,7 @@ async function archivedView(id: string) {
   const manifest = await json('run_manifest.json');
   const artBrief = await json('art_brief.json');
   const storyboard = await json('storyboard.json');
-  const render = await json('animatic/render.json');
+  const render = RENDER_STATUS.get(id) ?? (await json('animatic/render.json'));
   return {
     status: 'done',
     archived: true,
@@ -168,36 +174,123 @@ const RENDER_LIMIT = Number(process.env.RENDER_LIMIT ?? 3);
 let rendersStarted = 0;
 const RENDERING = new Set<string>();
 
-async function renderAnimatic(folder: string): Promise<void> {
-  const progress = (status: Record<string, unknown>) =>
-    saveRunFile(folder, 'animatic/render.json', JSON.stringify(status, null, 2), 'application/json');
-  const briefRaw = await readRunFile(folder, 'art_brief.json');
-  if (!briefRaw) throw new Error('no art brief; only a passing run can be rendered');
-  const brief = ArtBrief.parse(JSON.parse(briefRaw.toString('utf8')));
+interface RenderStatus {
+  status: 'rendering' | 'done' | 'error';
+  clips?: number;
+  done_clips?: number;
+  started_at?: string;
+  finished_at?: string;
+  model?: string;
+  voice?: string;
+  shots?: number[];
+  narration?: string[];
+  error?: string;
+}
+/** Progress of films being made on this instance; the same status is also written next to the clips. */
+const RENDER_STATUS = new Map<string, RenderStatus>();
+
+interface ScreenplayJson {
+  title: string;
+  logline: string;
+  beats: Array<{ number: number; title: string; summary: string; trait_in_play: string }>;
+}
+
+/**
+ * The film: a title card, one narrated eight-second Veo clip per evenly
+ * spaced shot, and an end card that says what the gate found. Clips already
+ * in the run folder are reused unless `force`, so a re-render with new
+ * narration does not pay for Veo twice.
+ */
+async function renderAnimatic(folder: string, opts: { force?: boolean } = {}): Promise<void> {
+  const progress = async (status: RenderStatus) => {
+    RENDER_STATUS.set(folder, status);
+    await saveRunFile(folder, 'animatic/render.json', JSON.stringify(status, null, 2), 'application/json');
+  };
+  const readJson = async <T,>(name: string): Promise<T | undefined> => {
+    const raw = await readRunFile(folder, name);
+    return raw ? (JSON.parse(raw.toString('utf8')) as T) : undefined;
+  };
+  const briefJson = await readJson<unknown>('art_brief.json');
+  if (!briefJson) throw new Error('only a passing run has an art brief to film');
+  const brief = ArtBrief.parse(briefJson);
+  const sp = await readJson<ScreenplayJson>('screenplay.json');
+  if (!sp) throw new Error('this run predates screenplay.json; run the bible again to make a film');
+  const manifest = await readJson<RunManifest>('run_manifest.json');
+  const rubric = await readJson<{ sources: unknown[] }>('portrayal_rubric.json');
+
   const n = Math.min(RENDER_SHOTS, brief.shots.length);
   const picks = Array.from({ length: n }, (_, i) => brief.shots[Math.floor((i * brief.shots.length) / n)]!);
-  const startedAt = new Date().toISOString();
-  let doneClips = 0;
-  await progress({ status: 'rendering', clips: n, done_clips: 0, started_at: startedAt, model: CLIP_MODEL, seconds_per_clip: CLIP_SECONDS });
+  const started_at = new Date().toISOString();
+  await progress({ status: 'rendering', clips: n, done_clips: 0, started_at, model: CLIP_MODEL });
 
-  const clipFiles = await mapLimit(picks, 2, async (shot, i) => {
-    const prompt = `${STYLE} ${shot.prompt} Gentle camera movement. Ambient sound only, no dialogue, no narration, no lyrics.`;
-    const bytes = await generateClip(prompt);
-    const rel = `animatic/clip_${String(i + 1).padStart(2, '0')}.mp4`;
-    const local = await saveRunFile(folder, rel, bytes, 'video/mp4');
-    doneClips += 1;
-    await progress({ status: 'rendering', clips: n, done_clips: doneClips, started_at: startedAt, model: CLIP_MODEL, seconds_per_clip: CLIP_SECONDS });
-    return local;
+  const beatOf = (num: number) => sp.beats.find((b) => b.number === num) ?? sp.beats[Math.min(num, sp.beats.length) - 1];
+  const lines = await narrate({
+    name: manifest?.character ?? 'the hero',
+    title: sp.title,
+    logline: sp.logline,
+    moments: picks.map((s) => {
+      const b = beatOf(s.beat);
+      return { shot: s.number, beat: s.beat, beat_title: b?.title ?? '', summary: b?.summary ?? '', trait_in_play: b?.trait_in_play ?? '', scene: s.scene_heading };
+    }),
   });
 
-  const out = path.join(localRunDir(folder), 'animatic', 'animatic.mp4');
-  await concatClips(clipFiles, out);
+  const dir = path.join(localRunDir(folder), 'animatic');
+  await mkdir(dir, { recursive: true });
+  let voice = NARRATOR_VOICES[0]!;
+  let doneClips = 0;
+  const parts = await mapLimit(picks, 2, async (shot, i) => {
+    const nn = String(i + 1).padStart(2, '0');
+    const rel = `animatic/clip_${nn}.mp4`;
+    const clipLocal = path.join(dir, `clip_${nn}.mp4`);
+    const existing = opts.force ? undefined : await readRunFile(folder, rel);
+    if (existing) await writeFile(clipLocal, existing);
+    else {
+      const prompt = `${STYLE} ${shot.prompt} Gentle camera movement. Ambient sound only, no dialogue, no narration, no lyrics.`;
+      await saveRunFile(folder, rel, await generateClip(prompt), 'video/mp4');
+    }
+    const narration = path.join(dir, `narration_${nn}.mp3`);
+    voice = await synthesizeNarration(lines[i]!, narration);
+    const mixed = path.join(dir, `mixed_${nn}.mp4`);
+    await mixNarration(clipLocal, narration, mixed);
+    doneClips += 1;
+    await progress({ status: 'rendering', clips: n, done_clips: doneClips, started_at, model: CLIP_MODEL });
+    return mixed;
+  });
+
+  const title = path.join(dir, 'title.mp4');
+  await textCard(sp.title, sp.logline, title, 4);
+  const end = path.join(dir, 'end.mp4');
+  await textCard('Hidden Force Studio', `Reviewed against ${rubric?.sources.length ?? 0} cited sources. Verdict: ${manifest?.verdict ?? 'PASS'}.`, end, 4);
+  const out = path.join(dir, 'animatic.mp4');
+  await concatFilm([title, ...parts, end], out);
   await saveRunFile(folder, 'animatic/animatic.mp4', await readFile(out), 'video/mp4');
+  await saveRunFile(folder, 'animatic/narration.json', JSON.stringify({ voice, lines }, null, 2), 'application/json');
   await progress({
-    status: 'done', clips: n, done_clips: n, started_at: startedAt, finished_at: new Date().toISOString(),
-    model: CLIP_MODEL, seconds_per_clip: CLIP_SECONDS, shots: picks.map((s) => s.number),
+    status: 'done', clips: n, done_clips: n, started_at, finished_at: new Date().toISOString(),
+    model: CLIP_MODEL, voice, shots: picks.map((s) => s.number), narration: lines,
   });
   archiveCache = undefined;
+}
+
+/** Start a film for a run folder, respecting the per-instance budget. Returns why it did not start, or undefined. */
+function startRender(folder: string, opts: { force?: boolean } = {}): string | undefined {
+  if (RENDERING.has(folder)) return undefined;
+  if (rendersStarted >= RENDER_LIMIT) return `the film budget is used up for now (${RENDER_LIMIT} films per instance)`;
+  rendersStarted += 1;
+  RENDERING.add(folder);
+  renderAnimatic(folder, opts)
+    .catch(async (err) => {
+      const message = err instanceof Error ? err.message : String(err);
+      console.error(`render ${folder} failed: ${message}`);
+      const status: RenderStatus = { status: 'error', error: message.slice(0, 300) };
+      RENDER_STATUS.set(folder, status);
+      await saveRunFile(folder, 'animatic/render.json', JSON.stringify(status, null, 2), 'application/json').catch(() => undefined);
+    })
+    .finally(() => {
+      RENDERING.delete(folder);
+      archiveCache = undefined;
+    });
+  return undefined;
 }
 
 const app = express();
@@ -283,8 +376,32 @@ async function execute(runId: string, bible: CharacterBible): Promise<void> {
         throw new Error(`${ev.author ?? 'model'} failed: ${ev.errorCode ?? ''} ${ev.errorMessage ?? ''}`.trim());
       }
     }
-    run.status = 'done';
     archiveCache = undefined; // the new folder should show up on the next listing
+    const verdict = (run.state['review'] as { verdict?: string } | undefined)?.verdict;
+    const folder = run.state['output_folder'];
+    if (run.film && verdict === 'PASS' && typeof folder === 'string') {
+      run.current = 'film';
+      run.events.push({ author: 'film', ts: Date.now() });
+      await snapshot(runId, run);
+      if (rendersStarted >= RENDER_LIMIT) {
+        run.state['film_skipped'] = `the film budget is used up for now (${RENDER_LIMIT} films per instance)`;
+      } else {
+        rendersStarted += 1;
+        RENDERING.add(folder);
+        try {
+          await renderAnimatic(folder);
+        } catch (err) {
+          const message = err instanceof Error ? err.message : String(err);
+          run.state['film_skipped'] = `the film failed: ${message.slice(0, 200)}`;
+          RENDER_STATUS.set(folder, { status: 'error', error: message.slice(0, 300) });
+        } finally {
+          RENDERING.delete(folder);
+        }
+      }
+    } else if (run.film) {
+      run.state['film_skipped'] = 'no film for a draft that did not pass';
+    }
+    run.status = 'done';
   } catch (err) {
     run.status = 'error';
     run.error = err instanceof Error ? err.message : String(err);
@@ -304,20 +421,31 @@ app.get('/api/bibles', async (_req, res) => {
 });
 
 app.post('/api/runs', (req: Request, res: Response) => {
-  const parsed = CharacterBible.safeParse(req.body);
+  const { film, ...body } = (req.body ?? {}) as { film?: boolean } & Record<string, unknown>;
+  const parsed = CharacterBible.safeParse(body);
   if (!parsed.success) {
     res.status(400).json({ error: parsed.error.flatten() });
     return;
   }
   const runId = randomUUID().slice(0, 12);
-  RUNS.set(runId, { status: 'running', character: parsed.data.name, startedAt: Date.now(), current: null, events: [], state: {} });
+  RUNS.set(runId, { status: 'running', character: parsed.data.name, startedAt: Date.now(), current: null, events: [], state: {}, film: film === true });
   void execute(runId, parsed.data);
   res.status(202).json({ run_id: runId });
 });
 
 app.get('/api/runs', async (_req, res) => {
-  const live = [...RUNS.entries()].map(([id, r]) => ({ id, status: r.status, character: r.character, started_at: r.startedAt, live: true }));
-  const archived = (await listArchived()).map((r) => ({ id: r.id, status: r.status, character: r.character, verdict: r.verdict, started_at: r.started_at, live: false }));
+  const live = [...RUNS.entries()].map(([id, r]) => {
+    const folder = typeof r.state['output_folder'] === 'string' ? (r.state['output_folder'] as string) : undefined;
+    return {
+      id, status: r.status, character: r.character, started_at: r.startedAt, live: true,
+      verdict: (r.state['review'] as { verdict?: string } | undefined)?.verdict,
+      film: folder ? RENDER_STATUS.get(folder)?.status === 'done' : false,
+    };
+  });
+  const archived = (await listArchived()).map((r) => ({
+    id: r.id, status: r.status, character: r.character, verdict: r.verdict, started_at: r.started_at, live: false,
+    film: r.files.includes('animatic/animatic.mp4'),
+  }));
   res.json([...archived, ...live]);
 });
 
@@ -358,16 +486,17 @@ app.post('/api/runs/:id/storyboard', async (req, res) => {
 
 app.post('/api/runs/:id/render', async (req, res) => {
   const id = req.params.id as string;
-  if (!RUN_ID.test(id)) {
+  const force = req.query['force'] === '1';
+  if (!RUN_ID.test(id) || id.startsWith('_')) {
     res.status(404).json({ error: 'no such run' });
     return;
   }
   const files = await listRunFiles(id);
   if (!files.includes('art_brief.json')) {
-    res.status(400).json({ error: 'only a passing run has an art brief to render from' });
+    res.status(400).json({ error: 'only a passing run has an art brief to film' });
     return;
   }
-  if (files.includes('animatic/animatic.mp4')) {
+  if (files.includes('animatic/animatic.mp4') && !force) {
     res.json({ status: 'done' });
     return;
   }
@@ -375,22 +504,11 @@ app.post('/api/runs/:id/render', async (req, res) => {
     res.status(202).json({ status: 'rendering' });
     return;
   }
-  if (rendersStarted >= RENDER_LIMIT) {
-    res.status(429).json({ error: `the render budget is used up for now (${RENDER_LIMIT} films per instance); the two finished films are on the Zayan and adversarial Maya runs` });
+  const refused = startRender(id, { force });
+  if (refused) {
+    res.status(429).json({ error: refused });
     return;
   }
-  rendersStarted += 1;
-  RENDERING.add(id);
-  renderAnimatic(id)
-    .catch(async (err) => {
-      const message = err instanceof Error ? err.message : String(err);
-      console.error(`render ${id} failed: ${message}`);
-      await saveRunFile(id, 'animatic/render.json', JSON.stringify({ status: 'error', error: message.slice(0, 300) }, null, 2), 'application/json').catch(() => undefined);
-    })
-    .finally(() => {
-      RENDERING.delete(id);
-      archiveCache = undefined;
-    });
   res.status(202).json({ status: 'rendering' });
 });
 
@@ -450,13 +568,17 @@ app.get('/api/runs/:id', async (req, res) => {
     return;
   }
   const s = run.state;
+  const folder = typeof s['output_folder'] === 'string' ? (s['output_folder'] as string) : undefined;
+  const render = folder ? RENDER_STATUS.get(folder) : undefined;
   res.json({
     status: run.status,
     error: run.error,
     character: run.character,
     current: run.current,
-    folder: s['output_folder'],
-    stages: STAGES,
+    folder,
+    film: run.film,
+    film_skipped: s['film_skipped'],
+    stages: run.film ? [...STAGES, 'film'] : STAGES,
     events: run.events,
     sources: s['sources'],
     rubric: s['rubric'],
@@ -464,6 +586,9 @@ app.get('/api/runs/:id', async (req, res) => {
     review_history: s['review_history'] ?? [],
     art_brief: s['art_brief'],
     storyboard: s['storyboard'],
+    storyboard_progress: s['storyboard_progress'],
+    render,
+    animatic: render?.status === 'done' ? 'animatic/animatic.mp4' : undefined,
     manifest: s['manifest'],
     package: s['package'],
   });

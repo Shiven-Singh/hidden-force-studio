@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "@google-cloud/storage": "^8.0.1",
+    "@google-cloud/text-to-speech": "^7.0.0",
     "@google/adk": "^2.0.0",
     "@google/genai": "^2.21.0",
     "@hfs/schemas": "workspace:*",

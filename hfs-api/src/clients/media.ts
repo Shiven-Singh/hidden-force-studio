@@ -1,18 +1,21 @@
 /**
- * Stills and clips on Vertex AI, and the ffmpeg glue between them.
+ * Stills, clips, narration, and the ffmpeg glue between them.
  *
  * Stills: Gemini's image models (gemini-3.1-flash-image, global) draw the
- * characters in a stylised look in about ten seconds. Clips: Veo 3.1 in
+ * characters in a stylized look in about ten seconds. Clips: Veo 3.1 in
  * us-central1 makes eight-second shots with its own sound in about a minute.
- * Both are Google Cloud AI, which is the only kind the rules allow.
+ * Narration: Cloud Text-to-Speech. All Google Cloud AI, which is the only
+ * kind the rules allow.
  */
 import { execFile } from 'node:child_process';
 import { mkdir, writeFile, readFile } from 'node:fs/promises';
 import { createRequire } from 'node:module';
 import path from 'node:path';
+import { fileURLToPath } from 'node:url';
 import { promisify } from 'node:util';
 import { GoogleGenAI } from '@google/genai';
 import { Storage } from '@google-cloud/storage';
+import textToSpeech from '@google-cloud/text-to-speech';
 import { localRunDir } from '../output-folder.js';
 
 const run = promisify(execFile);
@@ -24,13 +27,18 @@ export const STILL_MODEL = process.env.STILL_MODEL ?? 'gemini-3.1-flash-image';
 export const STILL_FALLBACK_MODEL = process.env.STILL_FALLBACK_MODEL ?? 'gemini-2.5-flash-image';
 export const CLIP_MODEL = process.env.CLIP_MODEL ?? 'veo-3.1-generate-001';
 export const CLIP_SECONDS = 8;
+export const NARRATOR_VOICES = (process.env.NARRATOR_VOICES ?? 'en-US-Chirp3-HD-Aoede,en-US-Neural2-F').split(',');
+
+const ASSETS = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..', '..', 'assets');
+const FONT_BOLD = path.join(ASSETS, 'IBMPlexSans-Bold.ttf');
+const FONT_REGULAR = path.join(ASSETS, 'IBMPlexSans-Regular.ttf');
 
 const sleep = (ms: number) => new Promise((r) => setTimeout(r, ms));
 const isRateLimit = (err: unknown): boolean => /429|RESOURCE_EXHAUSTED|exhausted/i.test(err instanceof Error ? err.message : String(err));
 
 /** One sentence that keeps every still and clip in the same visual world. */
 export const STYLE =
-  'Stylised 3D animation in the look of a modern family feature film, soft rounded character design, ' +
+  'Stylized 3D animation in the look of a modern family feature film, soft rounded character design, ' +
   'consistent character design across shots, not photorealistic, 16:9 film frame, no text, no captions, no watermark.';
 
 const project = process.env.GOOGLE_CLOUD_PROJECT;
@@ -99,7 +107,7 @@ export async function generateClip(prompt: string, timeoutMs = 6 * 60_000): Prom
   const started = Date.now();
   while (!op.done) {
     if (Date.now() - started > timeoutMs) throw new Error('clip generation timed out');
-    await new Promise((r) => setTimeout(r, 10_000));
+    await sleep(10_000);
     op = await client.operations.getVideosOperation({ operation: op });
   }
   if (op.error) throw new Error(`clip generation failed: ${JSON.stringify(op.error).slice(0, 200)}`);
@@ -113,10 +121,36 @@ export async function generateClip(prompt: string, timeoutMs = 6 * 60_000): Prom
   throw new Error(`no video returned${filtered.length ? `: ${filtered.join('; ').slice(0, 200)}` : ''}`);
 }
 
+let tts: InstanceType<typeof textToSpeech.TextToSpeechClient> | undefined;
+
+/** Narration as MP3. Tries the voices in order; the first is the most natural, the last the most available. */
+export async function synthesizeNarration(text: string, outFile: string): Promise<string> {
+  tts ??= new textToSpeech.TextToSpeechClient();
+  let lastErr: unknown;
+  for (const name of NARRATOR_VOICES) {
+    try {
+      const [res] = await tts.synthesizeSpeech({
+        input: { text },
+        voice: { languageCode: 'en-US', name },
+        audioConfig: { audioEncoding: 'MP3', speakingRate: 1.02 },
+      });
+      await mkdir(path.dirname(outFile), { recursive: true });
+      await writeFile(outFile, res.audioContent as Buffer);
+      return name;
+    } catch (err) {
+      lastErr = err;
+    }
+  }
+  throw lastErr instanceof Error ? lastErr : new Error(String(lastErr));
+}
+
 const ffmpeg = (): string => {
   if (!ffmpegPath) throw new Error('ffmpeg binary not available');
   return ffmpegPath;
 };
+
+/** drawtext filter option values: backslash, colon and quote have meaning inside a filter graph. */
+const fesc = (s: string): string => s.replace(/\\/g, '\\\\').replace(/:/g, '\\:').replace(/'/g, "\\'");
 
 /** PNG -> JPEG at 1280px wide, the size that is fine to commit and quick to load. */
 export async function toJpeg(png: Buffer, outFile: string): Promise<void> {
@@ -127,17 +161,84 @@ export async function toJpeg(png: Buffer, outFile: string): Promise<void> {
   await run('rm', ['-f', tmp]);
 }
 
-/** Concatenate clips into one film, re-encoded once so the result streams at a sane size. */
-export async function concatClips(clipFiles: string[], outFile: string): Promise<void> {
+async function hasAudio(file: string): Promise<boolean> {
+  try {
+    await run(ffmpeg(), ['-hide_banner', '-i', file]);
+  } catch (err) {
+    return /Audio:/.test(String((err as { stderr?: string }).stderr ?? ''));
+  }
+  return false;
+}
+
+/** Lay the narration over a clip, with the clip's own sound ducked underneath. */
+export async function mixNarration(clip: string, narration: string, outFile: string): Promise<void> {
+  const common = ['-map', '0:v', '-c:v', 'copy', '-c:a', 'aac', '-ar', '48000', '-b:a', '128k', outFile];
+  if (await hasAudio(clip)) {
+    await run(ffmpeg(), [
+      '-y', '-loglevel', 'error', '-i', clip, '-i', narration,
+      '-filter_complex', '[0:a]volume=0.28[bg];[1:a]adelay=450|450,apad[vo];[bg][vo]amix=inputs=2:duration=first:normalize=0[a]',
+      '-map', '[a]', ...common,
+    ]);
+  } else {
+    await run(ffmpeg(), [
+      '-y', '-loglevel', 'error', '-i', clip, '-i', narration,
+      '-filter_complex', '[1:a]adelay=450|450,apad[a]', '-map', '[a]', '-shortest', ...common,
+    ]);
+  }
+}
+
+/** Break a line into rows that fit a 1280px frame at the given size. drawtext does not wrap on its own. */
+function wrap(text: string, maxChars: number): string {
+  const words = text.split(/\s+/);
+  const rows: string[] = [];
+  let row = '';
+  for (const w of words) {
+    if ((row + ' ' + w).trim().length > maxChars && row) {
+      rows.push(row);
+      row = w;
+    } else {
+      row = (row + ' ' + w).trim();
+    }
+  }
+  if (row) rows.push(row);
+  return rows.join('\n');
+}
+
+/** A card with a headline and a smaller line under it, silent, on the studio's dark ground. */
+export async function textCard(headline: string, line: string, outFile: string, seconds = 3): Promise<void> {
   await mkdir(path.dirname(outFile), { recursive: true });
-  const list = `${outFile}.txt`;
-  await writeFile(list, clipFiles.map((f) => `file '${f.replace(/'/g, "'\\''")}'`).join('\n'));
+  const h = `${outFile}.h.txt`;
+  const l = `${outFile}.l.txt`;
+  await writeFile(h, wrap(headline, 30));
+  await writeFile(l, wrap(line, 62));
+  const filter =
+    `[0:v]drawtext=fontfile='${fesc(FONT_BOLD)}':textfile='${fesc(h)}':fontcolor=white:fontsize=62:line_spacing=10:x=(w-text_w)/2:y=(h-text_h)/2-70,` +
+    `drawtext=fontfile='${fesc(FONT_REGULAR)}':textfile='${fesc(l)}':fontcolor=0xC9CFD8:fontsize=30:line_spacing=8:x=(w-text_w)/2:y=(h-text_h)/2+60[v]`;
   await run(ffmpeg(), [
-    '-y', '-loglevel', 'error', '-f', 'concat', '-safe', '0', '-i', list,
-    '-c:v', 'libx264', '-preset', 'veryfast', '-crf', '26', '-pix_fmt', 'yuv420p',
-    '-c:a', 'aac', '-b:a', '128k', '-movflags', '+faststart', outFile,
+    '-y', '-loglevel', 'error',
+    '-f', 'lavfi', '-i', `color=c=0x1B1F26:s=1280x720:r=24:d=${seconds}`,
+    '-f', 'lavfi', '-i', 'anullsrc=r=48000:cl=stereo',
+    '-filter_complex', filter, '-map', '[v]', '-map', '1:a', '-t', String(seconds),
+    '-c:v', 'libx264', '-preset', 'veryfast', '-crf', '22', '-pix_fmt', 'yuv420p', '-r', '24',
+    '-c:a', 'aac', '-ar', '48000', '-b:a', '128k', outFile,
   ]);
-  await run('rm', ['-f', list]);
+  await run('rm', ['-f', h, l]);
+}
+
+/** Cut the parts into one film, normalizing size, frame rate and audio so the joins are clean. */
+export async function concatFilm(parts: string[], outFile: string): Promise<void> {
+  await mkdir(path.dirname(outFile), { recursive: true });
+  const inputs = parts.flatMap((p) => ['-i', p]);
+  const pre = parts.map((_, i) =>
+    `[${i}:v]scale=1280:720:force_original_aspect_ratio=decrease,pad=1280:720:(ow-iw)/2:(oh-ih)/2,setsar=1,fps=24[v${i}];` +
+    `[${i}:a]aformat=sample_rates=48000:channel_layouts=stereo[a${i}]`).join(';');
+  const cat = parts.map((_, i) => `[v${i}][a${i}]`).join('') + `concat=n=${parts.length}:v=1:a=1[v][a]`;
+  await run(ffmpeg(), [
+    '-y', '-loglevel', 'error', ...inputs,
+    '-filter_complex', `${pre};${cat}`, '-map', '[v]', '-map', '[a]',
+    '-c:v', 'libx264', '-preset', 'veryfast', '-crf', '24', '-pix_fmt', 'yuv420p',
+    '-c:a', 'aac', '-b:a', '128k', '-movflags', '+faststart', outFile,
+  ], { maxBuffer: 64 * 1024 * 1024 });
 }
 
 let storage: Storage | undefined;
@@ -184,6 +285,29 @@ export interface Storyboard {
   frames: StoryboardFrame[];
 }
 
+export interface ShotLike { number: number; beat: number; prompt: string }
+
+/** Draw one storyboard frame and store it. Never throws; a failure is recorded on the frame. */
+export async function drawFrame(folder: string, shot: ShotLike, palette: string[]): Promise<StoryboardFrame> {
+  const file = `storyboard/shot_${String(shot.number).padStart(2, '0')}.jpg`;
+  const prompt = `${STYLE} ${shot.prompt} Color palette: ${palette.join(', ')}.`;
+  try {
+    const { png, model } = await generateStill(prompt);
+    const local = path.join(localRunDir(folder), file);
+    await toJpeg(png, local);
+    await saveRunFile(folder, file, await readFile(local), 'image/jpeg');
+    return { shot: shot.number, beat: shot.beat, file, prompt, model };
+  } catch (err) {
+    return { shot: shot.number, beat: shot.beat, file, prompt, error: err instanceof Error ? err.message.slice(0, 200) : String(err) };
+  }
+}
+
+export async function writeStoryboard(folder: string, frames: StoryboardFrame[]): Promise<Storyboard> {
+  const board: Storyboard = { model: STILL_MODEL, style: STYLE, frames };
+  await saveRunFile(folder, 'storyboard.json', JSON.stringify(board, null, 2), 'application/json');
+  return board;
+}
+
 /**
  * Draw the frames a storyboard is missing. Sequential, with a pause between
  * calls, because that is what the image quota allows. Frames that already
@@ -191,7 +315,7 @@ export interface Storyboard {
  */
 export async function drawStoryboard(
   folder: string,
-  shots: Array<{ number: number; beat: number; prompt: string }>,
+  shots: ShotLike[],
   palette: string[],
   existing?: Storyboard,
   onFrame?: (done: number, total: number) => void,
@@ -200,29 +324,16 @@ export async function drawStoryboard(
   const frames: StoryboardFrame[] = [];
   let done = 0;
   for (const shot of shots) {
-    const file = `storyboard/shot_${String(shot.number).padStart(2, '0')}.jpg`;
-    const prompt = `${STYLE} ${shot.prompt} Colour palette: ${palette.join(', ')}.`;
     const kept = keep.get(shot.number);
-    if (kept) {
-      frames.push(kept);
-    } else {
-      try {
-        const { png, model } = await generateStill(prompt);
-        const local = path.join(localRunDir(folder), file);
-        await toJpeg(png, local);
-        await saveRunFile(folder, file, await readFile(local), 'image/jpeg');
-        frames.push({ shot: shot.number, beat: shot.beat, file, prompt, model });
-      } catch (err) {
-        frames.push({ shot: shot.number, beat: shot.beat, file, prompt, error: err instanceof Error ? err.message.slice(0, 200) : String(err) });
-      }
+    if (kept) frames.push(kept);
+    else {
+      frames.push(await drawFrame(folder, shot, palette));
       await sleep(4_000);
     }
     done += 1;
     onFrame?.(done, shots.length);
   }
-  const board: Storyboard = { model: STILL_MODEL, style: STYLE, frames };
-  await saveRunFile(folder, 'storyboard.json', JSON.stringify(board, null, 2), 'application/json');
-  return board;
+  return writeStoryboard(folder, frames);
 }
 
 /** Run `n` async jobs at a time. Order of results matches order of inputs. */

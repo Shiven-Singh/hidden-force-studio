@@ -28,11 +28,11 @@ Test: does the character want something for themselves, independent of helping o
 
 ## Evidence rule
 
-Every model score carries an `evidence` string. It must be a verbatim line of the script, checked by exact match after normalising quotes and whitespace. A score whose evidence is not in the script becomes `unclear`, and `unclear` counts as a failure on a hard rule. The gate fails closed.
+Every model score carries an `evidence` string. It must be a verbatim line of the script, checked by exact match after normalizing quotes and whitespace. A score whose evidence is not in the script becomes `unclear`, and `unclear` counts as a failure on a hard rule. The gate fails closed.
 
 ## Revision control
 
-| Iteration | Colour | On failure |
+| Iteration | Color | On failure |
 |---|---|---|
 | 1 | White | REVISE with instructions |
 | 2 | Blue | REVISE with instructions |

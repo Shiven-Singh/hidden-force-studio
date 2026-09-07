@@ -38,7 +38,7 @@ Three hard-fail classes, documented in [docs/rubric.md](docs/rubric.md):
 
 Plus every must-not-do rule the rubric compiled from the sources, and soft notes for length, naming the trait plainly, and beats that carry the trait.
 
-Every model score must quote a line that exists verbatim in the script, checked by exact match after normalising quotes and whitespace. A quote that does not exist turns the score to "unclear", and "unclear" fails a hard rule. The gate fails closed. Two revisions maximum, then HALT: stage 5 refuses to run and stage 6 writes the rubric, the review history, the rejected draft and a manifest that says why.
+Every model score must quote a line that exists verbatim in the script, checked by exact match after normalizing quotes and whitespace. A quote that does not exist turns the score to "unclear", and "unclear" fails a hard rule. The gate fails closed. Two revisions maximum, then HALT: stage 5 refuses to run and stage 6 writes the rubric, the review history, the rejected draft and a manifest that says why.
 
 Across the eight committed runs there are zero unverified quotes and zero "unclear" scores.
 
@@ -115,8 +115,8 @@ Every folder under [`outputs/`](outputs/) is a real run, unedited. Each has `por
 - The gate can over-refuse. That is the direction to err in.
 - Run state is in memory on Cloud Run. A restart loses the live timeline. Every run is also written to disk and to the bucket.
 - Six characters, six traits, one age band, English only. Nothing here has been tested outside that.
-- ADK for JavaScript logs that `LoopAgent` and `SequentialAgent` are deprecated in favour of a Workflow API that, per the same warning, cannot yet be used the way this pipeline needs. They work.
+- ADK for JavaScript logs that `LoopAgent` and `SequentialAgent` are deprecated in favor of a Workflow API that, per the same warning, cannot yet be used the way this pipeline needs. They work.
 
-## Licences
+## Licenses
 
 Code: MIT, see [LICENSE](LICENSE). The character bibles and generated scripts are pre-existing creative work included for evaluation, licensed CC BY-NC-ND 4.0, see [bibles/LICENSE-CONTENT](bibles/LICENSE-CONTENT).

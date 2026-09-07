@@ -24,6 +24,7 @@ COPY --from=build /app/hfs-schemas/dist ./hfs-schemas/dist
 COPY --from=build /app/hfs-api/package.json ./hfs-api/
 COPY --from=build /app/hfs-api/node_modules ./hfs-api/node_modules
 COPY --from=build /app/hfs-api/dist ./hfs-api/dist
+COPY --from=build /app/hfs-api/assets ./hfs-api/assets
 COPY --from=build /app/hfs-frontend/out ./hfs-frontend/out
 COPY bibles ./bibles
 EXPOSE 8080
