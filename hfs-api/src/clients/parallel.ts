@@ -26,7 +26,32 @@ export const ADVOCACY_DOMAINS: Record<string, string[]> = {
 
 type Pool = Source['pool'];
 
+const sleep = (ms: number) => new Promise((r) => setTimeout(r, ms));
+
+/**
+ * Parallel has answered a correctly keyed request with "401 No API key
+ * provided" twice, each time seconds after a successful call. Treat auth and
+ * server errors as transient and retry a few times before giving up.
+ */
 async function search(bible: CharacterBible, includeDomains?: string[]) {
+  const waits = [3_000, 6_000, 12_000];
+  let lastErr: unknown;
+  for (let attempt = 0; attempt <= waits.length; attempt++) {
+    try {
+      return await searchOnce(bible, includeDomains);
+    } catch (err) {
+      lastErr = err;
+      const status = (err as { status?: number }).status;
+      const retryable = status === 401 || status === 408 || status === 429 || (status !== undefined && status >= 500);
+      if (!retryable || attempt === waits.length) break;
+      console.warn(`parallel search ${status} on attempt ${attempt + 1}, retrying: ${String((err as Error).message).slice(0, 120)}`);
+      await sleep(waits[attempt]!);
+    }
+  }
+  throw lastErr instanceof Error ? lastErr : new Error(String(lastErr));
+}
+
+async function searchOnce(bible: CharacterBible, includeDomains?: string[]) {
   return parallel().search({
     objective:
       `Current guidance from disability and neurodiversity advocacy organisations on portraying ` +
