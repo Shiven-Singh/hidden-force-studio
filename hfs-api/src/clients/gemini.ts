@@ -7,6 +7,7 @@ import { GoogleGenAI } from '@google/genai';
 import { z } from 'zod';
 import { RuleScore, type CharacterBible, type PortrayalRubric, type Screenplay } from '@hfs/schemas';
 import { GATE_INSTRUCTION } from '../prompts.js';
+import { HTTP_OPTIONS } from './http.js';
 
 export const DRAFT_MODEL = process.env.DRAFT_MODEL ?? 'gemini-3.5-flash';
 export const REVIEW_MODEL = process.env.REVIEW_MODEL ?? 'gemini-3.1-pro';
@@ -32,7 +33,7 @@ export async function scoreWithModel(sp: Screenplay, rubric: PortrayalRubric, bi
       temperature: 0,
       responseMimeType: 'application/json',
       responseJsonSchema: z.toJSONSchema(Scores),
-      httpOptions: { timeout: 180_000, retryOptions: { attempts: 3, httpStatusCodes: [408, 429, 500, 502, 503, 504] } },
+      httpOptions: { ...HTTP_OPTIONS, retryOptions: { ...HTTP_OPTIONS.retryOptions } },
     },
   });
   return Scores.parse(JSON.parse(res.text ?? '[]'));

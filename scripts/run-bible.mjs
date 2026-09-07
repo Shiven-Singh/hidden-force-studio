@@ -27,8 +27,18 @@ console.log(`run ${run_id} for ${bible.name}${bible.adversarial ? ' (adversarial
 
 let last = '';
 let seenReviews = 0;
+let failures = 0;
 for (;;) {
-  const r = await (await fetch(`${base}/api/runs/${run_id}`)).json();
+  let r;
+  try {
+    r = await (await fetch(`${base}/api/runs/${run_id}`, { signal: AbortSignal.timeout(20_000) })).json();
+    failures = 0;
+  } catch (err) {
+    // The run continues server-side; a dropped poll is not a failed run.
+    if (++failures > 30) { console.error('poll failed 30 times, giving up:', err.message); process.exit(1); }
+    await new Promise((f) => setTimeout(f, 6000));
+    continue;
+  }
   const t = ((Date.now() - started) / 1000).toFixed(0).padStart(4);
   if (r.current !== last) {
     console.log(`${t}s  ${r.current}`);

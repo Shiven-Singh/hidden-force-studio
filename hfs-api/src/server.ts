@@ -8,9 +8,10 @@ import { readdir, readFile } from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import express, { type Request, type Response } from 'express';
-import { InMemorySessionService, Runner } from '@google/adk';
+import { InMemorySessionService, Runner, type Event } from '@google/adk';
 import { CharacterBible, STAGES } from '@hfs/schemas';
 import { rootAgent } from './agent.js';
+import { RUN_INACTIVITY_MS } from './clients/http.js';
 
 const here = path.dirname(fileURLToPath(import.meta.url));
 const REPO_ROOT = path.resolve(here, '..', '..');
@@ -53,11 +54,28 @@ async function execute(runId: string, bible: CharacterBible): Promise<void> {
       sessionId: runId,
       state: { bible_raw: bible, run_id: runId },
     });
-    for await (const ev of runner.runAsync({
+    const events = runner.runAsync({
       userId: USER_ID,
       sessionId: runId,
       newMessage: { role: 'user', parts: [{ text: 'run' }] },
-    })) {
+    })[Symbol.asyncIterator]();
+    for (;;) {
+      // Watchdog: a pipeline that emits nothing for RUN_INACTIVITY_MS is dead, not slow.
+      let timer: NodeJS.Timeout | undefined;
+      const inactivity = new Promise<never>((_, reject) => {
+        timer = setTimeout(() => reject(new Error(`no progress for ${RUN_INACTIVITY_MS / 60000} minutes at stage ${run.current ?? 'start'}`)), RUN_INACTIVITY_MS);
+      });
+      let step: IteratorResult<Event, void>;
+      try {
+        step = await Promise.race([events.next(), inactivity]);
+      } catch (err) {
+        void events.return?.(undefined);
+        throw err;
+      } finally {
+        clearTimeout(timer);
+      }
+      if (step.done) break;
+      const ev: Event = step.value;
       if (ev.author) {
         run.current = ev.author;
         run.events.push({ author: ev.author, ts: Date.now() });

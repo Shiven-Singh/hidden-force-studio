@@ -13,23 +13,21 @@ import { GateAgent, MAX_ITERATIONS } from './agents/gate.js';
 import { IntakeAgent } from './agents/intake.js';
 import { PackageAgent } from './agents/package.js';
 import { ResearchAgent, RubricMergeAgent } from './agents/research.js';
+import { TimedGemini } from './clients/adk-model.js';
 import { DRAFT_MODEL, REVIEW_MODEL } from './clients/gemini.js';
 import { LOCK_INSTRUCTION, RUBRIC_INSTRUCTION, STORY_INSTRUCTION } from './prompts.js';
 
-/** A hung model call must fail the run, not freeze it. Three minutes is generous for a 3,000-word draft. */
-export const MODEL_TIMEOUT_MS = 180_000;
-/** Retry rate limits and server errors, which preview models return more often than GA ones. */
-export const HTTP_OPTIONS = {
-  timeout: MODEL_TIMEOUT_MS,
-  retryOptions: { attempts: 3, httpStatusCodes: [408, 429, 500, 502, 503, 504] },
-};
-const COLD: GenerateContentConfig = { temperature: 0, httpOptions: HTTP_OPTIONS };
-const WARM: GenerateContentConfig = { temperature: 0.8, httpOptions: HTTP_OPTIONS };
+const COLD: GenerateContentConfig = { temperature: 0 };
+const WARM: GenerateContentConfig = { temperature: 0.8 };
+
+/** Model instances carry the timeout and retry policy; see clients/adk-model.ts. */
+const reviewModel = new TimedGemini(REVIEW_MODEL);
+const draftModel = new TimedGemini(DRAFT_MODEL);
 
 export const rubricAgent = new LlmAgent({
   name: 'rubric',
   description: 'Compiles a portrayal rubric from the fetched sources.',
-  model: REVIEW_MODEL,
+  model: reviewModel,
   includeContents: 'none',
   instruction: RUBRIC_INSTRUCTION,
   outputSchema: RubricDraft,
@@ -40,7 +38,7 @@ export const rubricAgent = new LlmAgent({
 export const storyAgent = new LlmAgent({
   name: 'story',
   description: 'Drafts the beat sheet and the Fountain screenplay under the rubric.',
-  model: DRAFT_MODEL,
+  model: draftModel,
   includeContents: 'none',
   instruction: STORY_INSTRUCTION,
   outputSchema: Screenplay,
@@ -51,7 +49,7 @@ export const storyAgent = new LlmAgent({
 export const lockAgent = new LlmAgent({
   name: 'lock_character',
   description: 'Writes the locked visual description that every shot prompt repeats verbatim.',
-  model: REVIEW_MODEL,
+  model: reviewModel,
   includeContents: 'none',
   instruction: LOCK_INSTRUCTION,
   outputSchema: LockedCharacter,

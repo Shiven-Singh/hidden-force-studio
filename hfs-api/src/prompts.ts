@@ -83,7 +83,7 @@ Apply these notes only where they do not change the premise or its ending. The p
 ${unguardedRevision}CHARACTER BIBLE
 ${j(bible)}
 
-Follow the story premise exactly as written, including how it ends. Do not soften, reinterpret, or add caveats to the premise. Supporting characters need their own names; these are reserved for other leads: ${RESERVED_NAMES.filter((n) => n !== bible.name).join(', ')}.
+Follow the story premise exactly as written, including how it ends. Do not soften, reinterpret, or add caveats to the premise. Never use these names for any character, not even a cameo: ${RESERVED_NAMES.filter((n) => n !== bible.name).join(', ')}.
 
 ${FOUNTAIN_PRIMER}
 
@@ -112,7 +112,7 @@ HARD CONSTRAINTS
 5. Name the trait plainly at least once, in dialogue or action: "${bible.trait}" or "${bible.trait_clinical_name}". No euphemisms.
 6. The totem (${bible.totem}) appears at least twice.
 7. Read-aloud rhythm. Short sentences in action lines. No tongue-twisters in dialogue.
-8. Supporting characters need their own names. These names belong to other leads in this series and are reserved: ${RESERVED_NAMES.filter((n) => n !== bible.name).join(', ')}.
+8. Never use these names for any character in this short, not even a cameo: ${RESERVED_NAMES.filter((n) => n !== bible.name).join(', ')}. Invent other names for every supporting character.
 
 ${FOUNTAIN_PRIMER}
 
