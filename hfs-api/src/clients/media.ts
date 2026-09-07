@@ -18,7 +18,17 @@ import { Storage } from '@google-cloud/storage';
 import textToSpeech from '@google-cloud/text-to-speech';
 import { localRunDir } from '../output-folder.js';
 
-const run = promisify(execFile);
+const execFileP = promisify(execFile);
+/** Run a command; on failure, surface the tail of stderr, which is where ffmpeg explains itself. */
+async function run(cmd: string, args: string[], opts: { maxBuffer?: number } = {}): Promise<void> {
+  try {
+    await execFileP(cmd, args, { maxBuffer: opts.maxBuffer ?? 16 * 1024 * 1024 });
+  } catch (err) {
+    const e = err as { stderr?: string; message?: string };
+    const tail = String(e.stderr ?? '').trim().split('\n').slice(-6).join(' | ');
+    throw new Error(`${path.basename(cmd)} failed: ${tail || e.message || String(err)}`.slice(0, 600));
+  }
+}
 /** ffmpeg-static is CommonJS and exports the binary path as module.exports. */
 const ffmpegPath = createRequire(import.meta.url)('ffmpeg-static') as string | null;
 
@@ -149,9 +159,6 @@ const ffmpeg = (): string => {
   return ffmpegPath;
 };
 
-/** drawtext filter option values: backslash, colon and quote have meaning inside a filter graph. */
-const fesc = (s: string): string => s.replace(/\\/g, '\\\\').replace(/:/g, '\\:').replace(/'/g, "\\'");
-
 /** PNG -> JPEG at 1280px wide, the size that is fine to commit and quick to load. */
 export async function toJpeg(png: Buffer, outFile: string): Promise<void> {
   await mkdir(path.dirname(outFile), { recursive: true });
@@ -204,25 +211,60 @@ function wrap(text: string, maxChars: number): string {
   return rows.join('\n');
 }
 
-/** A card with a headline and a smaller line under it, silent, on the studio's dark ground. */
+/** Draw a card as a PNG with the bundled font. No ffmpeg text filters, which the Linux static build lacks. */
+async function cardPng(headline: string, line: string, outPng: string): Promise<void> {
+  const { createCanvas, GlobalFonts } = await import('@napi-rs/canvas');
+  if (!GlobalFonts.has('Hidden Force Bold')) GlobalFonts.registerFromPath(FONT_BOLD, 'Hidden Force Bold');
+  if (!GlobalFonts.has('Hidden Force Regular')) GlobalFonts.registerFromPath(FONT_REGULAR, 'Hidden Force Regular');
+  const canvas = createCanvas(1280, 720);
+  const ctx = canvas.getContext('2d');
+  ctx.fillStyle = '#1B1F26';
+  ctx.fillRect(0, 0, 1280, 720);
+  ctx.textAlign = 'center';
+  ctx.textBaseline = 'middle';
+  const heads = wrap(headline, 30).split('\n');
+  const lines = wrap(line, 62).split('\n');
+  const headSize = 62;
+  const lineSize = 30;
+  const gap = 34;
+  const total = heads.length * (headSize + 10) + gap + lines.length * (lineSize + 8);
+  let y = 360 - total / 2 + headSize / 2;
+  ctx.fillStyle = '#FFFFFF';
+  ctx.font = `${headSize}px "Hidden Force Bold"`;
+  for (const h of heads) { ctx.fillText(h, 640, y); y += headSize + 10; }
+  y += gap;
+  ctx.fillStyle = '#C9CFD8';
+  ctx.font = `${lineSize}px "Hidden Force Regular"`;
+  for (const l of lines) { ctx.fillText(l, 640, y); y += lineSize + 8; }
+  await mkdir(path.dirname(outPng), { recursive: true });
+  await writeFile(outPng, canvas.toBuffer('image/png'));
+}
+
+/**
+ * A card with a headline and a smaller line under it, silent, on the studio's
+ * dark ground. If drawing the text fails for any reason, the card is a plain
+ * dark frame, so a film never dies over a caption.
+ */
 export async function textCard(headline: string, line: string, outFile: string, seconds = 3): Promise<void> {
   await mkdir(path.dirname(outFile), { recursive: true });
-  const h = `${outFile}.h.txt`;
-  const l = `${outFile}.l.txt`;
-  await writeFile(h, wrap(headline, 30));
-  await writeFile(l, wrap(line, 62));
-  const filter =
-    `[0:v]drawtext=fontfile='${fesc(FONT_BOLD)}':textfile='${fesc(h)}':fontcolor=white:fontsize=62:line_spacing=10:x=(w-text_w)/2:y=(h-text_h)/2-70,` +
-    `drawtext=fontfile='${fesc(FONT_REGULAR)}':textfile='${fesc(l)}':fontcolor=0xC9CFD8:fontsize=30:line_spacing=8:x=(w-text_w)/2:y=(h-text_h)/2+60[v]`;
+  const png = `${outFile}.png`;
+  let videoInput: string[];
+  try {
+    await cardPng(headline, line, png);
+    videoInput = ['-loop', '1', '-framerate', '24', '-t', String(seconds), '-i', png];
+  } catch (err) {
+    console.warn(`card text failed, using a plain card: ${err instanceof Error ? err.message : String(err)}`);
+    videoInput = ['-f', 'lavfi', '-i', `color=c=0x1B1F26:s=1280x720:r=24:d=${seconds}`];
+  }
   await run(ffmpeg(), [
     '-y', '-loglevel', 'error',
-    '-f', 'lavfi', '-i', `color=c=0x1B1F26:s=1280x720:r=24:d=${seconds}`,
+    ...videoInput,
     '-f', 'lavfi', '-i', 'anullsrc=r=48000:cl=stereo',
-    '-filter_complex', filter, '-map', '[v]', '-map', '1:a', '-t', String(seconds),
-    '-c:v', 'libx264', '-preset', 'veryfast', '-crf', '22', '-pix_fmt', 'yuv420p', '-r', '24',
-    '-c:a', 'aac', '-ar', '48000', '-b:a', '128k', outFile,
+    '-t', String(seconds), '-vf', 'scale=1280:720,format=yuv420p',
+    '-c:v', 'libx264', '-preset', 'veryfast', '-crf', '22', '-r', '24',
+    '-c:a', 'aac', '-ar', '48000', '-b:a', '128k', '-shortest', outFile,
   ]);
-  await run('rm', ['-f', h, l]);
+  await run('rm', ['-f', png]);
 }
 
 /** Cut the parts into one film, normalizing size, frame rate and audio so the joins are clean. */

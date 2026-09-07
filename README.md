@@ -24,9 +24,9 @@ One ADK `SequentialAgent` runs the stages in fixed order. Stages 3 and 4 sit ins
 | 5 art direction | locked description, sha256, one prompt per shot | gemini-3.1-pro-preview for the paragraph, code for the rest |
 | 5 storyboard | one still per shot, each prompt starting with the locked description | gemini-3.1-flash-image, three at a time |
 | 6 package | the files below to `outputs/` and Cloud Storage, run manifest | code |
-| 7 film, on request | eight evenly spaced shots as eight-second Veo clips, cut together with ffmpeg | veo-3.1-generate-001 |
+| 7 film | title card, eight evenly spaced shots as eight-second Veo clips with a narrator over each, end card with the verdict | veo-3.1-generate-001, Cloud Text-to-Speech, gemini-3.5-flash for the narration lines, ffmpeg |
 
-Stage 7 is a button on a passing run rather than part of every run, because eight Veo clips cost real money. Progress is written to `animatic/render.json` and the result to `animatic/animatic.mp4` in the run folder.
+Choosing a hero on the live page makes the whole short by default; "script and storyboard only" is a toggle. A finished run without a film has a "Make the film" button. Films cost real money, so each instance will start at most a few; progress is written to `animatic/render.json` and the result to `animatic/animatic.mp4` in the run folder. Clips are reused if a film is re-rendered.
 
 ## The gate
 
