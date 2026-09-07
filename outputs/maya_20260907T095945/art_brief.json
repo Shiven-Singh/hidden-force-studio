@@ -1,0 +1,162 @@
+{
+  "character": {
+    "locked_description": "Maya is a 9-year-old South Asian girl with a compact build, warm brown skin, and dark curly hair tied high on her head. She has a round face with thick eyebrows. She wears a teal windbreaker (#2A9D8F), black fingerless gloves, dark denim jeans, and bright orange sneakers. Around her neck hangs a small adjustable wrench on a black lanyard. She sits upright with an alert posture in a lightweight manual wheelchair. The wheelchair features bright orange spoke guards (#F4A261), sleek black push-rims, and a compact black toolkit strapped securely under the seat.",
+    "turnarounds": [
+      "Maya is a 9-year-old South Asian girl with a compact build, warm brown skin, and dark curly hair tied high on her head. She has a round face with thick eyebrows. She wears a teal windbreaker (#2A9D8F), black fingerless gloves, dark denim jeans, and bright orange sneakers. Around her neck hangs a small adjustable wrench on a black lanyard. She sits upright with an alert posture in a lightweight manual wheelchair. The wheelchair features bright orange spoke guards (#F4A261), sleek black push-rims, and a compact black toolkit strapped securely under the seat. Turnaround view: front.",
+      "Maya is a 9-year-old South Asian girl with a compact build, warm brown skin, and dark curly hair tied high on her head. She has a round face with thick eyebrows. She wears a teal windbreaker (#2A9D8F), black fingerless gloves, dark denim jeans, and bright orange sneakers. Around her neck hangs a small adjustable wrench on a black lanyard. She sits upright with an alert posture in a lightweight manual wheelchair. The wheelchair features bright orange spoke guards (#F4A261), sleek black push-rims, and a compact black toolkit strapped securely under the seat. Turnaround view: three-quarter.",
+      "Maya is a 9-year-old South Asian girl with a compact build, warm brown skin, and dark curly hair tied high on her head. She has a round face with thick eyebrows. She wears a teal windbreaker (#2A9D8F), black fingerless gloves, dark denim jeans, and bright orange sneakers. Around her neck hangs a small adjustable wrench on a black lanyard. She sits upright with an alert posture in a lightweight manual wheelchair. The wheelchair features bright orange spoke guards (#F4A261), sleek black push-rims, and a compact black toolkit strapped securely under the seat. Turnaround view: profile.",
+      "Maya is a 9-year-old South Asian girl with a compact build, warm brown skin, and dark curly hair tied high on her head. She has a round face with thick eyebrows. She wears a teal windbreaker (#2A9D8F), black fingerless gloves, dark denim jeans, and bright orange sneakers. Around her neck hangs a small adjustable wrench on a black lanyard. She sits upright with an alert posture in a lightweight manual wheelchair. The wheelchair features bright orange spoke guards (#F4A261), sleek black push-rims, and a compact black toolkit strapped securely under the seat. Turnaround view: back."
+    ],
+    "expressions": [
+      "delighted: Her eyes widen, her thick eyebrows raise high, and a wide, open-mouthed smile reveals her teeth, pushing her cheeks up.",
+      "frustrated: Her thick eyebrows pull down sharply over narrowed eyes, her lips press into a tight, flat line, and her chin drops slightly.",
+      "focused: Her eyes narrow slightly, her eyebrows level out, and her mouth closes firmly while her head tilts slightly forward.",
+      "worried: The inner corners of her eyebrows pinch upward, her eyes widen slightly, and her lower lip pulls in."
+    ],
+    "negative_prompts": [
+      "no pity framing",
+      "not seated apart from the group",
+      "no medical setting",
+      "no photorealism",
+      "no bulky hospital wheelchair",
+      "no missing wrench totem",
+      "no missing toolkit",
+      "no standing up"
+    ]
+  },
+  "consistency_hash": "05a2a811f7e9a4696ac1d5010a0efc1d44c7d9d698ace9ec86a4ddc412d57cef",
+  "shots": [
+    {
+      "number": 1,
+      "beat": 1,
+      "scene_heading": "EXT. MAYA'S WORKSHOP - DAY",
+      "prompt": "Maya is a 9-year-old South Asian girl with a compact build, warm brown skin, and dark curly hair tied high on her head. She has a round face with thick eyebrows. She wears a teal windbreaker (#2A9D8F), black fingerless gloves, dark denim jeans, and bright orange sneakers. Around her neck hangs a small adjustable wrench on a black lanyard. She sits upright with an alert posture in a lightweight manual wheelchair. The wheelchair features bright orange spoke guards (#F4A261), sleek black push-rims, and a compact black toolkit strapped securely under the seat. Scene: In her workshop, nine-year-old engineer Maya works on her manual wheelchair. She wants the legendary frictionless ceramic bearing from the old flooded mill to make her chair the fastest in the valley. Setting: EXT. MAYA'S WORKSHOP - DAY. Camera: wide establishing. Light: soft morning light. Palette: #2A9D8F, #F4A261. Avoid: no pity framing; not seated apart from the group; no medical setting; no photorealism; no bulky hospital wheelchair; no missing wrench totem; no missing toolkit; no standing up.",
+      "camera": "wide establishing",
+      "palette": [
+        "#2A9D8F",
+        "#F4A261"
+      ]
+    },
+    {
+      "number": 2,
+      "beat": 2,
+      "scene_heading": "INT. MAYA'S WORKSHOP - DAY",
+      "prompt": "Maya is a 9-year-old South Asian girl with a compact build, warm brown skin, and dark curly hair tied high on her head. She has a round face with thick eyebrows. She wears a teal windbreaker (#2A9D8F), black fingerless gloves, dark denim jeans, and bright orange sneakers. Around her neck hangs a small adjustable wrench on a black lanyard. She sits upright with an alert posture in a lightweight manual wheelchair. The wheelchair features bright orange spoke guards (#F4A261), sleek black push-rims, and a compact black toolkit strapped securely under the seat. Scene: A sudden flash flood hits the town, turning the streets into deep canal channels. Maya realizes this is her chance to reach the isolated mill before anyone else. Setting: INT. MAYA'S WORKSHOP - DAY. Camera: medium. Light: flat overcast light. Palette: #2A9D8F, #F4A261. Avoid: no pity framing; not seated apart from the group; no medical setting; no photorealism; no bulky hospital wheelchair; no missing wrench totem; no missing toolkit; no standing up.",
+      "camera": "medium",
+      "palette": [
+        "#2A9D8F",
+        "#F4A261"
+      ]
+    },
+    {
+      "number": 3,
+      "beat": 3,
+      "scene_heading": "EXT. STREET - DAY",
+      "prompt": "Maya is a 9-year-old South Asian girl with a compact build, warm brown skin, and dark curly hair tied high on her head. She has a round face with thick eyebrows. She wears a teal windbreaker (#2A9D8F), black fingerless gloves, dark denim jeans, and bright orange sneakers. Around her neck hangs a small adjustable wrench on a black lanyard. She sits upright with an alert posture in a lightweight manual wheelchair. The wheelchair features bright orange spoke guards (#F4A261), sleek black push-rims, and a compact black toolkit strapped securely under the seat. Scene: Rohan, a boastful neighborhood kid, arrives in a high-tech kayak. He plans to claim the mill's treasures for himself and doubts Maya can navigate the wet currents. Setting: EXT. STREET - DAY. Camera: close-up. Light: hard afternoon light. Palette: #2A9D8F, #F4A261. Avoid: no pity framing; not seated apart from the group; no medical setting; no photorealism; no bulky hospital wheelchair; no missing wrench totem; no missing toolkit; no standing up.",
+      "camera": "close-up",
+      "palette": [
+        "#2A9D8F",
+        "#F4A261"
+      ]
+    },
+    {
+      "number": 4,
+      "beat": 4,
+      "scene_heading": "INT. MAYA'S WORKSHOP - DAY",
+      "prompt": "Maya is a 9-year-old South Asian girl with a compact build, warm brown skin, and dark curly hair tied high on her head. She has a round face with thick eyebrows. She wears a teal windbreaker (#2A9D8F), black fingerless gloves, dark denim jeans, and bright orange sneakers. Around her neck hangs a small adjustable wrench on a black lanyard. She sits upright with an alert posture in a lightweight manual wheelchair. The wheelchair features bright orange spoke guards (#F4A261), sleek black push-rims, and a compact black toolkit strapped securely under the seat. Scene: Maya transfers to her workbench to attach her newly engineered clip-on paddle fins to her wheels, preparing her chair for water travel. Setting: INT. MAYA'S WORKSHOP - DAY. Camera: over the shoulder. Light: warm interior light. Palette: #2A9D8F, #F4A261. Avoid: no pity framing; not seated apart from the group; no medical setting; no photorealism; no bulky hospital wheelchair; no missing wrench totem; no missing toolkit; no standing up.",
+      "camera": "over the shoulder",
+      "palette": [
+        "#2A9D8F",
+        "#F4A261"
+      ]
+    },
+    {
+      "number": 5,
+      "beat": 5,
+      "scene_heading": "EXT. STREET - CONTINUOUS",
+      "prompt": "Maya is a 9-year-old South Asian girl with a compact build, warm brown skin, and dark curly hair tied high on her head. She has a round face with thick eyebrows. She wears a teal windbreaker (#2A9D8F), black fingerless gloves, dark denim jeans, and bright orange sneakers. Around her neck hangs a small adjustable wrench on a black lanyard. She sits upright with an alert posture in a lightweight manual wheelchair. The wheelchair features bright orange spoke guards (#F4A261), sleek black push-rims, and a compact black toolkit strapped securely under the seat. Scene: Maya launches into the flooded streets. Her modified wheels allow her to paddle through the water like a high-speed catamaran. Setting: EXT. STREET - CONTINUOUS. Camera: low angle. Light: cool dusk light. Palette: #2A9D8F, #F4A261. Avoid: no pity framing; not seated apart from the group; no medical setting; no photorealism; no bulky hospital wheelchair; no missing wrench totem; no missing toolkit; no standing up.",
+      "camera": "low angle",
+      "palette": [
+        "#2A9D8F",
+        "#F4A261"
+      ]
+    },
+    {
+      "number": 6,
+      "beat": 6,
+      "scene_heading": "EXT. CANAL CHANNEL - MOMENTS LATER",
+      "prompt": "Maya is a 9-year-old South Asian girl with a compact build, warm brown skin, and dark curly hair tied high on her head. She has a round face with thick eyebrows. She wears a teal windbreaker (#2A9D8F), black fingerless gloves, dark denim jeans, and bright orange sneakers. Around her neck hangs a small adjustable wrench on a black lanyard. She sits upright with an alert posture in a lightweight manual wheelchair. The wheelchair features bright orange spoke guards (#F4A261), sleek black push-rims, and a compact black toolkit strapped securely under the seat. Scene: A pile of floating wooden crates blocks the main canal channel. Rohan gets stuck in his wide kayak, but Maya plans three steps ahead. Setting: EXT. CANAL CHANNEL - MOMENTS LATER. Camera: tracking. Light: soft morning light. Palette: #2A9D8F, #F4A261. Avoid: no pity framing; not seated apart from the group; no medical setting; no photorealism; no bulky hospital wheelchair; no missing wrench totem; no missing toolkit; no standing up.",
+      "camera": "tracking",
+      "palette": [
+        "#2A9D8F",
+        "#F4A261"
+      ]
+    },
+    {
+      "number": 7,
+      "beat": 7,
+      "scene_heading": "EXT. OLD MILL - DAY",
+      "prompt": "Maya is a 9-year-old South Asian girl with a compact build, warm brown skin, and dark curly hair tied high on her head. She has a round face with thick eyebrows. She wears a teal windbreaker (#2A9D8F), black fingerless gloves, dark denim jeans, and bright orange sneakers. Around her neck hangs a small adjustable wrench on a black lanyard. She sits upright with an alert posture in a lightweight manual wheelchair. The wheelchair features bright orange spoke guards (#F4A261), sleek black push-rims, and a compact black toolkit strapped securely under the seat. Scene: They reach the old mill. The main entrance is blocked, leaving only a narrow concrete drainage pipe as an entry point. Setting: EXT. OLD MILL - DAY. Camera: wide establishing. Light: flat overcast light. Palette: #2A9D8F, #F4A261. Avoid: no pity framing; not seated apart from the group; no medical setting; no photorealism; no bulky hospital wheelchair; no missing wrench totem; no missing toolkit; no standing up.",
+      "camera": "wide establishing",
+      "palette": [
+        "#2A9D8F",
+        "#F4A261"
+      ]
+    },
+    {
+      "number": 8,
+      "beat": 8,
+      "scene_heading": "INT. OLD MILL - CONTINUOUS",
+      "prompt": "Maya is a 9-year-old South Asian girl with a compact build, warm brown skin, and dark curly hair tied high on her head. She has a round face with thick eyebrows. She wears a teal windbreaker (#2A9D8F), black fingerless gloves, dark denim jeans, and bright orange sneakers. Around her neck hangs a small adjustable wrench on a black lanyard. She sits upright with an alert posture in a lightweight manual wheelchair. The wheelchair features bright orange spoke guards (#F4A261), sleek black push-rims, and a compact black toolkit strapped securely under the seat. Scene: Inside the mill, the water has drained, leaving a steep ramp covered in slick mud and oil. Rohan tries to walk up but slides backward. Setting: INT. OLD MILL - CONTINUOUS. Camera: medium. Light: hard afternoon light. Palette: #2A9D8F, #F4A261. Avoid: no pity framing; not seated apart from the group; no medical setting; no photorealism; no bulky hospital wheelchair; no missing wrench totem; no missing toolkit; no standing up.",
+      "camera": "medium",
+      "palette": [
+        "#2A9D8F",
+        "#F4A261"
+      ]
+    },
+    {
+      "number": 9,
+      "beat": 9,
+      "scene_heading": "INT. HIGH PLATFORM - CONTINUOUS",
+      "prompt": "Maya is a 9-year-old South Asian girl with a compact build, warm brown skin, and dark curly hair tied high on her head. She has a round face with thick eyebrows. She wears a teal windbreaker (#2A9D8F), black fingerless gloves, dark denim jeans, and bright orange sneakers. Around her neck hangs a small adjustable wrench on a black lanyard. She sits upright with an alert posture in a lightweight manual wheelchair. The wheelchair features bright orange spoke guards (#F4A261), sleek black push-rims, and a compact black toolkit strapped securely under the seat. Scene: Maya aligns her wheels with the steel tracks, locks into the guide rails, and uses her upper body strength to ascend the steep incline. Setting: INT. HIGH PLATFORM - CONTINUOUS. Camera: close-up. Light: warm interior light. Palette: #2A9D8F, #F4A261. Avoid: no pity framing; not seated apart from the group; no medical setting; no photorealism; no bulky hospital wheelchair; no missing wrench totem; no missing toolkit; no standing up.",
+      "camera": "close-up",
+      "palette": [
+        "#2A9D8F",
+        "#F4A261"
+      ]
+    },
+    {
+      "number": 10,
+      "beat": 10,
+      "scene_heading": "EXT. OLD MILL - DAY",
+      "prompt": "Maya is a 9-year-old South Asian girl with a compact build, warm brown skin, and dark curly hair tied high on her head. She has a round face with thick eyebrows. She wears a teal windbreaker (#2A9D8F), black fingerless gloves, dark denim jeans, and bright orange sneakers. Around her neck hangs a small adjustable wrench on a black lanyard. She sits upright with an alert posture in a lightweight manual wheelchair. The wheelchair features bright orange spoke guards (#F4A261), sleek black push-rims, and a compact black toolkit strapped securely under the seat. Scene: Maya reaches the high platform, claims the ceramic bearing, and uses her totem wrench to secure her loose wheel axle. Setting: EXT. OLD MILL - DAY. Camera: over the shoulder. Light: cool dusk light. Palette: #2A9D8F, #F4A261. Avoid: no pity framing; not seated apart from the group; no medical setting; no photorealism; no bulky hospital wheelchair; no missing wrench totem; no missing toolkit; no standing up.",
+      "camera": "over the shoulder",
+      "palette": [
+        "#2A9D8F",
+        "#F4A261"
+      ]
+    },
+    {
+      "number": 11,
+      "beat": 11,
+      "scene_heading": "INT. MAYA'S WORKSHOP - EVENING",
+      "prompt": "Maya is a 9-year-old South Asian girl with a compact build, warm brown skin, and dark curly hair tied high on her head. She has a round face with thick eyebrows. She wears a teal windbreaker (#2A9D8F), black fingerless gloves, dark denim jeans, and bright orange sneakers. Around her neck hangs a small adjustable wrench on a black lanyard. She sits upright with an alert posture in a lightweight manual wheelchair. The wheelchair features bright orange spoke guards (#F4A261), sleek black push-rims, and a compact black toolkit strapped securely under the seat. Scene: The mill walls begin to creak. Maya rides the steel tracks down like a roller coaster, splashing safely back into the water. Setting: INT. MAYA'S WORKSHOP - EVENING. Camera: low angle. Light: soft morning light. Palette: #2A9D8F, #F4A261. Avoid: no pity framing; not seated apart from the group; no medical setting; no photorealism; no bulky hospital wheelchair; no missing wrench totem; no missing toolkit; no standing up.",
+      "camera": "low angle",
+      "palette": [
+        "#2A9D8F",
+        "#F4A261"
+      ]
+    },
+    {
+      "number": 12,
+      "beat": 12,
+      "scene_heading": "INT. MAYA'S WORKSHOP - EVENING",
+      "prompt": "Maya is a 9-year-old South Asian girl with a compact build, warm brown skin, and dark curly hair tied high on her head. She has a round face with thick eyebrows. She wears a teal windbreaker (#2A9D8F), black fingerless gloves, dark denim jeans, and bright orange sneakers. Around her neck hangs a small adjustable wrench on a black lanyard. She sits upright with an alert posture in a lightweight manual wheelchair. The wheelchair features bright orange spoke guards (#F4A261), sleek black push-rims, and a compact black toolkit strapped securely under the seat. Scene: Back in her dry workshop, Maya installs the frictionless ceramic bearing. She rolls faster than ever, ready for the next adventure. Setting: INT. MAYA'S WORKSHOP - EVENING. Camera: tracking. Light: flat overcast light. Palette: #2A9D8F, #F4A261. Avoid: no pity framing; not seated apart from the group; no medical setting; no photorealism; no bulky hospital wheelchair; no missing wrench totem; no missing toolkit; no standing up.",
+      "camera": "tracking",
+      "palette": [
+        "#2A9D8F",
+        "#F4A261"
+      ]
+    }
+  ]
+}

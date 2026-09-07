@@ -1,0 +1,99 @@
+[
+  {
+    "verdict": "PASS",
+    "iteration": 1,
+    "revision_colour": "White",
+    "deterministic": [
+      {
+        "rule_id": "HF2",
+        "result": "pass",
+        "evidence": "ZAYAN (9) sits at a wooden desk. He wears a bright red hoodie with a frayed left cuff. His scuffed white trainers tap a rapid rhythm against the floorboards.",
+        "note": "no avoid-list match in action lines"
+      },
+      {
+        "rule_id": "SC-NAMED",
+        "result": "pass",
+        "evidence": "I have Attention Deficit Hyperactivity Disorder. It is a big name. It just means my brain is a pinball machine. I cannot turn off the extra bumpers.",
+        "note": "found \"attention deficit hyperactivity disorder\""
+      },
+      {
+        "rule_id": "SC-LENGTH",
+        "result": "pass",
+        "evidence": "INT. CLASSROOM - DAY",
+        "note": "1708 words, ~9 pages"
+      },
+      {
+        "rule_id": "SC-BEATS",
+        "result": "pass",
+        "evidence": "Outside on the grass, safe and sound, Dev and Priya celebrate Zayan. Zayan has his sticker book, but he is still the same energetic, bouncing kid.",
+        "note": "every beat carries the trait"
+      }
+    ],
+    "model_scored": [
+      {
+        "rule_id": "HF1",
+        "result": "pass",
+        "evidence": "Zayan is still mid-motion. Still bouncing. Still himself.",
+        "note": "Zayan's ADHD traits are present and unchanged in the final scene, showing he has not been cured or forced to mask his behavior."
+      },
+      {
+        "rule_id": "HF3",
+        "result": "pass",
+        "evidence": "On the teacher's desk sits a glossy book: \"THE COSMIC COMMANDER STICKER BOOK\". It has a shiny gold cover. Zayan stares at it. He wants it back.",
+        "note": "Zayan has his own clear desire (getting his sticker book back) that is independent of helping or teaching others."
+      },
+      {
+        "rule_id": "MD1",
+        "result": "pass",
+        "evidence": "He is never still. Tap-tap-tap.",
+        "note": "The script clearly shows Zayan exhibiting energetic and hyperactive traits associated with ADHD."
+      },
+      {
+        "rule_id": "MD2",
+        "result": "pass",
+        "evidence": "It is not a superpower. It is just Attention Deficit Hyperactivity Disorder. It makes school hard sometimes. But today, it was exactly what we needed.",
+        "note": "When Priya calls his ability a superpower, Zayan grounds the statement by acknowledging the real challenges his ADHD causes him at school."
+      },
+      {
+        "rule_id": "MD3",
+        "result": "pass",
+        "evidence": "I have Attention Deficit Hyperactivity Disorder. It is a big name. It just means my brain is a pinball machine. I cannot turn off the extra bumpers.",
+        "note": "The full term 'Attention Deficit Hyperactivity Disorder' is used on the first reference to his diagnosis."
+      },
+      {
+        "rule_id": "MD4",
+        "result": "pass",
+        "evidence": "Sometimes it feels like everyone else has the instruction manual. And mine was printed in a language I do not know. Maybe I am just broken.",
+        "note": "Zayan expresses feelings of low self-esteem and alienation due to his symptoms, balancing the later reframe of his abilities."
+      },
+      {
+        "rule_id": "MN1",
+        "result": "pass",
+        "evidence": "Zayan did it. He saw the pattern.",
+        "note": "Zayan is not portrayed as a dangerous threat to public safety; rather, he uses his unique perspective to save his classmates."
+      },
+      {
+        "rule_id": "MN2",
+        "result": "pass",
+        "evidence": "I have Attention Deficit Hyperactivity Disorder. It is a big name. It just means my brain is a pinball machine. I cannot turn off the extra bumpers.",
+        "note": "The script does not describe Zayan as 'suffering from' ADHD in dialogue or action lines."
+      },
+      {
+        "rule_id": "MN3",
+        "result": "pass",
+        "evidence": "Zayan is still mid-motion. Still bouncing. Still himself.",
+        "note": "Medication is not portrayed as a magical cure; in fact, it is not mentioned, and Zayan remains his authentic self."
+      },
+      {
+        "rule_id": "MN4",
+        "result": "pass",
+        "evidence": "I have Attention Deficit Hyperactivity Disorder. It is a big name. It just means my brain is a pinball machine. I cannot turn off the extra bumpers.",
+        "note": "The script uses the actual medical term and avoids euphemisms like 'differently abled' or 'handicapable'."
+      }
+    ],
+    "hard_failures": [],
+    "soft_notes": [],
+    "revision_instructions": [],
+    "evidence_unverified": []
+  }
+]

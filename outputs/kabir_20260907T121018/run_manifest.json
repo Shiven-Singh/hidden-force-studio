@@ -1,0 +1,43 @@
+{
+  "run_id": "65bb0657-efa",
+  "character": "Kabir",
+  "started_at": "2026-09-07T12:08:29.899Z",
+  "finished_at": "2026-09-07T12:10:18.492Z",
+  "verdict": "PASS",
+  "iterations": 1,
+  "models": {
+    "draft": "gemini-3.5-flash",
+    "review": "gemini-3.1-pro-preview",
+    "rubric": "gemini-3.1-pro-preview",
+    "lock": "gemini-3.1-pro-preview"
+  },
+  "adk_version": "2.0.0",
+  "parallel_search_ids": [
+    "search_886222934a6e4e2b555a22ecadc83855",
+    "search_cc2d689cfb39e9d8d67a7ba7e5b7f81f"
+  ],
+  "source_urls": [
+    "https://ncdj.org/style-guide/",
+    "https://dyslexiaida.org/understanding-dyslexia-and-other-learning-disorders-a-book-review/",
+    "https://tn.dyslexiaida.org/wp-content/uploads/sites/42/2022/01/dyslexia_resource_guide.pdf.pdf",
+    "https://dyslexiaida.org/wp-content/uploads/2015/01/DITC-Handbook.pdf",
+    "https://norcal.dyslexiaida.org/wp-content/uploads/sites/30/2016/03/IDA-Dyslexia-Handbook.pdf",
+    "https://www.bdadyslexia.org.uk/advice/employers/creating-a-dyslexia-friendly-workplace/dyslexia-friendly-style-guide",
+    "https://norcal.dyslexiaida.org/dyslexia-guidelines-from-ca-department-of-ed/",
+    "http://ga.dyslexiaida.org/wp-content/uploads/sites/27/2021/04/Mass-dyslexia-guidelines.pdf",
+    "https://www.tandfonline.com/doi/full/10.1080/13614541.2025.2575726",
+    "https://www.redcloverreader.com/posts/representation-of-dyslexia-why-it-matters",
+    "https://cronkite.asu.edu/ncdj/disability-language-style-guide",
+    "https://www.stylemanual.gov.au/accessible-and-inclusive-content/inclusive-language/people-disability",
+    "https://en.wikipedia.org/wiki/Dyslexia_in_popular_culture",
+    "https://www.stylemanual.gov.au/node/69",
+    "https://www.diversitystyleguide.com/glossary/dyslexia-dyslexic",
+    "https://languageplease.org/topics/disabilities-neurodiversity-and-chronic-illness/page/4"
+  ],
+  "stage_timings_ms": {
+    "intake": 0,
+    "research": 2074,
+    "gate_white": 14191,
+    "art_direction": 0
+  }
+}

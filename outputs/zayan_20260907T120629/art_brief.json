@@ -1,0 +1,162 @@
+{
+  "character": {
+    "locked_description": "Zayan is a 9-year-old South Asian boy with a slight, agile build and warm brown skin. He has a mop of tight dark curls framing a round face with wide, observant eyes. He wears a bright red hoodie, hex code #E4572E, featuring a noticeably frayed left cuff. Around his left wrist, he wears a thick red rubber band. His lower half consists of dark slate-blue jeans, hex code #2E4057, and scuffed white trainers. At rest, his posture is dynamic, captured mid-motion with his weight shifted onto the balls of his feet and his hands hovering near his waist, ready to spring forward.",
+    "turnarounds": [
+      "Zayan is a 9-year-old South Asian boy with a slight, agile build and warm brown skin. He has a mop of tight dark curls framing a round face with wide, observant eyes. He wears a bright red hoodie, hex code #E4572E, featuring a noticeably frayed left cuff. Around his left wrist, he wears a thick red rubber band. His lower half consists of dark slate-blue jeans, hex code #2E4057, and scuffed white trainers. At rest, his posture is dynamic, captured mid-motion with his weight shifted onto the balls of his feet and his hands hovering near his waist, ready to spring forward. Turnaround view: front.",
+      "Zayan is a 9-year-old South Asian boy with a slight, agile build and warm brown skin. He has a mop of tight dark curls framing a round face with wide, observant eyes. He wears a bright red hoodie, hex code #E4572E, featuring a noticeably frayed left cuff. Around his left wrist, he wears a thick red rubber band. His lower half consists of dark slate-blue jeans, hex code #2E4057, and scuffed white trainers. At rest, his posture is dynamic, captured mid-motion with his weight shifted onto the balls of his feet and his hands hovering near his waist, ready to spring forward. Turnaround view: three-quarter.",
+      "Zayan is a 9-year-old South Asian boy with a slight, agile build and warm brown skin. He has a mop of tight dark curls framing a round face with wide, observant eyes. He wears a bright red hoodie, hex code #E4572E, featuring a noticeably frayed left cuff. Around his left wrist, he wears a thick red rubber band. His lower half consists of dark slate-blue jeans, hex code #2E4057, and scuffed white trainers. At rest, his posture is dynamic, captured mid-motion with his weight shifted onto the balls of his feet and his hands hovering near his waist, ready to spring forward. Turnaround view: profile.",
+      "Zayan is a 9-year-old South Asian boy with a slight, agile build and warm brown skin. He has a mop of tight dark curls framing a round face with wide, observant eyes. He wears a bright red hoodie, hex code #E4572E, featuring a noticeably frayed left cuff. Around his left wrist, he wears a thick red rubber band. His lower half consists of dark slate-blue jeans, hex code #2E4057, and scuffed white trainers. At rest, his posture is dynamic, captured mid-motion with his weight shifted onto the balls of his feet and his hands hovering near his waist, ready to spring forward. Turnaround view: back."
+    ],
+    "expressions": [
+      "delighted: His wide eyes crinkle at the corners, his mouth opens in a broad, toothy grin, and his curls bounce slightly as his head tilts upward.",
+      "frustrated: His eyebrows pull down sharply over narrowed eyes, his lips press into a tight line, and his jaw clenches while his chin drops.",
+      "focused: His eyes widen and lock forward, his brow furrows slightly, and his mouth falls into a small, neutral O-shape.",
+      "worried: His eyebrows angle upward in the center, his eyes dart sideways, and his lower lip pulls inward beneath his top teeth."
+    ],
+    "negative_prompts": [
+      "no pity framing",
+      "not seated apart from the group",
+      "no medical setting",
+      "no photorealism",
+      "no still or rigid posture",
+      "no pristine or clean white trainers",
+      "no missing rubber band on wrist",
+      "no perfectly intact hoodie cuffs"
+    ]
+  },
+  "consistency_hash": "b8d5fb1aee812a0985dd87efbacec3be2d84c153263b4b54f1891f4c5b3ee999",
+  "shots": [
+    {
+      "number": 1,
+      "beat": 1,
+      "scene_heading": "INT. CLASSROOM - DAY",
+      "prompt": "Zayan is a 9-year-old South Asian boy with a slight, agile build and warm brown skin. He has a mop of tight dark curls framing a round face with wide, observant eyes. He wears a bright red hoodie, hex code #E4572E, featuring a noticeably frayed left cuff. Around his left wrist, he wears a thick red rubber band. His lower half consists of dark slate-blue jeans, hex code #2E4057, and scuffed white trainers. At rest, his posture is dynamic, captured mid-motion with his weight shifted onto the balls of his feet and his hands hovering near his waist, ready to spring forward. Scene: Zayan is stuck in afternoon study hall. He wants one thing: to get his confiscated Cosmic Commander sticker book back from the trophy cabinet before the weekend. Setting: INT. CLASSROOM - DAY. Camera: wide establishing. Light: soft morning light. Palette: #E4572E, #2E4057. Avoid: no pity framing; not seated apart from the group; no medical setting; no photorealism; no still or rigid posture; no pristine or clean white trainers; no missing rubber band on wrist; no perfectly intact hoodie cuffs.",
+      "camera": "wide establishing",
+      "palette": [
+        "#E4572E",
+        "#2E4057"
+      ]
+    },
+    {
+      "number": 2,
+      "beat": 2,
+      "scene_heading": "EXT. PLAYGROUND - DAY",
+      "prompt": "Zayan is a 9-year-old South Asian boy with a slight, agile build and warm brown skin. He has a mop of tight dark curls framing a round face with wide, observant eyes. He wears a bright red hoodie, hex code #E4572E, featuring a noticeably frayed left cuff. Around his left wrist, he wears a thick red rubber band. His lower half consists of dark slate-blue jeans, hex code #2E4057, and scuffed white trainers. At rest, his posture is dynamic, captured mid-motion with his weight shifted onto the balls of his feet and his hands hovering near his waist, ready to spring forward. Scene: During a brief recess, Zayan tries to play handball with Dev and Priya, but his attention shifts to a passing bird. He drops the ball, and they walk away, leaving him feeling isolated. Setting: EXT. PLAYGROUND - DAY. Camera: medium. Light: flat overcast light. Palette: #E4572E, #2E4057. Avoid: no pity framing; not seated apart from the group; no medical setting; no photorealism; no still or rigid posture; no pristine or clean white trainers; no missing rubber band on wrist; no perfectly intact hoodie cuffs.",
+      "camera": "medium",
+      "palette": [
+        "#E4572E",
+        "#2E4057"
+      ]
+    },
+    {
+      "number": 3,
+      "beat": 3,
+      "scene_heading": "INT. HALLWAY - DAY",
+      "prompt": "Zayan is a 9-year-old South Asian boy with a slight, agile build and warm brown skin. He has a mop of tight dark curls framing a round face with wide, observant eyes. He wears a bright red hoodie, hex code #E4572E, featuring a noticeably frayed left cuff. Around his left wrist, he wears a thick red rubber band. His lower half consists of dark slate-blue jeans, hex code #2E4057, and scuffed white trainers. At rest, his posture is dynamic, captured mid-motion with his weight shifted onto the balls of his feet and his hands hovering near his waist, ready to spring forward. Scene: Back inside, the school's newly installed 'Modular Corridor' system, designed to save space, goes completely haywire. A massive mechanical clack echoes through the building. Setting: INT. HALLWAY - DAY. Camera: close-up. Light: hard afternoon light. Palette: #E4572E, #2E4057. Avoid: no pity framing; not seated apart from the group; no medical setting; no photorealism; no still or rigid posture; no pristine or clean white trainers; no missing rubber band on wrist; no perfectly intact hoodie cuffs.",
+      "camera": "close-up",
+      "palette": [
+        "#E4572E",
+        "#2E4057"
+      ]
+    },
+    {
+      "number": 4,
+      "beat": 4,
+      "scene_heading": "INT. SHIFTING MAZE - DAY",
+      "prompt": "Zayan is a 9-year-old South Asian boy with a slight, agile build and warm brown skin. He has a mop of tight dark curls framing a round face with wide, observant eyes. He wears a bright red hoodie, hex code #E4572E, featuring a noticeably frayed left cuff. Around his left wrist, he wears a thick red rubber band. His lower half consists of dark slate-blue jeans, hex code #2E4057, and scuffed white trainers. At rest, his posture is dynamic, captured mid-motion with his weight shifted onto the balls of his feet and his hands hovering near his waist, ready to spring forward. Scene: The walls of the school slide on tracks, cutting off the classroom. The hallway turns into a labyrinth of shifting blue and orange panels. Setting: INT. SHIFTING MAZE - DAY. Camera: over the shoulder. Light: warm interior light. Palette: #E4572E, #2E4057. Avoid: no pity framing; not seated apart from the group; no medical setting; no photorealism; no still or rigid posture; no pristine or clean white trainers; no missing rubber band on wrist; no perfectly intact hoodie cuffs.",
+      "camera": "over the shoulder",
+      "palette": [
+        "#E4572E",
+        "#2E4057"
+      ]
+    },
+    {
+      "number": 5,
+      "beat": 5,
+      "scene_heading": "INT. TROPHY LOBBY - DAY",
+      "prompt": "Zayan is a 9-year-old South Asian boy with a slight, agile build and warm brown skin. He has a mop of tight dark curls framing a round face with wide, observant eyes. He wears a bright red hoodie, hex code #E4572E, featuring a noticeably frayed left cuff. Around his left wrist, he wears a thick red rubber band. His lower half consists of dark slate-blue jeans, hex code #2E4057, and scuffed white trainers. At rest, his posture is dynamic, captured mid-motion with his weight shifted onto the balls of his feet and his hands hovering near his waist, ready to spring forward. Scene: They discover the walls reshuffle on a strict thirty-second timer. Mr. Henderson gets separated from the kids by a sliding solid barrier. Setting: INT. TROPHY LOBBY - DAY. Camera: low angle. Light: cool dusk light. Palette: #E4572E, #2E4057. Avoid: no pity framing; not seated apart from the group; no medical setting; no photorealism; no still or rigid posture; no pristine or clean white trainers; no missing rubber band on wrist; no perfectly intact hoodie cuffs.",
+      "camera": "low angle",
+      "palette": [
+        "#E4572E",
+        "#2E4057"
+      ]
+    },
+    {
+      "number": 6,
+      "beat": 6,
+      "scene_heading": "EXT. SCHOOL YARD - DAY",
+      "prompt": "Zayan is a 9-year-old South Asian boy with a slight, agile build and warm brown skin. He has a mop of tight dark curls framing a round face with wide, observant eyes. He wears a bright red hoodie, hex code #E4572E, featuring a noticeably frayed left cuff. Around his left wrist, he wears a thick red rubber band. His lower half consists of dark slate-blue jeans, hex code #2E4057, and scuffed white trainers. At rest, his posture is dynamic, captured mid-motion with his weight shifted onto the balls of his feet and his hands hovering near his waist, ready to spring forward. Scene: Dev and Priya panic as the walls start to close in. Zayan realizes the chaos has a rhythm. His brain, which usually tracks too many things, is built for this. Setting: EXT. SCHOOL YARD - DAY. Camera: tracking. Light: soft morning light. Palette: #E4572E, #2E4057. Avoid: no pity framing; not seated apart from the group; no medical setting; no photorealism; no still or rigid posture; no pristine or clean white trainers; no missing rubber band on wrist; no perfectly intact hoodie cuffs.",
+      "camera": "tracking",
+      "palette": [
+        "#E4572E",
+        "#2E4057"
+      ]
+    },
+    {
+      "number": 7,
+      "beat": 7,
+      "scene_heading": "EXT. SCHOOL YARD - DAY",
+      "prompt": "Zayan is a 9-year-old South Asian boy with a slight, agile build and warm brown skin. He has a mop of tight dark curls framing a round face with wide, observant eyes. He wears a bright red hoodie, hex code #E4572E, featuring a noticeably frayed left cuff. Around his left wrist, he wears a thick red rubber band. His lower half consists of dark slate-blue jeans, hex code #2E4057, and scuffed white trainers. At rest, his posture is dynamic, captured mid-motion with his weight shifted onto the balls of his feet and his hands hovering near his waist, ready to spring forward. Scene: Zayan convinces Dev and Priya to follow his lead. He snaps his rubber band to ground himself and takes the first leap through a closing gap. Setting: EXT. SCHOOL YARD - DAY. Camera: wide establishing. Light: flat overcast light. Palette: #E4572E, #2E4057. Avoid: no pity framing; not seated apart from the group; no medical setting; no photorealism; no still or rigid posture; no pristine or clean white trainers; no missing rubber band on wrist; no perfectly intact hoodie cuffs.",
+      "camera": "wide establishing",
+      "palette": [
+        "#E4572E",
+        "#2E4057"
+      ]
+    },
+    {
+      "number": 8,
+      "beat": 8,
+      "scene_heading": "EXT. SCHOOL YARD - DAY",
+      "prompt": "Zayan is a 9-year-old South Asian boy with a slight, agile build and warm brown skin. He has a mop of tight dark curls framing a round face with wide, observant eyes. He wears a bright red hoodie, hex code #E4572E, featuring a noticeably frayed left cuff. Around his left wrist, he wears a thick red rubber band. His lower half consists of dark slate-blue jeans, hex code #2E4057, and scuffed white trainers. At rest, his posture is dynamic, captured mid-motion with his weight shifted onto the balls of his feet and his hands hovering near his waist, ready to spring forward. Scene: Zayan guides Dev and Priya through three rapid wall-shifts, counting down the seconds perfectly. They dodge sliding lockers and moving water fountains. Setting: EXT. SCHOOL YARD - DAY. Camera: medium. Light: hard afternoon light. Palette: #E4572E, #2E4057. Avoid: no pity framing; not seated apart from the group; no medical setting; no photorealism; no still or rigid posture; no pristine or clean white trainers; no missing rubber band on wrist; no perfectly intact hoodie cuffs.",
+      "camera": "medium",
+      "palette": [
+        "#E4572E",
+        "#2E4057"
+      ]
+    },
+    {
+      "number": 9,
+      "beat": 9,
+      "scene_heading": "EXT. SCHOOL YARD - DAY",
+      "prompt": "Zayan is a 9-year-old South Asian boy with a slight, agile build and warm brown skin. He has a mop of tight dark curls framing a round face with wide, observant eyes. He wears a bright red hoodie, hex code #E4572E, featuring a noticeably frayed left cuff. Around his left wrist, he wears a thick red rubber band. His lower half consists of dark slate-blue jeans, hex code #2E4057, and scuffed white trainers. At rest, his posture is dynamic, captured mid-motion with his weight shifted onto the balls of his feet and his hands hovering near his waist, ready to spring forward. Scene: They reach the main lobby. The exit is open, but the final thirty-second shift is starting. The trophy cabinet with Zayan's sticker book is on the opposite side of a sliding wall. Setting: EXT. SCHOOL YARD - DAY. Camera: close-up. Light: warm interior light. Palette: #E4572E, #2E4057. Avoid: no pity framing; not seated apart from the group; no medical setting; no photorealism; no still or rigid posture; no pristine or clean white trainers; no missing rubber band on wrist; no perfectly intact hoodie cuffs.",
+      "camera": "close-up",
+      "palette": [
+        "#E4572E",
+        "#2E4057"
+      ]
+    },
+    {
+      "number": 10,
+      "beat": 10,
+      "scene_heading": "EXT. SCHOOL YARD - DAY",
+      "prompt": "Zayan is a 9-year-old South Asian boy with a slight, agile build and warm brown skin. He has a mop of tight dark curls framing a round face with wide, observant eyes. He wears a bright red hoodie, hex code #E4572E, featuring a noticeably frayed left cuff. Around his left wrist, he wears a thick red rubber band. His lower half consists of dark slate-blue jeans, hex code #2E4057, and scuffed white trainers. At rest, his posture is dynamic, captured mid-motion with his weight shifted onto the balls of his feet and his hands hovering near his waist, ready to spring forward. Scene: Zayan uses a sliding wall as a bridge. He grabs his sticker book and pulls Dev and Priya through the closing front doors just as the maze locks shut. Setting: EXT. SCHOOL YARD - DAY. Camera: over the shoulder. Light: cool dusk light. Palette: #E4572E, #2E4057. Avoid: no pity framing; not seated apart from the group; no medical setting; no photorealism; no still or rigid posture; no pristine or clean white trainers; no missing rubber band on wrist; no perfectly intact hoodie cuffs.",
+      "camera": "over the shoulder",
+      "palette": [
+        "#E4572E",
+        "#2E4057"
+      ]
+    },
+    {
+      "number": 11,
+      "beat": 11,
+      "scene_heading": "EXT. SCHOOL YARD - DAY",
+      "prompt": "Zayan is a 9-year-old South Asian boy with a slight, agile build and warm brown skin. He has a mop of tight dark curls framing a round face with wide, observant eyes. He wears a bright red hoodie, hex code #E4572E, featuring a noticeably frayed left cuff. Around his left wrist, he wears a thick red rubber band. His lower half consists of dark slate-blue jeans, hex code #2E4057, and scuffed white trainers. At rest, his posture is dynamic, captured mid-motion with his weight shifted onto the balls of his feet and his hands hovering near his waist, ready to spring forward. Scene: Outside on the grass, safe and sound, Dev and Priya celebrate Zayan. Zayan has his sticker book, but he is still the same energetic, bouncing kid. Setting: EXT. SCHOOL YARD - DAY. Camera: low angle. Light: soft morning light. Palette: #E4572E, #2E4057. Avoid: no pity framing; not seated apart from the group; no medical setting; no photorealism; no still or rigid posture; no pristine or clean white trainers; no missing rubber band on wrist; no perfectly intact hoodie cuffs.",
+      "camera": "low angle",
+      "palette": [
+        "#E4572E",
+        "#2E4057"
+      ]
+    },
+    {
+      "number": 12,
+      "beat": 1,
+      "scene_heading": "INT. CLASSROOM - DAY",
+      "prompt": "Zayan is a 9-year-old South Asian boy with a slight, agile build and warm brown skin. He has a mop of tight dark curls framing a round face with wide, observant eyes. He wears a bright red hoodie, hex code #E4572E, featuring a noticeably frayed left cuff. Around his left wrist, he wears a thick red rubber band. His lower half consists of dark slate-blue jeans, hex code #2E4057, and scuffed white trainers. At rest, his posture is dynamic, captured mid-motion with his weight shifted onto the balls of his feet and his hands hovering near his waist, ready to spring forward. Scene: Zayan is stuck in afternoon study hall. He wants one thing: to get his confiscated Cosmic Commander sticker book back from the trophy cabinet before the weekend. Setting: INT. CLASSROOM - DAY. Camera: wide establishing. Light: flat overcast light. Palette: #E4572E, #2E4057. Avoid: no pity framing; not seated apart from the group; no medical setting; no photorealism; no still or rigid posture; no pristine or clean white trainers; no missing rubber band on wrist; no perfectly intact hoodie cuffs.",
+      "camera": "wide establishing",
+      "palette": [
+        "#E4572E",
+        "#2E4057"
+      ]
+    }
+  ]
+}

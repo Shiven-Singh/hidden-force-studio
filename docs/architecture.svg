@@ -1,0 +1,88 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 560" width="960" height="560" font-family="IBM Plex Sans, Helvetica, Arial, sans-serif" font-size="14">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#4A5261"/>
+    </marker>
+  </defs>
+  <rect width="960" height="560" fill="#F5F6F8"/>
+
+  <!-- title -->
+  <text x="40" y="40" font-size="20" font-weight="600" fill="#1B1F26">Hidden Force Studio</text>
+  <text x="40" y="62" fill="#4A5261">One ADK SequentialAgent, fixed order. Stages 3 and 4 sit inside a LoopAgent capped at three iterations.</text>
+
+  <!-- input -->
+  <rect x="40" y="96" width="160" height="44" rx="8" fill="#FFFFFF" stroke="#D8DCE3"/>
+  <text x="120" y="123" text-anchor="middle" fill="#1B1F26">character bible (JSON)</text>
+
+  <!-- stage 1 -->
+  <rect x="40" y="170" width="160" height="60" rx="8" fill="#FFFFFF" stroke="#D8DCE3"/>
+  <text x="52" y="192" font-weight="600" fill="#1B1F26">1 · intake</text>
+  <text x="52" y="212" fill="#4A5261" font-size="12">validate, seed state</text>
+
+  <!-- stage 2 -->
+  <rect x="240" y="170" width="220" height="60" rx="8" fill="#FFFFFF" stroke="#D8DCE3"/>
+  <text x="252" y="192" font-weight="600" fill="#1B1F26">2 · research + rubric</text>
+  <text x="252" y="212" fill="#4A5261" font-size="12">Parallel Search ×2 → Gemini compiles rules</text>
+
+  <!-- partner callout -->
+  <rect x="240" y="96" width="220" height="44" rx="8" fill="#E2E8F0" stroke="#2E4057"/>
+  <text x="350" y="115" text-anchor="middle" font-weight="600" fill="#2E4057" font-size="12">Parallel Search API</text>
+  <text x="350" y="131" text-anchor="middle" fill="#2E4057" font-size="11">advocacy pool + open web, cited verbatim</text>
+  <line x1="350" y1="140" x2="350" y2="170" stroke="#2E4057" stroke-dasharray="3 3"/>
+
+  <!-- loop box -->
+  <rect x="500" y="150" width="420" height="220" rx="12" fill="#E2E8F0" stroke="#2E4057" stroke-dasharray="6 4"/>
+  <text x="516" y="172" font-size="11" font-weight="600" fill="#2E4057" letter-spacing="1">LOOPAGENT · MAX 3 · WHITE / BLUE / PINK</text>
+
+  <!-- stage 3 -->
+  <rect x="520" y="190" width="180" height="60" rx="8" fill="#FFFFFF" stroke="#D8DCE3"/>
+  <text x="532" y="212" font-weight="600" fill="#1B1F26">3 · story</text>
+  <text x="532" y="232" fill="#4A5261" font-size="12">gemini-3.5-flash → Fountain</text>
+
+  <!-- stage 4 -->
+  <rect x="720" y="190" width="180" height="60" rx="8" fill="#FFFFFF" stroke="#A8321F"/>
+  <text x="732" y="212" font-weight="600" fill="#A8321F">4 · gate</text>
+  <text x="732" y="232" fill="#4A5261" font-size="12">code checks + verified quotes</text>
+
+  <!-- gate detail -->
+  <text x="520" y="290" fill="#1B1F26" font-size="12">HF1 cure narrative · model-scored, evidence verified in code</text>
+  <text x="520" y="310" fill="#1B1F26" font-size="12">HF2 deficit voice · regex over action lines, deterministic</text>
+  <text x="520" y="330" fill="#1B1F26" font-size="12">HF3 inspiration porn · model-scored, evidence verified in code</text>
+  <text x="520" y="352" fill="#4A5261" font-size="12">PASS → exit loop · REVISE → redraft with findings · third fail → HALT</text>
+
+  <!-- loop back arrow -->
+  <path d="M 810 250 L 810 268 L 610 268 L 610 250" fill="none" stroke="#4A5261" marker-end="url(#arrow)"/>
+  <text x="710" y="264" text-anchor="middle" fill="#4A5261" font-size="11">REVISE</text>
+
+  <!-- stage 5 -->
+  <rect x="500" y="410" width="200" height="60" rx="8" fill="#FFFFFF" stroke="#D8DCE3"/>
+  <text x="512" y="432" font-weight="600" fill="#1B1F26">5 · art direction</text>
+  <text x="512" y="452" fill="#4A5261" font-size="12">locked paragraph, hash, shot list</text>
+
+  <!-- stage 6 -->
+  <rect x="720" y="410" width="200" height="60" rx="8" fill="#FFFFFF" stroke="#D8DCE3"/>
+  <text x="732" y="432" font-weight="600" fill="#1B1F26">6 · package</text>
+  <text x="732" y="452" fill="#4A5261" font-size="12">outputs/ + Cloud Storage + manifest</text>
+
+  <!-- halt path -->
+  <rect x="240" y="410" width="200" height="60" rx="8" fill="#F6E0DB" stroke="#A8321F"/>
+  <text x="252" y="432" font-weight="600" fill="#A8321F">HALT</text>
+  <text x="252" y="452" fill="#4A5261" font-size="12">stage 5 refuses, manifest says why</text>
+
+  <!-- arrows -->
+  <line x1="120" y1="140" x2="120" y2="170" stroke="#4A5261" marker-end="url(#arrow)"/>
+  <line x1="200" y1="200" x2="240" y2="200" stroke="#4A5261" marker-end="url(#arrow)"/>
+  <line x1="460" y1="200" x2="520" y2="220" stroke="#4A5261" marker-end="url(#arrow)"/>
+  <line x1="700" y1="220" x2="720" y2="220" stroke="#4A5261" marker-end="url(#arrow)"/>
+  <path d="M 810 370 L 810 390 L 600 390 L 600 410" fill="none" stroke="#4A5261" marker-end="url(#arrow)"/>
+  <text x="705" y="386" text-anchor="middle" fill="#1F7A4D" font-size="11" font-weight="600">PASS</text>
+  <line x1="700" y1="440" x2="720" y2="440" stroke="#4A5261" marker-end="url(#arrow)"/>
+  <path d="M 900 370 L 900 395 L 340 395 L 340 410" fill="none" stroke="#A8321F" marker-end="url(#arrow)"/>
+  <text x="470" y="391" text-anchor="middle" fill="#A8321F" font-size="11" font-weight="600">after Pink</text>
+  <path d="M 440 440 L 480 440 L 480 520 L 780 520 L 780 470" fill="none" stroke="#A8321F" stroke-dasharray="4 3" marker-end="url(#arrow)"/>
+  <text x="630" y="536" text-anchor="middle" fill="#A8321F" font-size="11">package still writes rubric, review history, rejected draft, manifest</text>
+
+  <!-- footer -->
+  <text x="40" y="520" fill="#4A5261" font-size="12">Google Cloud: @google/adk (Agent Builder), Gemini on Vertex AI, Cloud Run, Cloud Storage.</text>
+  <text x="40" y="538" fill="#4A5261" font-size="12">Every model score must quote a line that exists verbatim in the script. Unverified quotes fail closed.</text>
+</svg>

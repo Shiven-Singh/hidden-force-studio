@@ -1,8 +1,8 @@
 {
-  "run_id": "13685146-cc8",
+  "run_id": "23cb1273-e23",
   "character": "Zayan",
-  "started_at": "2026-09-07T08:54:23.023Z",
-  "finished_at": "2026-09-07T08:56:11.688Z",
+  "started_at": "2026-09-07T12:04:37.165Z",
+  "finished_at": "2026-09-07T12:06:29.145Z",
   "verdict": "PASS",
   "iterations": 1,
   "models": {
@@ -13,8 +13,8 @@
   },
   "adk_version": "2.0.0",
   "parallel_search_ids": [
-    "search_564757182c28916d09da373f53f3affb",
-    "search_c9c78eca4482262e63a3cd8702d12392"
+    "search_0d17abb3fb87355274cad334477629b7",
+    "search_5792b90cc5c9e93d5da570a281cb14ee"
   ],
   "source_urls": [
     "https://chadd.org/wp-content/uploads/2018/06/ATTN_10_14_MediaRepresents.pdf",
@@ -23,19 +23,20 @@
     "https://www.additudemag.com/fictional-characters-books-adhd-inspiration",
     "http://www.chadd.org/AttentionPDFs/ATTN_10_14_MediaRepresents.pdf",
     "https://www.additudemag.com/adhd-in-the-media-the-good-the-bad-and-the-ridiculous/",
-    "https://fherehab.com/learning/hollywood-depictions-of-adhd",
+    "https://www.additudemag.com/language-disorders-adhd-school-evaluation/",
     "https://chadd.org/wp-content/uploads/2018/06/ATTN_10_14_MediaRepresents.pdf",
     "https://cronkite.asu.edu/ncdj/disability-language-style-guide",
+    "https://terribleminds.com/ramble/2021/08/17/emily-wenstrom-why-we-need-adhd-representation-in-fiction/",
     "https://adhduk.co.uk/about-us/press/adhd-uk-adhd-language-style-guide-reccomendations-on-writing-about-adhd",
     "https://www.stylemanual.gov.au/accessible-and-inclusive-content/inclusive-language/disability-and-neurodiversity",
-    "https://www.stylemanual.gov.au/accessible-and-inclusive-content/inclusive-language/people-disability",
     "https://www.stylemanual.gov.au/node/69",
+    "https://www.stylemanual.gov.au/accessible-and-inclusive-content/inclusive-language/people-disability",
     "https://cronkite.asu.edu/sites/g/files/litvpz4131/files/2025-12/NCDJ-STYLE-GUIDE-EDIT-2021-SILVERMAN.pdf"
   ],
   "stage_timings_ms": {
     "intake": 0,
-    "research": 2898,
-    "gate_white": 27730,
+    "research": 4557,
+    "gate_white": 24368,
     "art_direction": 4
   }
 }

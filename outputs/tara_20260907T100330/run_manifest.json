@@ -1,0 +1,42 @@
+{
+  "run_id": "513ed254-679",
+  "character": "Tara",
+  "started_at": "2026-09-07T10:01:39.796Z",
+  "finished_at": "2026-09-07T10:03:30.679Z",
+  "verdict": "PASS",
+  "iterations": 1,
+  "models": {
+    "draft": "gemini-3.5-flash",
+    "review": "gemini-3.1-pro-preview",
+    "rubric": "gemini-3.1-pro-preview",
+    "lock": "gemini-3.1-pro-preview"
+  },
+  "adk_version": "2.0.0",
+  "parallel_search_ids": [
+    "search_8d9336d0b80da5ee3154023e3099356b",
+    "search_89655711f0d3e9e803a42bf10f211b67"
+  ],
+  "source_urls": [
+    "https://ncdj.org/style-guide/",
+    "https://childmind.org/article/best-childrens-books-about-mental-health/",
+    "https://ncdj.org/wp-content/uploads/2012/08/NCDJStyleGuide2015.pdf",
+    "https://adaa.org/sites/default/files/2026-05/ADAA%20Inclusive%20Language%20Guidelines%20Final%20June%202022.pdf",
+    "https://childmind.org/wp-content/uploads/2023/11/2019_Childrens_Mental_Health_Report_Full.pdf",
+    "https://childmind.org/article/media-guidelines-for-kids-of-all-ages/",
+    "https://adaa.org/living-with-anxiety/personal-stories/nina-short-film-anxiety",
+    "https://cronkite.asu.edu/ncdj/disability-language-style-guide",
+    "https://neurolaunch.com/character-with-anxiety/",
+    "https://adata.org/factsheet/ADANN-writing",
+    "https://resources.finalsite.net/images/v1752151690/monroeedu/x1lcsvifp2mpg5jdi0nu/Style_Guide__for_Inclusive_Communication_Jan.pdf",
+    "https://myfcph.org/a-disability-language-style-guide",
+    "https://health.oregonstate.edu/marcomm/services/website/website-style-guide",
+    "https://filecache.mediaroom.com/mr5mr_usga2/185171/download/Disability%20Language%20Style%20Guide%20(National%20Center%20on%20Disability%20and%20Journalism)%20Key%20Points.pdf",
+    "https://languageplease.org/anxiety"
+  ],
+  "stage_timings_ms": {
+    "intake": 0,
+    "research": 4852,
+    "gate_white": 21667,
+    "art_direction": 1
+  }
+}

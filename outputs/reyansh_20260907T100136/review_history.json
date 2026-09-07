@@ -1,0 +1,101 @@
+[
+  {
+    "verdict": "PASS",
+    "iteration": 1,
+    "revision_colour": "White",
+    "deterministic": [
+      {
+        "rule_id": "HF2",
+        "result": "pass",
+        "evidence": "A display case sits against the wall. Inside, a tiny, glittering stamp shines. The Golden Beetle Stamp. It is the color of deep purple #5B4B8A and gold.",
+        "note": "no avoid-list match in action lines"
+      },
+      {
+        "rule_id": "SC-NAMED",
+        "result": "pass",
+        "evidence": "REYANSH (10) stands in front of the glass. He is a South Asian boy. His hair is swept to one side. He wears a navy tracksuit top with white piping. A purple hearing aid, color #5B4B8A, sits behind his left ear. Reyansh is a deaf boy who has profound bilateral hearing loss. He looks at the stamp with intense focus.",
+        "note": "found \"deaf\""
+      },
+      {
+        "rule_id": "SC-LENGTH",
+        "result": "fail",
+        "evidence": "INT. SCHOOL HALLWAY - DAY",
+        "note": "1101 words, ~9 pages"
+      },
+      {
+        "rule_id": "SC-BEATS",
+        "result": "pass",
+        "evidence": "The thieves are apprehended, and Mrs. Gable rewards Reyansh with the real Golden Beetle Stamp for his incredible observation.",
+        "note": "every beat carries the trait"
+      }
+    ],
+    "model_scored": [
+      {
+        "rule_id": "HF1",
+        "result": "pass",
+        "evidence": "He is still the same deaf boy, with his navy tracksuit and his purple hearing aid. He did not need to hear a single word to catch the thief.",
+        "note": "The character's deafness is present and unchanged in the final scene, and it is not framed as something to be cured or overcome."
+      },
+      {
+        "rule_id": "HF3",
+        "result": "pass",
+        "evidence": "He snaps it open and closed. East, West, North, South. He wants that stamp.",
+        "note": "Reyansh has his own desires and interiority independent of teaching others a lesson."
+      },
+      {
+        "rule_id": "MD1",
+        "result": "pass",
+        "evidence": "Captions appear on screen for all spoken dialogue.",
+        "note": "The script explicitly includes captions and visual communication methods in the action lines."
+      },
+      {
+        "rule_id": "MD2",
+        "result": "pass",
+        "evidence": "Reyansh is a deaf boy who has profound bilateral hearing loss.",
+        "note": "The word 'deaf' is used strictly as an adjective in the character description."
+      },
+      {
+        "rule_id": "MD3",
+        "result": "pass",
+        "evidence": "Reyansh is a deaf boy who has profound bilateral hearing loss.",
+        "note": "The script correctly uses lowercase 'deaf' to refer to his audiological status."
+      },
+      {
+        "rule_id": "MD4",
+        "result": "pass",
+        "evidence": "He is still the same deaf boy, with his navy tracksuit and his purple hearing aid. He did not need to hear a single word to catch the thief.",
+        "note": "The character's deafness remains a permanent trait and is not cured by the end of the story."
+      },
+      {
+        "rule_id": "MN1",
+        "result": "pass",
+        "evidence": "He is still the same deaf boy, with his navy tracksuit and his purple hearing aid. He did not need to hear a single word to catch the thief.",
+        "note": "There are no scenes where the character undergoes a procedure or event to cure his deafness."
+      },
+      {
+        "rule_id": "MN2",
+        "result": "pass",
+        "evidence": "Reyansh is a deaf boy who has profound bilateral hearing loss.",
+        "note": "The script avoids pity-inducing phrases like 'suffers from' or 'afflicted with'."
+      },
+      {
+        "rule_id": "MN3",
+        "result": "pass",
+        "evidence": "ROHAN (10), a non-disabled classmate, runs up and taps Reyansh on the shoulder.",
+        "note": "Characters without disabilities are described as 'non-disabled' rather than 'normal' or 'able-bodied'."
+      },
+      {
+        "rule_id": "MN4",
+        "result": "pass",
+        "evidence": "Reyansh is a deaf boy who has profound bilateral hearing loss.",
+        "note": "The script does not use 'deaf' as a standalone noun to refer to the character."
+      }
+    ],
+    "hard_failures": [],
+    "soft_notes": [
+      "SC-LENGTH: 1101 words, ~9 pages"
+    ],
+    "revision_instructions": [],
+    "evidence_unverified": []
+  }
+]
