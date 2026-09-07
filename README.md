@@ -1,12 +1,12 @@
 # Hidden Force Studio
 
-A deterministic six-stage pipeline that turns a character bible for a neurodivergent or disabled child hero into an animated short's pre-production package: logline, beat sheet, screenplay in Fountain, locked character sheet, shot list, and an audit manifest. Between drafting and packaging sits a gate that scores the draft against a rubric compiled from live, cited advocacy sources, and refuses to ship a draft that fails.
+A deterministic pipeline that turns a character bible for a neurodivergent or disabled child hero into an animated short: a storyboard, a screenplay in Fountain, a beat sheet, a locked character sheet with a shot list, an audit manifest, and on request a 60-second film cut from Veo clips. Between drafting and packaging sits a gate that scores the draft against a rubric compiled from live, cited advocacy sources, and refuses to ship a draft that fails.
 
 Built for the Agentic Cinema hackathon, Parallel track. The first user is the builder: the six Hidden Force characters are my own, and this is the tool I wanted for producing them.
 
 It is not a replacement for a community sensitivity reader. It is the pre-read that catches the obvious failures so the paid human read is the last pass instead of the first. The gate never says "approved". It reports findings with evidence, and a person decides.
 
-**Live:** https://hidden-force-studio-gdxyknxydq-uc.a.run.app (Cloud Run, scales to zero, so the first load takes a few seconds). Pick a bible, watch the stages, read the gate's evidence. A run takes two to four minutes. Finished runs on the current instance are listed under "Recent runs".
+**Live:** https://hidden-force-studio-gdxyknxydq-uc.a.run.app (Cloud Run, scales to zero, so the first load takes a few seconds). Every finished run is listed on the page: open one to see the storyboard, the film if one has been rendered, the script, and the review with its evidence. Or pick a bible and watch a new run happen; it takes three to four minutes.
 
 ## Architecture
 
@@ -22,7 +22,11 @@ One ADK `SequentialAgent` runs the stages in fixed order. Stages 3 and 4 sit ins
 | 3 story | beat sheet and Fountain screenplay under the rubric | gemini-3.5-flash |
 | 4 gate | deterministic checks, model scores with verbatim evidence, verdict | code + gemini-3.1-pro-preview, t=0 |
 | 5 art direction | locked description, sha256, one prompt per shot | gemini-3.1-pro-preview for the paragraph, code for the rest |
-| 6 package | seven files to `outputs/` and Cloud Storage, run manifest | code |
+| 5 storyboard | one still per shot, each prompt starting with the locked description | gemini-3.1-flash-image, three at a time |
+| 6 package | the files below to `outputs/` and Cloud Storage, run manifest | code |
+| 7 film, on request | eight evenly spaced shots as eight-second Veo clips, cut together with ffmpeg | veo-3.1-generate-001 |
+
+Stage 7 is a button on a passing run rather than part of every run, because eight Veo clips cost real money. Progress is written to `animatic/render.json` and the result to `animatic/animatic.mp4` in the run folder.
 
 ## The gate
 
@@ -51,7 +55,7 @@ This mode exists because the constrained drafter is good at its job. The first r
 - [`hfs-api/src/agent.ts:27`](hfs-api/src/agent.ts#L27), [`:38`](hfs-api/src/agent.ts#L38), [`:49`](hfs-api/src/agent.ts#L49): the three `LlmAgent`s. [`:60`](hfs-api/src/agent.ts#L60) the `LoopAgent`, [`:67`](hfs-api/src/agent.ts#L67) the root `SequentialAgent`. `@google/adk` 2.0 is the JavaScript form of `google-adk`, Google Cloud's Agent Development Kit.
 - [`hfs-api/src/clients/adk-model.ts:9`](hfs-api/src/clients/adk-model.ts#L9): the Gemini model class the agents run on, Vertex AI backend, with a timeout and retry policy.
 - [`hfs-api/src/clients/gemini.ts:17`](hfs-api/src/clients/gemini.ts#L17) and [`:29`](hfs-api/src/clients/gemini.ts#L29): a direct structured `generateContent` call on Vertex AI via `@google/genai`, used by the gate.
-- [`hfs-api/src/agents/package.ts:102`](hfs-api/src/agents/package.ts#L102): Cloud Storage upload of every run.
+- [`hfs-api/src/clients/media.ts`](hfs-api/src/clients/media.ts): stills from `gemini-3.1-flash-image` and clips from `veo-3.1-generate-001`, both on Vertex AI, and Cloud Storage writes for every run file.
 - Hosting: Cloud Run, built by Cloud Build from the [Dockerfile](Dockerfile).
 
 ## Where Parallel is called
@@ -89,7 +93,7 @@ Gemini 3.x model ids are served from the `global` location on Vertex, not from a
 
 ## Committed runs
 
-Every folder under [`outputs/`](outputs/) is a real run, unedited. Each has `portrayal_rubric.json`, `review_history.json`, `run_manifest.json`, `beat_sheet.md`, and either `screenplay.fountain` with `art_brief.json` and `one_sheet.md`, or `screenplay.rejected.fountain` after a HALT.
+Every folder under [`outputs/`](outputs/) is a real run, unedited. Each has `portrayal_rubric.json`, `review_history.json`, `run_manifest.json`, `beat_sheet.md`, and either `screenplay.fountain` with `art_brief.json`, `one_sheet.md`, `storyboard.json` and twelve frames under `storyboard/`, or `screenplay.rejected.fountain` after a HALT. Films live in the bucket and play from the live page; they are too large to commit.
 
 | Run | Verdict | Drafts | What to look at |
 |---|---|---|---|
@@ -106,7 +110,8 @@ Every folder under [`outputs/`](outputs/) is a real run, unedited. Each has `por
 
 - HF1 and HF3 are model judgements. Mitigated by a separate review model at temperature zero and verbatim evidence, not eliminated.
 - Rubric quality depends on what Parallel returns. Both source pools are visible so a human can judge.
-- The consistency hash proves the locked paragraph never changed. There are no images in the core pipeline.
+- The consistency hash proves the locked paragraph never changed. The storyboard and the film start every prompt from that paragraph, which keeps the design close across shots but does not guarantee it; the image and video models are not checked by the gate.
+- The gate judged the adversarial Maya's Blue draft a pass because she is in her chair in the final scene, as the rule says. In that draft she climbs the flood ledge in engineered leg braces first. A community reader might call that the exoskeleton version of the cure trope. The rule is narrow on purpose, and this is exactly why the human read stays the last pass.
 - The gate can over-refuse. That is the direction to err in.
 - Run state is in memory on Cloud Run. A restart loses the live timeline. Every run is also written to disk and to the bucket.
 - Six characters, six traits, one age band, English only. Nothing here has been tested outside that.

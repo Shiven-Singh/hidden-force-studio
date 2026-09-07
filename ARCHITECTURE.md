@@ -18,7 +18,9 @@ bible JSON
    v
 [5] lock_character  LlmAgent         Gemini, t=0 -> locked description
     art_direction   BaseAgent        hash + shot prompts, code only
+    storyboard      BaseAgent        one still per shot, gemini-3.1-flash-image, 3 at a time
 [6] package         BaseAgent        outputs/<name>_<ts>/, GCS copy, run manifest
+[7] render          on request       8 Veo 3.1 clips -> ffmpeg -> animatic/animatic.mp4
 ```
 
 Stages 5 and 6 read `review.verdict` first. On anything other than PASS, art direction is skipped and package writes the rubric, the review history, the rejected draft, and a manifest that says HALT.
@@ -30,7 +32,8 @@ Stages 5 and 6 read `review.verdict` first. On anything other than PASS, art dir
 | Google Cloud Agent Builder, ADK for JavaScript (`@google/adk`) | `hfs-api/src/agent.ts` | `LlmAgent`, `LoopAgent`, `SequentialAgent` composition |
 | Gemini on Vertex AI (`@google/genai`) | `hfs-api/src/clients/gemini.ts` | direct structured call from the gate |
 | Parallel Search API (`parallel-web`) | `hfs-api/src/clients/parallel.ts` | two searches per run, results stored verbatim |
-| Cloud Storage | `hfs-api/src/agents/package.ts` | run outputs copied to `OUTPUT_BUCKET` |
+| Gemini image model and Veo on Vertex AI | `hfs-api/src/clients/media.ts` | storyboard stills, film clips |
+| Cloud Storage | `hfs-api/src/clients/media.ts` | every run file copied to `OUTPUT_BUCKET` |
 
 ## Runtime
 

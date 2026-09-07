@@ -32,6 +32,7 @@ for (;;) {
   let r;
   try {
     r = await (await fetch(`${base}/api/runs/${run_id}`, { signal: AbortSignal.timeout(20_000) })).json();
+    if (!r || !r.status || !Array.isArray(r.review_history)) throw new Error(`unexpected answer: ${JSON.stringify(r).slice(0, 120)}`);
     failures = 0;
   } catch (err) {
     // The run continues server-side; a dropped poll is not a failed run.

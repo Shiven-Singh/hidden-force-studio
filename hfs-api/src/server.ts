@@ -13,7 +13,7 @@ import { Storage } from '@google-cloud/storage';
 import { ArtBrief, CharacterBible, STAGES, type RunManifest } from '@hfs/schemas';
 import { rootAgent } from './agent.js';
 import { RUN_INACTIVITY_MS } from './clients/http.js';
-import { CLIP_MODEL, CLIP_SECONDS, STYLE, concatClips, generateClip, mapLimit, readRunFile, saveRunFile } from './clients/media.js';
+import { CLIP_MODEL, CLIP_SECONDS, STYLE, concatClips, drawStoryboard, generateClip, mapLimit, readRunFile, saveRunFile, type Storyboard } from './clients/media.js';
 import { localRunDir } from './output-folder.js';
 
 const here = path.dirname(fileURLToPath(import.meta.url));
@@ -106,7 +106,7 @@ async function listArchived(): Promise<ArchivedSummary[]> {
       if (idx < 1) continue;
       const id = f.name.slice(0, idx);
       const name = f.name.slice(idx + 1);
-      if (name && RUN_ID.test(id)) folders.set(id, [...(folders.get(id) ?? []), name]);
+      if (name && RUN_ID.test(id) && !id.startsWith('_')) folders.set(id, [...(folders.get(id) ?? []), name]);
     }
   } else {
     for (const id of await readdir(OUTPUT_DIR).catch(() => [] as string[])) {
@@ -212,6 +212,30 @@ const sessions = new InMemorySessionService();
 const runner = new Runner({ appName: APP_NAME, agent: rootAgent, sessionService: sessions });
 const RUNS = new Map<string, Run>();
 
+/**
+ * A snapshot of a live run's status in the bucket, so a poll that lands after
+ * a restart (or on another instance) can still answer instead of 404ing.
+ */
+async function snapshot(runId: string, run: Run): Promise<void> {
+  if (!storage || !BUCKET) return;
+  const body = JSON.stringify({
+    run_id: runId, status: run.status, current: run.current, character: run.character,
+    started_at: run.startedAt, folder: run.state['output_folder'] ?? null, error: run.error ?? null,
+    events: run.events, updated_at: Date.now(),
+  });
+  await storage.bucket(BUCKET).file(`_runs/${runId}.json`).save(body, { contentType: 'application/json' }).catch(() => undefined);
+}
+
+async function readSnapshot(runId: string): Promise<Record<string, unknown> | undefined> {
+  if (!storage || !BUCKET || !/^[a-z0-9-]+$/i.test(runId)) return undefined;
+  try {
+    const [buf] = await storage.bucket(BUCKET).file(`_runs/${runId}.json`).download();
+    return JSON.parse(buf.toString('utf8')) as Record<string, unknown>;
+  } catch {
+    return undefined;
+  }
+}
+
 async function execute(runId: string, bible: CharacterBible): Promise<void> {
   const run = RUNS.get(runId)!;
   try {
@@ -249,6 +273,7 @@ async function execute(runId: string, bible: CharacterBible): Promise<void> {
       }
       const delta = ev.actions?.stateDelta;
       if (delta) Object.assign(run.state, delta);
+      void snapshot(runId, run);
       // A failed model call arrives as an event, not an exception, and ADK moves on
       // to the next stage with nothing in state. Stop here and say what happened.
       if (ev.errorCode || ev.errorMessage) {
@@ -260,7 +285,9 @@ async function execute(runId: string, bible: CharacterBible): Promise<void> {
   } catch (err) {
     run.status = 'error';
     run.error = err instanceof Error ? err.message : String(err);
+    console.error(`run ${runId} failed at ${run.current ?? 'start'}: ${run.error}`);
   }
+  await snapshot(runId, run);
 }
 
 app.get('/api/health', (_req, res) => res.json({ ok: true }));
@@ -289,6 +316,41 @@ app.get('/api/runs', async (_req, res) => {
   const live = [...RUNS.entries()].map(([id, r]) => ({ id, status: r.status, character: r.character, started_at: r.startedAt, live: true }));
   const archived = (await listArchived()).map((r) => ({ id: r.id, status: r.status, character: r.character, verdict: r.verdict, started_at: r.started_at, live: false }));
   res.json([...archived, ...live]);
+});
+
+/** Redraw the frames a finished run's storyboard is missing. Idempotent; sequential; safe to call twice. */
+const REDRAWING = new Set<string>();
+app.post('/api/runs/:id/storyboard', async (req, res) => {
+  const id = req.params.id as string;
+  if (!RUN_ID.test(id) || id.startsWith('_')) {
+    res.status(404).json({ error: 'no such run' });
+    return;
+  }
+  const briefRaw = await readRunFile(id, 'art_brief.json');
+  if (!briefRaw) {
+    res.status(400).json({ error: 'only a passing run has an art brief to draw from' });
+    return;
+  }
+  if (REDRAWING.has(id)) {
+    res.status(202).json({ status: 'drawing' });
+    return;
+  }
+  const brief = ArtBrief.parse(JSON.parse(briefRaw.toString('utf8')));
+  const existingRaw = await readRunFile(id, 'storyboard.json');
+  const existing = existingRaw ? (JSON.parse(existingRaw.toString('utf8')) as Storyboard) : undefined;
+  const missing = brief.shots.filter((s) => !existing?.frames.some((f) => f.shot === s.number && !f.error)).length;
+  if (missing === 0) {
+    res.json({ status: 'done', frames: brief.shots.length });
+    return;
+  }
+  REDRAWING.add(id);
+  drawStoryboard(id, brief.shots, brief.shots[0]?.palette ?? [], existing)
+    .catch((err) => console.error(`storyboard ${id} failed: ${err instanceof Error ? err.message : String(err)}`))
+    .finally(() => {
+      REDRAWING.delete(id);
+      archiveCache = undefined;
+    });
+  res.status(202).json({ status: 'drawing', missing });
 });
 
 app.post('/api/runs/:id/render', async (req, res) => {
@@ -351,11 +413,32 @@ app.get(['/api/runs/:id/files/:name', '/api/runs/:id/files/:dir/:name'], async (
 });
 
 app.get('/api/runs/:id', async (req, res) => {
-  const run = RUNS.get(req.params.id as string);
+  const id = req.params.id as string;
+  const run = RUNS.get(id);
   if (!run) {
-    const view = await archivedView(req.params.id as string);
-    if (view) res.json(view);
-    else res.status(404).json({ error: 'no such run' });
+    const view = await archivedView(id);
+    if (view) {
+      res.json(view);
+      return;
+    }
+    // Not in memory and not archived: maybe a live run from a previous instance.
+    const snap = await readSnapshot(id);
+    if (snap) {
+      const folder = typeof snap['folder'] === 'string' ? (snap['folder'] as string) : undefined;
+      const archived = folder ? await archivedView(folder) : undefined;
+      if (archived) {
+        res.json({ ...archived, status: snap['status'] === 'error' ? 'error' : archived.status, error: snap['error'] ?? undefined });
+      } else {
+        res.json({
+          status: snap['status'] === 'running' ? 'error' : snap['status'],
+          error: snap['error'] ?? (snap['status'] === 'running' ? 'the instance running this job restarted before it finished' : undefined),
+          character: snap['character'], current: snap['current'], folder, stages: STAGES,
+          events: snap['events'] ?? [], review_history: [],
+        });
+      }
+      return;
+    }
+    res.status(404).json({ error: 'no such run' });
     return;
   }
   const s = run.state;

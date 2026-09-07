@@ -20,8 +20,13 @@ const run = promisify(execFile);
 const ffmpegPath = createRequire(import.meta.url)('ffmpeg-static') as string | null;
 
 export const STILL_MODEL = process.env.STILL_MODEL ?? 'gemini-3.1-flash-image';
+/** A second image model with its own quota, used when the first is rate-limited. */
+export const STILL_FALLBACK_MODEL = process.env.STILL_FALLBACK_MODEL ?? 'gemini-2.5-flash-image';
 export const CLIP_MODEL = process.env.CLIP_MODEL ?? 'veo-3.1-generate-001';
 export const CLIP_SECONDS = 8;
+
+const sleep = (ms: number) => new Promise((r) => setTimeout(r, ms));
+const isRateLimit = (err: unknown): boolean => /429|RESOURCE_EXHAUSTED|exhausted/i.test(err instanceof Error ? err.message : String(err));
 
 /** One sentence that keeps every still and clip in the same visual world. */
 export const STYLE =
@@ -34,19 +39,37 @@ let clipClient: GoogleGenAI | undefined;
 const stills = () => (stillClient ??= new GoogleGenAI({ vertexai: true, project, location: 'global' }));
 const clips = () => (clipClient ??= new GoogleGenAI({ vertexai: true, project, location: 'us-central1' }));
 
-/** A PNG of one shot. Throws if the model returned no image. */
-export async function generateStill(prompt: string): Promise<Buffer> {
+async function stillOnce(model: string, prompt: string): Promise<Buffer> {
   const res = await stills().models.generateContent({
-    model: STILL_MODEL,
+    model,
     contents: prompt,
-    config: {
-      responseModalities: ['IMAGE', 'TEXT'] as never,
-      httpOptions: { timeout: 120_000, retryOptions: { attempts: 3, httpStatusCodes: [408, 429, 500, 502, 503, 504] } },
-    },
+    config: { responseModalities: ['IMAGE', 'TEXT'] as never, httpOptions: { timeout: 120_000 } },
   });
   const part = res.candidates?.[0]?.content?.parts?.find((p) => p.inlineData?.data);
   if (!part?.inlineData?.data) throw new Error(`no image returned: ${(res.text ?? '').slice(0, 120)}`);
   return Buffer.from(part.inlineData.data, 'base64');
+}
+
+/**
+ * A PNG of one shot. Image quotas on a fresh project are a few requests a
+ * minute, so a 429 waits and retries with growing pauses, and after two the
+ * fallback model, which has its own quota, takes over. Returns the model used.
+ */
+export async function generateStill(prompt: string): Promise<{ png: Buffer; model: string }> {
+  const waits = [8_000, 16_000, 32_000, 48_000, 64_000];
+  let model = STILL_MODEL;
+  let lastErr: unknown;
+  for (let attempt = 0; attempt <= waits.length; attempt++) {
+    try {
+      return { png: await stillOnce(model, prompt), model };
+    } catch (err) {
+      lastErr = err;
+      if (!isRateLimit(err)) throw err;
+      if (attempt >= 1 && model === STILL_MODEL) model = STILL_FALLBACK_MODEL;
+      if (attempt < waits.length) await sleep(waits[attempt]!);
+    }
+  }
+  throw lastErr instanceof Error ? lastErr : new Error(String(lastErr));
 }
 
 /** An MP4 of one eight-second shot, with Veo's own sound. Polls until done. */
@@ -134,6 +157,62 @@ export async function readRunFile(folder: string, relPath: string): Promise<Buff
   } catch {
     return undefined;
   }
+}
+
+export interface StoryboardFrame {
+  shot: number;
+  beat: number;
+  file: string;
+  prompt: string;
+  model?: string;
+  error?: string;
+}
+
+export interface Storyboard {
+  model: string;
+  style: string;
+  frames: StoryboardFrame[];
+}
+
+/**
+ * Draw the frames a storyboard is missing. Sequential, with a pause between
+ * calls, because that is what the image quota allows. Frames that already
+ * succeeded are kept; frames that failed before are retried.
+ */
+export async function drawStoryboard(
+  folder: string,
+  shots: Array<{ number: number; beat: number; prompt: string }>,
+  palette: string[],
+  existing?: Storyboard,
+  onFrame?: (done: number, total: number) => void,
+): Promise<Storyboard> {
+  const keep = new Map((existing?.frames ?? []).filter((f) => !f.error).map((f) => [f.shot, f]));
+  const frames: StoryboardFrame[] = [];
+  let done = 0;
+  for (const shot of shots) {
+    const file = `storyboard/shot_${String(shot.number).padStart(2, '0')}.jpg`;
+    const prompt = `${STYLE} ${shot.prompt} Colour palette: ${palette.join(', ')}.`;
+    const kept = keep.get(shot.number);
+    if (kept) {
+      frames.push(kept);
+    } else {
+      try {
+        const { png, model } = await generateStill(prompt);
+        const local = path.join(localRunDir(folder), file);
+        await toJpeg(png, local);
+        await saveRunFile(folder, file, await readFile(local), 'image/jpeg');
+        frames.push({ shot: shot.number, beat: shot.beat, file, prompt, model });
+      } catch (err) {
+        frames.push({ shot: shot.number, beat: shot.beat, file, prompt, error: err instanceof Error ? err.message.slice(0, 200) : String(err) });
+      }
+      await sleep(4_000);
+    }
+    done += 1;
+    onFrame?.(done, shots.length);
+  }
+  const board: Storyboard = { model: STILL_MODEL, style: STYLE, frames };
+  await saveRunFile(folder, 'storyboard.json', JSON.stringify(board, null, 2), 'application/json');
+  return board;
 }
 
 /** Run `n` async jobs at a time. Order of results matches order of inputs. */

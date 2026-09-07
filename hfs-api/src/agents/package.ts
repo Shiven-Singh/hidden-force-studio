@@ -14,7 +14,7 @@ import {
 import { DRAFT_MODEL, REVIEW_MODEL } from '../clients/gemini.js';
 import { saveRunFile } from '../clients/media.js';
 import { localRunDir } from '../output-folder.js';
-import type { StoryboardFrame } from './storyboard.js';
+import type { Storyboard } from '../clients/media.js';
 
 const require = createRequire(import.meta.url);
 
@@ -54,7 +54,7 @@ export class PackageAgent extends PipelineAgent {
     const runId = String(st['run_id'] ?? 'unknown');
     const folder = String(st['output_folder']);
     const outDir = localRunDir(folder);
-    const storyboard = st['storyboard'] as { model: string; style: string; frames: StoryboardFrame[] } | undefined;
+    const storyboard = st['storyboard'] as Storyboard | undefined;
 
     const files: Record<string, string> = {
       'portrayal_rubric.json': JSON.stringify(rubric, null, 2),
@@ -88,7 +88,7 @@ export class PackageAgent extends PipelineAgent {
       stage_timings_ms: (st['stage_timings_ms'] as Record<string, number> | undefined) ?? {},
     });
     files['run_manifest.json'] = JSON.stringify(manifest, null, 2);
-    if (storyboard) files['storyboard.json'] = JSON.stringify(storyboard, null, 2);
+    // storyboard.json is written by drawStoryboard itself; listed here so the package knows about it.
 
     await Promise.all(
       Object.entries(files).map(([name, body]) =>
@@ -96,9 +96,10 @@ export class PackageAgent extends PipelineAgent {
     );
 
     const frameFiles = storyboard?.frames.filter((f) => !f.error).map((f) => f.file) ?? [];
+    const listed = [...Object.keys(files), ...(storyboard ? ['storyboard.json'] : [])].sort();
     const delta: Record<string, unknown> = {
       manifest,
-      package: { folder, local_dir: outDir, files: [...Object.keys(files).sort(), ...frameFiles], bucket: process.env.OUTPUT_BUCKET ?? null },
+      package: { folder, local_dir: outDir, files: [...listed, ...frameFiles], bucket: process.env.OUTPUT_BUCKET ?? null },
     };
     Object.assign(st, delta);
     yield createEvent({ author: this.name, actions: { stateDelta: delta } });
