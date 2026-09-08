@@ -40,7 +40,7 @@ Plus every must-not-do rule the rubric compiled from the sources, and soft notes
 
 Every model score must quote a line that exists verbatim in the script, checked by exact match after normalizing quotes and whitespace. A quote that does not exist turns the score to "unclear", and "unclear" fails a hard rule. The gate fails closed. Two revisions maximum, then HALT: stage 5 refuses to run and stage 6 writes the rubric, the review history, the rejected draft and a manifest that says why.
 
-Across the eight committed runs there are zero unverified quotes and zero "unclear" scores.
+Across the nine committed runs there are zero unverified quotes and zero "unclear" scores.
 
 ### Adversarial mode
 
@@ -52,7 +52,7 @@ This mode exists because the constrained drafter is good at its job. The first r
 
 ## Where Google Cloud is called
 
-- [`hfs-api/src/agent.ts:27`](hfs-api/src/agent.ts#L27), [`:38`](hfs-api/src/agent.ts#L38), [`:49`](hfs-api/src/agent.ts#L49): the three `LlmAgent`s. [`:60`](hfs-api/src/agent.ts#L60) the `LoopAgent`, [`:67`](hfs-api/src/agent.ts#L67) the root `SequentialAgent`. `@google/adk` 2.0 is the JavaScript form of `google-adk`, Google Cloud's Agent Development Kit.
+- [`hfs-api/src/agent.ts:28`](hfs-api/src/agent.ts#L28), [`:39`](hfs-api/src/agent.ts#L39), [`:50`](hfs-api/src/agent.ts#L50): the three `LlmAgent`s. [`:61`](hfs-api/src/agent.ts#L61) the `LoopAgent`, [`:68`](hfs-api/src/agent.ts#L68) the root `SequentialAgent`. `@google/adk` 2.0 is the JavaScript form of `google-adk`, Google Cloud's Agent Development Kit.
 - [`hfs-api/src/clients/adk-model.ts:9`](hfs-api/src/clients/adk-model.ts#L9): the Gemini model class the agents run on, Vertex AI backend, with a timeout and retry policy.
 - [`hfs-api/src/clients/gemini.ts:17`](hfs-api/src/clients/gemini.ts#L17) and [`:29`](hfs-api/src/clients/gemini.ts#L29): a direct structured `generateContent` call on Vertex AI via `@google/genai`, used by the gate.
 - [`hfs-api/src/clients/media.ts`](hfs-api/src/clients/media.ts): stills from `gemini-3.1-flash-image` and clips from `veo-3.1-generate-001`, both on Vertex AI, and Cloud Storage writes for every run file.
@@ -60,7 +60,7 @@ This mode exists because the constrained drafter is good at its job. The first r
 
 ## Where Parallel is called
 
-- [`hfs-api/src/clients/parallel.ts:14`](hfs-api/src/clients/parallel.ts#L14) constructs the client, [`:30`](hfs-api/src/clients/parallel.ts#L30) calls `client.search()`. Two searches per run: one restricted with `source_policy.include_domains` to advocacy and style-guide domains for the trait, one open web. Results are stored verbatim with their pool label, shown in the UI, written to `portrayal_rubric.json`, and the `search_id`s go into `run_manifest.json`.
+- [`hfs-api/src/clients/parallel.ts:14`](hfs-api/src/clients/parallel.ts#L14) constructs the client, [`:55`](hfs-api/src/clients/parallel.ts#L55) calls `client.search()`. Two searches per run: one restricted with `source_policy.include_domains` to advocacy and style-guide domains for the trait, one open web. Results are stored verbatim with their pool label, shown in the UI, written to `portrayal_rubric.json`, and the `search_id`s go into `run_manifest.json`.
 
 The rubric model only ever sees the excerpts. The URLs are attached by code afterwards ([`hfs-api/src/agents/research.ts`](hfs-api/src/agents/research.ts)), so no citation passes through a model.
 
@@ -95,16 +95,19 @@ Gemini 3.x model ids are served from the `global` location on Vertex, not from a
 
 Every folder under [`outputs/`](outputs/) is a real run, unedited. Each has `portrayal_rubric.json`, `review_history.json`, `run_manifest.json`, `beat_sheet.md`, and either `screenplay.fountain` with `art_brief.json`, `one_sheet.md`, `storyboard.json` and twelve frames under `storyboard/`, or `screenplay.rejected.fountain` after a HALT. Films live in the bucket and play from the live page; they are too large to commit.
 
-| Run | Verdict | Drafts | What to look at |
-|---|---|---|---|
-| `zayan_*` | PASS | 1 | the rubric citing CHADD and the NCDJ style guide, the script ending "He still has ADHD" |
-| `aanya_*` | PASS | 1 | pattern-reading as the mechanism of resolution |
-| `kabir_*` | PASS | 1 | dyslexia named plainly, the map that only works when letters move |
-| `maya_*` | PASS | 1 | "I do not need to walk. I have wheels." |
-| `reyansh_*` | PASS | 1 | a deaf lead whose skill is reading faces |
-| `tara_*` | PASS | 1 | hypervigilance as the early-warning system |
-| `maya_adversarial_*` | PASS | 2 | White fails HF1 and HF3 with quoted evidence, Blue passes with the chair in the last scene |
-| `maya_adversarial_unguarded_*` | HALT | 3 | three refusals, the rejected draft, a manifest that says HALT |
+| Run | Short | Verdict | Drafts | What to look at |
+|---|---|---|---|---|
+| `zayan_20260907T201737` | Zayan and the Shifting School | PASS | 1 | the rubric citing CHADD and the NCDJ style guide; a narrated film on the live page |
+| `maya_adversarial_20260907T203300` | The Flow of Freedom | PASS | 2 | White fails on the walking line, quoted; Blue keeps the chair and passes; a film |
+| `aanya_20260908T001847` | The Rhythm of School Street | PASS | 1 | pattern-reading as the mechanism of resolution |
+| `aanya_20260907T204844` | The Rhythm of the Lights | HALT | 3 | a genuine refusal on a hero that was not rigged: three drafts gave an eight-year-old savant-level engineering skill, against a rule the rubric took from a real source |
+| `kabir_20260907T210431` | Kabir and the Golden Gear | PASS | 1 | dyslexia named plainly |
+| `maya_20260907T212016` | Maya and the Golden Casters | PASS | 1 | the chair as engineered tech, never a burden |
+| `reyansh_20260907T213606` | The Silent Fold | PASS | 1 | a deaf lead whose skill is reading faces |
+| `tara_20260907T215221` | The Radar in Her Chest | PASS | 1 | hypervigilance as the early-warning system |
+| `maya_adversarial_unguarded_20260907T220809` | The Way Forward | HALT | 3 | three refusals of a writer who keeps the cure ending, the rejected draft, a manifest that says HALT |
+
+The Aanya refusal is worth reading. My original premise seed for her invited the trope, the gate caught it three times, and she passed after the seed was rewritten. Both runs are committed.
 
 ## What this is not
 
