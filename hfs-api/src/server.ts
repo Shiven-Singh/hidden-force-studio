@@ -96,8 +96,21 @@ interface ArchivedSummary {
   status: 'done';
   character: string;
   verdict: string;
+  title?: string;
   started_at: number;
   files: string[];
+}
+
+/** What the chat needs to say about a script without shipping the whole thing. */
+function screenplaySummary(sp: { title: string; logline: string; beats: unknown[]; fountain?: string; page_estimate?: number } | undefined) {
+  if (!sp) return undefined;
+  return {
+    title: sp.title,
+    logline: sp.logline,
+    beats: sp.beats.length,
+    words: sp.fountain ? sp.fountain.split(/\s+/).filter(Boolean).length : undefined,
+    pages: sp.page_estimate,
+  };
 }
 
 let archiveCache: { at: number; runs: ArchivedSummary[] } | undefined;
@@ -124,7 +137,9 @@ async function listArchived(): Promise<ArchivedSummary[]> {
     const raw = await readArchivedFile(id, 'run_manifest.json');
     if (!raw) continue;
     const m = JSON.parse(raw) as RunManifest;
-    runs.push({ id, status: 'done', character: m.character, verdict: m.verdict, started_at: Date.parse(m.started_at), files: files.sort() });
+    const spRaw = files.includes('screenplay.json') ? await readArchivedFile(id, 'screenplay.json') : undefined;
+    const title = spRaw ? (JSON.parse(spRaw) as { title?: string }).title : undefined;
+    runs.push({ id, status: 'done', character: m.character, verdict: m.verdict, title, started_at: Date.parse(m.started_at), files: files.sort() });
   }
   runs.sort((a, b) => a.started_at - b.started_at);
   archiveCache = { at: Date.now(), runs };
@@ -142,7 +157,10 @@ async function archivedView(id: string) {
   const artBrief = await json('art_brief.json');
   const storyboard = await json('storyboard.json');
   const render = RENDER_STATUS.get(id) ?? (await json('animatic/render.json'));
+  const sp = (await json('screenplay.json')) as { title: string; logline: string; beats: unknown[]; page_estimate?: number } | undefined;
+  const fountain = (await readArchivedFile(id, 'screenplay.fountain')) ?? (await readArchivedFile(id, 'screenplay.rejected.fountain'));
   return {
+    screenplay: screenplaySummary(sp ? { ...sp, fountain } : undefined),
     status: 'done',
     archived: true,
     character: summary.character,
@@ -440,11 +458,12 @@ app.get('/api/runs', async (_req, res) => {
     return {
       id, status: r.status, character: r.character, started_at: r.startedAt, live: true,
       verdict: (r.state['review'] as { verdict?: string } | undefined)?.verdict,
+      title: (r.state['screenplay'] as { title?: string } | undefined)?.title,
       film: folder ? RENDER_STATUS.get(folder)?.status === 'done' : false,
     };
   });
   const archived = (await listArchived()).map((r) => ({
-    id: r.id, status: r.status, character: r.character, verdict: r.verdict, started_at: r.started_at, live: false,
+    id: r.id, status: r.status, character: r.character, verdict: r.verdict, title: r.title, started_at: r.started_at, live: false,
     film: r.files.includes('animatic/animatic.mp4'),
   }));
   res.json([...archived, ...live]);
@@ -581,6 +600,7 @@ app.get('/api/runs/:id', async (req, res) => {
     film_skipped: s['film_skipped'],
     stages: run.film ? [...STAGES, 'film'] : STAGES,
     events: run.events,
+    screenplay: screenplaySummary(s['screenplay'] as { title: string; logline: string; beats: unknown[]; fountain?: string; page_estimate?: number } | undefined),
     sources: s['sources'],
     rubric: s['rubric'],
     review: s['review'],
