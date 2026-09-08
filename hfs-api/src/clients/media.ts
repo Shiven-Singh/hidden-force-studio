@@ -153,8 +153,12 @@ export async function synthesizeNarration(text: string, outFile: string): Promis
         voice: { languageCode: 'en-US', name },
         audioConfig: { audioEncoding: 'MP3', speakingRate: 1.02 },
       }), 60_000, `speech for "${text.slice(0, 30)}"`);
+      // gRPC hands back bytes; the REST transport hands back base64 text. Both must land as MP3 bytes.
+      const audio = res.audioContent as unknown;
+      const bytes = typeof audio === 'string' ? Buffer.from(audio, 'base64') : Buffer.from(audio as Uint8Array);
+      if (bytes.length < 500) throw new Error(`speech returned ${bytes.length} bytes`);
       await mkdir(path.dirname(outFile), { recursive: true });
-      await writeFile(outFile, res.audioContent as Buffer);
+      await writeFile(outFile, bytes);
       return name;
     } catch (err) {
       lastErr = err;
@@ -173,32 +177,41 @@ export async function toJpeg(png: Buffer, outFile: string): Promise<void> {
   await mkdir(path.dirname(outFile), { recursive: true });
   const tmp = `${outFile}.png`;
   await writeFile(tmp, png);
-  await run(ffmpeg(), ['-y', '-loglevel', 'error', '-i', tmp, '-vf', 'scale=1280:-2', '-q:v', '4', outFile]);
+  await run(ffmpeg(), ['-y', '-nostdin', '-loglevel', 'error', '-i', tmp, '-vf', 'scale=1280:-2', '-q:v', '4', outFile]);
   await run('rm', ['-f', tmp]);
 }
 
+/**
+ * Does the clip carry an audio stream? ffmpeg with an input and no output exits
+ * non-zero after printing the stream list, so the answer lives in stderr. This
+ * uses the raw exec on purpose: the friendly `run` wrapper drops stderr.
+ */
 async function hasAudio(file: string): Promise<boolean> {
   try {
-    await run(ffmpeg(), ['-hide_banner', '-i', file]);
+    await execFileP(ffmpeg(), ['-hide_banner', '-nostdin', '-i', file]);
   } catch (err) {
     return /Audio:/.test(String((err as { stderr?: string }).stderr ?? ''));
   }
   return false;
 }
 
-/** Lay the narration over a clip, with the clip's own sound ducked underneath. */
+/**
+ * Lay the narration over a clip, with the clip's own sound ducked underneath.
+ * Every branch has a bounded duration: `apad` without a limit plus `-shortest`
+ * on a copied video stream is an encode that never ends.
+ */
 export async function mixNarration(clip: string, narration: string, outFile: string): Promise<void> {
-  const common = ['-map', '0:v', '-c:v', 'copy', '-c:a', 'aac', '-ar', '48000', '-b:a', '128k', outFile];
+  const common = ['-map', '0:v', '-c:v', 'copy', '-c:a', 'aac', '-ar', '48000', '-b:a', '128k', '-t', String(CLIP_SECONDS), outFile];
   if (await hasAudio(clip)) {
     await run(ffmpeg(), [
-      '-y', '-loglevel', 'error', '-i', clip, '-i', narration,
-      '-filter_complex', '[0:a]volume=0.28[bg];[1:a]adelay=450|450,apad[vo];[bg][vo]amix=inputs=2:duration=first:normalize=0[a]',
+      '-y', '-nostdin', '-loglevel', 'error', '-i', clip, '-i', narration,
+      '-filter_complex', `[0:a]volume=0.28[bg];[1:a]adelay=450|450,apad=whole_dur=${CLIP_SECONDS}[vo];[bg][vo]amix=inputs=2:duration=first:normalize=0[a]`,
       '-map', '[a]', ...common,
     ]);
   } else {
     await run(ffmpeg(), [
-      '-y', '-loglevel', 'error', '-i', clip, '-i', narration,
-      '-filter_complex', '[1:a]adelay=450|450,apad[a]', '-map', '[a]', '-shortest', ...common,
+      '-y', '-nostdin', '-loglevel', 'error', '-i', clip, '-i', narration,
+      '-filter_complex', `[1:a]adelay=450|450,apad=whole_dur=${CLIP_SECONDS}[a]`, '-map', '[a]', ...common,
     ]);
   }
 }
@@ -266,7 +279,7 @@ export async function textCard(headline: string, line: string, outFile: string, 
     videoInput = ['-f', 'lavfi', '-i', `color=c=0x1B1F26:s=1280x720:r=24:d=${seconds}`];
   }
   await run(ffmpeg(), [
-    '-y', '-loglevel', 'error',
+    '-y', '-nostdin', '-loglevel', 'error',
     ...videoInput,
     '-f', 'lavfi', '-i', 'anullsrc=r=48000:cl=stereo',
     '-t', String(seconds), '-vf', 'scale=1280:720,format=yuv420p',
@@ -285,7 +298,7 @@ export async function concatFilm(parts: string[], outFile: string): Promise<void
     `[${i}:a]aformat=sample_rates=48000:channel_layouts=stereo[a${i}]`).join(';');
   const cat = parts.map((_, i) => `[v${i}][a${i}]`).join('') + `concat=n=${parts.length}:v=1:a=1[v][a]`;
   await run(ffmpeg(), [
-    '-y', '-loglevel', 'error', ...inputs,
+    '-y', '-nostdin', '-loglevel', 'error', ...inputs,
     '-filter_complex', `${pre};${cat}`, '-map', '[v]', '-map', '[a]',
     '-c:v', 'libx264', '-preset', 'veryfast', '-crf', '24', '-pix_fmt', 'yuv420p',
     '-c:a', 'aac', '-b:a', '128k', '-movflags', '+faststart', outFile,
