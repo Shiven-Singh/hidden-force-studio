@@ -28,7 +28,7 @@
       "beat": 4,
       "file": "storyboard/shot_04.jpg",
       "prompt": "Stylized 3D animation in the look of a modern family feature film, soft rounded character design, consistent character design across shots, not photorealistic, 16:9 film frame, no text, no captions, no watermark. Kabir is a ten-year-old South Asian boy with a slender build, warm brown skin, and short cropped black hair. His face features dark eyes and a straight nose. He wears a #3F7D4E green bomber jacket over a #F2E8CF off-white tee, paired with tan cargo shorts and gray sneakers. A canvas satchel covered in colorful embroidered patches hangs across his chest. In his hands, he holds a wooden folding ruler with brass joints. At rest, he stands with his weight shifted slightly forward, his fingers resting on the brass joints of his folded ruler. Scene: During recess, Kabir and his friend Leo study the blueprint. Leo sees only a messy, overlapping set of misaligned letters and lines. Setting: EXT. SCHOOL COURTYARD - DAY. Camera: over the shoulder. Light: warm interior light. Palette: #3F7D4E, #F2E8CF. Avoid: no pity framing; not seated apart from the group; no medical setting; no photorealism; no floating text or glowing letters; no missing patches on the satchel; no long hair. Color palette: #3F7D4E, #F2E8CF.",
-      "error": "{\"error\":{\"code\":504,\"message\":\"Deadline expired before operation could complete.\",\"status\":\"DEADLINE_EXCEEDED\"}}"
+      "model": "gemini-3.1-flash-image"
     },
     {
       "shot": 5,
