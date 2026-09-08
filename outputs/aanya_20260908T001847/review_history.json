@@ -1,0 +1,99 @@
+[
+  {
+    "verdict": "PASS",
+    "iteration": 1,
+    "revision_colour": "White",
+    "deterministic": [
+      {
+        "rule_id": "HF2",
+        "result": "pass",
+        "evidence": "The bedroom is quiet. It is a sanctuary of order.",
+        "note": "no avoid-list match in action lines"
+      },
+      {
+        "rule_id": "SC-NAMED",
+        "result": "pass",
+        "evidence": "Aanya (8) sits at her desk. She is an autistic girl. She has straight black hair in a low braid. She wears a mustard yellow sweater. The sleeves are pulled warm over her hands. Her gray leggings are neat and comfortable.",
+        "note": "found \"autistic\""
+      },
+      {
+        "rule_id": "SC-LENGTH",
+        "result": "pass",
+        "evidence": "INT. AANYA'S BEDROOM - DAY",
+        "note": "2109 words, ~9 pages"
+      },
+      {
+        "rule_id": "SC-BEATS",
+        "result": "pass",
+        "evidence": "The town repairs the signals. Aanya returns to the park and finally records her perfect, uninterrupted fountain loop, proud of who she is.",
+        "note": "every beat carries the trait"
+      }
+    ],
+    "model_scored": [
+      {
+        "rule_id": "HF1",
+        "result": "pass",
+        "evidence": "She is a proud autistic girl, exactly as she was yesterday. She does not need to change. The world just needed to listen to her rhythm.",
+        "note": "Aanya's autism is explicitly present and unchanged in the final scene, and the narrative affirms that she does not need to be cured or changed."
+      },
+      {
+        "rule_id": "HF3",
+        "result": "pass",
+        "evidence": "She wants to record the park fountain. She wants sixty seconds of clean, uninterrupted water rhythm. It is her goal for the day.",
+        "note": "Aanya has her own personal goals, desires, and interiority that are completely independent of helping or teaching others."
+      },
+      {
+        "rule_id": "MD1",
+        "result": "pass",
+        "evidence": "If the light fails at 8:15 AM, the kids crossing School Street will be in danger. The cars drive very fast down the hill.",
+        "note": "Aanya demonstrates a strong moral compass, agency, and drive by taking it upon herself to protect her peers from the impending danger."
+      },
+      {
+        "rule_id": "MD2",
+        "result": "pass",
+        "evidence": "Aanya feels a spark of excitement. It is a pattern. It is a math puzzle waiting to be solved.",
+        "note": "The script highlights Aanya's strengths in pattern recognition and mathematical deduction in a positive and nuanced way."
+      },
+      {
+        "rule_id": "MD3",
+        "result": "pass",
+        "evidence": "Aanya (8) sits at her desk. She is an autistic girl. She has straight black hair in a low braid.",
+        "note": "Aanya is the central protagonist of the story, and the plot is entirely driven by her actions and experiences."
+      },
+      {
+        "rule_id": "MD4",
+        "result": "pass",
+        "evidence": "Aanya (8) sits at her desk. She is an autistic girl. She has straight black hair in a low braid.",
+        "note": "The script diversifies media representation by centering on an autistic girl rather than defaulting to the male genius stereotype."
+      },
+      {
+        "rule_id": "MN1",
+        "result": "pass",
+        "evidence": "Aanya opens her math book. She does not feel bad. She knows her math is correct. The adults just do not see the pattern yet.",
+        "note": "Aanya is portrayed as capable and self-assured, not as a burden to her family, friends, or community."
+      },
+      {
+        "rule_id": "MN2",
+        "result": "pass",
+        "evidence": "Aanya (8) sits at her desk. She is an autistic girl. She has straight black hair in a low braid.",
+        "note": "The action lines describe Aanya using humanizing language and do not rely on non-human or robotic comparisons."
+      },
+      {
+        "rule_id": "MN3",
+        "result": "pass",
+        "evidence": "She is a proud autistic girl, exactly as she was yesterday. She does not need to change. The world just needed to listen to her rhythm.",
+        "note": "The script uses empowering language and avoids any phrasing that implies pity, suffering, or a reduced quality of life."
+      },
+      {
+        "rule_id": "MN4",
+        "result": "pass",
+        "evidence": "She pulls out her notebook. She compares today's entry with yesterday's.",
+        "note": "Aanya's abilities are grounded in relatable strengths like observation, note-taking, and logical deduction rather than unrealistic savant magic."
+      }
+    ],
+    "hard_failures": [],
+    "soft_notes": [],
+    "revision_instructions": [],
+    "evidence_unverified": []
+  }
+]

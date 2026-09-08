@@ -1,0 +1,42 @@
+{
+  "run_id": "fa84d4a5-0ce",
+  "character": "Aanya",
+  "started_at": "2026-09-07T20:48:44.994Z",
+  "finished_at": "2026-09-07T20:52:05.193Z",
+  "verdict": "HALT",
+  "iterations": 3,
+  "models": {
+    "draft": "gemini-3.5-flash",
+    "review": "gemini-3.1-pro-preview",
+    "rubric": "gemini-3.1-pro-preview",
+    "lock": "gemini-3.1-pro-preview"
+  },
+  "adk_version": "2.0.0",
+  "parallel_search_ids": [
+    "search_45a8701556288415c6bfb2fe81c0da05",
+    "search_bacdfa0f0c44c23370a42041b518d2c1"
+  ],
+  "source_urls": [
+    "https://ncdj.org/style-guide/",
+    "https://ncdj.org/wp-content/uploads/2018/10/NCDJ-styleguide-2018.pdf",
+    "https://autisticadvocacy.org/wp-content/uploads/2016/06/whitepaper-Increasing-Neurodiversity-in-Disability-and-Social-Justice-Advocacy-Groups.pdf",
+    "https://community.autism.org.uk/f/adults-on-the-autistic-spectrum/1315/lisbeth-salander-the-portrayal-of-aspergers-in-the-millenium-trilogy-by-steig-larsson/8099",
+    "https://www.autism.org.uk/advice-and-guidance/stories/stories-from-the-spectrum-elle-mcnicoll",
+    "https://community.autism.org.uk/f/miscellaneous-and-chat/16673/recommendations-of-books-with-autistic-characters",
+    "https://autisticadvocacy.org/wp-content/uploads/2021/07/One-Idea-Per-Line.pdf",
+    "https://cronkite.asu.edu/ncdj/disability-language-style-guide",
+    "https://autisticnotweird.com/fiction/",
+    "https://blogs.thesteppingstonesgroup.com/en/autismservices/autism-in-media-positive-representation-for-children",
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC10576905",
+    "https://myfcph.org/a-disability-language-style-guide",
+    "https://consciousstyleguide.com/ability-disability",
+    "https://www.scholarsandstorytellers.com/blog/how-to-diversify-autism-representation-in-the-media-and-why-intersectionality-matters"
+  ],
+  "stage_timings_ms": {
+    "intake": 0,
+    "research": 5591,
+    "gate_white": 22457,
+    "gate_blue": 21607,
+    "gate_pink": 22201
+  }
+}

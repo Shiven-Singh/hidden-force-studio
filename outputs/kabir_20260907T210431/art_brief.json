@@ -1,0 +1,161 @@
+{
+  "character": {
+    "locked_description": "Kabir is a ten-year-old South Asian boy with a slender build, warm brown skin, and short cropped black hair. His face features dark eyes and a straight nose. He wears a #3F7D4E green bomber jacket over a #F2E8CF off-white tee, paired with tan cargo shorts and gray sneakers. A canvas satchel covered in colorful embroidered patches hangs across his chest. In his hands, he holds a wooden folding ruler with brass joints. At rest, he stands with his weight shifted slightly forward, his fingers resting on the brass joints of his folded ruler.",
+    "turnarounds": [
+      "Kabir is a ten-year-old South Asian boy with a slender build, warm brown skin, and short cropped black hair. His face features dark eyes and a straight nose. He wears a #3F7D4E green bomber jacket over a #F2E8CF off-white tee, paired with tan cargo shorts and gray sneakers. A canvas satchel covered in colorful embroidered patches hangs across his chest. In his hands, he holds a wooden folding ruler with brass joints. At rest, he stands with his weight shifted slightly forward, his fingers resting on the brass joints of his folded ruler. Turnaround view: front.",
+      "Kabir is a ten-year-old South Asian boy with a slender build, warm brown skin, and short cropped black hair. His face features dark eyes and a straight nose. He wears a #3F7D4E green bomber jacket over a #F2E8CF off-white tee, paired with tan cargo shorts and gray sneakers. A canvas satchel covered in colorful embroidered patches hangs across his chest. In his hands, he holds a wooden folding ruler with brass joints. At rest, he stands with his weight shifted slightly forward, his fingers resting on the brass joints of his folded ruler. Turnaround view: three-quarter.",
+      "Kabir is a ten-year-old South Asian boy with a slender build, warm brown skin, and short cropped black hair. His face features dark eyes and a straight nose. He wears a #3F7D4E green bomber jacket over a #F2E8CF off-white tee, paired with tan cargo shorts and gray sneakers. A canvas satchel covered in colorful embroidered patches hangs across his chest. In his hands, he holds a wooden folding ruler with brass joints. At rest, he stands with his weight shifted slightly forward, his fingers resting on the brass joints of his folded ruler. Turnaround view: profile.",
+      "Kabir is a ten-year-old South Asian boy with a slender build, warm brown skin, and short cropped black hair. His face features dark eyes and a straight nose. He wears a #3F7D4E green bomber jacket over a #F2E8CF off-white tee, paired with tan cargo shorts and gray sneakers. A canvas satchel covered in colorful embroidered patches hangs across his chest. In his hands, he holds a wooden folding ruler with brass joints. At rest, he stands with his weight shifted slightly forward, his fingers resting on the brass joints of his folded ruler. Turnaround view: back."
+    ],
+    "expressions": [
+      "delighted: His eyes widen, his eyebrows raise, and a broad, open smile reveals his teeth, lifting his cheeks.",
+      "frustrated: His eyebrows pull down and together, his lips press into a tight, flat line, and his jaw clenches.",
+      "focused: His eyes narrow slightly, his brow furrows just a bit, and his mouth rests in a neutral, firm position.",
+      "worried: The inner corners of his eyebrows angle upward, his eyes widen slightly, and his lower lip pulls slightly inward."
+    ],
+    "negative_prompts": [
+      "no pity framing",
+      "not seated apart from the group",
+      "no medical setting",
+      "no photorealism",
+      "no floating text or glowing letters",
+      "no missing patches on the satchel",
+      "no long hair"
+    ]
+  },
+  "consistency_hash": "364a9b200bd583c948676354b107d8ea338a3bcc37395bd4ae6ed851f0ea52bf",
+  "shots": [
+    {
+      "number": 1,
+      "beat": 1,
+      "scene_heading": "INT. KABIR'S WORKSHOP - DAY",
+      "prompt": "Kabir is a ten-year-old South Asian boy with a slender build, warm brown skin, and short cropped black hair. His face features dark eyes and a straight nose. He wears a #3F7D4E green bomber jacket over a #F2E8CF off-white tee, paired with tan cargo shorts and gray sneakers. A canvas satchel covered in colorful embroidered patches hangs across his chest. In his hands, he holds a wooden folding ruler with brass joints. At rest, he stands with his weight shifted slightly forward, his fingers resting on the brass joints of his folded ruler. Scene: Kabir works on his ultimate masterpiece, a motorized toy crane, but realizes he needs a rare vintage brass gear only found in the school's legendary, lost 1950s time capsule. Setting: INT. KABIR'S WORKSHOP - DAY. Camera: wide establishing. Light: soft morning light. Palette: #3F7D4E, #F2E8CF. Avoid: no pity framing; not seated apart from the group; no medical setting; no photorealism; no floating text or glowing letters; no missing patches on the satchel; no long hair.",
+      "camera": "wide establishing",
+      "palette": [
+        "#3F7D4E",
+        "#F2E8CF"
+      ]
+    },
+    {
+      "number": 2,
+      "beat": 2,
+      "scene_heading": "INT. SCHOOL LIBRARY - DAY",
+      "prompt": "Kabir is a ten-year-old South Asian boy with a slender build, warm brown skin, and short cropped black hair. His face features dark eyes and a straight nose. He wears a #3F7D4E green bomber jacket over a #F2E8CF off-white tee, paired with tan cargo shorts and gray sneakers. A canvas satchel covered in colorful embroidered patches hangs across his chest. In his hands, he holds a wooden folding ruler with brass joints. At rest, he stands with his weight shifted slightly forward, his fingers resting on the brass joints of his folded ruler. Scene: While searching the school library's history corner, Kabir finds an old, dusty blueprint of the school's forgotten basement tunnels. Setting: INT. SCHOOL LIBRARY - DAY. Camera: medium. Light: flat overcast light. Palette: #3F7D4E, #F2E8CF. Avoid: no pity framing; not seated apart from the group; no medical setting; no photorealism; no floating text or glowing letters; no missing patches on the satchel; no long hair.",
+      "camera": "medium",
+      "palette": [
+        "#3F7D4E",
+        "#F2E8CF"
+      ]
+    },
+    {
+      "number": 3,
+      "beat": 3,
+      "scene_heading": "INT. CLASSROOM - DAY",
+      "prompt": "Kabir is a ten-year-old South Asian boy with a slender build, warm brown skin, and short cropped black hair. His face features dark eyes and a straight nose. He wears a #3F7D4E green bomber jacket over a #F2E8CF off-white tee, paired with tan cargo shorts and gray sneakers. A canvas satchel covered in colorful embroidered patches hangs across his chest. In his hands, he holds a wooden folding ruler with brass joints. At rest, he stands with his weight shifted slightly forward, his fingers resting on the brass joints of his folded ruler. Scene: In English class, Kabir is called on to read aloud from a history textbook. He feels the pressure but uses his folding ruler to ground himself. Setting: INT. CLASSROOM - DAY. Camera: close-up. Light: hard afternoon light. Palette: #3F7D4E, #F2E8CF. Avoid: no pity framing; not seated apart from the group; no medical setting; no photorealism; no floating text or glowing letters; no missing patches on the satchel; no long hair.",
+      "camera": "close-up",
+      "palette": [
+        "#3F7D4E",
+        "#F2E8CF"
+      ]
+    },
+    {
+      "number": 4,
+      "beat": 4,
+      "scene_heading": "EXT. SCHOOL COURTYARD - DAY",
+      "prompt": "Kabir is a ten-year-old South Asian boy with a slender build, warm brown skin, and short cropped black hair. His face features dark eyes and a straight nose. He wears a #3F7D4E green bomber jacket over a #F2E8CF off-white tee, paired with tan cargo shorts and gray sneakers. A canvas satchel covered in colorful embroidered patches hangs across his chest. In his hands, he holds a wooden folding ruler with brass joints. At rest, he stands with his weight shifted slightly forward, his fingers resting on the brass joints of his folded ruler. Scene: During recess, Kabir and his friend Leo study the blueprint. Leo sees only a messy, overlapping set of misaligned letters and lines. Setting: EXT. SCHOOL COURTYARD - DAY. Camera: over the shoulder. Light: warm interior light. Palette: #3F7D4E, #F2E8CF. Avoid: no pity framing; not seated apart from the group; no medical setting; no photorealism; no floating text or glowing letters; no missing patches on the satchel; no long hair.",
+      "camera": "over the shoulder",
+      "palette": [
+        "#3F7D4E",
+        "#F2E8CF"
+      ]
+    },
+    {
+      "number": 5,
+      "beat": 5,
+      "scene_heading": "INT. BASEMENT CORRIDOR - AFTERNOON",
+      "prompt": "Kabir is a ten-year-old South Asian boy with a slender build, warm brown skin, and short cropped black hair. His face features dark eyes and a straight nose. He wears a #3F7D4E green bomber jacket over a #F2E8CF off-white tee, paired with tan cargo shorts and gray sneakers. A canvas satchel covered in colorful embroidered patches hangs across his chest. In his hands, he holds a wooden folding ruler with brass joints. At rest, he stands with his weight shifted slightly forward, his fingers resting on the brass joints of his folded ruler. Scene: Kabir and Leo slip past the dusty boiler room door and enter the cold, brick-lined tunnels beneath the school. Setting: INT. BASEMENT CORRIDOR - AFTERNOON. Camera: low angle. Light: cool dusk light. Palette: #3F7D4E, #F2E8CF. Avoid: no pity framing; not seated apart from the group; no medical setting; no photorealism; no floating text or glowing letters; no missing patches on the satchel; no long hair.",
+      "camera": "low angle",
+      "palette": [
+        "#3F7D4E",
+        "#F2E8CF"
+      ]
+    },
+    {
+      "number": 6,
+      "beat": 6,
+      "scene_heading": "INT. THE GEAR GATE - CONTINUOUS",
+      "prompt": "Kabir is a ten-year-old South Asian boy with a slender build, warm brown skin, and short cropped black hair. His face features dark eyes and a straight nose. He wears a #3F7D4E green bomber jacket over a #F2E8CF off-white tee, paired with tan cargo shorts and gray sneakers. A canvas satchel covered in colorful embroidered patches hangs across his chest. In his hands, he holds a wooden folding ruler with brass joints. At rest, he stands with his weight shifted slightly forward, his fingers resting on the brass joints of his folded ruler. Scene: They encounter a heavy brass gate locked with an alphabetical dial. The letters must be aligned to form a specific sound sequence. Setting: INT. THE GEAR GATE - CONTINUOUS. Camera: tracking. Light: soft morning light. Palette: #3F7D4E, #F2E8CF. Avoid: no pity framing; not seated apart from the group; no medical setting; no photorealism; no floating text or glowing letters; no missing patches on the satchel; no long hair.",
+      "camera": "tracking",
+      "palette": [
+        "#3F7D4E",
+        "#F2E8CF"
+      ]
+    },
+    {
+      "number": 7,
+      "beat": 7,
+      "scene_heading": "INT. THE ROTATING TUNNEL - CONTINUOUS",
+      "prompt": "Kabir is a ten-year-old South Asian boy with a slender build, warm brown skin, and short cropped black hair. His face features dark eyes and a straight nose. He wears a #3F7D4E green bomber jacket over a #F2E8CF off-white tee, paired with tan cargo shorts and gray sneakers. A canvas satchel covered in colorful embroidered patches hangs across his chest. In his hands, he holds a wooden folding ruler with brass joints. At rest, he stands with his weight shifted slightly forward, his fingers resting on the brass joints of his folded ruler. Scene: The tunnel walls physically rotate, changing the layout of the maze. Leo panics as the exit disappears. Setting: INT. THE ROTATING TUNNEL - CONTINUOUS. Camera: wide establishing. Light: flat overcast light. Palette: #3F7D4E, #F2E8CF. Avoid: no pity framing; not seated apart from the group; no medical setting; no photorealism; no floating text or glowing letters; no missing patches on the satchel; no long hair.",
+      "camera": "wide establishing",
+      "palette": [
+        "#3F7D4E",
+        "#F2E8CF"
+      ]
+    },
+    {
+      "number": 8,
+      "beat": 8,
+      "scene_heading": "INT. THE CHAMBER OF ECHOES - CONTINUOUS",
+      "prompt": "Kabir is a ten-year-old South Asian boy with a slender build, warm brown skin, and short cropped black hair. His face features dark eyes and a straight nose. He wears a #3F7D4E green bomber jacket over a #F2E8CF off-white tee, paired with tan cargo shorts and gray sneakers. A canvas satchel covered in colorful embroidered patches hangs across his chest. In his hands, he holds a wooden folding ruler with brass joints. At rest, he stands with his weight shifted slightly forward, his fingers resting on the brass joints of his folded ruler. Scene: They reach a chamber with speaking tubes. A voice recording plays a series of complex phonemic clues to open the next door. Setting: INT. THE CHAMBER OF ECHOES - CONTINUOUS. Camera: medium. Light: hard afternoon light. Palette: #3F7D4E, #F2E8CF. Avoid: no pity framing; not seated apart from the group; no medical setting; no photorealism; no floating text or glowing letters; no missing patches on the satchel; no long hair.",
+      "camera": "medium",
+      "palette": [
+        "#3F7D4E",
+        "#F2E8CF"
+      ]
+    },
+    {
+      "number": 9,
+      "beat": 9,
+      "scene_heading": "INT. THE COAL VAULT - CONTINUOUS",
+      "prompt": "Kabir is a ten-year-old South Asian boy with a slender build, warm brown skin, and short cropped black hair. His face features dark eyes and a straight nose. He wears a #3F7D4E green bomber jacket over a #F2E8CF off-white tee, paired with tan cargo shorts and gray sneakers. A canvas satchel covered in colorful embroidered patches hangs across his chest. In his hands, he holds a wooden folding ruler with brass joints. At rest, he stands with his weight shifted slightly forward, his fingers resting on the brass joints of his folded ruler. Scene: They find the old coal vault. In the center sits the rusted steel time capsule from 1954. Setting: INT. THE COAL VAULT - CONTINUOUS. Camera: close-up. Light: warm interior light. Palette: #3F7D4E, #F2E8CF. Avoid: no pity framing; not seated apart from the group; no medical setting; no photorealism; no floating text or glowing letters; no missing patches on the satchel; no long hair.",
+      "camera": "close-up",
+      "palette": [
+        "#3F7D4E",
+        "#F2E8CF"
+      ]
+    },
+    {
+      "number": 10,
+      "beat": 10,
+      "scene_heading": "INT. THE COAL VAULT - CONTINUOUS",
+      "prompt": "Kabir is a ten-year-old South Asian boy with a slender build, warm brown skin, and short cropped black hair. His face features dark eyes and a straight nose. He wears a #3F7D4E green bomber jacket over a #F2E8CF off-white tee, paired with tan cargo shorts and gray sneakers. A canvas satchel covered in colorful embroidered patches hangs across his chest. In his hands, he holds a wooden folding ruler with brass joints. At rest, he stands with his weight shifted slightly forward, his fingers resting on the brass joints of his folded ruler. Scene: Inside the capsule, among old photos and newspapers, Kabir finds the pristine, gold-plated vintage gear he needs. Setting: INT. THE COAL VAULT - CONTINUOUS. Camera: over the shoulder. Light: cool dusk light. Palette: #3F7D4E, #F2E8CF. Avoid: no pity framing; not seated apart from the group; no medical setting; no photorealism; no floating text or glowing letters; no missing patches on the satchel; no long hair.",
+      "camera": "over the shoulder",
+      "palette": [
+        "#3F7D4E",
+        "#F2E8CF"
+      ]
+    },
+    {
+      "number": 11,
+      "beat": 11,
+      "scene_heading": "EXT. SCHOOL COURTYARD - CONTINUOUS",
+      "prompt": "Kabir is a ten-year-old South Asian boy with a slender build, warm brown skin, and short cropped black hair. His face features dark eyes and a straight nose. He wears a #3F7D4E green bomber jacket over a #F2E8CF off-white tee, paired with tan cargo shorts and gray sneakers. A canvas satchel covered in colorful embroidered patches hangs across his chest. In his hands, he holds a wooden folding ruler with brass joints. At rest, he stands with his weight shifted slightly forward, his fingers resting on the brass joints of his folded ruler. Scene: The heavy footsteps of Mr. Henderson, the custodian, echo down the hall. They must escape quickly. Setting: EXT. SCHOOL COURTYARD - CONTINUOUS. Camera: low angle. Light: soft morning light. Palette: #3F7D4E, #F2E8CF. Avoid: no pity framing; not seated apart from the group; no medical setting; no photorealism; no floating text or glowing letters; no missing patches on the satchel; no long hair.",
+      "camera": "low angle",
+      "palette": [
+        "#3F7D4E",
+        "#F2E8CF"
+      ]
+    },
+    {
+      "number": 12,
+      "beat": 12,
+      "scene_heading": "INT. KABIR'S WORKSHOP - NIGHT",
+      "prompt": "Kabir is a ten-year-old South Asian boy with a slender build, warm brown skin, and short cropped black hair. His face features dark eyes and a straight nose. He wears a #3F7D4E green bomber jacket over a #F2E8CF off-white tee, paired with tan cargo shorts and gray sneakers. A canvas satchel covered in colorful embroidered patches hangs across his chest. In his hands, he holds a wooden folding ruler with brass joints. At rest, he stands with his weight shifted slightly forward, his fingers resting on the brass joints of his folded ruler. Scene: Back in his workshop, Kabir successfully integrates the golden gear into his crane. It works flawlessly. Setting: INT. KABIR'S WORKSHOP - NIGHT. Camera: tracking. Light: flat overcast light. Palette: #3F7D4E, #F2E8CF. Avoid: no pity framing; not seated apart from the group; no medical setting; no photorealism; no floating text or glowing letters; no missing patches on the satchel; no long hair.",
+      "camera": "tracking",
+      "palette": [
+        "#3F7D4E",
+        "#F2E8CF"
+      ]
+    }
+  ]
+}

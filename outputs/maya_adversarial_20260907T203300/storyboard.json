@@ -1,0 +1,104 @@
+{
+  "model": "gemini-3.1-flash-image",
+  "style": "Stylized 3D animation in the look of a modern family feature film, soft rounded character design, consistent character design across shots, not photorealistic, 16:9 film frame, no text, no captions, no watermark.",
+  "frames": [
+    {
+      "shot": 1,
+      "beat": 1,
+      "file": "storyboard/shot_01.jpg",
+      "prompt": "Stylized 3D animation in the look of a modern family feature film, soft rounded character design, consistent character design across shots, not photorealistic, 16:9 film frame, no text, no captions, no watermark. A 9-year-old South Asian girl with a slender build, warm brown skin, and dark curly hair tied high in a ponytail. She has a round face with dark eyes. She wears a #2A9D8F teal windbreaker, black fingerless gloves, dark gray pants, and black sneakers. A small adjustable wrench hangs from a lanyard around her neck. She sits upright and balanced in a lightweight manual wheelchair. The wheelchair features #F4A261 orange spoke guards on the large rear wheels, black front casters, and a custom black toolkit strapped securely under the seat. Scene: Maya refines her wheelchair maneuvers on backyard ramps she engineered, demonstrating her athletic mastery and engineering skill. Setting: EXT. MAYA'S BACKYARD - SUNRISE. Camera: wide establishing. Light: soft morning light. Palette: #2A9D8F, #F4A261. Avoid: no pity framing; not seated apart from the group; no medical setting; no photorealism; no hospital gowns or medical equipment; no bulky electric wheelchairs; no missing orange spoke guards; no loose hair. Color palette: #2A9D8F, #F4A261.",
+      "model": "gemini-3.1-flash-image"
+    },
+    {
+      "shot": 2,
+      "beat": 2,
+      "file": "storyboard/shot_02.jpg",
+      "prompt": "Stylized 3D animation in the look of a modern family feature film, soft rounded character design, consistent character design across shots, not photorealistic, 16:9 film frame, no text, no captions, no watermark. A 9-year-old South Asian girl with a slender build, warm brown skin, and dark curly hair tied high in a ponytail. She has a round face with dark eyes. She wears a #2A9D8F teal windbreaker, black fingerless gloves, dark gray pants, and black sneakers. A small adjustable wrench hangs from a lanyard around her neck. She sits upright and balanced in a lightweight manual wheelchair. The wheelchair features #F4A261 orange spoke guards on the large rear wheels, black front casters, and a custom black toolkit strapped securely under the seat. Scene: Maya transfers out of her wheelchair onto the grass to stretch and build her strength during her daily training routine. Setting: INT. GARAGE - DAY. Camera: medium. Light: flat overcast light. Palette: #2A9D8F, #F4A261. Avoid: no pity framing; not seated apart from the group; no medical setting; no photorealism; no hospital gowns or medical equipment; no bulky electric wheelchairs; no missing orange spoke guards; no loose hair. Color palette: #2A9D8F, #F4A261.",
+      "model": "gemini-3.1-flash-image"
+    },
+    {
+      "shot": 3,
+      "beat": 3,
+      "file": "storyboard/shot_03.jpg",
+      "prompt": "Stylized 3D animation in the look of a modern family feature film, soft rounded character design, consistent character design across shots, not photorealistic, 16:9 film frame, no text, no captions, no watermark. A 9-year-old South Asian girl with a slender build, warm brown skin, and dark curly hair tied high in a ponytail. She has a round face with dark eyes. She wears a #2A9D8F teal windbreaker, black fingerless gloves, dark gray pants, and black sneakers. A small adjustable wrench hangs from a lanyard around her neck. She sits upright and balanced in a lightweight manual wheelchair. The wheelchair features #F4A261 orange spoke guards on the large rear wheels, black front casters, and a custom black toolkit strapped securely under the seat. Scene: Maya transfers to her high workbench stool in the garage to work on her wheelchair and map out the town's drainage channels. Setting: INT. SCHOOL HALLWAY - DAY. Camera: close-up. Light: hard afternoon light. Palette: #2A9D8F, #F4A261. Avoid: no pity framing; not seated apart from the group; no medical setting; no photorealism; no hospital gowns or medical equipment; no bulky electric wheelchairs; no missing orange spoke guards; no loose hair. Color palette: #2A9D8F, #F4A261.",
+      "model": "gemini-3.1-flash-image"
+    },
+    {
+      "shot": 4,
+      "beat": 4,
+      "file": "storyboard/shot_04.jpg",
+      "prompt": "Stylized 3D animation in the look of a modern family feature film, soft rounded character design, consistent character design across shots, not photorealistic, 16:9 film frame, no text, no captions, no watermark. A 9-year-old South Asian girl with a slender build, warm brown skin, and dark curly hair tied high in a ponytail. She has a round face with dark eyes. She wears a #2A9D8F teal windbreaker, black fingerless gloves, dark gray pants, and black sneakers. A small adjustable wrench hangs from a lanyard around her neck. She sits upright and balanced in a lightweight manual wheelchair. The wheelchair features #F4A261 orange spoke guards on the large rear wheels, black front casters, and a custom black toolkit strapped securely under the seat. Scene: Maya warns Leo and Chloe about the dangers of the drainage canal, predicting the flood's path three moves ahead. Setting: INT. MAYA'S HOUSE - LIVING ROOM - AFTERNOON. Camera: over the shoulder. Light: warm interior light. Palette: #2A9D8F, #F4A261. Avoid: no pity framing; not seated apart from the group; no medical setting; no photorealism; no hospital gowns or medical equipment; no bulky electric wheelchairs; no missing orange spoke guards; no loose hair. Color palette: #2A9D8F, #F4A261.",
+      "model": "gemini-3.1-flash-image"
+    },
+    {
+      "shot": 5,
+      "beat": 5,
+      "file": "storyboard/shot_05.jpg",
+      "prompt": "Stylized 3D animation in the look of a modern family feature film, soft rounded character design, consistent character design across shots, not photorealistic, 16:9 film frame, no text, no captions, no watermark. A 9-year-old South Asian girl with a slender build, warm brown skin, and dark curly hair tied high in a ponytail. She has a round face with dark eyes. She wears a #2A9D8F teal windbreaker, black fingerless gloves, dark gray pants, and black sneakers. A small adjustable wrench hangs from a lanyard around her neck. She sits upright and balanced in a lightweight manual wheelchair. The wheelchair features #F4A261 orange spoke guards on the large rear wheels, black front casters, and a custom black toolkit strapped securely under the seat. Scene: Maya and her mom prepare for the storm, using Maya's pre-planned safety measures and calm leadership. Setting: EXT. MAIN STREET - AFTERNOON. Camera: low angle. Light: cool dusk light. Palette: #2A9D8F, #F4A261. Avoid: no pity framing; not seated apart from the group; no medical setting; no photorealism; no hospital gowns or medical equipment; no bulky electric wheelchairs; no missing orange spoke guards; no loose hair. Color palette: #2A9D8F, #F4A261.",
+      "model": "gemini-3.1-flash-image"
+    },
+    {
+      "shot": 6,
+      "beat": 6,
+      "file": "storyboard/shot_06.jpg",
+      "prompt": "Stylized 3D animation in the look of a modern family feature film, soft rounded character design, consistent character design across shots, not photorealistic, 16:9 film frame, no text, no captions, no watermark. A 9-year-old South Asian girl with a slender build, warm brown skin, and dark curly hair tied high in a ponytail. She has a round face with dark eyes. She wears a #2A9D8F teal windbreaker, black fingerless gloves, dark gray pants, and black sneakers. A small adjustable wrench hangs from a lanyard around her neck. She sits upright and balanced in a lightweight manual wheelchair. The wheelchair features #F4A261 orange spoke guards on the large rear wheels, black front casters, and a custom black toolkit strapped securely under the seat. Scene: Maya firmly tells Mr. Davis not to touch her chair as she easily tackles a high curb that was designed without her in mind. Setting: EXT. TOWN PARK - AFTERNOON. Camera: tracking. Light: soft morning light. Palette: #2A9D8F, #F4A261. Avoid: no pity framing; not seated apart from the group; no medical setting; no photorealism; no hospital gowns or medical equipment; no bulky electric wheelchairs; no missing orange spoke guards; no loose hair. Color palette: #2A9D8F, #F4A261.",
+      "model": "gemini-3.1-flash-image"
+    },
+    {
+      "shot": 7,
+      "beat": 7,
+      "file": "storyboard/shot_07.jpg",
+      "prompt": "Stylized 3D animation in the look of a modern family feature film, soft rounded character design, consistent character design across shots, not photorealistic, 16:9 film frame, no text, no captions, no watermark. A 9-year-old South Asian girl with a slender build, warm brown skin, and dark curly hair tied high in a ponytail. She has a round face with dark eyes. She wears a #2A9D8F teal windbreaker, black fingerless gloves, dark gray pants, and black sneakers. A small adjustable wrench hangs from a lanyard around her neck. She sits upright and balanced in a lightweight manual wheelchair. The wheelchair features #F4A261 orange spoke guards on the large rear wheels, black front casters, and a custom black toolkit strapped securely under the seat. Scene: The storm hits, turning the town's pathways into raging water channels and concrete ramps. Setting: EXT. DRAINAGE CANAL - AFTERNOON. Camera: wide establishing. Light: flat overcast light. Palette: #2A9D8F, #F4A261. Avoid: no pity framing; not seated apart from the group; no medical setting; no photorealism; no hospital gowns or medical equipment; no bulky electric wheelchairs; no missing orange spoke guards; no loose hair. Color palette: #2A9D8F, #F4A261.",
+      "model": "gemini-3.1-flash-image"
+    },
+    {
+      "shot": 8,
+      "beat": 8,
+      "file": "storyboard/shot_08.jpg",
+      "prompt": "Stylized 3D animation in the look of a modern family feature film, soft rounded character design, consistent character design across shots, not photorealistic, 16:9 film frame, no text, no captions, no watermark. A 9-year-old South Asian girl with a slender build, warm brown skin, and dark curly hair tied high in a ponytail. She has a round face with dark eyes. She wears a #2A9D8F teal windbreaker, black fingerless gloves, dark gray pants, and black sneakers. A small adjustable wrench hangs from a lanyard around her neck. She sits upright and balanced in a lightweight manual wheelchair. The wheelchair features #F4A261 orange spoke guards on the large rear wheels, black front casters, and a custom black toolkit strapped securely under the seat. Scene: Leo and Chloe ignore her warning and get trapped on a crumbling ledge as the canal turns into a rapid river. Setting: EXT. DRAINAGE CANAL - CONTINUOUS. Camera: medium. Light: hard afternoon light. Palette: #2A9D8F, #F4A261. Avoid: no pity framing; not seated apart from the group; no medical setting; no photorealism; no hospital gowns or medical equipment; no bulky electric wheelchairs; no missing orange spoke guards; no loose hair. Color palette: #2A9D8F, #F4A261.",
+      "model": "gemini-2.5-flash-image"
+    },
+    {
+      "shot": 9,
+      "beat": 9,
+      "file": "storyboard/shot_09.jpg",
+      "prompt": "Stylized 3D animation in the look of a modern family feature film, soft rounded character design, consistent character design across shots, not photorealistic, 16:9 film frame, no text, no captions, no watermark. A 9-year-old South Asian girl with a slender build, warm brown skin, and dark curly hair tied high in a ponytail. She has a round face with dark eyes. She wears a #2A9D8F teal windbreaker, black fingerless gloves, dark gray pants, and black sneakers. A small adjustable wrench hangs from a lanyard around her neck. She sits upright and balanced in a lightweight manual wheelchair. The wheelchair features #F4A261 orange spoke guards on the large rear wheels, black front casters, and a custom black toolkit strapped securely under the seat. Scene: Maya rides down into the rushing canal water to save her friends, utilizing her secret summer training. Setting: EXT. DRAINAGE CANAL - GRATE - CONTINUOUS. Camera: close-up. Light: warm interior light. Palette: #2A9D8F, #F4A261. Avoid: no pity framing; not seated apart from the group; no medical setting; no photorealism; no hospital gowns or medical equipment; no bulky electric wheelchairs; no missing orange spoke guards; no loose hair. Color palette: #2A9D8F, #F4A261.",
+      "model": "gemini-3.1-flash-image"
+    },
+    {
+      "shot": 10,
+      "beat": 10,
+      "file": "storyboard/shot_10.jpg",
+      "prompt": "Stylized 3D animation in the look of a modern family feature film, soft rounded character design, consistent character design across shots, not photorealistic, 16:9 film frame, no text, no captions, no watermark. A 9-year-old South Asian girl with a slender build, warm brown skin, and dark curly hair tied high in a ponytail. She has a round face with dark eyes. She wears a #2A9D8F teal windbreaker, black fingerless gloves, dark gray pants, and black sneakers. A small adjustable wrench hangs from a lanyard around her neck. She sits upright and balanced in a lightweight manual wheelchair. The wheelchair features #F4A261 orange spoke guards on the large rear wheels, black front casters, and a custom black toolkit strapped securely under the seat. Scene: Maya's front caster gets tightly wedged in the heavy debris of the grate, leaving her stuck as the water rises. Setting: EXT. DRAINAGE CANAL - AFTERNOON. Camera: over the shoulder. Light: cool dusk light. Palette: #2A9D8F, #F4A261. Avoid: no pity framing; not seated apart from the group; no medical setting; no photorealism; no hospital gowns or medical equipment; no bulky electric wheelchairs; no missing orange spoke guards; no loose hair. Color palette: #2A9D8F, #F4A261.",
+      "model": "gemini-3.1-flash-image"
+    },
+    {
+      "shot": 11,
+      "beat": 11,
+      "file": "storyboard/shot_11.jpg",
+      "prompt": "Stylized 3D animation in the look of a modern family feature film, soft rounded character design, consistent character design across shots, not photorealistic, 16:9 film frame, no text, no captions, no watermark. A 9-year-old South Asian girl with a slender build, warm brown skin, and dark curly hair tied high in a ponytail. She has a round face with dark eyes. She wears a #2A9D8F teal windbreaker, black fingerless gloves, dark gray pants, and black sneakers. A small adjustable wrench hangs from a lanyard around her neck. She sits upright and balanced in a lightweight manual wheelchair. The wheelchair features #F4A261 orange spoke guards on the large rear wheels, black front casters, and a custom black toolkit strapped securely under the seat. Scene: Instead of panicking, Maya uses her wrench totem to quickly unbolt the wedged caster from her wheelchair frame. Setting: EXT. DRAINAGE CANAL - AFTERNOON. Camera: low angle. Light: soft morning light. Palette: #2A9D8F, #F4A261. Avoid: no pity framing; not seated apart from the group; no medical setting; no photorealism; no hospital gowns or medical equipment; no bulky electric wheelchairs; no missing orange spoke guards; no loose hair. Color palette: #2A9D8F, #F4A261.",
+      "model": "gemini-3.1-flash-image"
+    },
+    {
+      "shot": 12,
+      "beat": 12,
+      "file": "storyboard/shot_12.jpg",
+      "prompt": "Stylized 3D animation in the look of a modern family feature film, soft rounded character design, consistent character design across shots, not photorealistic, 16:9 film frame, no text, no captions, no watermark. A 9-year-old South Asian girl with a slender build, warm brown skin, and dark curly hair tied high in a ponytail. She has a round face with dark eyes. She wears a #2A9D8F teal windbreaker, black fingerless gloves, dark gray pants, and black sneakers. A small adjustable wrench hangs from a lanyard around her neck. She sits upright and balanced in a lightweight manual wheelchair. The wheelchair features #F4A261 orange spoke guards on the large rear wheels, black front casters, and a custom black toolkit strapped securely under the seat. Scene: Free from the jam, Maya balances expertly on her rear wheels, navigating the rushing water to reach the manual release lever. Setting: EXT. DRAINAGE CANAL - AFTERNOON. Camera: tracking. Light: flat overcast light. Palette: #2A9D8F, #F4A261. Avoid: no pity framing; not seated apart from the group; no medical setting; no photorealism; no hospital gowns or medical equipment; no bulky electric wheelchairs; no missing orange spoke guards; no loose hair. Color palette: #2A9D8F, #F4A261.",
+      "model": "gemini-2.5-flash-image"
+    },
+    {
+      "shot": 13,
+      "beat": 13,
+      "file": "storyboard/shot_13.jpg",
+      "prompt": "Stylized 3D animation in the look of a modern family feature film, soft rounded character design, consistent character design across shots, not photorealistic, 16:9 film frame, no text, no captions, no watermark. A 9-year-old South Asian girl with a slender build, warm brown skin, and dark curly hair tied high in a ponytail. She has a round face with dark eyes. She wears a #2A9D8F teal windbreaker, black fingerless gloves, dark gray pants, and black sneakers. A small adjustable wrench hangs from a lanyard around her neck. She sits upright and balanced in a lightweight manual wheelchair. The wheelchair features #F4A261 orange spoke guards on the large rear wheels, black front casters, and a custom black toolkit strapped securely under the seat. Scene: Maya pulls the heavy lever, clearing the debris and draining the floodwaters just in time to save her friends. Setting: EXT. DRAINAGE CANAL - AFTERNOON. Camera: wide establishing. Light: hard afternoon light. Palette: #2A9D8F, #F4A261. Avoid: no pity framing; not seated apart from the group; no medical setting; no photorealism; no hospital gowns or medical equipment; no bulky electric wheelchairs; no missing orange spoke guards; no loose hair. Color palette: #2A9D8F, #F4A261.",
+      "model": "gemini-3.1-flash-image"
+    },
+    {
+      "shot": 14,
+      "beat": 14,
+      "file": "storyboard/shot_14.jpg",
+      "prompt": "Stylized 3D animation in the look of a modern family feature film, soft rounded character design, consistent character design across shots, not photorealistic, 16:9 film frame, no text, no captions, no watermark. A 9-year-old South Asian girl with a slender build, warm brown skin, and dark curly hair tied high in a ponytail. She has a round face with dark eyes. She wears a #2A9D8F teal windbreaker, black fingerless gloves, dark gray pants, and black sneakers. A small adjustable wrench hangs from a lanyard around her neck. She sits upright and balanced in a lightweight manual wheelchair. The wheelchair features #F4A261 orange spoke guards on the large rear wheels, black front casters, and a custom black toolkit strapped securely under the seat. Scene: As the sun emerges, Maya rolls home with her friends, proud of her engineered chair and her engineering mind. Setting: EXT. DRAINAGE CANAL - AFTERNOON. Camera: medium. Light: warm interior light. Palette: #2A9D8F, #F4A261. Avoid: no pity framing; not seated apart from the group; no medical setting; no photorealism; no hospital gowns or medical equipment; no bulky electric wheelchairs; no missing orange spoke guards; no loose hair. Color palette: #2A9D8F, #F4A261.",
+      "model": "gemini-2.5-flash-image"
+    }
+  ]
+}

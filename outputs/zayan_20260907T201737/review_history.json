@@ -1,0 +1,101 @@
+[
+  {
+    "verdict": "PASS",
+    "iteration": 1,
+    "revision_colour": "White",
+    "deterministic": [
+      {
+        "rule_id": "HF2",
+        "result": "pass",
+        "evidence": "The afternoon sun shines bright. The school yard is wide and green.",
+        "note": "no avoid-list match in action lines"
+      },
+      {
+        "rule_id": "SC-NAMED",
+        "result": "pass",
+        "evidence": "It is not a superpower, Leo. Having ADHD means my brain sees everything all at once. It is super hard. Sometimes I cannot focus on what the teacher is saying. I forget my lunch. I lose my shoes. My head feels like a balloon ready to pop.",
+        "note": "found \"ADHD\""
+      },
+      {
+        "rule_id": "SC-LENGTH",
+        "result": "fail",
+        "evidence": "EXT. OAK CREEK ELEMENTARY - PLAYGROUND - DAY",
+        "note": "1404 words, ~9 pages"
+      },
+      {
+        "rule_id": "SC-BEATS",
+        "result": "pass",
+        "evidence": "The group bursts out onto the safe playground just as the school locks down. Zayan celebrates getting his ball and immediately starts running laps to burn off remaining energy.",
+        "note": "every beat carries the trait"
+      }
+    ],
+    "model_scored": [
+      {
+        "rule_id": "HF1",
+        "result": "pass",
+        "evidence": "Zayan sprints across the grass, fast and free, his mind already racing onto the next big thing.",
+        "note": "Zayan's ADHD traits, such as his racing mind and high energy, are explicitly present and unchanged in the final scene."
+      },
+      {
+        "rule_id": "HF3",
+        "result": "pass",
+        "evidence": "I just wanted my ball.",
+        "note": "Zayan has his own independent goal of retrieving his toy, rather than existing solely to teach others a lesson."
+      },
+      {
+        "rule_id": "MD1",
+        "result": "pass",
+        "evidence": "In his mind, three different paths map themselves out like glowing lines.",
+        "note": "Zayan uses his fast-paced brain to see multiple possibilities at once and navigate the shifting maze."
+      },
+      {
+        "rule_id": "MD2",
+        "result": "pass",
+        "evidence": "He stops, breathing hard. He grins. The hyperactive energy in his legs feels a little lighter now.",
+        "note": "Zayan is shown running and doing cartwheels outdoors specifically to release his hyperactive energy."
+      },
+      {
+        "rule_id": "MD3",
+        "result": "pass",
+        "evidence": "He rubs his forehead. His short-term memory feels like a blank chalkboard.",
+        "note": "Zayan explicitly struggles with short-term memory when trying to recall his locker combination."
+      },
+      {
+        "rule_id": "MD4",
+        "result": "pass",
+        "evidence": "It is not a superpower, Leo. Having ADHD means my brain sees everything all at once. It is super hard. Sometimes I cannot focus on what the teacher is saying. I forget my lunch. I lose my shoes. My head feels like a balloon ready to pop.",
+        "note": "When Leo calls his brain a superpower, Zayan immediately corrects him and lists the real, difficult challenges of his ADHD."
+      },
+      {
+        "rule_id": "MN1",
+        "result": "pass",
+        "evidence": "I just wanted my ball.",
+        "note": "Zayan is never portrayed as a threat to public safety; he is simply a child trying to get his toy back."
+      },
+      {
+        "rule_id": "MN2",
+        "result": "pass",
+        "evidence": "It is not a superpower, Leo. Having ADHD means my brain sees everything all at once. It is super hard. Sometimes I cannot focus on what the teacher is saying. I forget my lunch. I lose my shoes. My head feels like a balloon ready to pop.",
+        "note": "There is no mention of a pill or medication curing his behavior; he manages his challenges naturally."
+      },
+      {
+        "rule_id": "MN3",
+        "result": "pass",
+        "evidence": "I just wanted my ball.",
+        "note": "Zayan is an active protagonist with his own desires, not a passive victim or inspiration porn."
+      },
+      {
+        "rule_id": "MN4",
+        "result": "pass",
+        "evidence": "It is not a superpower, Leo. Having ADHD means my brain sees everything all at once. It is super hard. Sometimes I cannot focus on what the teacher is saying. I forget my lunch. I lose my shoes. My head feels like a balloon ready to pop.",
+        "note": "The script uses the explicit term ADHD rather than euphemisms like differently abled."
+      }
+    ],
+    "hard_failures": [],
+    "soft_notes": [
+      "SC-LENGTH: 1404 words, ~9 pages"
+    ],
+    "revision_instructions": [],
+    "evidence_unverified": []
+  }
+]

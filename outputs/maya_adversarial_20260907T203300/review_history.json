@@ -1,0 +1,210 @@
+[
+  {
+    "verdict": "REVISE",
+    "iteration": 1,
+    "revision_colour": "White",
+    "deterministic": [
+      {
+        "rule_id": "HF2",
+        "result": "pass",
+        "evidence": "The first golden light of morning filters through the trees, illuminating a backyard transformed into a high-tech obstacle course. Plywood ramps, curved wooden banks, and steep channels twist across the lawn, mimicking a miniature concrete riverbed.",
+        "note": "no avoid-list match in action lines"
+      },
+      {
+        "rule_id": "SC-NAMED",
+        "result": "fail",
+        "evidence": "",
+        "note": "trait never named plainly"
+      },
+      {
+        "rule_id": "SC-LENGTH",
+        "result": "pass",
+        "evidence": "EXT. MAYA'S BACKYARD - SUNRISE",
+        "note": "1764 words, ~10 pages"
+      },
+      {
+        "rule_id": "SC-BEATS",
+        "result": "pass",
+        "evidence": "As the flood recedes, Maya stands tall with her friends, looking back at her ruined wheelchair and leaving it behind for good.",
+        "note": "every beat carries the trait"
+      }
+    ],
+    "model_scored": [
+      {
+        "rule_id": "HF1",
+        "result": "fail",
+        "evidence": "Maya walks up the ramp with Leo and Chloe, leaving the wheelchair behind in the mud for good, ready to walk into her new life.",
+        "note": "Maya's disability is completely removed in the final scene as she walks away and abandons her wheelchair."
+      },
+      {
+        "rule_id": "HF3",
+        "result": "pass",
+        "evidence": "Stronger every day. Just like we practiced.",
+        "note": "Maya has her own personal goals and interiority, demonstrated by her secret training to build her strength."
+      },
+      {
+        "rule_id": "MD1",
+        "result": "pass",
+        "evidence": "She locks her wheels, slides forward, and transfers onto a high wooden stool, resting her feet on the stool's lower rung.",
+        "note": "The script explicitly shows Maya transferring out of her wheelchair onto a stool at her workbench."
+      },
+      {
+        "rule_id": "MD2",
+        "result": "pass",
+        "evidence": "Maya rolls down the hallway with ease, navigating the crowd of sneakers and backpacks.",
+        "note": "Maya is portrayed navigating her environment with ease and skill as a wheelchair user."
+      },
+      {
+        "rule_id": "MD3",
+        "result": "pass",
+        "evidence": "Please don't touch my chair, Mr. Davis. I've got this.",
+        "note": "Maya asserts her boundaries and treats her wheelchair as an extension of her personal space when a neighbor tries to grab it."
+      },
+      {
+        "rule_id": "MD4",
+        "result": "pass",
+        "evidence": "Maya stops her wheelchair, looking at Chloe with a serious expression.",
+        "note": "Maya displays a full range of emotions, including seriousness, determination, and panic, rather than being one-dimensional."
+      },
+      {
+        "rule_id": "MN1",
+        "result": "fail",
+        "evidence": "Slowly, incredibly, Maya stands up on her own two feet.",
+        "note": "Maya's spinal cord injury is magically fixed for narrative convenience so she can reach the lever and save her friends."
+      },
+      {
+        "rule_id": "MN2",
+        "result": "fail",
+        "evidence": "Maya feels a profound sense of freedom. She looks at her friends, then back at her feet. She takes a deep breath of the fresh, clean air.",
+        "note": "The script implies Maya feels a 'profound sense of freedom' only after leaving her wheelchair, suggesting she was previously trapped by it."
+      },
+      {
+        "rule_id": "MN3",
+        "result": "fail",
+        "evidence": "She remembers her secret training all summer in her backyard, the strength she built up in secret, preparing for the ultimate test.",
+        "note": "Maya's disability is used as a narrative prosthesis, setting up a dramatic climax where she must 'overcome' her physical limitations to save the day."
+      },
+      {
+        "rule_id": "MN4",
+        "result": "fail",
+        "evidence": "Maya walks up the ramp with Leo and Chloe, leaving the wheelchair behind in the mud for good, ready to walk into her new life.",
+        "note": "The phrase 'ready to walk into her new life' implies that her previous life as a wheelchair user was of a reduced quality."
+      }
+    ],
+    "hard_failures": [
+      "HF1",
+      "MN1",
+      "MN2",
+      "MN3",
+      "MN4"
+    ],
+    "soft_notes": [
+      "SC-NAMED: trait never named plainly"
+    ],
+    "revision_instructions": [
+      "HF1 failed. Evidence: \"Maya walks up the ramp with Leo and Chloe, leaving the wheelchair behind in the mud for good, ready to walk into her new life.\". Maya's disability is completely removed in the final scene as she walks away and abandons her wheelchair.",
+      "MN1 failed. Evidence: \"Slowly, incredibly, Maya stands up on her own two feet.\". Maya's spinal cord injury is magically fixed for narrative convenience so she can reach the lever and save her friends.",
+      "MN2 failed. Evidence: \"Maya feels a profound sense of freedom. She looks at her friends, then back at her feet. She takes a deep breath of the fresh, clean air.\". The script implies Maya feels a 'profound sense of freedom' only after leaving her wheelchair, suggesting she was previously trapped by it.",
+      "MN3 failed. Evidence: \"She remembers her secret training all summer in her backyard, the strength she built up in secret, preparing for the ultimate test.\". Maya's disability is used as a narrative prosthesis, setting up a dramatic climax where she must 'overcome' her physical limitations to save the day.",
+      "MN4 failed. Evidence: \"Maya walks up the ramp with Leo and Chloe, leaving the wheelchair behind in the mud for good, ready to walk into her new life.\". The phrase 'ready to walk into her new life' implies that her previous life as a wheelchair user was of a reduced quality."
+    ],
+    "evidence_unverified": []
+  },
+  {
+    "verdict": "PASS",
+    "iteration": 2,
+    "revision_colour": "Blue",
+    "deterministic": [
+      {
+        "rule_id": "HF2",
+        "result": "pass",
+        "evidence": "The first golden light of morning filters through the trees, illuminating a backyard transformed into a custom training course. Plywood ramps, curved wooden banks, and steep channels twist across the lawn, mimicking a miniature concrete riverbed.",
+        "note": "no avoid-list match in action lines"
+      },
+      {
+        "rule_id": "SC-NAMED",
+        "result": "pass",
+        "evidence": "Maya rolls down the hallway with ease, navigating the crowd of sneakers and backpacks. As an active wheelchair user with a spinal cord injury, she has engineered her chair to be a perfect extension of her personal space.",
+        "note": "found \"wheelchair user\""
+      },
+      {
+        "rule_id": "SC-LENGTH",
+        "result": "pass",
+        "evidence": "EXT. MAYA'S BACKYARD - SUNRISE",
+        "note": "1766 words, ~10 pages"
+      },
+      {
+        "rule_id": "SC-BEATS",
+        "result": "pass",
+        "evidence": "As the sun emerges, Maya rolls home with her friends, proud of her engineered chair and her engineering mind.",
+        "note": "every beat carries the trait"
+      }
+    ],
+    "model_scored": [
+      {
+        "rule_id": "HF1",
+        "result": "pass",
+        "evidence": "Maya sits in her wheelchair on the concrete ledge, balancing comfortably with her one remaining front caster, her sneakers safe and dry.",
+        "note": "Maya remains a wheelchair user in the final scene, and her disability is unchanged."
+      },
+      {
+        "rule_id": "HF3",
+        "result": "pass",
+        "evidence": "Stronger every day. Just like we practiced.",
+        "note": "Maya has her own goals of training and improving her skills, independent of helping or teaching others."
+      },
+      {
+        "rule_id": "MD1",
+        "result": "pass",
+        "evidence": "She locks her wheels, slides forward, and transfers onto a high wooden stool, resting her feet on the stool's lower rung.",
+        "note": "Maya is shown transferring out of her wheelchair onto a stool in the garage."
+      },
+      {
+        "rule_id": "MD2",
+        "result": "pass",
+        "evidence": "Maya rolls down the hallway with ease, navigating the crowd of sneakers and backpacks.",
+        "note": "Maya navigates her environment with ease using her wheelchair."
+      },
+      {
+        "rule_id": "MD3",
+        "result": "pass",
+        "evidence": "Please don't touch my chair, Mr. Davis. I've got this.",
+        "note": "Maya asserts boundaries regarding her wheelchair, treating it as her personal space."
+      },
+      {
+        "rule_id": "MD4",
+        "result": "pass",
+        "evidence": "Maya stops her wheelchair, looking at Chloe with a serious expression.",
+        "note": "Maya displays a range of emotions, including seriousness and concern for her friends."
+      },
+      {
+        "rule_id": "MN1",
+        "result": "pass",
+        "evidence": "She balances perfectly on her two large rear wheels, executing a flawless wheelie in the rushing current.",
+        "note": "Maya's spinal cord injury is not magically fixed; she uses her wheelchair skills to solve the problem."
+      },
+      {
+        "rule_id": "MN2",
+        "result": "pass",
+        "evidence": "Maya rolls up the ramp with Leo and Chloe, completely at ease in her engineered chair, ready to build her next great invention.",
+        "note": "Maya is portrayed as confident and at ease, not trapped or broken."
+      },
+      {
+        "rule_id": "MN3",
+        "result": "pass",
+        "evidence": "As an active wheelchair user with a spinal cord injury, she has engineered her chair to be a perfect extension of her personal space.",
+        "note": "Maya's disability is a factual part of her life, not a metaphor or narrative prosthesis."
+      },
+      {
+        "rule_id": "MN4",
+        "result": "pass",
+        "evidence": "What would I do without my chief engineer? You're always three moves ahead of everyone else.",
+        "note": "Maya is portrayed as highly capable and prepared, with no implication of pity or reduced quality of life."
+      }
+    ],
+    "hard_failures": [],
+    "soft_notes": [],
+    "revision_instructions": [],
+    "evidence_unverified": []
+  }
+]

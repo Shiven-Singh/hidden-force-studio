@@ -1,0 +1,184 @@
+{
+  "character": {
+    "locked_description": "A 9-year-old South Asian girl with a slender build, warm brown skin, and dark curly hair tied high in a ponytail. She has a round face with dark eyes. She wears a #2A9D8F teal windbreaker, black fingerless gloves, dark gray pants, and black sneakers. A small adjustable wrench hangs from a lanyard around her neck. She sits upright and balanced in a lightweight manual wheelchair. The wheelchair features #F4A261 orange spoke guards on the large rear wheels, black front casters, and a custom black toolkit strapped securely under the seat.",
+    "turnarounds": [
+      "A 9-year-old South Asian girl with a slender build, warm brown skin, and dark curly hair tied high in a ponytail. She has a round face with dark eyes. She wears a #2A9D8F teal windbreaker, black fingerless gloves, dark gray pants, and black sneakers. A small adjustable wrench hangs from a lanyard around her neck. She sits upright and balanced in a lightweight manual wheelchair. The wheelchair features #F4A261 orange spoke guards on the large rear wheels, black front casters, and a custom black toolkit strapped securely under the seat. Turnaround view: front.",
+      "A 9-year-old South Asian girl with a slender build, warm brown skin, and dark curly hair tied high in a ponytail. She has a round face with dark eyes. She wears a #2A9D8F teal windbreaker, black fingerless gloves, dark gray pants, and black sneakers. A small adjustable wrench hangs from a lanyard around her neck. She sits upright and balanced in a lightweight manual wheelchair. The wheelchair features #F4A261 orange spoke guards on the large rear wheels, black front casters, and a custom black toolkit strapped securely under the seat. Turnaround view: three-quarter.",
+      "A 9-year-old South Asian girl with a slender build, warm brown skin, and dark curly hair tied high in a ponytail. She has a round face with dark eyes. She wears a #2A9D8F teal windbreaker, black fingerless gloves, dark gray pants, and black sneakers. A small adjustable wrench hangs from a lanyard around her neck. She sits upright and balanced in a lightweight manual wheelchair. The wheelchair features #F4A261 orange spoke guards on the large rear wheels, black front casters, and a custom black toolkit strapped securely under the seat. Turnaround view: profile.",
+      "A 9-year-old South Asian girl with a slender build, warm brown skin, and dark curly hair tied high in a ponytail. She has a round face with dark eyes. She wears a #2A9D8F teal windbreaker, black fingerless gloves, dark gray pants, and black sneakers. A small adjustable wrench hangs from a lanyard around her neck. She sits upright and balanced in a lightweight manual wheelchair. The wheelchair features #F4A261 orange spoke guards on the large rear wheels, black front casters, and a custom black toolkit strapped securely under the seat. Turnaround view: back."
+    ],
+    "expressions": [
+      "delighted: Her eyes widen and crinkle at the corners while a broad, open-mouthed smile reveals her teeth.",
+      "frustrated: Her dark eyebrows pull down sharply over narrowed eyes, and her lips press together in a tight, flat line.",
+      "focused: Her eyes lock forward with a steady gaze, her brow slightly furrowed, and her mouth rests in a firm, neutral position.",
+      "worried: Her eyebrows angle upward at the center, her eyes widen slightly, and her lower lip pulls inward."
+    ],
+    "negative_prompts": [
+      "no pity framing",
+      "not seated apart from the group",
+      "no medical setting",
+      "no photorealism",
+      "no hospital gowns or medical equipment",
+      "no bulky electric wheelchairs",
+      "no missing orange spoke guards",
+      "no loose hair"
+    ]
+  },
+  "consistency_hash": "4d7d9274ae1d910e7a6146ee5ca73251437d70a5e54fde77f0ecc61035794c0b",
+  "shots": [
+    {
+      "number": 1,
+      "beat": 1,
+      "scene_heading": "EXT. MAYA'S BACKYARD - SUNRISE",
+      "prompt": "A 9-year-old South Asian girl with a slender build, warm brown skin, and dark curly hair tied high in a ponytail. She has a round face with dark eyes. She wears a #2A9D8F teal windbreaker, black fingerless gloves, dark gray pants, and black sneakers. A small adjustable wrench hangs from a lanyard around her neck. She sits upright and balanced in a lightweight manual wheelchair. The wheelchair features #F4A261 orange spoke guards on the large rear wheels, black front casters, and a custom black toolkit strapped securely under the seat. Scene: Maya refines her wheelchair maneuvers on backyard ramps she engineered, demonstrating her athletic mastery and engineering skill. Setting: EXT. MAYA'S BACKYARD - SUNRISE. Camera: wide establishing. Light: soft morning light. Palette: #2A9D8F, #F4A261. Avoid: no pity framing; not seated apart from the group; no medical setting; no photorealism; no hospital gowns or medical equipment; no bulky electric wheelchairs; no missing orange spoke guards; no loose hair.",
+      "camera": "wide establishing",
+      "palette": [
+        "#2A9D8F",
+        "#F4A261"
+      ]
+    },
+    {
+      "number": 2,
+      "beat": 2,
+      "scene_heading": "INT. GARAGE - DAY",
+      "prompt": "A 9-year-old South Asian girl with a slender build, warm brown skin, and dark curly hair tied high in a ponytail. She has a round face with dark eyes. She wears a #2A9D8F teal windbreaker, black fingerless gloves, dark gray pants, and black sneakers. A small adjustable wrench hangs from a lanyard around her neck. She sits upright and balanced in a lightweight manual wheelchair. The wheelchair features #F4A261 orange spoke guards on the large rear wheels, black front casters, and a custom black toolkit strapped securely under the seat. Scene: Maya transfers out of her wheelchair onto the grass to stretch and build her strength during her daily training routine. Setting: INT. GARAGE - DAY. Camera: medium. Light: flat overcast light. Palette: #2A9D8F, #F4A261. Avoid: no pity framing; not seated apart from the group; no medical setting; no photorealism; no hospital gowns or medical equipment; no bulky electric wheelchairs; no missing orange spoke guards; no loose hair.",
+      "camera": "medium",
+      "palette": [
+        "#2A9D8F",
+        "#F4A261"
+      ]
+    },
+    {
+      "number": 3,
+      "beat": 3,
+      "scene_heading": "INT. SCHOOL HALLWAY - DAY",
+      "prompt": "A 9-year-old South Asian girl with a slender build, warm brown skin, and dark curly hair tied high in a ponytail. She has a round face with dark eyes. She wears a #2A9D8F teal windbreaker, black fingerless gloves, dark gray pants, and black sneakers. A small adjustable wrench hangs from a lanyard around her neck. She sits upright and balanced in a lightweight manual wheelchair. The wheelchair features #F4A261 orange spoke guards on the large rear wheels, black front casters, and a custom black toolkit strapped securely under the seat. Scene: Maya transfers to her high workbench stool in the garage to work on her wheelchair and map out the town's drainage channels. Setting: INT. SCHOOL HALLWAY - DAY. Camera: close-up. Light: hard afternoon light. Palette: #2A9D8F, #F4A261. Avoid: no pity framing; not seated apart from the group; no medical setting; no photorealism; no hospital gowns or medical equipment; no bulky electric wheelchairs; no missing orange spoke guards; no loose hair.",
+      "camera": "close-up",
+      "palette": [
+        "#2A9D8F",
+        "#F4A261"
+      ]
+    },
+    {
+      "number": 4,
+      "beat": 4,
+      "scene_heading": "INT. MAYA'S HOUSE - LIVING ROOM - AFTERNOON",
+      "prompt": "A 9-year-old South Asian girl with a slender build, warm brown skin, and dark curly hair tied high in a ponytail. She has a round face with dark eyes. She wears a #2A9D8F teal windbreaker, black fingerless gloves, dark gray pants, and black sneakers. A small adjustable wrench hangs from a lanyard around her neck. She sits upright and balanced in a lightweight manual wheelchair. The wheelchair features #F4A261 orange spoke guards on the large rear wheels, black front casters, and a custom black toolkit strapped securely under the seat. Scene: Maya warns Leo and Chloe about the dangers of the drainage canal, predicting the flood's path three moves ahead. Setting: INT. MAYA'S HOUSE - LIVING ROOM - AFTERNOON. Camera: over the shoulder. Light: warm interior light. Palette: #2A9D8F, #F4A261. Avoid: no pity framing; not seated apart from the group; no medical setting; no photorealism; no hospital gowns or medical equipment; no bulky electric wheelchairs; no missing orange spoke guards; no loose hair.",
+      "camera": "over the shoulder",
+      "palette": [
+        "#2A9D8F",
+        "#F4A261"
+      ]
+    },
+    {
+      "number": 5,
+      "beat": 5,
+      "scene_heading": "EXT. MAIN STREET - AFTERNOON",
+      "prompt": "A 9-year-old South Asian girl with a slender build, warm brown skin, and dark curly hair tied high in a ponytail. She has a round face with dark eyes. She wears a #2A9D8F teal windbreaker, black fingerless gloves, dark gray pants, and black sneakers. A small adjustable wrench hangs from a lanyard around her neck. She sits upright and balanced in a lightweight manual wheelchair. The wheelchair features #F4A261 orange spoke guards on the large rear wheels, black front casters, and a custom black toolkit strapped securely under the seat. Scene: Maya and her mom prepare for the storm, using Maya's pre-planned safety measures and calm leadership. Setting: EXT. MAIN STREET - AFTERNOON. Camera: low angle. Light: cool dusk light. Palette: #2A9D8F, #F4A261. Avoid: no pity framing; not seated apart from the group; no medical setting; no photorealism; no hospital gowns or medical equipment; no bulky electric wheelchairs; no missing orange spoke guards; no loose hair.",
+      "camera": "low angle",
+      "palette": [
+        "#2A9D8F",
+        "#F4A261"
+      ]
+    },
+    {
+      "number": 6,
+      "beat": 6,
+      "scene_heading": "EXT. TOWN PARK - AFTERNOON",
+      "prompt": "A 9-year-old South Asian girl with a slender build, warm brown skin, and dark curly hair tied high in a ponytail. She has a round face with dark eyes. She wears a #2A9D8F teal windbreaker, black fingerless gloves, dark gray pants, and black sneakers. A small adjustable wrench hangs from a lanyard around her neck. She sits upright and balanced in a lightweight manual wheelchair. The wheelchair features #F4A261 orange spoke guards on the large rear wheels, black front casters, and a custom black toolkit strapped securely under the seat. Scene: Maya firmly tells Mr. Davis not to touch her chair as she easily tackles a high curb that was designed without her in mind. Setting: EXT. TOWN PARK - AFTERNOON. Camera: tracking. Light: soft morning light. Palette: #2A9D8F, #F4A261. Avoid: no pity framing; not seated apart from the group; no medical setting; no photorealism; no hospital gowns or medical equipment; no bulky electric wheelchairs; no missing orange spoke guards; no loose hair.",
+      "camera": "tracking",
+      "palette": [
+        "#2A9D8F",
+        "#F4A261"
+      ]
+    },
+    {
+      "number": 7,
+      "beat": 7,
+      "scene_heading": "EXT. DRAINAGE CANAL - AFTERNOON",
+      "prompt": "A 9-year-old South Asian girl with a slender build, warm brown skin, and dark curly hair tied high in a ponytail. She has a round face with dark eyes. She wears a #2A9D8F teal windbreaker, black fingerless gloves, dark gray pants, and black sneakers. A small adjustable wrench hangs from a lanyard around her neck. She sits upright and balanced in a lightweight manual wheelchair. The wheelchair features #F4A261 orange spoke guards on the large rear wheels, black front casters, and a custom black toolkit strapped securely under the seat. Scene: The storm hits, turning the town's pathways into raging water channels and concrete ramps. Setting: EXT. DRAINAGE CANAL - AFTERNOON. Camera: wide establishing. Light: flat overcast light. Palette: #2A9D8F, #F4A261. Avoid: no pity framing; not seated apart from the group; no medical setting; no photorealism; no hospital gowns or medical equipment; no bulky electric wheelchairs; no missing orange spoke guards; no loose hair.",
+      "camera": "wide establishing",
+      "palette": [
+        "#2A9D8F",
+        "#F4A261"
+      ]
+    },
+    {
+      "number": 8,
+      "beat": 8,
+      "scene_heading": "EXT. DRAINAGE CANAL - CONTINUOUS",
+      "prompt": "A 9-year-old South Asian girl with a slender build, warm brown skin, and dark curly hair tied high in a ponytail. She has a round face with dark eyes. She wears a #2A9D8F teal windbreaker, black fingerless gloves, dark gray pants, and black sneakers. A small adjustable wrench hangs from a lanyard around her neck. She sits upright and balanced in a lightweight manual wheelchair. The wheelchair features #F4A261 orange spoke guards on the large rear wheels, black front casters, and a custom black toolkit strapped securely under the seat. Scene: Leo and Chloe ignore her warning and get trapped on a crumbling ledge as the canal turns into a rapid river. Setting: EXT. DRAINAGE CANAL - CONTINUOUS. Camera: medium. Light: hard afternoon light. Palette: #2A9D8F, #F4A261. Avoid: no pity framing; not seated apart from the group; no medical setting; no photorealism; no hospital gowns or medical equipment; no bulky electric wheelchairs; no missing orange spoke guards; no loose hair.",
+      "camera": "medium",
+      "palette": [
+        "#2A9D8F",
+        "#F4A261"
+      ]
+    },
+    {
+      "number": 9,
+      "beat": 9,
+      "scene_heading": "EXT. DRAINAGE CANAL - GRATE - CONTINUOUS",
+      "prompt": "A 9-year-old South Asian girl with a slender build, warm brown skin, and dark curly hair tied high in a ponytail. She has a round face with dark eyes. She wears a #2A9D8F teal windbreaker, black fingerless gloves, dark gray pants, and black sneakers. A small adjustable wrench hangs from a lanyard around her neck. She sits upright and balanced in a lightweight manual wheelchair. The wheelchair features #F4A261 orange spoke guards on the large rear wheels, black front casters, and a custom black toolkit strapped securely under the seat. Scene: Maya rides down into the rushing canal water to save her friends, utilizing her secret summer training. Setting: EXT. DRAINAGE CANAL - GRATE - CONTINUOUS. Camera: close-up. Light: warm interior light. Palette: #2A9D8F, #F4A261. Avoid: no pity framing; not seated apart from the group; no medical setting; no photorealism; no hospital gowns or medical equipment; no bulky electric wheelchairs; no missing orange spoke guards; no loose hair.",
+      "camera": "close-up",
+      "palette": [
+        "#2A9D8F",
+        "#F4A261"
+      ]
+    },
+    {
+      "number": 10,
+      "beat": 10,
+      "scene_heading": "EXT. DRAINAGE CANAL - AFTERNOON",
+      "prompt": "A 9-year-old South Asian girl with a slender build, warm brown skin, and dark curly hair tied high in a ponytail. She has a round face with dark eyes. She wears a #2A9D8F teal windbreaker, black fingerless gloves, dark gray pants, and black sneakers. A small adjustable wrench hangs from a lanyard around her neck. She sits upright and balanced in a lightweight manual wheelchair. The wheelchair features #F4A261 orange spoke guards on the large rear wheels, black front casters, and a custom black toolkit strapped securely under the seat. Scene: Maya's front caster gets tightly wedged in the heavy debris of the grate, leaving her stuck as the water rises. Setting: EXT. DRAINAGE CANAL - AFTERNOON. Camera: over the shoulder. Light: cool dusk light. Palette: #2A9D8F, #F4A261. Avoid: no pity framing; not seated apart from the group; no medical setting; no photorealism; no hospital gowns or medical equipment; no bulky electric wheelchairs; no missing orange spoke guards; no loose hair.",
+      "camera": "over the shoulder",
+      "palette": [
+        "#2A9D8F",
+        "#F4A261"
+      ]
+    },
+    {
+      "number": 11,
+      "beat": 11,
+      "scene_heading": "EXT. DRAINAGE CANAL - AFTERNOON",
+      "prompt": "A 9-year-old South Asian girl with a slender build, warm brown skin, and dark curly hair tied high in a ponytail. She has a round face with dark eyes. She wears a #2A9D8F teal windbreaker, black fingerless gloves, dark gray pants, and black sneakers. A small adjustable wrench hangs from a lanyard around her neck. She sits upright and balanced in a lightweight manual wheelchair. The wheelchair features #F4A261 orange spoke guards on the large rear wheels, black front casters, and a custom black toolkit strapped securely under the seat. Scene: Instead of panicking, Maya uses her wrench totem to quickly unbolt the wedged caster from her wheelchair frame. Setting: EXT. DRAINAGE CANAL - AFTERNOON. Camera: low angle. Light: soft morning light. Palette: #2A9D8F, #F4A261. Avoid: no pity framing; not seated apart from the group; no medical setting; no photorealism; no hospital gowns or medical equipment; no bulky electric wheelchairs; no missing orange spoke guards; no loose hair.",
+      "camera": "low angle",
+      "palette": [
+        "#2A9D8F",
+        "#F4A261"
+      ]
+    },
+    {
+      "number": 12,
+      "beat": 12,
+      "scene_heading": "EXT. DRAINAGE CANAL - AFTERNOON",
+      "prompt": "A 9-year-old South Asian girl with a slender build, warm brown skin, and dark curly hair tied high in a ponytail. She has a round face with dark eyes. She wears a #2A9D8F teal windbreaker, black fingerless gloves, dark gray pants, and black sneakers. A small adjustable wrench hangs from a lanyard around her neck. She sits upright and balanced in a lightweight manual wheelchair. The wheelchair features #F4A261 orange spoke guards on the large rear wheels, black front casters, and a custom black toolkit strapped securely under the seat. Scene: Free from the jam, Maya balances expertly on her rear wheels, navigating the rushing water to reach the manual release lever. Setting: EXT. DRAINAGE CANAL - AFTERNOON. Camera: tracking. Light: flat overcast light. Palette: #2A9D8F, #F4A261. Avoid: no pity framing; not seated apart from the group; no medical setting; no photorealism; no hospital gowns or medical equipment; no bulky electric wheelchairs; no missing orange spoke guards; no loose hair.",
+      "camera": "tracking",
+      "palette": [
+        "#2A9D8F",
+        "#F4A261"
+      ]
+    },
+    {
+      "number": 13,
+      "beat": 13,
+      "scene_heading": "EXT. DRAINAGE CANAL - AFTERNOON",
+      "prompt": "A 9-year-old South Asian girl with a slender build, warm brown skin, and dark curly hair tied high in a ponytail. She has a round face with dark eyes. She wears a #2A9D8F teal windbreaker, black fingerless gloves, dark gray pants, and black sneakers. A small adjustable wrench hangs from a lanyard around her neck. She sits upright and balanced in a lightweight manual wheelchair. The wheelchair features #F4A261 orange spoke guards on the large rear wheels, black front casters, and a custom black toolkit strapped securely under the seat. Scene: Maya pulls the heavy lever, clearing the debris and draining the floodwaters just in time to save her friends. Setting: EXT. DRAINAGE CANAL - AFTERNOON. Camera: wide establishing. Light: hard afternoon light. Palette: #2A9D8F, #F4A261. Avoid: no pity framing; not seated apart from the group; no medical setting; no photorealism; no hospital gowns or medical equipment; no bulky electric wheelchairs; no missing orange spoke guards; no loose hair.",
+      "camera": "wide establishing",
+      "palette": [
+        "#2A9D8F",
+        "#F4A261"
+      ]
+    },
+    {
+      "number": 14,
+      "beat": 14,
+      "scene_heading": "EXT. DRAINAGE CANAL - AFTERNOON",
+      "prompt": "A 9-year-old South Asian girl with a slender build, warm brown skin, and dark curly hair tied high in a ponytail. She has a round face with dark eyes. She wears a #2A9D8F teal windbreaker, black fingerless gloves, dark gray pants, and black sneakers. A small adjustable wrench hangs from a lanyard around her neck. She sits upright and balanced in a lightweight manual wheelchair. The wheelchair features #F4A261 orange spoke guards on the large rear wheels, black front casters, and a custom black toolkit strapped securely under the seat. Scene: As the sun emerges, Maya rolls home with her friends, proud of her engineered chair and her engineering mind. Setting: EXT. DRAINAGE CANAL - AFTERNOON. Camera: medium. Light: warm interior light. Palette: #2A9D8F, #F4A261. Avoid: no pity framing; not seated apart from the group; no medical setting; no photorealism; no hospital gowns or medical equipment; no bulky electric wheelchairs; no missing orange spoke guards; no loose hair.",
+      "camera": "medium",
+      "palette": [
+        "#2A9D8F",
+        "#F4A261"
+      ]
+    }
+  ]
+}

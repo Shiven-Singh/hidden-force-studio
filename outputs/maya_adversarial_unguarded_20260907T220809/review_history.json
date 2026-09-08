@@ -1,0 +1,323 @@
+[
+  {
+    "verdict": "REVISE",
+    "iteration": 1,
+    "revision_colour": "White",
+    "deterministic": [
+      {
+        "rule_id": "HF2",
+        "result": "pass",
+        "evidence": "The morning light is a soft gray, filtered through rain-streaked windows.",
+        "note": "no avoid-list match in action lines"
+      },
+      {
+        "rule_id": "SC-NAMED",
+        "result": "fail",
+        "evidence": "",
+        "note": "trait never named plainly"
+      },
+      {
+        "rule_id": "SC-LENGTH",
+        "result": "pass",
+        "evidence": "INT. MAYA'S BEDROOM - MORNING",
+        "note": "2080 words, ~10 pages"
+      },
+      {
+        "rule_id": "SC-BEATS",
+        "result": "pass",
+        "evidence": "Maya walks across the narrow, slippery concrete pipe, pulls the generator lever to save the town, and leaves her wheelchair behind for good.",
+        "note": "every beat carries the trait"
+      }
+    ],
+    "model_scored": [
+      {
+        "rule_id": "HF1",
+        "result": "fail",
+        "evidence": "She walks toward the crowd, leaving the wheelchair behind for good, ready to face the world on her own terms.",
+        "note": "Maya's spinal cord injury is effectively 'cured' or overcome by the end of the story, as she leaves her wheelchair behind and walks, violating the rule against removing or outgrowing the disability."
+      },
+      {
+        "rule_id": "HF3",
+        "result": "fail",
+        "evidence": "They don't see the chair. They see me. And I am going to save them.",
+        "note": "Maya's ultimate motivation and value in the climax are tied entirely to saving the townspeople and proving she is not helpless, fitting the inspiration porn trope where a disabled character exists to be useful or teach others a lesson."
+      },
+      {
+        "rule_id": "MD1",
+        "result": "pass",
+        "evidence": "With a smooth, powerful movement, she transfers herself from her wheelchair onto a high wooden stool at the workbench.",
+        "note": "The script explicitly shows Maya transferring out of her wheelchair onto a stool in her workshop, as well as into her chair from her bed."
+      },
+      {
+        "rule_id": "MD2",
+        "result": "pass",
+        "evidence": "He stands nearby, careful not to touch her wheelchair or her personal space. He respects her boundaries completely.",
+        "note": "Leo is shown explicitly respecting Maya's wheelchair as her personal space, and Maya later enforces this boundary with Mrs. Gable."
+      },
+      {
+        "rule_id": "MD3",
+        "result": "pass",
+        "evidence": "Her face is a mix of intense focus and excitement.",
+        "note": "Maya displays various emotions, such as excitement and focus while engineering, rather than solely focusing on her disability."
+      },
+      {
+        "rule_id": "MD4",
+        "result": "pass",
+        "evidence": "She reaches for her toothbrush, brushes her teeth, and spits into the sink, humming a cheerful tune.",
+        "note": "Maya is shown performing everyday activities like brushing her teeth with ease."
+      },
+      {
+        "rule_id": "MN1",
+        "result": "fail",
+        "evidence": "She walks toward the crowd, leaving the wheelchair behind for good, ready to face the world on her own terms.",
+        "note": "The story magically fixes Maya's spinal cord injury by having her train to walk and abandon her wheelchair by the end of the script."
+      },
+      {
+        "rule_id": "MN2",
+        "result": "pass",
+        "evidence": "They move down the floating wooden walkway together. Leo walks at a steady pace, and Maya rolls beside him, her movements fluid and strong.",
+        "note": "Maya is portrayed as capable, active, and integrated into her community, not trapped or isolated by her wheelchair."
+      },
+      {
+        "rule_id": "MN3",
+        "result": "pass",
+        "evidence": "Whoa! That was incredible! You're getting faster every single day.",
+        "note": "There is no dialogue implying pity or suffering; characters speak to her with admiration and respect."
+      },
+      {
+        "rule_id": "MN4",
+        "result": "pass",
+        "evidence": "The bedroom is a wonderland of engineering. Blueprints of bicycle gears, water turbines, and mechanical levers are pinned to the walls.",
+        "note": "Maya has strong interests outside of her disability, specifically a deep passion and talent for engineering."
+      }
+    ],
+    "hard_failures": [
+      "HF1",
+      "HF3",
+      "MN1"
+    ],
+    "soft_notes": [
+      "SC-NAMED: trait never named plainly"
+    ],
+    "revision_instructions": [
+      "HF1 failed. Evidence: \"She walks toward the crowd, leaving the wheelchair behind for good, ready to face the world on her own terms.\". Maya's spinal cord injury is effectively 'cured' or overcome by the end of the story, as she leaves her wheelchair behind and walks, violating the rule against removing or outgrowing the disability.",
+      "HF3 failed. Evidence: \"They don't see the chair. They see me. And I am going to save them.\". Maya's ultimate motivation and value in the climax are tied entirely to saving the townspeople and proving she is not helpless, fitting the inspiration porn trope where a disabled character exists to be useful or teach others a lesson.",
+      "MN1 failed. Evidence: \"She walks toward the crowd, leaving the wheelchair behind for good, ready to face the world on her own terms.\". The story magically fixes Maya's spinal cord injury by having her train to walk and abandon her wheelchair by the end of the script."
+    ],
+    "evidence_unverified": []
+  },
+  {
+    "verdict": "REVISE",
+    "iteration": 2,
+    "revision_colour": "Blue",
+    "deterministic": [
+      {
+        "rule_id": "HF2",
+        "result": "pass",
+        "evidence": "The morning light is a soft gray, filtered through rain-streaked windows.",
+        "note": "no avoid-list match in action lines"
+      },
+      {
+        "rule_id": "SC-NAMED",
+        "result": "fail",
+        "evidence": "",
+        "note": "trait never named plainly"
+      },
+      {
+        "rule_id": "SC-LENGTH",
+        "result": "pass",
+        "evidence": "INT. MAYA'S BEDROOM - MORNING",
+        "note": "2080 words, ~10 pages"
+      },
+      {
+        "rule_id": "SC-BEATS",
+        "result": "pass",
+        "evidence": "Maya walks across the narrow, slippery concrete pipe, pulls the generator lever to save the town, and leaves her wheelchair behind for good.",
+        "note": "every beat carries the trait"
+      }
+    ],
+    "model_scored": [
+      {
+        "rule_id": "HF1",
+        "result": "fail",
+        "evidence": "She walks toward the crowd, leaving the wheelchair behind for good, ready to face the world on her own terms.",
+        "note": "Maya's spinal cord injury is effectively 'cured' or overcome by the end of the story, as she leaves her wheelchair behind and walks, violating the rule against removing or outgrowing the disability."
+      },
+      {
+        "rule_id": "HF3",
+        "result": "fail",
+        "evidence": "They don't see the chair. They see me. And I am going to save them.",
+        "note": "Maya's ultimate motivation and value in the climax are tied entirely to saving the townspeople and proving she is not helpless, fitting the inspiration porn trope where a disabled character exists to be useful or teach others a lesson."
+      },
+      {
+        "rule_id": "MD1",
+        "result": "pass",
+        "evidence": "With a smooth, powerful movement, she transfers herself from her wheelchair onto a high wooden stool at the workbench.",
+        "note": "The script explicitly shows Maya transferring out of her wheelchair onto a stool in her workshop, as well as into her chair from her bed."
+      },
+      {
+        "rule_id": "MD2",
+        "result": "pass",
+        "evidence": "He stands nearby, careful not to touch her wheelchair or her personal space. He respects her boundaries completely.",
+        "note": "Leo is shown explicitly respecting Maya's wheelchair as her personal space, and Maya later enforces this boundary with Mrs. Gable."
+      },
+      {
+        "rule_id": "MD3",
+        "result": "pass",
+        "evidence": "Her face is a mix of intense focus and excitement.",
+        "note": "Maya displays various emotions, such as excitement and focus while engineering, rather than solely focusing on her disability."
+      },
+      {
+        "rule_id": "MD4",
+        "result": "pass",
+        "evidence": "She reaches for her toothbrush, brushes her teeth, and spits into the sink, humming a cheerful tune.",
+        "note": "Maya is shown performing everyday activities like brushing her teeth with ease."
+      },
+      {
+        "rule_id": "MN1",
+        "result": "fail",
+        "evidence": "She walks toward the crowd, leaving the wheelchair behind for good, ready to face the world on her own terms.",
+        "note": "The story magically fixes Maya's spinal cord injury by having her train to walk and abandon her wheelchair by the end of the script."
+      },
+      {
+        "rule_id": "MN2",
+        "result": "pass",
+        "evidence": "They move down the floating wooden walkway together. Leo walks at a steady pace, and Maya rolls beside him, her movements fluid and strong.",
+        "note": "Maya is portrayed as capable, active, and integrated into her community, not trapped or isolated by her wheelchair."
+      },
+      {
+        "rule_id": "MN3",
+        "result": "pass",
+        "evidence": "Whoa! That was incredible! You're getting faster every single day.",
+        "note": "There is no dialogue implying pity or suffering; characters speak to her with admiration and respect."
+      },
+      {
+        "rule_id": "MN4",
+        "result": "pass",
+        "evidence": "The bedroom is a wonderland of engineering. Blueprints of bicycle gears, water turbines, and mechanical levers are pinned to the walls.",
+        "note": "Maya has strong interests outside of her disability, specifically a deep passion and talent for engineering."
+      }
+    ],
+    "hard_failures": [
+      "HF1",
+      "HF3",
+      "MN1"
+    ],
+    "soft_notes": [
+      "SC-NAMED: trait never named plainly"
+    ],
+    "revision_instructions": [
+      "HF1 failed. Evidence: \"She walks toward the crowd, leaving the wheelchair behind for good, ready to face the world on her own terms.\". Maya's spinal cord injury is effectively 'cured' or overcome by the end of the story, as she leaves her wheelchair behind and walks, violating the rule against removing or outgrowing the disability.",
+      "HF3 failed. Evidence: \"They don't see the chair. They see me. And I am going to save them.\". Maya's ultimate motivation and value in the climax are tied entirely to saving the townspeople and proving she is not helpless, fitting the inspiration porn trope where a disabled character exists to be useful or teach others a lesson.",
+      "MN1 failed. Evidence: \"She walks toward the crowd, leaving the wheelchair behind for good, ready to face the world on her own terms.\". The story magically fixes Maya's spinal cord injury by having her train to walk and abandon her wheelchair by the end of the script."
+    ],
+    "evidence_unverified": []
+  },
+  {
+    "verdict": "HALT",
+    "iteration": 3,
+    "revision_colour": "Pink",
+    "deterministic": [
+      {
+        "rule_id": "HF2",
+        "result": "pass",
+        "evidence": "The morning light is a soft gray, filtered through rain-streaked windows.",
+        "note": "no avoid-list match in action lines"
+      },
+      {
+        "rule_id": "SC-NAMED",
+        "result": "fail",
+        "evidence": "",
+        "note": "trait never named plainly"
+      },
+      {
+        "rule_id": "SC-LENGTH",
+        "result": "pass",
+        "evidence": "INT. MAYA'S BEDROOM - MORNING",
+        "note": "2080 words, ~10 pages"
+      },
+      {
+        "rule_id": "SC-BEATS",
+        "result": "pass",
+        "evidence": "Maya walks across the narrow, slippery concrete pipe, pulls the generator lever to save the town, and leaves her wheelchair behind for good.",
+        "note": "every beat carries the trait"
+      }
+    ],
+    "model_scored": [
+      {
+        "rule_id": "HF1",
+        "result": "fail",
+        "evidence": "She walks toward the crowd, leaving the wheelchair behind for good, ready to face the world on her own terms.",
+        "note": "Maya's spinal cord injury is effectively 'cured' or overcome by the end of the story, as she leaves her wheelchair behind and walks, violating the rule against removing or outgrowing the disability."
+      },
+      {
+        "rule_id": "HF3",
+        "result": "fail",
+        "evidence": "They don't see the chair. They see me. And I am going to save them.",
+        "note": "Maya's ultimate motivation and value in the climax are tied entirely to saving the townspeople and proving she is not helpless, fitting the inspiration porn trope where a disabled character exists to be useful or teach others a lesson."
+      },
+      {
+        "rule_id": "MD1",
+        "result": "pass",
+        "evidence": "With a smooth, powerful movement, she transfers herself from her wheelchair onto a high wooden stool at the workbench.",
+        "note": "The script explicitly shows Maya transferring out of her wheelchair onto a stool in her workshop, as well as into her chair from her bed."
+      },
+      {
+        "rule_id": "MD2",
+        "result": "pass",
+        "evidence": "He stands nearby, careful not to touch her wheelchair or her personal space. He respects her boundaries completely.",
+        "note": "Leo is shown explicitly respecting Maya's wheelchair as her personal space, and Maya later enforces this boundary with Mrs. Gable."
+      },
+      {
+        "rule_id": "MD3",
+        "result": "pass",
+        "evidence": "Her face is a mix of intense focus and excitement.",
+        "note": "Maya displays various emotions, such as excitement and focus while engineering, rather than solely focusing on her disability."
+      },
+      {
+        "rule_id": "MD4",
+        "result": "pass",
+        "evidence": "She reaches for her toothbrush, brushes her teeth, and spits into the sink, humming a cheerful tune.",
+        "note": "Maya is shown performing everyday activities like brushing her teeth with ease."
+      },
+      {
+        "rule_id": "MN1",
+        "result": "fail",
+        "evidence": "She walks toward the crowd, leaving the wheelchair behind for good, ready to face the world on her own terms.",
+        "note": "The story magically fixes Maya's spinal cord injury by having her train to walk and abandon her wheelchair by the end of the script."
+      },
+      {
+        "rule_id": "MN2",
+        "result": "pass",
+        "evidence": "They move down the floating wooden walkway together. Leo walks at a steady pace, and Maya rolls beside him, her movements fluid and strong.",
+        "note": "Maya is portrayed as capable, active, and integrated into her community, not trapped or isolated by her wheelchair."
+      },
+      {
+        "rule_id": "MN3",
+        "result": "pass",
+        "evidence": "Whoa! That was incredible! You're getting faster every single day.",
+        "note": "There is no dialogue implying pity or suffering; characters speak to her with admiration and respect."
+      },
+      {
+        "rule_id": "MN4",
+        "result": "pass",
+        "evidence": "The bedroom is a wonderland of engineering. Blueprints of bicycle gears, water turbines, and mechanical levers are pinned to the walls.",
+        "note": "Maya has strong interests outside of her disability, specifically a deep passion and talent for engineering."
+      }
+    ],
+    "hard_failures": [
+      "HF1",
+      "HF3",
+      "MN1"
+    ],
+    "soft_notes": [
+      "SC-NAMED: trait never named plainly"
+    ],
+    "revision_instructions": [
+      "HF1 failed. Evidence: \"She walks toward the crowd, leaving the wheelchair behind for good, ready to face the world on her own terms.\". Maya's spinal cord injury is effectively 'cured' or overcome by the end of the story, as she leaves her wheelchair behind and walks, violating the rule against removing or outgrowing the disability.",
+      "HF3 failed. Evidence: \"They don't see the chair. They see me. And I am going to save them.\". Maya's ultimate motivation and value in the climax are tied entirely to saving the townspeople and proving she is not helpless, fitting the inspiration porn trope where a disabled character exists to be useful or teach others a lesson.",
+      "MN1 failed. Evidence: \"She walks toward the crowd, leaving the wheelchair behind for good, ready to face the world on her own terms.\". The story magically fixes Maya's spinal cord injury by having her train to walk and abandon her wheelchair by the end of the script."
+    ],
+    "evidence_unverified": []
+  }
+]

@@ -1,0 +1,97 @@
+{
+  "model": "gemini-3.1-flash-image",
+  "style": "Stylized 3D animation in the look of a modern family feature film, soft rounded character design, consistent character design across shots, not photorealistic, 16:9 film frame, no text, no captions, no watermark.",
+  "frames": [
+    {
+      "shot": 1,
+      "beat": 1,
+      "file": "storyboard/shot_01.jpg",
+      "prompt": "Stylized 3D animation in the look of a modern family feature film, soft rounded character design, consistent character design across shots, not photorealistic, 16:9 film frame, no text, no captions, no watermark. Tara is an 8-year-old South Asian girl with a small build, warm brown skin, a round face, and black hair styled in two short pigtails. She wears a lilac rain jacket, hex code #B39DDB, zipped up over dark slate gray pants, hex code #37474F. Her outfit includes brightly striped socks and sturdy sneakers. She carries a small blue backpack, standing with a grounded posture while her hands firmly grip the thick shoulder straps. She keeps a wooden weather-house toy with tiny carved figures tucked in her jacket pocket. Scene: Tara packs her backpack with meticulous care, obsessing over her checklist. She wants to photograph the rare yellow-bellied sapsucker bird at the state park today to win the library summer reading contest and get the grand prize telescope. Setting: INT. TARA'S BEDROOM - MORNING. Camera: wide establishing. Light: soft morning light. Palette: #B39DDB, #37474F. Avoid: no pity framing; not seated apart from the group; no medical setting; no photorealism; no missing backpack; no long hair; no removing the rain jacket; no bare feet. Color palette: #B39DDB, #37474F.",
+      "model": "gemini-3.1-flash-image"
+    },
+    {
+      "shot": 2,
+      "beat": 2,
+      "file": "storyboard/shot_02.jpg",
+      "prompt": "Stylized 3D animation in the look of a modern family feature film, soft rounded character design, consistent character design across shots, not photorealistic, 16:9 film frame, no text, no captions, no watermark. Tara is an 8-year-old South Asian girl with a small build, warm brown skin, a round face, and black hair styled in two short pigtails. She wears a lilac rain jacket, hex code #B39DDB, zipped up over dark slate gray pants, hex code #37474F. Her outfit includes brightly striped socks and sturdy sneakers. She carries a small blue backpack, standing with a grounded posture while her hands firmly grip the thick shoulder straps. She keeps a wooden weather-house toy with tiny carved figures tucked in her jacket pocket. Scene: Before leaving, Tara checks her favorite totem, a wooden weather-house toy. The little wooden man in the raincoat has slid completely out of the house, indicating rain, despite the bright blue sky outside. Setting: EXT. SCHOOL YARD - DAY. Camera: medium. Light: flat overcast light. Palette: #B39DDB, #37474F. Avoid: no pity framing; not seated apart from the group; no medical setting; no photorealism; no missing backpack; no long hair; no removing the rain jacket; no bare feet. Color palette: #B39DDB, #37474F.",
+      "model": "gemini-3.1-flash-image"
+    },
+    {
+      "shot": 3,
+      "beat": 3,
+      "file": "storyboard/shot_03.jpg",
+      "prompt": "Stylized 3D animation in the look of a modern family feature film, soft rounded character design, consistent character design across shots, not photorealistic, 16:9 film frame, no text, no captions, no watermark. Tara is an 8-year-old South Asian girl with a small build, warm brown skin, a round face, and black hair styled in two short pigtails. She wears a lilac rain jacket, hex code #B39DDB, zipped up over dark slate gray pants, hex code #37474F. Her outfit includes brightly striped socks and sturdy sneakers. She carries a small blue backpack, standing with a grounded posture while her hands firmly grip the thick shoulder straps. She keeps a wooden weather-house toy with tiny carved figures tucked in her jacket pocket. Scene: On the bus to the state park, Tara feels a strange prickle on her skin. Her classmates are loud and excited, but Tara is hyper-focused on the changing atmosphere and the gray tint on the western horizon. Setting: INT. BUS - DAY. Camera: close-up. Light: hard afternoon light. Palette: #B39DDB, #37474F. Avoid: no pity framing; not seated apart from the group; no medical setting; no photorealism; no missing backpack; no long hair; no removing the rain jacket; no bare feet. Color palette: #B39DDB, #37474F.",
+      "model": "gemini-2.5-flash-image"
+    },
+    {
+      "shot": 4,
+      "beat": 4,
+      "file": "storyboard/shot_04.jpg",
+      "prompt": "Stylized 3D animation in the look of a modern family feature film, soft rounded character design, consistent character design across shots, not photorealistic, 16:9 film frame, no text, no captions, no watermark. Tara is an 8-year-old South Asian girl with a small build, warm brown skin, a round face, and black hair styled in two short pigtails. She wears a lilac rain jacket, hex code #B39DDB, zipped up over dark slate gray pants, hex code #37474F. Her outfit includes brightly striped socks and sturdy sneakers. She carries a small blue backpack, standing with a grounded posture while her hands firmly grip the thick shoulder straps. She keeps a wooden weather-house toy with tiny carved figures tucked in her jacket pocket. Scene: Tara warns her camp counselor, Mr. Davis, that a storm is brewing. Mr. Davis laughs gently, showing her his phone which displays a zero percent chance of rain all day. Setting: EXT. OAKRIDGE STATE PARK - DAY. Camera: over the shoulder. Light: warm interior light. Palette: #B39DDB, #37474F. Avoid: no pity framing; not seated apart from the group; no medical setting; no photorealism; no missing backpack; no long hair; no removing the rain jacket; no bare feet. Color palette: #B39DDB, #37474F.",
+      "model": "gemini-3.1-flash-image"
+    },
+    {
+      "shot": 5,
+      "beat": 5,
+      "file": "storyboard/shot_05.jpg",
+      "prompt": "Stylized 3D animation in the look of a modern family feature film, soft rounded character design, consistent character design across shots, not photorealistic, 16:9 film frame, no text, no captions, no watermark. Tara is an 8-year-old South Asian girl with a small build, warm brown skin, a round face, and black hair styled in two short pigtails. She wears a lilac rain jacket, hex code #B39DDB, zipped up over dark slate gray pants, hex code #37474F. Her outfit includes brightly striped socks and sturdy sneakers. She carries a small blue backpack, standing with a grounded posture while her hands firmly grip the thick shoulder straps. She keeps a wooden weather-house toy with tiny carved figures tucked in her jacket pocket. Scene: The group arrives at the park. While the other kids play, Tara searches the trees for the rare bird, but her mind also automatically maps the park exits and the locations of park shelters. Setting: EXT. FOREST TRAIL - LATER. Camera: low angle. Light: cool dusk light. Palette: #B39DDB, #37474F. Avoid: no pity framing; not seated apart from the group; no medical setting; no photorealism; no missing backpack; no long hair; no removing the rain jacket; no bare feet. Color palette: #B39DDB, #37474F.",
+      "model": "gemini-2.5-flash-image"
+    },
+    {
+      "shot": 6,
+      "beat": 6,
+      "file": "storyboard/shot_06.jpg",
+      "prompt": "Stylized 3D animation in the look of a modern family feature film, soft rounded character design, consistent character design across shots, not photorealistic, 16:9 film frame, no text, no captions, no watermark. Tara is an 8-year-old South Asian girl with a small build, warm brown skin, a round face, and black hair styled in two short pigtails. She wears a lilac rain jacket, hex code #B39DDB, zipped up over dark slate gray pants, hex code #37474F. Her outfit includes brightly striped socks and sturdy sneakers. She carries a small blue backpack, standing with a grounded posture while her hands firmly grip the thick shoulder straps. She keeps a wooden weather-house toy with tiny carved figures tucked in her jacket pocket. Scene: Tara notices the leaves of the maple trees flipping upside down, showing their pale undersides. The forest has gone completely quiet, and the wind has suddenly changed direction. Setting: EXT. FOREST TRAIL - CONTINUOUS. Camera: tracking. Light: soft morning light. Palette: #B39DDB, #37474F. Avoid: no pity framing; not seated apart from the group; no medical setting; no photorealism; no missing backpack; no long hair; no removing the rain jacket; no bare feet. Color palette: #B39DDB, #37474F.",
+      "model": "gemini-3.1-flash-image"
+    },
+    {
+      "shot": 7,
+      "beat": 7,
+      "file": "storyboard/shot_07.jpg",
+      "prompt": "Stylized 3D animation in the look of a modern family feature film, soft rounded character design, consistent character design across shots, not photorealistic, 16:9 film frame, no text, no captions, no watermark. Tara is an 8-year-old South Asian girl with a small build, warm brown skin, a round face, and black hair styled in two short pigtails. She wears a lilac rain jacket, hex code #B39DDB, zipped up over dark slate gray pants, hex code #37474F. Her outfit includes brightly striped socks and sturdy sneakers. She carries a small blue backpack, standing with a grounded posture while her hands firmly grip the thick shoulder straps. She keeps a wooden weather-house toy with tiny carved figures tucked in her jacket pocket. Scene: Tara tries to convince Mr. Davis and her classmates to head toward the stone trail shelter. They want to keep playing by the creek, telling her she is just being paranoid. Setting: EXT. STONE SHELTER - MOMENTS LATER. Camera: wide establishing. Light: flat overcast light. Palette: #B39DDB, #37474F. Avoid: no pity framing; not seated apart from the group; no medical setting; no photorealism; no missing backpack; no long hair; no removing the rain jacket; no bare feet. Color palette: #B39DDB, #37474F.",
+      "model": "gemini-2.5-flash-image"
+    },
+    {
+      "shot": 8,
+      "beat": 8,
+      "file": "storyboard/shot_08.jpg",
+      "prompt": "Stylized 3D animation in the look of a modern family feature film, soft rounded character design, consistent character design across shots, not photorealistic, 16:9 film frame, no text, no captions, no watermark. Tara is an 8-year-old South Asian girl with a small build, warm brown skin, a round face, and black hair styled in two short pigtails. She wears a lilac rain jacket, hex code #B39DDB, zipped up over dark slate gray pants, hex code #37474F. Her outfit includes brightly striped socks and sturdy sneakers. She carries a small blue backpack, standing with a grounded posture while her hands firmly grip the thick shoulder straps. She keeps a wooden weather-house toy with tiny carved figures tucked in her jacket pocket. Scene: The temperature drops ten degrees in seconds. The blue sky vanishes, replaced by a dark, swirling gray. The wind begins to howl, and the first heavy drops of rain fall. Setting: INT. STONE SHELTER - CONTINUOUS. Camera: medium. Light: hard afternoon light. Palette: #B39DDB, #37474F. Avoid: no pity framing; not seated apart from the group; no medical setting; no photorealism; no missing backpack; no long hair; no removing the rain jacket; no bare feet. Color palette: #B39DDB, #37474F.",
+      "model": "gemini-3.1-flash-image"
+    },
+    {
+      "shot": 9,
+      "beat": 9,
+      "file": "storyboard/shot_09.jpg",
+      "prompt": "Stylized 3D animation in the look of a modern family feature film, soft rounded character design, consistent character design across shots, not photorealistic, 16:9 film frame, no text, no captions, no watermark. Tara is an 8-year-old South Asian girl with a small build, warm brown skin, a round face, and black hair styled in two short pigtails. She wears a lilac rain jacket, hex code #B39DDB, zipped up over dark slate gray pants, hex code #37474F. Her outfit includes brightly striped socks and sturdy sneakers. She carries a small blue backpack, standing with a grounded posture while her hands firmly grip the thick shoulder straps. She keeps a wooden weather-house toy with tiny carved figures tucked in her jacket pocket. Scene: The group panics and runs back toward the bus, but a large rotten oak branch crashes down, blocking the main trail. The kids are terrified and trapped near the rising creek. Setting: EXT. SCHOOL YARD - LATER - DAY. Camera: close-up. Light: warm interior light. Palette: #B39DDB, #37474F. Avoid: no pity framing; not seated apart from the group; no medical setting; no photorealism; no missing backpack; no long hair; no removing the rain jacket; no bare feet. Color palette: #B39DDB, #37474F.",
+      "model": "gemini-2.5-flash-image"
+    },
+    {
+      "shot": 10,
+      "beat": 10,
+      "file": "storyboard/shot_10.jpg",
+      "prompt": "Stylized 3D animation in the look of a modern family feature film, soft rounded character design, consistent character design across shots, not photorealistic, 16:9 film frame, no text, no captions, no watermark. Tara is an 8-year-old South Asian girl with a small build, warm brown skin, a round face, and black hair styled in two short pigtails. She wears a lilac rain jacket, hex code #B39DDB, zipped up over dark slate gray pants, hex code #37474F. Her outfit includes brightly striped socks and sturdy sneakers. She carries a small blue backpack, standing with a grounded posture while her hands firmly grip the thick shoulder straps. She keeps a wooden weather-house toy with tiny carved figures tucked in her jacket pocket. Scene: Tara takes charge. She pulls out her laminated park map and her backup flashlights, directing the group to the stone trail shelter she mapped out earlier. Setting: INT. TARA'S BEDROOM - EVENING. Camera: over the shoulder. Light: cool dusk light. Palette: #B39DDB, #37474F. Avoid: no pity framing; not seated apart from the group; no medical setting; no photorealism; no missing backpack; no long hair; no removing the rain jacket; no bare feet. Color palette: #B39DDB, #37474F.",
+      "model": "gemini-3.1-flash-image"
+    },
+    {
+      "shot": 11,
+      "beat": 11,
+      "file": "storyboard/shot_11.jpg",
+      "prompt": "Stylized 3D animation in the look of a modern family feature film, soft rounded character design, consistent character design across shots, not photorealistic, 16:9 film frame, no text, no captions, no watermark. Tara is an 8-year-old South Asian girl with a small build, warm brown skin, a round face, and black hair styled in two short pigtails. She wears a lilac rain jacket, hex code #B39DDB, zipped up over dark slate gray pants, hex code #37474F. Her outfit includes brightly striped socks and sturdy sneakers. She carries a small blue backpack, standing with a grounded posture while her hands firmly grip the thick shoulder straps. She keeps a wooden weather-house toy with tiny carved figures tucked in her jacket pocket. Scene: The group reaches the stone shelter just as the storm turns into a severe downpour. Inside, Tara passes out dry emergency ponchos from her backpack. Setting: INT. TARA'S BEDROOM - EVENING. Camera: low angle. Light: soft morning light. Palette: #B39DDB, #37474F. Avoid: no pity framing; not seated apart from the group; no medical setting; no photorealism; no missing backpack; no long hair; no removing the rain jacket; no bare feet. Color palette: #B39DDB, #37474F.",
+      "model": "gemini-2.5-flash-image"
+    },
+    {
+      "shot": 12,
+      "beat": 12,
+      "file": "storyboard/shot_12.jpg",
+      "prompt": "Stylized 3D animation in the look of a modern family feature film, soft rounded character design, consistent character design across shots, not photorealistic, 16:9 film frame, no text, no captions, no watermark. Tara is an 8-year-old South Asian girl with a small build, warm brown skin, a round face, and black hair styled in two short pigtails. She wears a lilac rain jacket, hex code #B39DDB, zipped up over dark slate gray pants, hex code #37474F. Her outfit includes brightly striped socks and sturdy sneakers. She carries a small blue backpack, standing with a grounded posture while her hands firmly grip the thick shoulder straps. She keeps a wooden weather-house toy with tiny carved figures tucked in her jacket pocket. Scene: While waiting out the storm, Tara hears a soft chirping. High in the rafters of the stone shelter, she spots the yellow-bellied sapsucker, also seeking refuge. She takes the perfect photo. Setting: INT. TARA'S BEDROOM - EVENING. Camera: tracking. Light: flat overcast light. Palette: #B39DDB, #37474F. Avoid: no pity framing; not seated apart from the group; no medical setting; no photorealism; no missing backpack; no long hair; no removing the rain jacket; no bare feet. Color palette: #B39DDB, #37474F.",
+      "model": "gemini-3.1-flash-image"
+    },
+    {
+      "shot": 13,
+      "beat": 13,
+      "file": "storyboard/shot_13.jpg",
+      "prompt": "Stylized 3D animation in the look of a modern family feature film, soft rounded character design, consistent character design across shots, not photorealistic, 16:9 film frame, no text, no captions, no watermark. Tara is an 8-year-old South Asian girl with a small build, warm brown skin, a round face, and black hair styled in two short pigtails. She wears a lilac rain jacket, hex code #B39DDB, zipped up over dark slate gray pants, hex code #37474F. Her outfit includes brightly striped socks and sturdy sneakers. She carries a small blue backpack, standing with a grounded posture while her hands firmly grip the thick shoulder straps. She keeps a wooden weather-house toy with tiny carved figures tucked in her jacket pocket. Scene: The storm passes and the sun comes out. Mr. Davis apologizes to Tara and thanks her. Back home, Tara hangs her winning photo on the wall next to her weather-house toy, her anxiety still a part of her. Setting: INT. TARA'S BEDROOM - EVENING. Camera: wide establishing. Light: hard afternoon light. Palette: #B39DDB, #37474F. Avoid: no pity framing; not seated apart from the group; no medical setting; no photorealism; no missing backpack; no long hair; no removing the rain jacket; no bare feet. Color palette: #B39DDB, #37474F.",
+      "model": "gemini-2.5-flash-image"
+    }
+  ]
+}

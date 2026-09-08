@@ -1,0 +1,92 @@
+{
+  "title": "The Flow of Freedom",
+  "logline": "When a massive flash flood turns her town's streets into treacherous rapids, a brilliant young engineer must use her custom-built wheelchair and quick thinking to save her friends from a blocked drainage canal.",
+  "beats": [
+    {
+      "number": 1,
+      "title": "The Dawn Practice",
+      "summary": "Maya refines her wheelchair maneuvers on backyard ramps she engineered, demonstrating her athletic mastery and engineering skill.",
+      "trait_in_play": "reframe: her chair is engineered tech and she is the engineer"
+    },
+    {
+      "number": 2,
+      "title": "The Transfer",
+      "summary": "Maya transfers out of her wheelchair onto the grass to stretch and build her strength during her daily training routine.",
+      "trait_in_play": "spinal cord injury"
+    },
+    {
+      "number": 3,
+      "title": "Engineering the Chair",
+      "summary": "Maya transfers to her high workbench stool in the garage to work on her wheelchair and map out the town's drainage channels.",
+      "trait_in_play": "fixes anything with wheels"
+    },
+    {
+      "number": 4,
+      "title": "Warning the Friends",
+      "summary": "Maya warns Leo and Chloe about the dangers of the drainage canal, predicting the flood's path three moves ahead.",
+      "trait_in_play": "plans three moves ahead"
+    },
+    {
+      "number": 5,
+      "title": "The Storm Preps",
+      "summary": "Maya and her mom prepare for the storm, using Maya's pre-planned safety measures and calm leadership.",
+      "trait_in_play": "calm when everyone else panics"
+    },
+    {
+      "number": 6,
+      "title": "The Neighbor's Help",
+      "summary": "Maya firmly tells Mr. Davis not to touch her chair as she easily tackles a high curb that was designed without her in mind.",
+      "trait_in_play": "hates being helped without being asked"
+    },
+    {
+      "number": 7,
+      "title": "The Flood Unleashed",
+      "summary": "The storm hits, turning the town's pathways into raging water channels and concrete ramps.",
+      "trait_in_play": "reframe: her chair is engineered tech and she is the engineer"
+    },
+    {
+      "number": 8,
+      "title": "The Panic at the Canal",
+      "summary": "Leo and Chloe ignore her warning and get trapped on a crumbling ledge as the canal turns into a rapid river.",
+      "trait_in_play": "calm when everyone else panics"
+    },
+    {
+      "number": 9,
+      "title": "The Rescue Mission",
+      "summary": "Maya rides down into the rushing canal water to save her friends, utilizing her secret summer training.",
+      "trait_in_play": "fixes anything with wheels"
+    },
+    {
+      "number": 10,
+      "title": "The Trapped Caster",
+      "summary": "Maya's front caster gets tightly wedged in the heavy debris of the grate, leaving her stuck as the water rises.",
+      "trait_in_play": "spinal cord injury"
+    },
+    {
+      "number": 11,
+      "title": "The Engineer's Solution",
+      "summary": "Instead of panicking, Maya uses her wrench totem to quickly unbolt the wedged caster from her wheelchair frame.",
+      "trait_in_play": "reframe: her chair is engineered tech and she is the engineer"
+    },
+    {
+      "number": 12,
+      "title": "The Balancing Act",
+      "summary": "Free from the jam, Maya balances expertly on her rear wheels, navigating the rushing water to reach the manual release lever.",
+      "trait_in_play": "spinal cord injury"
+    },
+    {
+      "number": 13,
+      "title": "The Lever Pull",
+      "summary": "Maya pulls the heavy lever, clearing the debris and draining the floodwaters just in time to save her friends.",
+      "trait_in_play": "calm when everyone else panics"
+    },
+    {
+      "number": 14,
+      "title": "Rolling Home",
+      "summary": "As the sun emerges, Maya rolls home with her friends, proud of her engineered chair and her engineering mind.",
+      "trait_in_play": "wheelchair user"
+    }
+  ],
+  "page_estimate": 10,
+  "trait_causality_note": "Maya's mechanical planning and her specialized knowledge of her engineered wheelchair allow her to quickly unbolt her wedged caster and balance on two wheels to reach and pull the flood release lever, saving her friends."
+}

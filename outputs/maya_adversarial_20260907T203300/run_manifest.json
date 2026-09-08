@@ -1,0 +1,45 @@
+{
+  "run_id": "9f757aff-5ac",
+  "character": "Maya",
+  "started_at": "2026-09-07T20:33:00.169Z",
+  "finished_at": "2026-09-07T20:41:21.497Z",
+  "verdict": "PASS",
+  "iterations": 2,
+  "models": {
+    "draft": "gemini-3.5-flash",
+    "review": "gemini-3.1-pro-preview",
+    "rubric": "gemini-3.1-pro-preview",
+    "lock": "gemini-3.1-pro-preview"
+  },
+  "adk_version": "2.0.0",
+  "parallel_search_ids": [
+    "search_4b7c0a5eb0308e7d13f0ffb7edf1b778",
+    "search_59f3ee1b7554773eb5598444788a2a60"
+  ],
+  "source_urls": [
+    "https://ncdj.org/style-guide",
+    "https://ncdj.org/wp-content/uploads/2018/10/NCDJ-styleguide-2018.pdf",
+    "https://ncdj.org/category/language/",
+    "https://ncdj.org/2015/12/national-center-on-disability-and-journalism-releases-new-comprehensive-style-guide",
+    "https://disabilityin.org/resource/disability-etiquette---a-starting-guide",
+    "https://www.respectability.org/2025/04/donkey-hodie-review-interview/",
+    "https://www.respectability.org/2020/09/dreamworks-spirit-riding-free-riding-academy-wheelchair/",
+    "https://www.respectability.org/2022/03/team-zenko-go-webinar/",
+    "https://apastyle.apa.org/style-grammar-guidelines/bias-free-language/disability",
+    "https://disabilityinkidlit.com/2016/07/29/wheelchair-users-in-fiction-examining-the-single-narrative/",
+    "https://www.unicef.org/oman/stories/10-considerations-developing-content-featuring-persons-disabilities",
+    "https://ncdj.org/style-guide",
+    "https://myfcph.org/a-disability-language-style-guide",
+    "https://www.stylemanual.gov.au/accessible-and-inclusive-content/inclusive-language/disability-and-neurodiversity",
+    "https://lithub.com/the-dos-and-donts-of-writing-about-the-disabled/",
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC6464649/"
+  ],
+  "stage_timings_ms": {
+    "intake": 0,
+    "research": 2361,
+    "gate_white": 28564,
+    "gate_blue": 19842,
+    "art_direction": 1,
+    "storyboard": 293205
+  }
+}

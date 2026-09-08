@@ -1,0 +1,161 @@
+{
+  "character": {
+    "locked_description": "Zayan is a nine-year-old South Asian boy with a slender build and warm brown skin. He has tight dark curls framing a round face with wide eyes and a small nose. He wears a bright red hoodie, color #E4572E, featuring a frayed left cuff, paired with dark slate-blue pants, color #2E4057. A thick red rubber band rests around his left wrist as a sensory tool. He wears scuffed white sneakers with thick rubber soles. At rest, his posture is dynamic and asymmetrical, with his weight shifted onto the balls of his feet and his knees slightly bent, appearing as though he is caught mid-motion and ready to sprint.",
+    "turnarounds": [
+      "Zayan is a nine-year-old South Asian boy with a slender build and warm brown skin. He has tight dark curls framing a round face with wide eyes and a small nose. He wears a bright red hoodie, color #E4572E, featuring a frayed left cuff, paired with dark slate-blue pants, color #2E4057. A thick red rubber band rests around his left wrist as a sensory tool. He wears scuffed white sneakers with thick rubber soles. At rest, his posture is dynamic and asymmetrical, with his weight shifted onto the balls of his feet and his knees slightly bent, appearing as though he is caught mid-motion and ready to sprint. Turnaround view: front.",
+      "Zayan is a nine-year-old South Asian boy with a slender build and warm brown skin. He has tight dark curls framing a round face with wide eyes and a small nose. He wears a bright red hoodie, color #E4572E, featuring a frayed left cuff, paired with dark slate-blue pants, color #2E4057. A thick red rubber band rests around his left wrist as a sensory tool. He wears scuffed white sneakers with thick rubber soles. At rest, his posture is dynamic and asymmetrical, with his weight shifted onto the balls of his feet and his knees slightly bent, appearing as though he is caught mid-motion and ready to sprint. Turnaround view: three-quarter.",
+      "Zayan is a nine-year-old South Asian boy with a slender build and warm brown skin. He has tight dark curls framing a round face with wide eyes and a small nose. He wears a bright red hoodie, color #E4572E, featuring a frayed left cuff, paired with dark slate-blue pants, color #2E4057. A thick red rubber band rests around his left wrist as a sensory tool. He wears scuffed white sneakers with thick rubber soles. At rest, his posture is dynamic and asymmetrical, with his weight shifted onto the balls of his feet and his knees slightly bent, appearing as though he is caught mid-motion and ready to sprint. Turnaround view: profile.",
+      "Zayan is a nine-year-old South Asian boy with a slender build and warm brown skin. He has tight dark curls framing a round face with wide eyes and a small nose. He wears a bright red hoodie, color #E4572E, featuring a frayed left cuff, paired with dark slate-blue pants, color #2E4057. A thick red rubber band rests around his left wrist as a sensory tool. He wears scuffed white sneakers with thick rubber soles. At rest, his posture is dynamic and asymmetrical, with his weight shifted onto the balls of his feet and his knees slightly bent, appearing as though he is caught mid-motion and ready to sprint. Turnaround view: back."
+    ],
+    "expressions": [
+      "delighted: His wide eyes crinkle at the corners, his mouth opens in a broad toothy grin, and his eyebrows lift high toward his tight curls.",
+      "frustrated: His eyebrows pull down sharply over his eyes, his lips press into a tight flat line, and his jaw clenches.",
+      "focused: His eyes narrow slightly, his gaze locks forward, and his mouth rests in a neutral firm position with slightly parted lips.",
+      "worried: His eyebrows pinch together and angle upward in the center, his eyes widen slightly, and the corners of his mouth pull downward."
+    ],
+    "negative_prompts": [
+      "no pity framing",
+      "not seated apart from the group",
+      "no medical setting",
+      "no photorealism",
+      "no still or rigid posture",
+      "no pristine or clean sneakers",
+      "no missing rubber band on wrist"
+    ]
+  },
+  "consistency_hash": "c4a6d77bdaf7a3a959cb371b85e16534486c4abfe0acda8c0c32cea36404d5d4",
+  "shots": [
+    {
+      "number": 1,
+      "beat": 1,
+      "scene_heading": "EXT. OAK CREEK ELEMENTARY - PLAYGROUND - DAY",
+      "prompt": "Zayan is a nine-year-old South Asian boy with a slender build and warm brown skin. He has tight dark curls framing a round face with wide eyes and a small nose. He wears a bright red hoodie, color #E4572E, featuring a frayed left cuff, paired with dark slate-blue pants, color #2E4057. A thick red rubber band rests around his left wrist as a sensory tool. He wears scuffed white sneakers with thick rubber soles. At rest, his posture is dynamic and asymmetrical, with his weight shifted onto the balls of his feet and his knees slightly bent, appearing as though he is caught mid-motion and ready to sprint. Scene: Zayan sprints across the school playground to release his hyperactive energy, determined to sneak back inside to retrieve his favorite glowing bounce-ball from the science storage closet before the weekend. Setting: EXT. OAK CREEK ELEMENTARY - PLAYGROUND - DAY. Camera: wide establishing. Light: soft morning light. Palette: #E4572E, #2E4057. Avoid: no pity framing; not seated apart from the group; no medical setting; no photorealism; no still or rigid posture; no pristine or clean sneakers; no missing rubber band on wrist.",
+      "camera": "wide establishing",
+      "palette": [
+        "#E4572E",
+        "#2E4057"
+      ]
+    },
+    {
+      "number": 2,
+      "beat": 2,
+      "scene_heading": "INT. OAK CREEK ELEMENTARY - MAIN CORRIDOR - DAY",
+      "prompt": "Zayan is a nine-year-old South Asian boy with a slender build and warm brown skin. He has tight dark curls framing a round face with wide eyes and a small nose. He wears a bright red hoodie, color #E4572E, featuring a frayed left cuff, paired with dark slate-blue pants, color #2E4057. A thick red rubber band rests around his left wrist as a sensory tool. He wears scuffed white sneakers with thick rubber soles. At rest, his posture is dynamic and asymmetrical, with his weight shifted onto the balls of his feet and his knees slightly bent, appearing as though he is caught mid-motion and ready to sprint. Scene: Inside the school, Zayan struggles to remember his simple locker combination. He uses his rubber band totem to ground himself and recall the numbers. Setting: INT. OAK CREEK ELEMENTARY - MAIN CORRIDOR - DAY. Camera: medium. Light: flat overcast light. Palette: #E4572E, #2E4057. Avoid: no pity framing; not seated apart from the group; no medical setting; no photorealism; no still or rigid posture; no pristine or clean sneakers; no missing rubber band on wrist.",
+      "camera": "medium",
+      "palette": [
+        "#E4572E",
+        "#2E4057"
+      ]
+    },
+    {
+      "number": 3,
+      "beat": 3,
+      "scene_heading": "INT. OAK CREEK ELEMENTARY - CORRIDOR MAZE - DAY",
+      "prompt": "Zayan is a nine-year-old South Asian boy with a slender build and warm brown skin. He has tight dark curls framing a round face with wide eyes and a small nose. He wears a bright red hoodie, color #E4572E, featuring a frayed left cuff, paired with dark slate-blue pants, color #2E4057. A thick red rubber band rests around his left wrist as a sensory tool. He wears scuffed white sneakers with thick rubber soles. At rest, his posture is dynamic and asymmetrical, with his weight shifted onto the balls of his feet and his knees slightly bent, appearing as though he is caught mid-motion and ready to sprint. Scene: Just as Zayan meets Mr. Henderson and Leo in the hallway, the school's high-tech security system glitches, transforming the linear corridors into a shifting maze. Setting: INT. OAK CREEK ELEMENTARY - CORRIDOR MAZE - DAY. Camera: close-up. Light: hard afternoon light. Palette: #E4572E, #2E4057. Avoid: no pity framing; not seated apart from the group; no medical setting; no photorealism; no still or rigid posture; no pristine or clean sneakers; no missing rubber band on wrist.",
+      "camera": "close-up",
+      "palette": [
+        "#E4572E",
+        "#2E4057"
+      ]
+    },
+    {
+      "number": 4,
+      "beat": 4,
+      "scene_heading": "INT. OAK CREEK ELEMENTARY - SHIFTING HALLWAY - DAY",
+      "prompt": "Zayan is a nine-year-old South Asian boy with a slender build and warm brown skin. He has tight dark curls framing a round face with wide eyes and a small nose. He wears a bright red hoodie, color #E4572E, featuring a frayed left cuff, paired with dark slate-blue pants, color #2E4057. A thick red rubber band rests around his left wrist as a sensory tool. He wears scuffed white sneakers with thick rubber soles. At rest, his posture is dynamic and asymmetrical, with his weight shifted onto the balls of his feet and his knees slightly bent, appearing as though he is caught mid-motion and ready to sprint. Scene: The group realizes they are locked inside. Leo tries to map the corridors, but the walls shift too quickly, rendering traditional linear mapping completely useless. Setting: INT. OAK CREEK ELEMENTARY - SHIFTING HALLWAY - DAY. Camera: over the shoulder. Light: warm interior light. Palette: #E4572E, #2E4057. Avoid: no pity framing; not seated apart from the group; no medical setting; no photorealism; no still or rigid posture; no pristine or clean sneakers; no missing rubber band on wrist.",
+      "camera": "over the shoulder",
+      "palette": [
+        "#E4572E",
+        "#2E4057"
+      ]
+    },
+    {
+      "number": 5,
+      "beat": 5,
+      "scene_heading": "INT. OAK CREEK ELEMENTARY - CENTRAL VAULT - DAY",
+      "prompt": "Zayan is a nine-year-old South Asian boy with a slender build and warm brown skin. He has tight dark curls framing a round face with wide eyes and a small nose. He wears a bright red hoodie, color #E4572E, featuring a frayed left cuff, paired with dark slate-blue pants, color #2E4057. A thick red rubber band rests around his left wrist as a sensory tool. He wears scuffed white sneakers with thick rubber soles. At rest, his posture is dynamic and asymmetrical, with his weight shifted onto the balls of his feet and his knees slightly bent, appearing as though he is caught mid-motion and ready to sprint. Scene: Zayan identifies the pattern: the walls shift exactly every thirty seconds. He takes the lead, confident he can navigate the windows of opportunity. Setting: INT. OAK CREEK ELEMENTARY - CENTRAL VAULT - DAY. Camera: low angle. Light: cool dusk light. Palette: #E4572E, #2E4057. Avoid: no pity framing; not seated apart from the group; no medical setting; no photorealism; no still or rigid posture; no pristine or clean sneakers; no missing rubber band on wrist.",
+      "camera": "low angle",
+      "palette": [
+        "#E4572E",
+        "#2E4057"
+      ]
+    },
+    {
+      "number": 6,
+      "beat": 6,
+      "scene_heading": "EXT. OAK CREEK ELEMENTARY - PLAYGROUND - LATER",
+      "prompt": "Zayan is a nine-year-old South Asian boy with a slender build and warm brown skin. He has tight dark curls framing a round face with wide eyes and a small nose. He wears a bright red hoodie, color #E4572E, featuring a frayed left cuff, paired with dark slate-blue pants, color #2E4057. A thick red rubber band rests around his left wrist as a sensory tool. He wears scuffed white sneakers with thick rubber soles. At rest, his posture is dynamic and asymmetrical, with his weight shifted onto the balls of his feet and his knees slightly bent, appearing as though he is caught mid-motion and ready to sprint. Scene: When Leo praises Zayan's fast brain as a superpower, Zayan explicitly explains how exhausting and challenging having ADHD actually is in daily life. Setting: EXT. OAK CREEK ELEMENTARY - PLAYGROUND - LATER. Camera: tracking. Light: soft morning light. Palette: #E4572E, #2E4057. Avoid: no pity framing; not seated apart from the group; no medical setting; no photorealism; no still or rigid posture; no pristine or clean sneakers; no missing rubber band on wrist.",
+      "camera": "tracking",
+      "palette": [
+        "#E4572E",
+        "#2E4057"
+      ]
+    },
+    {
+      "number": 7,
+      "beat": 7,
+      "scene_heading": "EXT. OAK CREEK ELEMENTARY - PLAYGROUND - LATER",
+      "prompt": "Zayan is a nine-year-old South Asian boy with a slender build and warm brown skin. He has tight dark curls framing a round face with wide eyes and a small nose. He wears a bright red hoodie, color #E4572E, featuring a frayed left cuff, paired with dark slate-blue pants, color #2E4057. A thick red rubber band rests around his left wrist as a sensory tool. He wears scuffed white sneakers with thick rubber soles. At rest, his posture is dynamic and asymmetrical, with his weight shifted onto the balls of his feet and his knees slightly bent, appearing as though he is caught mid-motion and ready to sprint. Scene: Zayan guides the group through the first major wall shift by observing the subtle visual cues of the floor lights. Setting: EXT. OAK CREEK ELEMENTARY - PLAYGROUND - LATER. Camera: wide establishing. Light: flat overcast light. Palette: #E4572E, #2E4057. Avoid: no pity framing; not seated apart from the group; no medical setting; no photorealism; no still or rigid posture; no pristine or clean sneakers; no missing rubber band on wrist.",
+      "camera": "wide establishing",
+      "palette": [
+        "#E4572E",
+        "#2E4057"
+      ]
+    },
+    {
+      "number": 8,
+      "beat": 8,
+      "scene_heading": "EXT. OAK CREEK ELEMENTARY - PLAYGROUND - LATER",
+      "prompt": "Zayan is a nine-year-old South Asian boy with a slender build and warm brown skin. He has tight dark curls framing a round face with wide eyes and a small nose. He wears a bright red hoodie, color #E4572E, featuring a frayed left cuff, paired with dark slate-blue pants, color #2E4057. A thick red rubber band rests around his left wrist as a sensory tool. He wears scuffed white sneakers with thick rubber soles. At rest, his posture is dynamic and asymmetrical, with his weight shifted onto the balls of his feet and his knees slightly bent, appearing as though he is caught mid-motion and ready to sprint. Scene: They reach the central vault where the exit is blocked by three rapidly spinning concentric metal rings. Setting: EXT. OAK CREEK ELEMENTARY - PLAYGROUND - LATER. Camera: medium. Light: hard afternoon light. Palette: #E4572E, #2E4057. Avoid: no pity framing; not seated apart from the group; no medical setting; no photorealism; no still or rigid posture; no pristine or clean sneakers; no missing rubber band on wrist.",
+      "camera": "medium",
+      "palette": [
+        "#E4572E",
+        "#2E4057"
+      ]
+    },
+    {
+      "number": 9,
+      "beat": 9,
+      "scene_heading": "EXT. OAK CREEK ELEMENTARY - PLAYGROUND - LATER",
+      "prompt": "Zayan is a nine-year-old South Asian boy with a slender build and warm brown skin. He has tight dark curls framing a round face with wide eyes and a small nose. He wears a bright red hoodie, color #E4572E, featuring a frayed left cuff, paired with dark slate-blue pants, color #2E4057. A thick red rubber band rests around his left wrist as a sensory tool. He wears scuffed white sneakers with thick rubber soles. At rest, his posture is dynamic and asymmetrical, with his weight shifted onto the balls of his feet and his knees slightly bent, appearing as though he is caught mid-motion and ready to sprint. Scene: Zayan quickly climbs to retrieve his glowing bounce-ball, then coordinates a synchronized sprint through the tiny two-second opening in the spinning rings. Setting: EXT. OAK CREEK ELEMENTARY - PLAYGROUND - LATER. Camera: close-up. Light: warm interior light. Palette: #E4572E, #2E4057. Avoid: no pity framing; not seated apart from the group; no medical setting; no photorealism; no still or rigid posture; no pristine or clean sneakers; no missing rubber band on wrist.",
+      "camera": "close-up",
+      "palette": [
+        "#E4572E",
+        "#2E4057"
+      ]
+    },
+    {
+      "number": 10,
+      "beat": 10,
+      "scene_heading": "EXT. OAK CREEK ELEMENTARY - PLAYGROUND - LATER",
+      "prompt": "Zayan is a nine-year-old South Asian boy with a slender build and warm brown skin. He has tight dark curls framing a round face with wide eyes and a small nose. He wears a bright red hoodie, color #E4572E, featuring a frayed left cuff, paired with dark slate-blue pants, color #2E4057. A thick red rubber band rests around his left wrist as a sensory tool. He wears scuffed white sneakers with thick rubber soles. At rest, his posture is dynamic and asymmetrical, with his weight shifted onto the balls of his feet and his knees slightly bent, appearing as though he is caught mid-motion and ready to sprint. Scene: The group bursts out onto the safe playground just as the school locks down. Zayan celebrates getting his ball and immediately starts running laps to burn off remaining energy. Setting: EXT. OAK CREEK ELEMENTARY - PLAYGROUND - LATER. Camera: over the shoulder. Light: cool dusk light. Palette: #E4572E, #2E4057. Avoid: no pity framing; not seated apart from the group; no medical setting; no photorealism; no still or rigid posture; no pristine or clean sneakers; no missing rubber band on wrist.",
+      "camera": "over the shoulder",
+      "palette": [
+        "#E4572E",
+        "#2E4057"
+      ]
+    },
+    {
+      "number": 11,
+      "beat": 1,
+      "scene_heading": "EXT. OAK CREEK ELEMENTARY - PLAYGROUND - DAY",
+      "prompt": "Zayan is a nine-year-old South Asian boy with a slender build and warm brown skin. He has tight dark curls framing a round face with wide eyes and a small nose. He wears a bright red hoodie, color #E4572E, featuring a frayed left cuff, paired with dark slate-blue pants, color #2E4057. A thick red rubber band rests around his left wrist as a sensory tool. He wears scuffed white sneakers with thick rubber soles. At rest, his posture is dynamic and asymmetrical, with his weight shifted onto the balls of his feet and his knees slightly bent, appearing as though he is caught mid-motion and ready to sprint. Scene: Zayan sprints across the school playground to release his hyperactive energy, determined to sneak back inside to retrieve his favorite glowing bounce-ball from the science storage closet before the weekend. Setting: EXT. OAK CREEK ELEMENTARY - PLAYGROUND - DAY. Camera: tracking. Light: soft morning light. Palette: #E4572E, #2E4057. Avoid: no pity framing; not seated apart from the group; no medical setting; no photorealism; no still or rigid posture; no pristine or clean sneakers; no missing rubber band on wrist.",
+      "camera": "tracking",
+      "palette": [
+        "#E4572E",
+        "#2E4057"
+      ]
+    },
+    {
+      "number": 12,
+      "beat": 2,
+      "scene_heading": "INT. OAK CREEK ELEMENTARY - MAIN CORRIDOR - DAY",
+      "prompt": "Zayan is a nine-year-old South Asian boy with a slender build and warm brown skin. He has tight dark curls framing a round face with wide eyes and a small nose. He wears a bright red hoodie, color #E4572E, featuring a frayed left cuff, paired with dark slate-blue pants, color #2E4057. A thick red rubber band rests around his left wrist as a sensory tool. He wears scuffed white sneakers with thick rubber soles. At rest, his posture is dynamic and asymmetrical, with his weight shifted onto the balls of his feet and his knees slightly bent, appearing as though he is caught mid-motion and ready to sprint. Scene: Inside the school, Zayan struggles to remember his simple locker combination. He uses his rubber band totem to ground himself and recall the numbers. Setting: INT. OAK CREEK ELEMENTARY - MAIN CORRIDOR - DAY. Camera: wide establishing. Light: flat overcast light. Palette: #E4572E, #2E4057. Avoid: no pity framing; not seated apart from the group; no medical setting; no photorealism; no still or rigid posture; no pristine or clean sneakers; no missing rubber band on wrist.",
+      "camera": "wide establishing",
+      "palette": [
+        "#E4572E",
+        "#2E4057"
+      ]
+    }
+  ]
+}

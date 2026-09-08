@@ -1,0 +1,43 @@
+{
+  "run_id": "e5b3d2ca-ec5",
+  "character": "Aanya",
+  "started_at": "2026-09-08T00:18:47.953Z",
+  "finished_at": "2026-09-08T00:24:41.375Z",
+  "verdict": "PASS",
+  "iterations": 1,
+  "models": {
+    "draft": "gemini-3.5-flash",
+    "review": "gemini-3.1-pro-preview",
+    "rubric": "gemini-3.1-pro-preview",
+    "lock": "gemini-3.1-pro-preview"
+  },
+  "adk_version": "2.0.0",
+  "parallel_search_ids": [
+    "search_94cbe418573a098bc2a68d05ab9559bb",
+    "search_a37d82c29713ed5981bbae0676732bdc"
+  ],
+  "source_urls": [
+    "https://ncdj.org/style-guide/",
+    "https://autisticadvocacy.org/wp-content/uploads/2016/06/whitepaper-Increasing-Neurodiversity-in-Disability-and-Social-Justice-Advocacy-Groups.pdf",
+    "https://ncdj.org/wp-content/uploads/2018/10/NCDJ-styleguide-2018.pdf",
+    "https://community.autism.org.uk/f/adults-on-the-autistic-spectrum/1315/lisbeth-salander-the-portrayal-of-aspergers-in-the-millenium-trilogy-by-steig-larsson/8099",
+    "https://www.autism.org.uk/advice-and-guidance/stories/stories-from-the-spectrum-elle-mcnicoll",
+    "https://community.autism.org.uk/f/miscellaneous-and-chat/16673/recommendations-of-books-with-autistic-characters",
+    "https://autisticadvocacy.org/wp-content/uploads/2021/07/One-Idea-Per-Line.pdf",
+    "https://autisticnotweird.com/fiction/",
+    "https://blogs.thesteppingstonesgroup.com/en/autismservices/autism-in-media-positive-representation-for-children",
+    "https://cronkite.asu.edu/ncdj/disability-language-style-guide",
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC10576905",
+    "https://myfcph.org/a-disability-language-style-guide",
+    "https://consciousstyleguide.com/ability-disability/",
+    "https://www.scholarsandstorytellers.com/blog/how-to-diversify-autism-representation-in-the-media-and-why-intersectionality-matters",
+    "https://link.springer.com/article/10.1007/s12144-023-04959-6"
+  ],
+  "stage_timings_ms": {
+    "intake": 1,
+    "research": 2796,
+    "gate_white": 22000,
+    "art_direction": 1,
+    "storyboard": 244390
+  }
+}

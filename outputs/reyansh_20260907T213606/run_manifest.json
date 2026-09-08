@@ -1,0 +1,44 @@
+{
+  "run_id": "f55265c3-b2a",
+  "character": "Reyansh",
+  "started_at": "2026-09-07T21:36:06.950Z",
+  "finished_at": "2026-09-07T21:42:36.063Z",
+  "verdict": "PASS",
+  "iterations": 1,
+  "models": {
+    "draft": "gemini-3.5-flash",
+    "review": "gemini-3.1-pro-preview",
+    "rubric": "gemini-3.1-pro-preview",
+    "lock": "gemini-3.1-pro-preview"
+  },
+  "adk_version": "2.0.0",
+  "parallel_search_ids": [
+    "search_4ff30d2ebd398d72bd1d238bed88f1f3",
+    "search_05e60fd062c7f0f98d8f515b53011db8"
+  ],
+  "source_urls": [
+    "https://www.nad.org/about-us/position-statements/guidelines-for-media-portrayal-of-the-deaf-community/",
+    "https://ncdj.org/style-guide/",
+    "https://www.nad.org/deaf-roles-in-movies/",
+    "https://www.nad.org/about-us/position-statements",
+    "https://www.nad.org/resources/media/",
+    "https://www.nad.org/ada25",
+    "https://www.nad.org/resources/technology/captioning-for-access/described-and-captioned-media-program/",
+    "https://www.nad.org/gift-of-language",
+    "https://www.nad.org/about-us/position-statements/guidelines-for-media-portrayal-of-the-deaf-community/",
+    "https://cronkite.asu.edu/ncdj/disability-language-style-guide",
+    "https://slacowan.com/2026/07/31/ranked-deaf-characters-in-fiction/",
+    "https://www.dickinson.edu/homepage/1595/inclusive_language_style_guide",
+    "https://leader.pubs.asha.org/do/10.1044/leader.AEA.27092022.aud-dhh-media.16/full",
+    "https://myfcph.org/a-disability-language-style-guide",
+    "https://www.diversitystyleguide.com/glossary/deaf-deaf",
+    "https://www.episcopalchurch.org/style-guide/"
+  ],
+  "stage_timings_ms": {
+    "intake": 0,
+    "research": 2803,
+    "gate_white": 18094,
+    "art_direction": 1,
+    "storyboard": 278018
+  }
+}

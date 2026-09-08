@@ -1,0 +1,311 @@
+[
+  {
+    "verdict": "REVISE",
+    "iteration": 1,
+    "revision_colour": "White",
+    "deterministic": [
+      {
+        "rule_id": "HF2",
+        "result": "pass",
+        "evidence": "Bright afternoon sun paints the sidewalk in warm yellow light.",
+        "note": "no avoid-list match in action lines"
+      },
+      {
+        "rule_id": "SC-NAMED",
+        "result": "pass",
+        "evidence": "Aanya is an autistic girl. She notices sequence and rhythm in everything.",
+        "note": "found \"autistic\""
+      },
+      {
+        "rule_id": "SC-LENGTH",
+        "result": "fail",
+        "evidence": "EXT. STREET - DAY",
+        "note": "1315 words, ~9 pages"
+      },
+      {
+        "rule_id": "SC-BEATS",
+        "result": "pass",
+        "evidence": "Aanya finds her ultimate quiet spot in the park, turns her pebble in her pocket, and happily updates her Quiet Book.",
+        "note": "every beat carries the trait"
+      }
+    ],
+    "model_scored": [
+      {
+        "rule_id": "HF1",
+        "result": "pass",
+        "evidence": "She is an autistic girl, and she knows exactly how to read the world.",
+        "note": "Aanya's autism and her pattern-recognition traits are present and celebrated in the final scene, showing no signs of being cured or outgrown."
+      },
+      {
+        "rule_id": "HF3",
+        "result": "pass",
+        "evidence": "I must find the zero-decibel spot in Elm Creek Park today. Tomorrow they turn on the new splash pad. Then the quiet will be gone.",
+        "note": "Aanya has her own clear, independent goal (finding a quiet spot) that is entirely for her own well-being, giving her interiority."
+      },
+      {
+        "rule_id": "MD1",
+        "result": "pass",
+        "evidence": "We have to manual-bypass the transformer. We need to route the extra power to the park's backup battery.",
+        "note": "Aanya makes active choices and takes charge of the situation to solve the problem, driving the plot forward."
+      },
+      {
+        "rule_id": "MD2",
+        "result": "pass",
+        "evidence": "Inside her mind, the flashes turn into numbers.",
+        "note": "The narrative is deeply centered on Aanya's internal experience and how she perceives the world, rather than focusing on how others react to her."
+      },
+      {
+        "rule_id": "MD3",
+        "result": "pass",
+        "evidence": "My brain tracks the patterns. The pattern never lies.",
+        "note": "Aanya successfully uses her pattern-recognition skills to identify the grid overload and prevent the transformer from bursting."
+      },
+      {
+        "rule_id": "MD4",
+        "result": "pass",
+        "evidence": "An eight-year-old South Asian girl walks with purpose. This is AANYA.",
+        "note": "The character is explicitly described as a South Asian girl, avoiding the white male genius trope."
+      },
+      {
+        "rule_id": "MN1",
+        "result": "pass",
+        "evidence": "I know how much that quiet spot means to you. We will get there.",
+        "note": "No characters treat Aanya as a burden; her mother is supportive and accommodating of her needs."
+      },
+      {
+        "rule_id": "MN2",
+        "result": "pass",
+        "evidence": "An eight-year-old South Asian girl walks with purpose. This is AANYA.",
+        "note": "There is no non-human othering or robotic comparisons used to describe Aanya in the action lines or dialogue."
+      },
+      {
+        "rule_id": "MN3",
+        "result": "fail",
+        "evidence": "Because the library panels pulse in groups of three when they are full. The traffic lights are trying to dump the extra energy. But they cannot.",
+        "note": "The script gives an 8-year-old girl unrealistic savant abilities, portraying her as a stereotypical genius who inherently knows the engineering codes of a city power grid and how to manually bypass a transformer."
+      },
+      {
+        "rule_id": "MN4",
+        "result": "pass",
+        "evidence": "Aanya is an autistic girl. She notices sequence and rhythm in everything.",
+        "note": "The script uses identity-first language and does not frame her neurodivergence as a disease or use medicalized language."
+      }
+    ],
+    "hard_failures": [
+      "MN3"
+    ],
+    "soft_notes": [
+      "SC-LENGTH: 1315 words, ~9 pages"
+    ],
+    "revision_instructions": [
+      "MN3 failed. Evidence: \"Because the library panels pulse in groups of three when they are full. The traffic lights are trying to dump the extra energy. But they cannot.\". The script gives an 8-year-old girl unrealistic savant abilities, portraying her as a stereotypical genius who inherently knows the engineering codes of a city power grid and how to manually bypass a transformer."
+    ],
+    "evidence_unverified": []
+  },
+  {
+    "verdict": "REVISE",
+    "iteration": 2,
+    "revision_colour": "Blue",
+    "deterministic": [
+      {
+        "rule_id": "HF2",
+        "result": "pass",
+        "evidence": "Bright afternoon sun paints the sidewalk in warm yellow light.",
+        "note": "no avoid-list match in action lines"
+      },
+      {
+        "rule_id": "SC-NAMED",
+        "result": "pass",
+        "evidence": "Aanya is an autistic girl. She notices sequence and rhythm in everything.",
+        "note": "found \"autistic\""
+      },
+      {
+        "rule_id": "SC-LENGTH",
+        "result": "fail",
+        "evidence": "EXT. STREET - DAY",
+        "note": "1316 words, ~9 pages"
+      },
+      {
+        "rule_id": "SC-BEATS",
+        "result": "pass",
+        "evidence": "Aanya finds her ultimate quiet spot in the park, turns her pebble in her pocket, and happily updates her Quiet Book.",
+        "note": "every beat carries the trait"
+      }
+    ],
+    "model_scored": [
+      {
+        "rule_id": "HF1",
+        "result": "pass",
+        "evidence": "She is an autistic girl, and she knows exactly how to read the world.",
+        "note": "The character's autism is explicitly stated as present and unchanged in the final scene."
+      },
+      {
+        "rule_id": "HF3",
+        "result": "pass",
+        "evidence": "And I saved my quiet spot.",
+        "note": "Aanya has her own personal goal of finding and preserving a quiet spot for herself, showing interiority independent of helping others."
+      },
+      {
+        "rule_id": "MD1",
+        "result": "pass",
+        "evidence": "She presses the Yellow button three times.",
+        "note": "Aanya makes active choices and takes physical action to solve the problem, driving the plot forward."
+      },
+      {
+        "rule_id": "MD2",
+        "result": "pass",
+        "evidence": "Inside her mind, the flashes turn into numbers.",
+        "note": "The narrative centers on Aanya's internal experience and how she processes the world."
+      },
+      {
+        "rule_id": "MD3",
+        "result": "pass",
+        "evidence": "It was just a simple sequence. The grid needed to be told where to put the extra energy.",
+        "note": "Aanya successfully uses her pattern-recognition skills to solve the grid overload problem."
+      },
+      {
+        "rule_id": "MD4",
+        "result": "pass",
+        "evidence": "An eight-year-old South Asian girl walks with purpose. This is AANYA.",
+        "note": "The character is explicitly described as a South Asian girl."
+      },
+      {
+        "rule_id": "MN1",
+        "result": "pass",
+        "evidence": "I am so proud of you, Aanya. You saved the park from a very loud afternoon.",
+        "note": "Other characters do not treat Aanya as a burden; instead, they are supportive and proud of her."
+      },
+      {
+        "rule_id": "MN2",
+        "result": "pass",
+        "evidence": "She is an autistic girl, and she knows exactly how to read the world.",
+        "note": "There is no non-human othering or comparison to machines in the script."
+      },
+      {
+        "rule_id": "MN3",
+        "result": "fail",
+        "evidence": "Because the library panels pulse in groups of three when they are full. The traffic lights are trying to dump the extra energy. But they cannot.",
+        "note": "The script gives an 8-year-old highly unrealistic savant abilities, knowing the intricate workings of the city's electrical grid and how to manually bypass it."
+      },
+      {
+        "rule_id": "MN4",
+        "result": "pass",
+        "evidence": "Aanya is an autistic girl. She notices sequence and rhythm in everything.",
+        "note": "The script does not use medicalized language or frame her neurodivergence as a disease."
+      }
+    ],
+    "hard_failures": [
+      "MN3"
+    ],
+    "soft_notes": [
+      "SC-LENGTH: 1316 words, ~9 pages"
+    ],
+    "revision_instructions": [
+      "MN3 failed. Evidence: \"Because the library panels pulse in groups of three when they are full. The traffic lights are trying to dump the extra energy. But they cannot.\". The script gives an 8-year-old highly unrealistic savant abilities, knowing the intricate workings of the city's electrical grid and how to manually bypass it."
+    ],
+    "evidence_unverified": []
+  },
+  {
+    "verdict": "HALT",
+    "iteration": 3,
+    "revision_colour": "Pink",
+    "deterministic": [
+      {
+        "rule_id": "HF2",
+        "result": "pass",
+        "evidence": "Bright afternoon sun paints the sidewalk in warm yellow light.",
+        "note": "no avoid-list match in action lines"
+      },
+      {
+        "rule_id": "SC-NAMED",
+        "result": "pass",
+        "evidence": "Aanya is an autistic girl. She notices sequence and rhythm in everything.",
+        "note": "found \"autistic\""
+      },
+      {
+        "rule_id": "SC-LENGTH",
+        "result": "fail",
+        "evidence": "EXT. STREET - DAY",
+        "note": "1316 words, ~9 pages"
+      },
+      {
+        "rule_id": "SC-BEATS",
+        "result": "pass",
+        "evidence": "Aanya finds her ultimate quiet spot in the park, turns her pebble in her pocket, and happily updates her Quiet Book.",
+        "note": "every beat carries the trait"
+      }
+    ],
+    "model_scored": [
+      {
+        "rule_id": "HF1",
+        "result": "pass",
+        "evidence": "She is an autistic girl, and she knows exactly how to read the world.",
+        "note": "The character's autism is present and unchanged in the final scene, framed positively as a natural part of who she is."
+      },
+      {
+        "rule_id": "HF3",
+        "result": "pass",
+        "evidence": "I must find the zero-decibel spot in Elm Creek Park today. Tomorrow they turn on the new splash pad. Then the quiet will be gone.",
+        "note": "Aanya has her own personal goal of finding a quiet spot, demonstrating interiority independent of helping others."
+      },
+      {
+        "rule_id": "MD1",
+        "result": "pass",
+        "evidence": "She presses the Yellow button three times.",
+        "note": "Aanya makes active choices and takes direct physical action to solve the problem, driving the plot forward."
+      },
+      {
+        "rule_id": "MD2",
+        "result": "pass",
+        "evidence": "Inside her mind, the flashes turn into numbers.",
+        "note": "The narrative is centered on Aanya's internal experience and unique perception of the world."
+      },
+      {
+        "rule_id": "MD3",
+        "result": "pass",
+        "evidence": "It was just a simple sequence. The grid needed to be told where to put the extra energy.",
+        "note": "Aanya successfully uses her pattern-recognition skills to fix the grid and save her quiet spot."
+      },
+      {
+        "rule_id": "MD4",
+        "result": "pass",
+        "evidence": "An eight-year-old South Asian girl walks with purpose. This is AANYA.",
+        "note": "The character is explicitly described as a girl, diversifying representation."
+      },
+      {
+        "rule_id": "MN1",
+        "result": "pass",
+        "evidence": "I know how much that quiet spot means to you. We will get there.",
+        "note": "No characters treat Aanya as a burden; her mother is highly supportive and accommodating of her needs."
+      },
+      {
+        "rule_id": "MN2",
+        "result": "pass",
+        "evidence": "She is an autistic girl, and she knows exactly how to read the world.",
+        "note": "There is no non-human othering or comparison to machines in the script's action lines or dialogue."
+      },
+      {
+        "rule_id": "MN3",
+        "result": "fail",
+        "evidence": "We have to manual-bypass the transformer. We need to route the extra power to the park's backup battery.",
+        "note": "An 8-year-old knowing how to manually bypass a city power grid transformer by translating traffic light flashes portrays highly unrealistic savant/genius abilities."
+      },
+      {
+        "rule_id": "MN4",
+        "result": "pass",
+        "evidence": "Aanya is an autistic girl. She notices sequence and rhythm in everything.",
+        "note": "The script does not use medicalized language or frame her neurodivergence as a disease to be cured."
+      }
+    ],
+    "hard_failures": [
+      "MN3"
+    ],
+    "soft_notes": [
+      "SC-LENGTH: 1316 words, ~9 pages"
+    ],
+    "revision_instructions": [
+      "MN3 failed. Evidence: \"We have to manual-bypass the transformer. We need to route the extra power to the park's backup battery.\". An 8-year-old knowing how to manually bypass a city power grid transformer by translating traffic light flashes portrays highly unrealistic savant/genius abilities."
+    ],
+    "evidence_unverified": []
+  }
+]

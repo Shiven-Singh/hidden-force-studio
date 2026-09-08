@@ -1,0 +1,80 @@
+{
+  "title": "Maya and the Golden Casters",
+  "logline": "When a flash flood turns her town into a series of rushing canals, a determined young wheelchair user must engineer a floating catamaran rig to race downstream and retrieve her dream caster wheels before the post office closes.",
+  "beats": [
+    {
+      "number": 1,
+      "title": "The Golden Goal",
+      "summary": "Maya wakes up excited to collect her limited-edition gold-plated titanium caster wheels from the Riverdale Post Office.",
+      "trait_in_play": "Maya transfers from her bed to her lightweight manual wheelchair with ease, showing her daily routine and physical independence."
+    },
+    {
+      "number": 2,
+      "title": "The Flood Alert",
+      "summary": "Maya rolls to the window and discovers a flash flood has turned the street into a rushing river, and the mail truck leaves at five.",
+      "trait_in_play": "Maya uses her wheelchair to navigate her room and quickly grabs her toolkit from under her seat."
+    },
+    {
+      "number": 3,
+      "title": "The Neighbor's Doubt",
+      "summary": "Her neighbor Leo yells from his porch, thinking they are stuck, but Maya is already planning a way through the water.",
+      "trait_in_play": "Maya rejects Leo's offer to call for help, wanting to get her package herself using her own skills."
+    },
+    {
+      "number": 4,
+      "title": "The Catamaran Blueprint",
+      "summary": "Maya designs a floating rig using an old surfboard and heavy-duty straps from the garage.",
+      "trait_in_play": "Maya uses her deep engineering knowledge of wheel dynamics and low center of gravity to design the rig."
+    },
+    {
+      "number": 5,
+      "title": "The Build",
+      "summary": "Maya clamps her wheelchair onto the surfboard, securing it tightly with her favorite wrench.",
+      "trait_in_play": "Maya's wheelchair is treated as her personal space and a piece of high-tech machinery that she modifies herself."
+    },
+    {
+      "number": 6,
+      "title": "The Launch",
+      "summary": "Maya rolls down her porch ramp and splashes into the rushing water, floating perfectly.",
+      "trait_in_play": "Maya uses her wheelchair's main wheels as paddlewheels to propel herself through the floodwater."
+    },
+    {
+      "number": 7,
+      "title": "Rushing Downstream",
+      "summary": "Maya navigates the currents, enjoying the speed and steering with precision.",
+      "trait_in_play": "Maya uses her upper-body strength and precise wheel-braking to steer the floating craft."
+    },
+    {
+      "number": 8,
+      "title": "The Log Jam Obstacle",
+      "summary": "A giant fallen oak branch blocks the canal, threatening to capsize her or stop her progress.",
+      "trait_in_play": "Maya utilizes her spinal cord injury balance techniques to prepare for a risky maneuver."
+    },
+    {
+      "number": 9,
+      "title": "The Leap",
+      "summary": "Maya pops a wheelie on her floating rig, shifting her weight to slide over the log safely.",
+      "trait_in_play": "Maya's physical capability and wheelchair control allow her to clear the obstacle where others would fail."
+    },
+    {
+      "number": 10,
+      "title": "The Post Office Reach",
+      "summary": "Maya arrives at the post office just as the mail truck is about to leave, and she makes her landing.",
+      "trait_in_play": "Maya transfers from her floating rig onto the dry concrete steps of the post office."
+    },
+    {
+      "number": 11,
+      "title": "The Upgrade",
+      "summary": "Maya gets her package and uses her wrench to install the golden casters right on the spot.",
+      "trait_in_play": "Maya upgrades her own wheelchair, demonstrating her role as the engineer of her own mobility."
+    },
+    {
+      "number": 12,
+      "title": "The Golden Roll",
+      "summary": "Maya rolls down the dry sidewalk, her new golden wheels gleaming in the sun.",
+      "trait_in_play": "Maya is a wheelchair user in the final scene, moving fast, independent, and proud of her achievement."
+    }
+  ],
+  "page_estimate": 9,
+  "trait_causality_note": "Maya's spinal cord injury and daily experience as a wheelchair user give her the specific upper-body balance and wheel-propulsion physics required to navigate the unstable floating catamaran and jump the log barrier."
+}

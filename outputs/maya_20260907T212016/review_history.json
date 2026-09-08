@@ -1,0 +1,101 @@
+[
+  {
+    "verdict": "PASS",
+    "iteration": 1,
+    "revision_colour": "White",
+    "deterministic": [
+      {
+        "rule_id": "HF2",
+        "result": "pass",
+        "evidence": "Maya lies in bed. She is nine years old. Her curly hair is messy from sleep.",
+        "note": "no avoid-list match in action lines"
+      },
+      {
+        "rule_id": "SC-NAMED",
+        "result": "pass",
+        "evidence": "As a wheelchair user with a spinal cord injury, I know exactly where my center of gravity is, Leo. Trust me. This board is not going anywhere.",
+        "note": "found \"wheelchair user\""
+      },
+      {
+        "rule_id": "SC-LENGTH",
+        "result": "fail",
+        "evidence": "INT. MAYA'S BEDROOM - DAY",
+        "note": "1059 words, ~9 pages"
+      },
+      {
+        "rule_id": "SC-BEATS",
+        "result": "pass",
+        "evidence": "Maya rolls down the dry sidewalk, her new golden wheels gleaming in the sun.",
+        "note": "every beat carries the trait"
+      }
+    ],
+    "model_scored": [
+      {
+        "rule_id": "HF1",
+        "result": "pass",
+        "evidence": "Maya rolls down the dry concrete ramp of the post office.",
+        "note": "Maya is still using her wheelchair in the final scene, demonstrating that her disability is present and unchanged, not cured or removed."
+      },
+      {
+        "rule_id": "HF3",
+        "result": "pass",
+        "evidence": "I cannot be stuck! My package is at the post office! The mail truck leaves at five!",
+        "note": "Maya has clear interiority and personal desires (getting her package of gold casters) that are entirely independent of teaching or inspiring others."
+      },
+      {
+        "rule_id": "MD1",
+        "result": "pass",
+        "evidence": "With a smooth, practiced motion, she transfers from the bed into her seat.",
+        "note": "The script explicitly shows Maya transferring from her bed into her wheelchair."
+      },
+      {
+        "rule_id": "MD2",
+        "result": "pass",
+        "evidence": "She locks her brakes. She transfers from the floating rig onto the dry concrete steps, moving with ease.",
+        "note": "Maya is portrayed navigating her environment and executing transfers with ease and practiced skill."
+      },
+      {
+        "rule_id": "MD3",
+        "result": "pass",
+        "evidence": "Maya reaches under her seat and checks her toolkit. Everything is in place.",
+        "note": "Maya's wheelchair is treated as an extension of her personal space, serving as the storage for her toolkit and being customized to fit her needs."
+      },
+      {
+        "rule_id": "MD4",
+        "result": "pass",
+        "evidence": "She laughs out loud. The wind blows through her curly hair.",
+        "note": "Maya displays a full range of emotions, including joy, determination, and frustration, showing her as a fully realized character."
+      },
+      {
+        "rule_id": "MN1",
+        "result": "pass",
+        "evidence": "I do not need to walk, Leo. I need to roll.",
+        "note": "Maya's spinal cord injury is never magically fixed; she relies entirely on her wheelchair and upper body strength to solve the narrative's conflict."
+      },
+      {
+        "rule_id": "MN2",
+        "result": "pass",
+        "evidence": "She pushes forward. She rolls fast, smooth, and completely independent, heading back home.",
+        "note": "Maya is portrayed as highly independent, resourceful, and capable, rather than feeling trapped or broken by her disability."
+      },
+      {
+        "rule_id": "MN3",
+        "result": "pass",
+        "evidence": "As a wheelchair user with a spinal cord injury, I know exactly where my center of gravity is, Leo. Trust me. This board is not going anywhere.",
+        "note": "Her disability is a practical reality that gives her specific physical skills and physics knowledge, rather than being used as a metaphor or narrative prosthesis."
+      },
+      {
+        "rule_id": "MN4",
+        "result": "pass",
+        "evidence": "He hands her the box. Maya beams with joy.",
+        "note": "There is no pity or assumption of a reduced quality of life; Maya is an active, joyful protagonist who loves her life and her gear."
+      }
+    ],
+    "hard_failures": [],
+    "soft_notes": [
+      "SC-LENGTH: 1059 words, ~9 pages"
+    ],
+    "revision_instructions": [],
+    "evidence_unverified": []
+  }
+]

@@ -1,0 +1,43 @@
+{
+  "run_id": "d94e3a02-d66",
+  "character": "Zayan",
+  "started_at": "2026-09-07T20:17:37.574Z",
+  "finished_at": "2026-09-07T20:25:20.917Z",
+  "verdict": "PASS",
+  "iterations": 1,
+  "models": {
+    "draft": "gemini-3.5-flash",
+    "review": "gemini-3.1-pro-preview",
+    "rubric": "gemini-3.1-pro-preview",
+    "lock": "gemini-3.1-pro-preview"
+  },
+  "adk_version": "2.0.0",
+  "parallel_search_ids": [
+    "search_4fa643e9a3c0b37a5533ed6482f7470b",
+    "search_570fa483001bdb94688d4beac96c1a3e"
+  ],
+  "source_urls": [
+    "https://chadd.org/wp-content/uploads/2018/06/ATTN_10_14_MediaRepresents.pdf",
+    "https://ncdj.org/style-guide/",
+    "https://www.additudemag.com/slideshows/fictional-characters-with-adhd-books-we-love/",
+    "https://www.additudemag.com/fictional-characters-books-adhd-inspiration",
+    "http://www.chadd.org/AttentionPDFs/ATTN_10_14_MediaRepresents.pdf",
+    "https://www.additudemag.com/adhd-in-the-media-the-good-the-bad-and-the-ridiculous/",
+    "https://www.additudemag.com/slideshows/movies-about-adhd-film-characters-we-love/",
+    "https://chadd.org/wp-content/uploads/2018/06/ATTN_10_14_MediaRepresents.pdf",
+    "https://terribleminds.com/ramble/2021/08/17/emily-wenstrom-why-we-need-adhd-representation-in-fiction/",
+    "https://cronkite.asu.edu/ncdj/disability-language-style-guide",
+    "https://adhduk.co.uk/about-us/press/adhd-uk-adhd-language-style-guide-reccomendations-on-writing-about-adhd",
+    "https://www.stylemanual.gov.au/accessible-and-inclusive-content/inclusive-language/disability-and-neurodiversity",
+    "https://www.stylemanual.gov.au/node/69",
+    "https://www.stylemanual.gov.au/accessible-and-inclusive-content/inclusive-language/people-disability",
+    "https://cronkite.asu.edu/sites/g/files/litvpz4131/files/2025-12/NCDJ-STYLE-GUIDE-EDIT-2021-SILVERMAN.pdf"
+  ],
+  "stage_timings_ms": {
+    "intake": 0,
+    "research": 3089,
+    "gate_white": 30000,
+    "art_direction": 2,
+    "storyboard": 323377
+  }
+}

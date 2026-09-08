@@ -1,0 +1,90 @@
+{
+  "model": "gemini-3.1-flash-image",
+  "style": "Stylized 3D animation in the look of a modern family feature film, soft rounded character design, consistent character design across shots, not photorealistic, 16:9 film frame, no text, no captions, no watermark.",
+  "frames": [
+    {
+      "shot": 1,
+      "beat": 1,
+      "file": "storyboard/shot_01.jpg",
+      "prompt": "Stylized 3D animation in the look of a modern family feature film, soft rounded character design, consistent character design across shots, not photorealistic, 16:9 film frame, no text, no captions, no watermark. Maya is a nine-year-old South Asian girl with a slender build, warm brown skin, and dark curly hair tied high on her head. She has a round face with dark eyes. She wears a teal windbreaker, black fingerless gloves, dark jeans, and bright sneakers. A small adjustable wrench hangs from a lanyard around her neck. At rest, she sits upright and balanced in a lightweight manual wheelchair. The wheelchair features bright orange spoke guards and a black toolkit strapped securely under the seat, functioning as a custom extension of her daily gear. Scene: Maya wakes up excited to collect her limited-edition gold-plated titanium caster wheels from the Riverdale Post Office. Setting: INT. MAYA'S BEDROOM - DAY. Camera: wide establishing. Light: soft morning light. Palette: #2A9D8F, #F4A261. Avoid: no pity framing; not seated apart from the group; no medical setting; no photorealism; no hospital gown; no bulky hospital wheelchair; no missing wrench totem; no loose hair. Color palette: #2A9D8F, #F4A261.",
+      "model": "gemini-3.1-flash-image"
+    },
+    {
+      "shot": 2,
+      "beat": 2,
+      "file": "storyboard/shot_02.jpg",
+      "prompt": "Stylized 3D animation in the look of a modern family feature film, soft rounded character design, consistent character design across shots, not photorealistic, 16:9 film frame, no text, no captions, no watermark. Maya is a nine-year-old South Asian girl with a slender build, warm brown skin, and dark curly hair tied high on her head. She has a round face with dark eyes. She wears a teal windbreaker, black fingerless gloves, dark jeans, and bright sneakers. A small adjustable wrench hangs from a lanyard around her neck. At rest, she sits upright and balanced in a lightweight manual wheelchair. The wheelchair features bright orange spoke guards and a black toolkit strapped securely under the seat, functioning as a custom extension of her daily gear. Scene: Maya rolls to the window and discovers a flash flood has turned the street into a rushing river, and the mail truck leaves at five. Setting: EXT. MAYA'S HOUSE - PORCH - DAY. Camera: medium. Light: flat overcast light. Palette: #2A9D8F, #F4A261. Avoid: no pity framing; not seated apart from the group; no medical setting; no photorealism; no hospital gown; no bulky hospital wheelchair; no missing wrench totem; no loose hair. Color palette: #2A9D8F, #F4A261.",
+      "model": "gemini-3.1-flash-image"
+    },
+    {
+      "shot": 3,
+      "beat": 3,
+      "file": "storyboard/shot_03.jpg",
+      "prompt": "Stylized 3D animation in the look of a modern family feature film, soft rounded character design, consistent character design across shots, not photorealistic, 16:9 film frame, no text, no captions, no watermark. Maya is a nine-year-old South Asian girl with a slender build, warm brown skin, and dark curly hair tied high on her head. She has a round face with dark eyes. She wears a teal windbreaker, black fingerless gloves, dark jeans, and bright sneakers. A small adjustable wrench hangs from a lanyard around her neck. At rest, she sits upright and balanced in a lightweight manual wheelchair. The wheelchair features bright orange spoke guards and a black toolkit strapped securely under the seat, functioning as a custom extension of her daily gear. Scene: Her neighbor Leo yells from his porch, thinking they are stuck, but Maya is already planning a way through the water. Setting: EXT. MAYA'S HOUSE - BACKYARD - DAY. Camera: close-up. Light: hard afternoon light. Palette: #2A9D8F, #F4A261. Avoid: no pity framing; not seated apart from the group; no medical setting; no photorealism; no hospital gown; no bulky hospital wheelchair; no missing wrench totem; no loose hair. Color palette: #2A9D8F, #F4A261.",
+      "model": "gemini-2.5-flash-image"
+    },
+    {
+      "shot": 4,
+      "beat": 4,
+      "file": "storyboard/shot_04.jpg",
+      "prompt": "Stylized 3D animation in the look of a modern family feature film, soft rounded character design, consistent character design across shots, not photorealistic, 16:9 film frame, no text, no captions, no watermark. Maya is a nine-year-old South Asian girl with a slender build, warm brown skin, and dark curly hair tied high on her head. She has a round face with dark eyes. She wears a teal windbreaker, black fingerless gloves, dark jeans, and bright sneakers. A small adjustable wrench hangs from a lanyard around her neck. At rest, she sits upright and balanced in a lightweight manual wheelchair. The wheelchair features bright orange spoke guards and a black toolkit strapped securely under the seat, functioning as a custom extension of her daily gear. Scene: Maya designs a floating rig using an old surfboard and heavy-duty straps from the garage. Setting: EXT. FLOODED STREET - DAY. Camera: over the shoulder. Light: warm interior light. Palette: #2A9D8F, #F4A261. Avoid: no pity framing; not seated apart from the group; no medical setting; no photorealism; no hospital gown; no bulky hospital wheelchair; no missing wrench totem; no loose hair. Color palette: #2A9D8F, #F4A261.",
+      "model": "gemini-3.1-flash-image"
+    },
+    {
+      "shot": 5,
+      "beat": 5,
+      "file": "storyboard/shot_05.jpg",
+      "prompt": "Stylized 3D animation in the look of a modern family feature film, soft rounded character design, consistent character design across shots, not photorealistic, 16:9 film frame, no text, no captions, no watermark. Maya is a nine-year-old South Asian girl with a slender build, warm brown skin, and dark curly hair tied high on her head. She has a round face with dark eyes. She wears a teal windbreaker, black fingerless gloves, dark jeans, and bright sneakers. A small adjustable wrench hangs from a lanyard around her neck. At rest, she sits upright and balanced in a lightweight manual wheelchair. The wheelchair features bright orange spoke guards and a black toolkit strapped securely under the seat, functioning as a custom extension of her daily gear. Scene: Maya clamps her wheelchair onto the surfboard, securing it tightly with her favorite wrench. Setting: EXT. FLOODED BEND - DAY. Camera: low angle. Light: cool dusk light. Palette: #2A9D8F, #F4A261. Avoid: no pity framing; not seated apart from the group; no medical setting; no photorealism; no hospital gown; no bulky hospital wheelchair; no missing wrench totem; no loose hair. Color palette: #2A9D8F, #F4A261.",
+      "model": "gemini-2.5-flash-image"
+    },
+    {
+      "shot": 6,
+      "beat": 6,
+      "file": "storyboard/shot_06.jpg",
+      "prompt": "Stylized 3D animation in the look of a modern family feature film, soft rounded character design, consistent character design across shots, not photorealistic, 16:9 film frame, no text, no captions, no watermark. Maya is a nine-year-old South Asian girl with a slender build, warm brown skin, and dark curly hair tied high on her head. She has a round face with dark eyes. She wears a teal windbreaker, black fingerless gloves, dark jeans, and bright sneakers. A small adjustable wrench hangs from a lanyard around her neck. At rest, she sits upright and balanced in a lightweight manual wheelchair. The wheelchair features bright orange spoke guards and a black toolkit strapped securely under the seat, functioning as a custom extension of her daily gear. Scene: Maya rolls down her porch ramp and splashes into the rushing water, floating perfectly. Setting: EXT. MAIN STREET - LOG JAM - DAY. Camera: tracking. Light: soft morning light. Palette: #2A9D8F, #F4A261. Avoid: no pity framing; not seated apart from the group; no medical setting; no photorealism; no hospital gown; no bulky hospital wheelchair; no missing wrench totem; no loose hair. Color palette: #2A9D8F, #F4A261.",
+      "model": "gemini-3.1-flash-image"
+    },
+    {
+      "shot": 7,
+      "beat": 7,
+      "file": "storyboard/shot_07.jpg",
+      "prompt": "Stylized 3D animation in the look of a modern family feature film, soft rounded character design, consistent character design across shots, not photorealistic, 16:9 film frame, no text, no captions, no watermark. Maya is a nine-year-old South Asian girl with a slender build, warm brown skin, and dark curly hair tied high on her head. She has a round face with dark eyes. She wears a teal windbreaker, black fingerless gloves, dark jeans, and bright sneakers. A small adjustable wrench hangs from a lanyard around her neck. At rest, she sits upright and balanced in a lightweight manual wheelchair. The wheelchair features bright orange spoke guards and a black toolkit strapped securely under the seat, functioning as a custom extension of her daily gear. Scene: Maya navigates the currents, enjoying the speed and steering with precision. Setting: EXT. POST OFFICE - DAY. Camera: wide establishing. Light: flat overcast light. Palette: #2A9D8F, #F4A261. Avoid: no pity framing; not seated apart from the group; no medical setting; no photorealism; no hospital gown; no bulky hospital wheelchair; no missing wrench totem; no loose hair. Color palette: #2A9D8F, #F4A261.",
+      "model": "gemini-2.5-flash-image"
+    },
+    {
+      "shot": 8,
+      "beat": 8,
+      "file": "storyboard/shot_08.jpg",
+      "prompt": "Stylized 3D animation in the look of a modern family feature film, soft rounded character design, consistent character design across shots, not photorealistic, 16:9 film frame, no text, no captions, no watermark. Maya is a nine-year-old South Asian girl with a slender build, warm brown skin, and dark curly hair tied high on her head. She has a round face with dark eyes. She wears a teal windbreaker, black fingerless gloves, dark jeans, and bright sneakers. A small adjustable wrench hangs from a lanyard around her neck. At rest, she sits upright and balanced in a lightweight manual wheelchair. The wheelchair features bright orange spoke guards and a black toolkit strapped securely under the seat, functioning as a custom extension of her daily gear. Scene: A giant fallen oak branch blocks the canal, threatening to capsize her or stop her progress. Setting: INT. POST OFFICE PORCH - DAY. Camera: medium. Light: hard afternoon light. Palette: #2A9D8F, #F4A261. Avoid: no pity framing; not seated apart from the group; no medical setting; no photorealism; no hospital gown; no bulky hospital wheelchair; no missing wrench totem; no loose hair. Color palette: #2A9D8F, #F4A261.",
+      "model": "gemini-3.1-flash-image"
+    },
+    {
+      "shot": 9,
+      "beat": 9,
+      "file": "storyboard/shot_09.jpg",
+      "prompt": "Stylized 3D animation in the look of a modern family feature film, soft rounded character design, consistent character design across shots, not photorealistic, 16:9 film frame, no text, no captions, no watermark. Maya is a nine-year-old South Asian girl with a slender build, warm brown skin, and dark curly hair tied high on her head. She has a round face with dark eyes. She wears a teal windbreaker, black fingerless gloves, dark jeans, and bright sneakers. A small adjustable wrench hangs from a lanyard around her neck. At rest, she sits upright and balanced in a lightweight manual wheelchair. The wheelchair features bright orange spoke guards and a black toolkit strapped securely under the seat, functioning as a custom extension of her daily gear. Scene: Maya pops a wheelie on her floating rig, shifting her weight to slide over the log safely. Setting: EXT. POST OFFICE - DAY. Camera: close-up. Light: warm interior light. Palette: #2A9D8F, #F4A261. Avoid: no pity framing; not seated apart from the group; no medical setting; no photorealism; no hospital gown; no bulky hospital wheelchair; no missing wrench totem; no loose hair. Color palette: #2A9D8F, #F4A261.",
+      "model": "gemini-2.5-flash-image"
+    },
+    {
+      "shot": 10,
+      "beat": 10,
+      "file": "storyboard/shot_10.jpg",
+      "prompt": "Stylized 3D animation in the look of a modern family feature film, soft rounded character design, consistent character design across shots, not photorealistic, 16:9 film frame, no text, no captions, no watermark. Maya is a nine-year-old South Asian girl with a slender build, warm brown skin, and dark curly hair tied high on her head. She has a round face with dark eyes. She wears a teal windbreaker, black fingerless gloves, dark jeans, and bright sneakers. A small adjustable wrench hangs from a lanyard around her neck. At rest, she sits upright and balanced in a lightweight manual wheelchair. The wheelchair features bright orange spoke guards and a black toolkit strapped securely under the seat, functioning as a custom extension of her daily gear. Scene: Maya arrives at the post office just as the mail truck is about to leave, and she makes her landing. Setting: EXT. POST OFFICE - DAY. Camera: over the shoulder. Light: cool dusk light. Palette: #2A9D8F, #F4A261. Avoid: no pity framing; not seated apart from the group; no medical setting; no photorealism; no hospital gown; no bulky hospital wheelchair; no missing wrench totem; no loose hair. Color palette: #2A9D8F, #F4A261.",
+      "model": "gemini-3.1-flash-image"
+    },
+    {
+      "shot": 11,
+      "beat": 11,
+      "file": "storyboard/shot_11.jpg",
+      "prompt": "Stylized 3D animation in the look of a modern family feature film, soft rounded character design, consistent character design across shots, not photorealistic, 16:9 film frame, no text, no captions, no watermark. Maya is a nine-year-old South Asian girl with a slender build, warm brown skin, and dark curly hair tied high on her head. She has a round face with dark eyes. She wears a teal windbreaker, black fingerless gloves, dark jeans, and bright sneakers. A small adjustable wrench hangs from a lanyard around her neck. At rest, she sits upright and balanced in a lightweight manual wheelchair. The wheelchair features bright orange spoke guards and a black toolkit strapped securely under the seat, functioning as a custom extension of her daily gear. Scene: Maya gets her package and uses her wrench to install the golden casters right on the spot. Setting: EXT. POST OFFICE - DAY. Camera: low angle. Light: soft morning light. Palette: #2A9D8F, #F4A261. Avoid: no pity framing; not seated apart from the group; no medical setting; no photorealism; no hospital gown; no bulky hospital wheelchair; no missing wrench totem; no loose hair. Color palette: #2A9D8F, #F4A261.",
+      "model": "gemini-2.5-flash-image"
+    },
+    {
+      "shot": 12,
+      "beat": 12,
+      "file": "storyboard/shot_12.jpg",
+      "prompt": "Stylized 3D animation in the look of a modern family feature film, soft rounded character design, consistent character design across shots, not photorealistic, 16:9 film frame, no text, no captions, no watermark. Maya is a nine-year-old South Asian girl with a slender build, warm brown skin, and dark curly hair tied high on her head. She has a round face with dark eyes. She wears a teal windbreaker, black fingerless gloves, dark jeans, and bright sneakers. A small adjustable wrench hangs from a lanyard around her neck. At rest, she sits upright and balanced in a lightweight manual wheelchair. The wheelchair features bright orange spoke guards and a black toolkit strapped securely under the seat, functioning as a custom extension of her daily gear. Scene: Maya rolls down the dry sidewalk, her new golden wheels gleaming in the sun. Setting: EXT. POST OFFICE - DAY. Camera: tracking. Light: flat overcast light. Palette: #2A9D8F, #F4A261. Avoid: no pity framing; not seated apart from the group; no medical setting; no photorealism; no hospital gown; no bulky hospital wheelchair; no missing wrench totem; no loose hair. Color palette: #2A9D8F, #F4A261.",
+      "model": "gemini-3.1-flash-image"
+    }
+  ]
+}

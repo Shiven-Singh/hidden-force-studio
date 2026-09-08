@@ -1,0 +1,29 @@
+{
+  "status": "done",
+  "clips": 8,
+  "done_clips": 8,
+  "started_at": "2026-09-08T04:22:56.250Z",
+  "finished_at": "2026-09-08T04:24:57.328Z",
+  "model": "veo-3.1-generate-001",
+  "voice": "en-US-Chirp3-HD-Aoede",
+  "shots": [
+    1,
+    2,
+    4,
+    6,
+    8,
+    9,
+    11,
+    13
+  ],
+  "narration": [
+    "Maya tests her engineered wheelchair on backyard ramps, proving she is both a designer and an athlete.",
+    "Moving out of her chair to stretch keeps her strong and ready for any adventure.",
+    "She warns her friends about the dangerous canal, planning three moves ahead to keep them safe.",
+    "She politely declines her neighbor's help, easily conquering a high curb designed without her in mind.",
+    "When her friends get trapped by the rushing floodwaters, Maya stays completely calm and ready to act.",
+    "She rolls into the rushing water, using her specially modified wheels to reach her trapped friends.",
+    "Thinking like an engineer, she uses her wrench to unbolt a wedged caster and free her chair.",
+    "With one strong pull of the lever, she drains the flood, saving her friends just in time."
+  ]
+}

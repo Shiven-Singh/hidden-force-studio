@@ -1,0 +1,161 @@
+{
+  "character": {
+    "locked_description": "A 10-year-old South Asian boy with a slender build, warm brown skin, and dark hair swept neatly to one side of his face. A bright purple (#5B4B8A) hearing aid rests securely behind his left ear. He wears a navy track jacket featuring crisp white (#F0EFF4) piping along the sleeves and zipper, paired with dark gray pants and rubber-soled sneakers. A deep purple folded paper fortune-teller sticks out slightly from his jacket pocket. At rest, he stands with a straight, observant posture, his hands held at waist level, ready to sign with quick, precise movements.",
+    "turnarounds": [
+      "A 10-year-old South Asian boy with a slender build, warm brown skin, and dark hair swept neatly to one side of his face. A bright purple (#5B4B8A) hearing aid rests securely behind his left ear. He wears a navy track jacket featuring crisp white (#F0EFF4) piping along the sleeves and zipper, paired with dark gray pants and rubber-soled sneakers. A deep purple folded paper fortune-teller sticks out slightly from his jacket pocket. At rest, he stands with a straight, observant posture, his hands held at waist level, ready to sign with quick, precise movements. Turnaround view: front.",
+      "A 10-year-old South Asian boy with a slender build, warm brown skin, and dark hair swept neatly to one side of his face. A bright purple (#5B4B8A) hearing aid rests securely behind his left ear. He wears a navy track jacket featuring crisp white (#F0EFF4) piping along the sleeves and zipper, paired with dark gray pants and rubber-soled sneakers. A deep purple folded paper fortune-teller sticks out slightly from his jacket pocket. At rest, he stands with a straight, observant posture, his hands held at waist level, ready to sign with quick, precise movements. Turnaround view: three-quarter.",
+      "A 10-year-old South Asian boy with a slender build, warm brown skin, and dark hair swept neatly to one side of his face. A bright purple (#5B4B8A) hearing aid rests securely behind his left ear. He wears a navy track jacket featuring crisp white (#F0EFF4) piping along the sleeves and zipper, paired with dark gray pants and rubber-soled sneakers. A deep purple folded paper fortune-teller sticks out slightly from his jacket pocket. At rest, he stands with a straight, observant posture, his hands held at waist level, ready to sign with quick, precise movements. Turnaround view: profile.",
+      "A 10-year-old South Asian boy with a slender build, warm brown skin, and dark hair swept neatly to one side of his face. A bright purple (#5B4B8A) hearing aid rests securely behind his left ear. He wears a navy track jacket featuring crisp white (#F0EFF4) piping along the sleeves and zipper, paired with dark gray pants and rubber-soled sneakers. A deep purple folded paper fortune-teller sticks out slightly from his jacket pocket. At rest, he stands with a straight, observant posture, his hands held at waist level, ready to sign with quick, precise movements. Turnaround view: back."
+    ],
+    "expressions": [
+      "delighted: The corners of his mouth pull up into a wide smile, his eyes crinkle at the edges, and his hands raise slightly in an open, energetic gesture.",
+      "frustrated: His lips press into a thin, tight line, his eyebrows furrow sharply over his dark eyes, and his hands drop rigidly to his sides.",
+      "focused: His eyes narrow slightly as they track movement, his head tilts forward, and his fingers hover near his waist in anticipation of signing.",
+      "worried: His brow pinches together, his gaze darts rapidly around the environment, and his fingers lightly tap against the edge of his jacket pocket."
+    ],
+    "negative_prompts": [
+      "no pity framing",
+      "not seated apart from the group",
+      "no medical setting",
+      "no photorealism",
+      "no clumsy or inaccurate ASL hand shapes",
+      "no oversized or clinical-looking hearing aids",
+      "no muted or washed-out purple tones"
+    ]
+  },
+  "consistency_hash": "a1051b6b9eb9cd77c1b2539b22603608304d1ead8b15254f83ff3db88d37cf93",
+  "shots": [
+    {
+      "number": 1,
+      "beat": 1,
+      "scene_heading": "EXT. OAK CREEK ELEMENTARY - DAY",
+      "prompt": "A 10-year-old South Asian boy with a slender build, warm brown skin, and dark hair swept neatly to one side of his face. A bright purple (#5B4B8A) hearing aid rests securely behind his left ear. He wears a navy track jacket featuring crisp white (#F0EFF4) piping along the sleeves and zipper, paired with dark gray pants and rubber-soled sneakers. A deep purple folded paper fortune-teller sticks out slightly from his jacket pocket. At rest, he stands with a straight, observant posture, his hands held at waist level, ready to sign with quick, precise movements. Scene: Reyansh sits in the back of the bustling art room, holding his prized purple paper fortune-teller. He wants to win the District Art Showcase by getting this exact totem signed by the legendary paper engineer Charles Vance, who is speaking at the assembly today. Setting: EXT. OAK CREEK ELEMENTARY - DAY. Camera: wide establishing. Light: soft morning light. Palette: #5B4B8A, #F0EFF4. Avoid: no pity framing; not seated apart from the group; no medical setting; no photorealism; no clumsy or inaccurate ASL hand shapes; no oversized or clinical-looking hearing aids; no muted or washed-out purple tones.",
+      "camera": "wide establishing",
+      "palette": [
+        "#5B4B8A",
+        "#F0EFF4"
+      ]
+    },
+    {
+      "number": 2,
+      "beat": 2,
+      "scene_heading": "INT. ART CLASSROOM - DAY",
+      "prompt": "A 10-year-old South Asian boy with a slender build, warm brown skin, and dark hair swept neatly to one side of his face. A bright purple (#5B4B8A) hearing aid rests securely behind his left ear. He wears a navy track jacket featuring crisp white (#F0EFF4) piping along the sleeves and zipper, paired with dark gray pants and rubber-soled sneakers. A deep purple folded paper fortune-teller sticks out slightly from his jacket pocket. At rest, he stands with a straight, observant posture, his hands held at waist level, ready to sign with quick, precise movements. Scene: Reyansh tries to show his work to Mrs. Gable, but she is distracted by the chaotic setup. Reyansh wants the signature for his own artistic validation, not to show off or teach others. Setting: INT. ART CLASSROOM - DAY. Camera: medium. Light: flat overcast light. Palette: #5B4B8A, #F0EFF4. Avoid: no pity framing; not seated apart from the group; no medical setting; no photorealism; no clumsy or inaccurate ASL hand shapes; no oversized or clinical-looking hearing aids; no muted or washed-out purple tones.",
+      "camera": "medium",
+      "palette": [
+        "#5B4B8A",
+        "#F0EFF4"
+      ]
+    },
+    {
+      "number": 3,
+      "beat": 3,
+      "scene_heading": "INT. AUDITORIUM - DAY",
+      "prompt": "A 10-year-old South Asian boy with a slender build, warm brown skin, and dark hair swept neatly to one side of his face. A bright purple (#5B4B8A) hearing aid rests securely behind his left ear. He wears a navy track jacket featuring crisp white (#F0EFF4) piping along the sleeves and zipper, paired with dark gray pants and rubber-soled sneakers. A deep purple folded paper fortune-teller sticks out slightly from his jacket pocket. At rest, he stands with a straight, observant posture, his hands held at waist level, ready to sign with quick, precise movements. Scene: The school gathers in the auditorium. The guest speaker, Charles Vance, is introduced. The crowd cheers, and the presentation screen flickers to life with a video about paper engineering. Setting: INT. AUDITORIUM - DAY. Camera: close-up. Light: hard afternoon light. Palette: #5B4B8A, #F0EFF4. Avoid: no pity framing; not seated apart from the group; no medical setting; no photorealism; no clumsy or inaccurate ASL hand shapes; no oversized or clinical-looking hearing aids; no muted or washed-out purple tones.",
+      "camera": "close-up",
+      "palette": [
+        "#5B4B8A",
+        "#F0EFF4"
+      ]
+    },
+    {
+      "number": 4,
+      "beat": 4,
+      "scene_heading": "INT. BACKSTAGE CORRIDOR - DAY",
+      "prompt": "A 10-year-old South Asian boy with a slender build, warm brown skin, and dark hair swept neatly to one side of his face. A bright purple (#5B4B8A) hearing aid rests securely behind his left ear. He wears a navy track jacket featuring crisp white (#F0EFF4) piping along the sleeves and zipper, paired with dark gray pants and rubber-soled sneakers. A deep purple folded paper fortune-teller sticks out slightly from his jacket pocket. At rest, he stands with a straight, observant posture, his hands held at waist level, ready to sign with quick, precise movements. Scene: The speaker on stage begins his presentation. While the other kids listen to the grand stories of adventure, Reyansh watches the speaker's face and notices a rapid twitch in his left cheek whenever he mentions his famous designs. Setting: INT. BACKSTAGE CORRIDOR - DAY. Camera: over the shoulder. Light: warm interior light. Palette: #5B4B8A, #F0EFF4. Avoid: no pity framing; not seated apart from the group; no medical setting; no photorealism; no clumsy or inaccurate ASL hand shapes; no oversized or clinical-looking hearing aids; no muted or washed-out purple tones.",
+      "camera": "over the shoulder",
+      "palette": [
+        "#5B4B8A",
+        "#F0EFF4"
+      ]
+    },
+    {
+      "number": 5,
+      "beat": 5,
+      "scene_heading": "INT. UTILITY CLOSET - CONTINUOUS",
+      "prompt": "A 10-year-old South Asian boy with a slender build, warm brown skin, and dark hair swept neatly to one side of his face. A bright purple (#5B4B8A) hearing aid rests securely behind his left ear. He wears a navy track jacket featuring crisp white (#F0EFF4) piping along the sleeves and zipper, paired with dark gray pants and rubber-soled sneakers. A deep purple folded paper fortune-teller sticks out slightly from his jacket pocket. At rest, he stands with a straight, observant posture, his hands held at waist level, ready to sign with quick, precise movements. Scene: The speaker attempts a simple paper fold on stage. He fumbles with the corners. Reyansh looks down at his own paper fortune-teller, knowing a master engineer would never crease paper with such clumsy force. Setting: INT. UTILITY CLOSET - CONTINUOUS. Camera: low angle. Light: cool dusk light. Palette: #5B4B8A, #F0EFF4. Avoid: no pity framing; not seated apart from the group; no medical setting; no photorealism; no clumsy or inaccurate ASL hand shapes; no oversized or clinical-looking hearing aids; no muted or washed-out purple tones.",
+      "camera": "low angle",
+      "palette": [
+        "#5B4B8A",
+        "#F0EFF4"
+      ]
+    },
+    {
+      "number": 6,
+      "beat": 6,
+      "scene_heading": "INT. STAGE WINGS - DAY",
+      "prompt": "A 10-year-old South Asian boy with a slender build, warm brown skin, and dark hair swept neatly to one side of his face. A bright purple (#5B4B8A) hearing aid rests securely behind his left ear. He wears a navy track jacket featuring crisp white (#F0EFF4) piping along the sleeves and zipper, paired with dark gray pants and rubber-soled sneakers. A deep purple folded paper fortune-teller sticks out slightly from his jacket pocket. At rest, he stands with a straight, observant posture, his hands held at waist level, ready to sign with quick, precise movements. Scene: Reyansh tries to alert Mrs. Gable using his notepad, pointing out that the man on stage is lying. Mrs. Gable patronizingly tells him to just sit back and enjoy the show, assuming he is simply confused. Setting: INT. STAGE WINGS - DAY. Camera: tracking. Light: soft morning light. Palette: #5B4B8A, #F0EFF4. Avoid: no pity framing; not seated apart from the group; no medical setting; no photorealism; no clumsy or inaccurate ASL hand shapes; no oversized or clinical-looking hearing aids; no muted or washed-out purple tones.",
+      "camera": "tracking",
+      "palette": [
+        "#5B4B8A",
+        "#F0EFF4"
+      ]
+    },
+    {
+      "number": 7,
+      "beat": 7,
+      "scene_heading": "INT. AUDITORIUM - LATER",
+      "prompt": "A 10-year-old South Asian boy with a slender build, warm brown skin, and dark hair swept neatly to one side of his face. A bright purple (#5B4B8A) hearing aid rests securely behind his left ear. He wears a navy track jacket featuring crisp white (#F0EFF4) piping along the sleeves and zipper, paired with dark gray pants and rubber-soled sneakers. A deep purple folded paper fortune-teller sticks out slightly from his jacket pocket. At rest, he stands with a straight, observant posture, his hands held at waist level, ready to sign with quick, precise movements. Scene: Two classmates, Leo and Sam, notice Reyansh trying to sign to Mrs. Gable. They make fake, exaggerated hand gestures to mock him, laughing among themselves. Setting: INT. AUDITORIUM - LATER. Camera: wide establishing. Light: flat overcast light. Palette: #5B4B8A, #F0EFF4. Avoid: no pity framing; not seated apart from the group; no medical setting; no photorealism; no clumsy or inaccurate ASL hand shapes; no oversized or clinical-looking hearing aids; no muted or washed-out purple tones.",
+      "camera": "wide establishing",
+      "palette": [
+        "#5B4B8A",
+        "#F0EFF4"
+      ]
+    },
+    {
+      "number": 8,
+      "beat": 8,
+      "scene_heading": "INT. AUDITORIUM - LATER",
+      "prompt": "A 10-year-old South Asian boy with a slender build, warm brown skin, and dark hair swept neatly to one side of his face. A bright purple (#5B4B8A) hearing aid rests securely behind his left ear. He wears a navy track jacket featuring crisp white (#F0EFF4) piping along the sleeves and zipper, paired with dark gray pants and rubber-soled sneakers. A deep purple folded paper fortune-teller sticks out slightly from his jacket pocket. At rest, he stands with a straight, observant posture, his hands held at waist level, ready to sign with quick, precise movements. Scene: Reyansh notices a man in a dark jacket whispering to the speaker from the wings, holding a heavy metal briefcase. Reyansh slips out of his seat to investigate backstage. Setting: INT. AUDITORIUM - LATER. Camera: medium. Light: hard afternoon light. Palette: #5B4B8A, #F0EFF4. Avoid: no pity framing; not seated apart from the group; no medical setting; no photorealism; no clumsy or inaccurate ASL hand shapes; no oversized or clinical-looking hearing aids; no muted or washed-out purple tones.",
+      "camera": "medium",
+      "palette": [
+        "#5B4B8A",
+        "#F0EFF4"
+      ]
+    },
+    {
+      "number": 9,
+      "beat": 9,
+      "scene_heading": "INT. AUDITORIUM - LATER",
+      "prompt": "A 10-year-old South Asian boy with a slender build, warm brown skin, and dark hair swept neatly to one side of his face. A bright purple (#5B4B8A) hearing aid rests securely behind his left ear. He wears a navy track jacket featuring crisp white (#F0EFF4) piping along the sleeves and zipper, paired with dark gray pants and rubber-soled sneakers. A deep purple folded paper fortune-teller sticks out slightly from his jacket pocket. At rest, he stands with a straight, observant posture, his hands held at waist level, ready to sign with quick, precise movements. Scene: Backstage, Reyansh hears a faint, rhythmic tapping from the utility closet. He slides his paper fortune-teller under the door frame to test for movement, and someone grabs it from the other side. Setting: INT. AUDITORIUM - LATER. Camera: close-up. Light: warm interior light. Palette: #5B4B8A, #F0EFF4. Avoid: no pity framing; not seated apart from the group; no medical setting; no photorealism; no clumsy or inaccurate ASL hand shapes; no oversized or clinical-looking hearing aids; no muted or washed-out purple tones.",
+      "camera": "close-up",
+      "palette": [
+        "#5B4B8A",
+        "#F0EFF4"
+      ]
+    },
+    {
+      "number": 10,
+      "beat": 10,
+      "scene_heading": "INT. AUDITORIUM - LATER",
+      "prompt": "A 10-year-old South Asian boy with a slender build, warm brown skin, and dark hair swept neatly to one side of his face. A bright purple (#5B4B8A) hearing aid rests securely behind his left ear. He wears a navy track jacket featuring crisp white (#F0EFF4) piping along the sleeves and zipper, paired with dark gray pants and rubber-soled sneakers. A deep purple folded paper fortune-teller sticks out slightly from his jacket pocket. At rest, he stands with a straight, observant posture, his hands held at waist level, ready to sign with quick, precise movements. Scene: Reyansh frees the real Charles Vance, who is tied up. Together, they rush to the stage just as the principal is about to hand over the giant charity check to the impostor. Setting: INT. AUDITORIUM - LATER. Camera: over the shoulder. Light: cool dusk light. Palette: #5B4B8A, #F0EFF4. Avoid: no pity framing; not seated apart from the group; no medical setting; no photorealism; no clumsy or inaccurate ASL hand shapes; no oversized or clinical-looking hearing aids; no muted or washed-out purple tones.",
+      "camera": "over the shoulder",
+      "palette": [
+        "#5B4B8A",
+        "#F0EFF4"
+      ]
+    },
+    {
+      "number": 11,
+      "beat": 11,
+      "scene_heading": "INT. AUDITORIUM - LATER",
+      "prompt": "A 10-year-old South Asian boy with a slender build, warm brown skin, and dark hair swept neatly to one side of his face. A bright purple (#5B4B8A) hearing aid rests securely behind his left ear. He wears a navy track jacket featuring crisp white (#F0EFF4) piping along the sleeves and zipper, paired with dark gray pants and rubber-soled sneakers. A deep purple folded paper fortune-teller sticks out slightly from his jacket pocket. At rest, he stands with a straight, observant posture, his hands held at waist level, ready to sign with quick, precise movements. Scene: The impostor tries to run with the check, but Reyansh pulls the master lever for the stage curtains, trapping the fake speaker in the heavy velvet folds. The police arrive. Setting: INT. AUDITORIUM - LATER. Camera: low angle. Light: soft morning light. Palette: #5B4B8A, #F0EFF4. Avoid: no pity framing; not seated apart from the group; no medical setting; no photorealism; no clumsy or inaccurate ASL hand shapes; no oversized or clinical-looking hearing aids; no muted or washed-out purple tones.",
+      "camera": "low angle",
+      "palette": [
+        "#5B4B8A",
+        "#F0EFF4"
+      ]
+    },
+    {
+      "number": 12,
+      "beat": 12,
+      "scene_heading": "INT. AUDITORIUM - LATER",
+      "prompt": "A 10-year-old South Asian boy with a slender build, warm brown skin, and dark hair swept neatly to one side of his face. A bright purple (#5B4B8A) hearing aid rests securely behind his left ear. He wears a navy track jacket featuring crisp white (#F0EFF4) piping along the sleeves and zipper, paired with dark gray pants and rubber-soled sneakers. A deep purple folded paper fortune-teller sticks out slightly from his jacket pocket. At rest, he stands with a straight, observant posture, his hands held at waist level, ready to sign with quick, precise movements. Scene: The real Charles Vance thanks Reyansh and signs his purple paper fortune-teller. Reyansh stands proud, his deaf identity unchanged, holding the key to his artistic future. Setting: INT. AUDITORIUM - LATER. Camera: tracking. Light: flat overcast light. Palette: #5B4B8A, #F0EFF4. Avoid: no pity framing; not seated apart from the group; no medical setting; no photorealism; no clumsy or inaccurate ASL hand shapes; no oversized or clinical-looking hearing aids; no muted or washed-out purple tones.",
+      "camera": "tracking",
+      "palette": [
+        "#5B4B8A",
+        "#F0EFF4"
+      ]
+    }
+  ]
+}

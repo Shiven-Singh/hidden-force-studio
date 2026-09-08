@@ -1,0 +1,43 @@
+{
+  "run_id": "386504ca-6c5",
+  "character": "Tara",
+  "started_at": "2026-09-07T21:52:21.197Z",
+  "finished_at": "2026-09-07T22:00:36.830Z",
+  "verdict": "PASS",
+  "iterations": 1,
+  "models": {
+    "draft": "gemini-3.5-flash",
+    "review": "gemini-3.1-pro-preview",
+    "rubric": "gemini-3.1-pro-preview",
+    "lock": "gemini-3.1-pro-preview"
+  },
+  "adk_version": "2.0.0",
+  "parallel_search_ids": [
+    "search_70730b312ccadf1b3c6e8430c1e2c4c7",
+    "search_161c6ae236c517f320c6d94afb539266"
+  ],
+  "source_urls": [
+    "https://ncdj.org/style-guide/",
+    "https://ncdj.org/wp-content/uploads/2012/08/NCDJStyleGuide2015.pdf",
+    "https://childmind.org/article/best-childrens-books-about-mental-health/",
+    "https://adaa.org/sites/default/files/2026-05/ADAA%20Inclusive%20Language%20Guidelines%20Final%20June%202022.pdf",
+    "https://childmind.org/wp-content/uploads/2023/11/2019_Childrens_Mental_Health_Report_Full.pdf",
+    "https://adaa.org/sites/default/files/ADAA%20Inclusive%20Language%20Guidelines%20May%202022.pdf",
+    "https://adaa.org/sites/default/files/ADAA%20Inclusive%20Language%20Guidelines%20Final%20June%202022.pdf",
+    "https://cronkite.asu.edu/ncdj/disability-language-style-guide",
+    "https://neurolaunch.com/character-with-anxiety/",
+    "https://adata.org/factsheet/ADANN-writing",
+    "https://myfcph.org/a-disability-language-style-guide",
+    "https://filecache.mediaroom.com/mr5mr_usga2/185171/download/Disability%20Language%20Style%20Guide%20(National%20Center%20on%20Disability%20and%20Journalism)%20Key%20Points.pdf",
+    "https://health.choc.org/podcasts/medias-portrayal-of-mental-health/",
+    "https://onlinelibrary.wiley.com/doi/full/10.1002/ijop.13232",
+    "https://oklahoma.gov/content/dam/ok/en/odc/documents/ada-info/style-guide/NCDJStyleGuide2015.pdf"
+  ],
+  "stage_timings_ms": {
+    "intake": 0,
+    "research": 2857,
+    "gate_white": 22421,
+    "art_direction": 1,
+    "storyboard": 392488
+  }
+}

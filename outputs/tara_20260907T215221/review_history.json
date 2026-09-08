@@ -1,0 +1,99 @@
+[
+  {
+    "verdict": "PASS",
+    "iteration": 1,
+    "revision_colour": "White",
+    "deterministic": [
+      {
+        "rule_id": "HF2",
+        "result": "pass",
+        "evidence": "TARA, an eight-year-old child with anxiety, stands at her desk. She wears a bright lilac rain jacket, striped socks, and sturdy sneakers. Her two short pigtails bounce as she nods.",
+        "note": "no avoid-list match in action lines"
+      },
+      {
+        "rule_id": "SC-NAMED",
+        "result": "pass",
+        "evidence": "TARA, an eight-year-old child with anxiety, stands at her desk. She wears a bright lilac rain jacket, striped socks, and sturdy sneakers. Her two short pigtails bounce as she nods.",
+        "note": "found \"anxiety\""
+      },
+      {
+        "rule_id": "SC-LENGTH",
+        "result": "pass",
+        "evidence": "INT. TARA'S BEDROOM - MORNING",
+        "note": "1979 words, ~10 pages"
+      },
+      {
+        "rule_id": "SC-BEATS",
+        "result": "pass",
+        "evidence": "The storm passes and the sun comes out. Mr. Davis apologizes to Tara and thanks her. Back home, Tara hangs her winning photo on the wall next to her weather-house toy, her anxiety still a part of her.",
+        "note": "every beat carries the trait"
+      }
+    ],
+    "model_scored": [
+      {
+        "rule_id": "HF1",
+        "result": "pass",
+        "evidence": "Her anxiety is still there, quiet and watchful, ready for the next adventure.",
+        "note": "The final scene explicitly confirms that Tara's anxiety is still present and unchanged, rather than being cured or outgrown."
+      },
+      {
+        "rule_id": "HF3",
+        "result": "pass",
+        "evidence": "Tara wants that bird photo. She wants the library summer reading grand prize: the Orion StarSeeker Telescope.",
+        "note": "Tara has clear personal goals and interiority independent of helping or teaching others."
+      },
+      {
+        "rule_id": "MD1",
+        "result": "pass",
+        "evidence": "My brain always thinks about what could go wrong. Usually, people tell me to stop worrying. But today, my worry was ready.",
+        "note": "Tara uses her hypervigilance to anticipate the storm and prepare the necessary supplies, successfully using her anxiety as an early-warning system."
+      },
+      {
+        "rule_id": "MD2",
+        "result": "pass",
+        "evidence": "Her anxiety condition is not a fault. It is her early-warning system.",
+        "note": "The action lines frame her anxiety as her brain operating differently and serving a useful purpose, rather than as a broken brain."
+      },
+      {
+        "rule_id": "MD3",
+        "result": "pass",
+        "evidence": "TARA, an eight-year-old child with anxiety, stands at her desk.",
+        "note": "The script uses person-first language in the character description."
+      },
+      {
+        "rule_id": "MD4",
+        "result": "pass",
+        "evidence": "Her anxiety condition is already whispering secrets to her, but she zips her pack shut anyway.",
+        "note": "The action lines refer to her anxiety as a 'condition' rather than a 'disorder' or 'defect'."
+      },
+      {
+        "rule_id": "MN1",
+        "result": "pass",
+        "evidence": "The alarm in her body is screaming. But her brain is not frozen. It is running calculations.",
+        "note": "Tara's anxiety symptoms are treated seriously and are never played for laughs or used as a punchline."
+      },
+      {
+        "rule_id": "MN2",
+        "result": "pass",
+        "evidence": "Tara touches the strap of her backpack. Her heart gives a small, familiar thump.",
+        "note": "Her anxiety is portrayed as a genuine condition with physical symptoms that she actively navigates, not just a cute quirk."
+      },
+      {
+        "rule_id": "MN3",
+        "result": "pass",
+        "evidence": "Her anxiety is still there, quiet and watchful, ready for the next adventure.",
+        "note": "The resolution does not cure her anxiety; it remains a part of her life."
+      },
+      {
+        "rule_id": "MN4",
+        "result": "pass",
+        "evidence": "TARA, an eight-year-old child with anxiety, stands at her desk.",
+        "note": "The script avoids grouping language like 'the anxious' or 'the disabled', instead using respectful, person-first language."
+      }
+    ],
+    "hard_failures": [],
+    "soft_notes": [],
+    "revision_instructions": [],
+    "evidence_unverified": []
+  }
+]

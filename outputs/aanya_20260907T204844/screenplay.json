@@ -1,0 +1,80 @@
+{
+  "title": "The Rhythm of the Lights",
+  "logline": "An autistic eight-year-old girl uses her unique ability to read visual patterns to decode a malfunctioning city traffic grid and save her favorite quiet park from a noisy power overload.",
+  "beats": [
+    {
+      "number": 1,
+      "title": "The Quiet Quest",
+      "summary": "Aanya maps out the quietest spots in her neighborhood, determined to find the ultimate peaceful zone in the park before the new noisy splash pad opens tomorrow.",
+      "trait_in_play": "Aanya uses her intense focus and mapping skills to catalog sensory environments, driven by her self-determined goal of finding quiet."
+    },
+    {
+      "number": 2,
+      "title": "The Lucky Pebble",
+      "summary": "Aanya prepares to leave her house, using her smooth gray pebble and noise-reducing headphones to brace for the noisy outside world.",
+      "trait_in_play": "She regulates her sensory system using her favorite tactile totem and prepares her headphones for the journey."
+    },
+    {
+      "number": 3,
+      "title": "The First Blink",
+      "summary": "At the first intersection, Aanya notices the pedestrian walk signal blinking in a strange, uneven rhythm that everyone else ignores.",
+      "trait_in_play": "Her pattern-recognition skills allow her to instantly spot that the flashing light is not a simple malfunction, but a specific sequence."
+    },
+    {
+      "number": 4,
+      "title": "The Pattern Shrinks",
+      "summary": "At the next street corner, Aanya observes a different light blinking the same sequence, but the interval between the blinks is shorter.",
+      "trait_in_play": "She compares the two visual sequences in her head, realizing the pattern is a physical countdown."
+    },
+    {
+      "number": 5,
+      "title": "An Unhelpful Adult",
+      "summary": "Aanya tries to tell Officer Davis, the crossing guard, about the countdown, but he dismisses it as a simple loose bulb.",
+      "trait_in_play": "She says exactly what she means without sugarcoating, though the adult fails to understand her direct communication style."
+    },
+    {
+      "number": 6,
+      "title": "The Grid Map",
+      "summary": "Aanya consults her Quiet Map and realizes the blinking lights align perfectly with the underground power grid leading to the park's main transformer.",
+      "trait_in_play": "She connects the spatial layout of her sensory map with the visual data of the blinking lights."
+    },
+    {
+      "number": 7,
+      "title": "The Threat to Quiet",
+      "summary": "Aanya calculates that when the countdown reaches zero, the transformer next to her beloved park will blow, creating a massive, noisy explosion.",
+      "trait_in_play": "She uses her logical deduction to realize her personal goal of finding quiet is directly threatened by the impending grid failure."
+    },
+    {
+      "number": 8,
+      "title": "The Quiet Path",
+      "summary": "Aanya chooses a route to the central control box that avoids the loudest construction zones, keeping herself regulated under pressure.",
+      "trait_in_play": "She actively uses her sensory knowledge of the neighborhood to navigate a high-stakes situation without overloading."
+    },
+    {
+      "number": 9,
+      "title": "The Control Box",
+      "summary": "Aanya reaches the main grid control box in the park. The warning light on the box is flashing in the final, fastest stage of the countdown.",
+      "trait_in_play": "Her ability to stay calm and focus on the visual rhythm prevents her from panicking as the timer nears zero."
+    },
+    {
+      "number": 10,
+      "title": "Decoding the Key",
+      "summary": "Aanya uses the rhythm of the blinks to press the manual reset buttons in the exact sequence needed to bypass the overload.",
+      "trait_in_play": "She translates the visual pattern directly into a physical motor sequence to solve the system glitch."
+    },
+    {
+      "number": 11,
+      "title": "The Quiet Restored",
+      "summary": "The lights stop blinking and return to normal. The park transformer hums quietly, completely safe from the explosion.",
+      "trait_in_play": "Her success preserves the peaceful park environment she worked so hard to map out."
+    },
+    {
+      "number": 12,
+      "title": "The Perfect Spot",
+      "summary": "Aanya finds her ultimate quiet spot in the park, turns her pebble in her pocket, and happily updates her Quiet Book.",
+      "trait_in_play": "She remains the same autistic girl, proud of her skills and enjoying her well-deserved peaceful moment."
+    }
+  ],
+  "page_estimate": 9,
+  "trait_causality_note": "Only Aanya's autistic pattern-recognition skills allow her to perceive the traffic lights' irregular blinking as an active countdown sequence and translate the visual rhythm into the specific manual button sequence needed to reset the power grid."
+}

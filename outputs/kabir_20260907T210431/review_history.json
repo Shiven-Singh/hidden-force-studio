@@ -1,0 +1,99 @@
+[
+  {
+    "verdict": "PASS",
+    "iteration": 1,
+    "revision_colour": "White",
+    "deterministic": [
+      {
+        "rule_id": "HF2",
+        "result": "pass",
+        "evidence": "Kabir sits at a wooden desk. He is ten years old, with short cropped hair. He wears a green bomber jacket over a white tee and cargo shorts.",
+        "note": "no avoid-list match in action lines"
+      },
+      {
+        "rule_id": "SC-NAMED",
+        "result": "pass",
+        "evidence": "Kabir lets out a breath. He feels the sweat on his palms. He knows he is smart. He can build a working engine from scraps. But reading aloud makes him feel like he is moving through deep mud. He has dyslexia, and it does not go away just because he tries harder.",
+        "note": "found \"dyslexia\""
+      },
+      {
+        "rule_id": "SC-LENGTH",
+        "result": "pass",
+        "evidence": "INT. KABIR'S WORKSHOP - DAY",
+        "note": "2318 words, ~10 pages"
+      },
+      {
+        "rule_id": "SC-BEATS",
+        "result": "pass",
+        "evidence": "Back in his workshop, Kabir successfully integrates the golden gear into his crane. It works flawlessly.",
+        "note": "every beat carries the trait"
+      }
+    ],
+    "model_scored": [
+      {
+        "rule_id": "HF1",
+        "result": "pass",
+        "evidence": "He still has dyslexia. The adventure did not cure him. It did not make reading easy.",
+        "note": "The final scene explicitly states that Kabir's dyslexia is still present and unchanged, avoiding a cure narrative."
+      },
+      {
+        "rule_id": "HF3",
+        "result": "pass",
+        "evidence": "Plastic is too soft. I need brass. Real brass.",
+        "note": "Kabir has his own personal goal (building a toy crane with a brass gear) and does not exist merely to inspire or teach others."
+      },
+      {
+        "rule_id": "MD1",
+        "result": "pass",
+        "evidence": "He still has dyslexia. The adventure did not cure him. It did not make reading easy.",
+        "note": "The script clearly depicts Kabir's dyslexia as a persistent trait that is not cured by the end of the story."
+      },
+      {
+        "rule_id": "MD2",
+        "result": "pass",
+        "evidence": "He knows the word in his head, but his brain struggles to map the letters to the speech sounds.",
+        "note": "The script shows Kabir experiencing specific challenges with phonological processing, rather than just reversing letters."
+      },
+      {
+        "rule_id": "MD3",
+        "result": "pass",
+        "evidence": "He knows he is smart. He can build a working engine from scraps. But reading aloud makes him feel like he is moving through deep mud.",
+        "note": "Kabir's intelligence and mechanical skills are portrayed as independent of his reading abilities."
+      },
+      {
+        "rule_id": "MD4",
+        "result": "pass",
+        "evidence": "Kabir pulls out a small plastic card with a slot cut in it. He places it over the line. It isolates the words.",
+        "note": "Kabir uses alternative learning methods and tools, such as a reading guide and 3D diagrams, to process information."
+      },
+      {
+        "rule_id": "MN1",
+        "result": "pass",
+        "evidence": "Kabir sits at a wooden desk. He is ten years old, with short cropped hair. He wears a green bomber jacket over a white tee and cargo shorts.",
+        "note": "Kabir is not portrayed as misbehaved; he is focused, calm, and engaged in his hobbies."
+      },
+      {
+        "rule_id": "MN2",
+        "result": "pass",
+        "evidence": "Plastic is too soft. I need brass. Real brass.",
+        "note": "Kabir is the protagonist of his own adventure driven by his personal interests, not portrayed as a hero solely because he has dyslexia."
+      },
+      {
+        "rule_id": "MN3",
+        "result": "pass",
+        "evidence": "He has dyslexia, and it does not go away just because he tries harder.",
+        "note": "The script uses the direct term 'dyslexia' and avoids euphemisms like 'differently abled'."
+      },
+      {
+        "rule_id": "MN4",
+        "result": "pass",
+        "evidence": "He has dyslexia, and it does not go away just because he tries harder.",
+        "note": "The word 'dyslexic' is not used as a noun to describe Kabir anywhere in the script."
+      }
+    ],
+    "hard_failures": [],
+    "soft_notes": [],
+    "revision_instructions": [],
+    "evidence_unverified": []
+  }
+]

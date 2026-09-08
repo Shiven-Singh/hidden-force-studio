@@ -1,0 +1,68 @@
+{
+  "title": "Zayan and the Shifting School",
+  "logline": "When an experimental school security system turns the hallways into a rapidly shifting maze, a nine-year-old boy with ADHD must use his fast-pattern recognition to guide his teacher and classmate to safety.",
+  "beats": [
+    {
+      "number": 1,
+      "title": "The Quest for the Glow-Ball",
+      "summary": "Zayan sprints across the school playground to release his hyperactive energy, determined to sneak back inside to retrieve his favorite glowing bounce-ball from the science storage closet before the weekend.",
+      "trait_in_play": "Zayan uses intense physical activity (running, cartwheels) to manage his hyperactive energy levels, showing his constant need for movement."
+    },
+    {
+      "number": 2,
+      "title": "The Locker Obstacle",
+      "summary": "Inside the school, Zayan struggles to remember his simple locker combination. He uses his rubber band totem to ground himself and recall the numbers.",
+      "trait_in_play": "Zayan experiences short-term memory challenges, a common aspect of his ADHD, and uses a physical sensory anchor (snapping his rubber band) to focus."
+    },
+    {
+      "number": 3,
+      "title": "The Security Glitch",
+      "summary": "Just as Zayan meets Mr. Henderson and Leo in the hallway, the school's high-tech security system glitches, transforming the linear corridors into a shifting maze.",
+      "trait_in_play": "Zayan is highly alert to the changing environment, noticing details that others miss when the emergency begins."
+    },
+    {
+      "number": 4,
+      "title": "Trapped in the Maze",
+      "summary": "The group realizes they are locked inside. Leo tries to map the corridors, but the walls shift too quickly, rendering traditional linear mapping completely useless.",
+      "trait_in_play": "Zayan remains calm under pressure, his brain already beginning to track the timing of the shifting walls."
+    },
+    {
+      "number": 5,
+      "title": "The Thirty-Second Rule",
+      "summary": "Zayan identifies the pattern: the walls shift exactly every thirty seconds. He takes the lead, confident he can navigate the windows of opportunity.",
+      "trait_in_play": "Zayan's rapid pattern recognition allows him to see the timing behind the chaotic shifting of the maze."
+    },
+    {
+      "number": 6,
+      "title": "Not a Superpower",
+      "summary": "When Leo praises Zayan's fast brain as a superpower, Zayan explicitly explains how exhausting and challenging having ADHD actually is in daily life.",
+      "trait_in_play": "Zayan openly discusses the realities of attention deficit hyperactivity disorder, qualifying that his brain's speed comes with real struggles."
+    },
+    {
+      "number": 7,
+      "title": "Navigating the Pulses",
+      "summary": "Zayan guides the group through the first major wall shift by observing the subtle visual cues of the floor lights.",
+      "trait_in_play": "Zayan's brain tracks multiple environmental possibilities at once, picking the safe corridor before it even opens."
+    },
+    {
+      "number": 8,
+      "title": "The Vault Chamber",
+      "summary": "They reach the central vault where the exit is blocked by three rapidly spinning concentric metal rings.",
+      "trait_in_play": "Zayan uses his focus to calculate the complex rotational overlapping of the three separate rings."
+    },
+    {
+      "number": 9,
+      "title": "The Ultimate Leap",
+      "summary": "Zayan quickly climbs to retrieve his glowing bounce-ball, then coordinates a synchronized sprint through the tiny two-second opening in the spinning rings.",
+      "trait_in_play": "Zayan's fearlessness and ability to compute multiple moving parts simultaneously allow him to execute the escape plan perfectly."
+    },
+    {
+      "number": 10,
+      "title": "Back to the Playground",
+      "summary": "The group bursts out onto the safe playground just as the school locks down. Zayan celebrates getting his ball and immediately starts running laps to burn off remaining energy.",
+      "trait_in_play": "Zayan continues to have ADHD, bouncing his ball and running, showing that his neurodivergence is a permanent, integrated part of who he is."
+    }
+  ],
+  "page_estimate": 9,
+  "trait_causality_note": "Zayan's ADHD allows him to process multiple shifting corridor pathways and overlapping rotational ring cycles simultaneously, a feat impossible for the neurotypical characters who can only focus on one linear path at a time."
+}

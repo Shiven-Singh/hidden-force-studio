@@ -1,0 +1,86 @@
+{
+  "title": "The Radar in Her Chest",
+  "logline": "When a sudden, unpredicted storm threatens her summer camp field trip, an eight-year-old child with anxiety must rely on her hypervigilant early-warning system to guide her classmates to safety.",
+  "beats": [
+    {
+      "number": 1,
+      "title": "The Telescope Dream",
+      "summary": "Tara packs her backpack with meticulous care, obsessing over her checklist. She wants to photograph the rare yellow-bellied sapsucker bird at the state park today to win the library summer reading contest and get the grand prize telescope.",
+      "trait_in_play": "Tara's anxiety condition makes her prepare for every possible scenario, double-checking her gear and straps."
+    },
+    {
+      "number": 2,
+      "title": "The Weather House Warning",
+      "summary": "Before leaving, Tara checks her favorite totem, a wooden weather-house toy. The little wooden man in the raincoat has slid completely out of the house, indicating rain, despite the bright blue sky outside.",
+      "trait_in_play": "She trusts her totem and her internal alarm over the clear blue sky, sensing a shift in the air."
+    },
+    {
+      "number": 3,
+      "title": "The Bus Ride Jitters",
+      "summary": "On the bus to the state park, Tara feels a strange prickle on her skin. Her classmates are loud and excited, but Tara is hyper-focused on the changing atmosphere and the gray tint on the western horizon.",
+      "trait_in_play": "Her anxiety condition acts as a sensory amplifier, making her notice subtle environmental changes before anyone else."
+    },
+    {
+      "number": 4,
+      "title": "The Forecast Lies",
+      "summary": "Tara warns her camp counselor, Mr. Davis, that a storm is brewing. Mr. Davis laughs gently, showing her his phone which displays a zero percent chance of rain all day.",
+      "trait_in_play": "Her hypervigilance is dismissed by adults as unnecessary worrying, but she remains alert."
+    },
+    {
+      "number": 5,
+      "title": "The Search Begins",
+      "summary": "The group arrives at the park. While the other kids play, Tara searches the trees for the rare bird, but her mind also automatically maps the park exits and the locations of park shelters.",
+      "trait_in_play": "Her brain operates differently, constantly scanning the environment for safety exits while she pursues her goal."
+    },
+    {
+      "number": 6,
+      "title": "The Nature Signals",
+      "summary": "Tara notices the leaves of the maple trees flipping upside down, showing their pale undersides. The forest has gone completely quiet, and the wind has suddenly changed direction.",
+      "trait_in_play": "Her hypervigilance acts as an early-warning system, reading the physical signs of an approaching storm."
+    },
+    {
+      "number": 7,
+      "title": "The Warning Ignored Again",
+      "summary": "Tara tries to convince Mr. Davis and her classmates to head toward the stone trail shelter. They want to keep playing by the creek, telling her she is just being paranoid.",
+      "trait_in_play": "She experiences the frustration of her genuine protective condition being labeled as a simple defect of character."
+    },
+    {
+      "number": 8,
+      "title": "The Sky Turns Gray",
+      "summary": "The temperature drops ten degrees in seconds. The blue sky vanishes, replaced by a dark, swirling gray. The wind begins to howl, and the first heavy drops of rain fall.",
+      "trait_in_play": "Her physical alarm system is validated as the threat she prepared for becomes reality."
+    },
+    {
+      "number": 9,
+      "title": "The Path Blocked",
+      "summary": "The group panics and runs back toward the bus, but a large rotten oak branch crashes down, blocking the main trail. The kids are terrified and trapped near the rising creek.",
+      "trait_in_play": "While others panic, Tara's pre-planned contingencies keep her grounded and ready to act."
+    },
+    {
+      "number": 10,
+      "title": "The Early-Warning System Saves the Day",
+      "summary": "Tara takes charge. She pulls out her laminated park map and her backup flashlights, directing the group to the stone trail shelter she mapped out earlier.",
+      "trait_in_play": "Her preparation, driven by her anxiety condition, provides the exact tools and knowledge needed to save the group."
+    },
+    {
+      "number": 11,
+      "title": "Shelter in the Storm",
+      "summary": "The group reaches the stone shelter just as the storm turns into a severe downpour. Inside, Tara passes out dry emergency ponchos from her backpack.",
+      "trait_in_play": "Her thoroughness makes her a comforting anchor for her classmates, showing kindness to those who are now scared."
+    },
+    {
+      "number": 12,
+      "title": "The Rare Discovery",
+      "summary": "While waiting out the storm, Tara hears a soft chirping. High in the rafters of the stone shelter, she spots the yellow-bellied sapsucker, also seeking refuge. She takes the perfect photo.",
+      "trait_in_play": "Her sharp observational skills, a core part of her condition, allow her to achieve her personal dream."
+    },
+    {
+      "number": 13,
+      "title": "The Calm After",
+      "summary": "The storm passes and the sun comes out. Mr. Davis apologizes to Tara and thanks her. Back home, Tara hangs her winning photo on the wall next to her weather-house toy, her anxiety still a part of her.",
+      "trait_in_play": "Her condition is not cured, but she accepts it as a vital part of who she is."
+    }
+  ],
+  "page_estimate": 10,
+  "trait_causality_note": "Tara's anxiety condition and hypervigilance are the direct mechanisms of the resolution, as her obsessive weather-monitoring, packing of backup flashlights and maps, and scouting of safe stone shelters before the hike are the only reasons the group survives the unpredicted flash storm safely."
+}

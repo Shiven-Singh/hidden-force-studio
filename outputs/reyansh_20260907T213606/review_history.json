@@ -1,0 +1,99 @@
+[
+  {
+    "verdict": "PASS",
+    "iteration": 1,
+    "revision_colour": "White",
+    "deterministic": [
+      {
+        "rule_id": "HF2",
+        "result": "pass",
+        "evidence": "Bright morning sun hits the red brick walls of a suburban school. A banner reads: WELCOME PAPER ENGINEER CHARLES VANCE!",
+        "note": "no avoid-list match in action lines"
+      },
+      {
+        "rule_id": "SC-NAMED",
+        "result": "pass",
+        "evidence": "Reyansh has profound bilateral hearing loss. He is deaf. He does not hear the chatter of the kids around him. Instead, his eyes dart across the room, reading the environment.",
+        "note": "found \"deaf\""
+      },
+      {
+        "rule_id": "SC-LENGTH",
+        "result": "pass",
+        "evidence": "EXT. OAK CREEK ELEMENTARY - DAY",
+        "note": "2255 words, ~10 pages"
+      },
+      {
+        "rule_id": "SC-BEATS",
+        "result": "pass",
+        "evidence": "The real Charles Vance thanks Reyansh and signs his purple paper fortune-teller. Reyansh stands proud, his deaf identity unchanged, holding the key to his artistic future.",
+        "note": "every beat carries the trait"
+      }
+    ],
+    "model_scored": [
+      {
+        "rule_id": "HF1",
+        "result": "pass",
+        "evidence": "Reyansh slips the signed totem back into his pocket. He is a deaf boy, and he has everything he needs to win the showcase.",
+        "note": "Reyansh's deafness is present and unchanged in the final scene, and it is not cured or medicated away."
+      },
+      {
+        "rule_id": "HF3",
+        "result": "pass",
+        "evidence": "Reyansh wants to win the District Art Showcase.",
+        "note": "Reyansh has his own personal goal and interiority, independent of teaching others a lesson."
+      },
+      {
+        "rule_id": "MD1",
+        "result": "unclear",
+        "evidence": "Reyansh has profound bilateral hearing loss. He is deaf.",
+        "note": "The script does not contain any notes regarding deaf consultants or casting a deaf actor, so this cannot be verified from the text alone."
+      },
+      {
+        "rule_id": "MD2",
+        "result": "pass",
+        "evidence": "Reyansh has profound bilateral hearing loss. He is deaf.",
+        "note": "The script correctly uses the term 'deaf' to describe his profound bilateral hearing loss."
+      },
+      {
+        "rule_id": "MD3",
+        "result": "pass",
+        "evidence": "Reyansh has profound bilateral hearing loss. He is deaf.",
+        "note": "The script correctly uses lowercase 'deaf' when referring to his audiological status."
+      },
+      {
+        "rule_id": "MD4",
+        "result": "pass",
+        "evidence": "On the screen, an educational video plays. It has visible captions at the bottom: \"CHARLES VANCE: MASTER OF 3D PAPER DESIGN.\"",
+        "note": "The educational video shown in the auditorium is depicted with visible captions."
+      },
+      {
+        "rule_id": "MN1",
+        "result": "pass",
+        "evidence": "Reyansh slips the signed totem back into his pocket. He is a deaf boy, and he has everything he needs to win the showcase.",
+        "note": "The storyline does not involve Reyansh's hearing loss being cured or medically fixed."
+      },
+      {
+        "rule_id": "MN2",
+        "result": "pass",
+        "evidence": "Reyansh has profound bilateral hearing loss. He is deaf.",
+        "note": "The script does not use deficit language such as 'suffers from', 'afflicted with', or 'victim of'."
+      },
+      {
+        "rule_id": "MN3",
+        "result": "pass",
+        "evidence": "Because he is a deaf boy, they think he does not understand the situation.",
+        "note": "The script correctly uses 'deaf' as an adjective (e.g., 'deaf boy') and not as a noun."
+      },
+      {
+        "rule_id": "MN4",
+        "result": "pass",
+        "evidence": "Reyansh has profound bilateral hearing loss. He is deaf.",
+        "note": "The script avoids using the terms 'handicapped', 'handi-capable', or 'differently abled'."
+      }
+    ],
+    "hard_failures": [],
+    "soft_notes": [],
+    "revision_instructions": [],
+    "evidence_unverified": []
+  }
+]

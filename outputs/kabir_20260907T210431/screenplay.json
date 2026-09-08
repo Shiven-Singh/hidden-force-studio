@@ -1,0 +1,80 @@
+{
+  "title": "Kabir and the Golden Gear",
+  "logline": "To find a legendary 1950s time capsule hidden deep beneath his school, a ten-year-old boy with dyslexia must use his unique spatial skills to navigate a shifting subterranean maze that only makes sense when the letters move.",
+  "beats": [
+    {
+      "number": 1,
+      "title": "The Missing Piece",
+      "summary": "Kabir works on his ultimate masterpiece, a motorized toy crane, but realizes he needs a rare vintage brass gear only found in the school's legendary, lost 1950s time capsule.",
+      "trait_in_play": "Kabir visualizes the entire crane's internal mechanics in perfect three-dimensional space, though he cannot read the printed instruction manual."
+    },
+    {
+      "number": 2,
+      "title": "The Archive Discovery",
+      "summary": "While searching the school library's history corner, Kabir finds an old, dusty blueprint of the school's forgotten basement tunnels.",
+      "trait_in_play": "Kabir struggles with the library catalog system's letter-sound codes, but instantly recognizes the geometric patterns on the old map."
+    },
+    {
+      "number": 3,
+      "title": "The Classroom Test",
+      "summary": "In English class, Kabir is called on to read aloud from a history textbook. He feels the pressure but uses his folding ruler to ground himself.",
+      "trait_in_play": "Kabir experiences phonological processing difficulties, struggling to blend letter sounds like 'str' and 'ch', but his teacher accommodates his visual style."
+    },
+    {
+      "number": 4,
+      "title": "The Shifting Map",
+      "summary": "During recess, Kabir and his friend Leo study the blueprint. Leo sees only a messy, overlapping set of misaligned letters and lines.",
+      "trait_in_play": "Kabir's dyslexia allows him to see the overlapping letters not as static mistakes, but as moving spatial layers that align into a path."
+    },
+    {
+      "number": 5,
+      "title": "Into the Deep",
+      "summary": "Kabir and Leo slip past the dusty boiler room door and enter the cold, brick-lined tunnels beneath the school.",
+      "trait_in_play": "Kabir uses his canvas satchel and his spatial memory to navigate the dark, winding corridors without getting lost."
+    },
+    {
+      "number": 6,
+      "title": "The Gear Gate",
+      "summary": "They encounter a heavy brass gate locked with an alphabetical dial. The letters must be aligned to form a specific sound sequence.",
+      "trait_in_play": "Kabir struggles to sound out the words phonetically, but he visualizes the letters as interlocking gear teeth to solve the physical mechanism."
+    },
+    {
+      "number": 7,
+      "title": "The Rotating Tunnel",
+      "summary": "The tunnel walls physically rotate, changing the layout of the maze. Leo panics as the exit disappears.",
+      "trait_in_play": "Kabir uses his three-dimensional spatial awareness to track their movement, clicking his folding ruler to measure the angles of rotation."
+    },
+    {
+      "number": 8,
+      "title": "The Chamber of Echoes",
+      "summary": "They reach a chamber with speaking tubes. A voice recording plays a series of complex phonemic clues to open the next door.",
+      "trait_in_play": "Kabir utilizes his exceptional auditory memory, recalling the exact sequence of spoken sounds he heard once to match them to the carved wall runes."
+    },
+    {
+      "number": 9,
+      "title": "The Coal Vault",
+      "summary": "They find the old coal vault. In the center sits the rusted steel time capsule from 1954.",
+      "trait_in_play": "Kabir uses his folding ruler to pry open the seized latch of the capsule, showing his practical engineering skills."
+    },
+    {
+      "number": 10,
+      "title": "The Prize Secured",
+      "summary": "Inside the capsule, among old photos and newspapers, Kabir finds the pristine, gold-plated vintage gear he needs.",
+      "trait_in_play": "Kabir ignores the printed text of the old newspapers but perfectly deciphers the physical diagram stamped on the gear box."
+    },
+    {
+      "number": 11,
+      "title": "The Custodian's Shadow",
+      "summary": "The heavy footsteps of Mr. Henderson, the custodian, echo down the hall. They must escape quickly.",
+      "trait_in_play": "Kabir quickly maps a new exit route through an old coal chute by visualizing the school's structural layout in his head."
+    },
+    {
+      "number": 12,
+      "title": "The Crane Ascends",
+      "summary": "Back in his workshop, Kabir successfully integrates the golden gear into his crane. It works flawlessly.",
+      "trait_in_play": "Kabir still struggles to read the written project label, but his crane is a masterpiece of engineering, showing his intelligence is independent of his reading speed."
+    }
+  ],
+  "page_estimate": 10,
+  "trait_causality_note": "Kabir's dyslexia allows him to perceive the overlapping, misaligned letters on the blueprint not as a static error, but as shifting three-dimensional layers that map out the physical maze."
+}

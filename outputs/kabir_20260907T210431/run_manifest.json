@@ -1,0 +1,44 @@
+{
+  "run_id": "4659af06-277",
+  "character": "Kabir",
+  "started_at": "2026-09-07T21:04:31.633Z",
+  "finished_at": "2026-09-07T21:13:08.532Z",
+  "verdict": "PASS",
+  "iterations": 1,
+  "models": {
+    "draft": "gemini-3.5-flash",
+    "review": "gemini-3.1-pro-preview",
+    "rubric": "gemini-3.1-pro-preview",
+    "lock": "gemini-3.1-pro-preview"
+  },
+  "adk_version": "2.0.0",
+  "parallel_search_ids": [
+    "search_90b37f0868df85e49f2ad6f95b92116b",
+    "search_001e9588b7eea8afd7c3775cee7b2bc4"
+  ],
+  "source_urls": [
+    "https://ncdj.org/style-guide/",
+    "https://dyslexiaida.org/understanding-dyslexia-and-other-learning-disorders-a-book-review/",
+    "https://ncdj.org/wp-content/uploads/2018/10/NCDJ-styleguide-2018.pdf",
+    "https://dyslexiaida.org/wp-content/uploads/2015/01/DITC-Handbook.pdf",
+    "https://tn.dyslexiaida.org/wp-content/uploads/sites/42/2022/01/dyslexia_resource_guide.pdf.pdf",
+    "https://dyslexiaida.org/ida-dyslexia-handbook",
+    "https://www.bdadyslexia.org.uk/advice/employers/creating-a-dyslexia-friendly-workplace/dyslexia-friendly-style-guide",
+    "http://va.dyslexiaida.org/wp-content/uploads/sites/38/2016/11/Publications-List.pdf",
+    "https://www.redcloverreader.com/posts/representation-of-dyslexia-why-it-matters",
+    "https://www.tandfonline.com/doi/full/10.1080/13614541.2025.2575726",
+    "https://cronkite.asu.edu/ncdj/disability-language-style-guide",
+    "https://www.stylemanual.gov.au/accessible-and-inclusive-content/inclusive-language/people-disability",
+    "https://en.wikipedia.org/wiki/Dyslexia_in_popular_culture",
+    "https://www.stylemanual.gov.au/node/69",
+    "https://www.diversitystyleguide.com/glossary/dyslexia-dyslexic",
+    "https://languageplease.org/topics/disabilities-neurodiversity-and-chronic-illness/page/4"
+  ],
+  "stage_timings_ms": {
+    "intake": 1,
+    "research": 2805,
+    "gate_white": 22318,
+    "art_direction": 1,
+    "storyboard": 379182
+  }
+}
