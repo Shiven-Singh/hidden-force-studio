@@ -133,17 +133,26 @@ export async function generateClip(prompt: string, timeoutMs = 6 * 60_000): Prom
 
 let tts: InstanceType<typeof textToSpeech.TextToSpeechClient> | undefined;
 
-/** Narration as MP3. Tries the voices in order; the first is the most natural, the last the most available. */
+/** Race a step against a clock, so a stalled call fails the film instead of freezing it. */
+export function withTimeout<T>(p: Promise<T>, ms: number, label: string): Promise<T> {
+  let timer: NodeJS.Timeout | undefined;
+  const clock = new Promise<never>((_, reject) => {
+    timer = setTimeout(() => reject(new Error(`${label} took longer than ${Math.round(ms / 1000)}s`)), ms);
+  });
+  return Promise.race([p, clock]).finally(() => clearTimeout(timer));
+}
+
+/** Narration as MP3. REST transport, not gRPC, which is the safer choice from a container. Tries the voices in order. */
 export async function synthesizeNarration(text: string, outFile: string): Promise<string> {
-  tts ??= new textToSpeech.TextToSpeechClient();
+  tts ??= new textToSpeech.TextToSpeechClient({ fallback: true });
   let lastErr: unknown;
   for (const name of NARRATOR_VOICES) {
     try {
-      const [res] = await tts.synthesizeSpeech({
+      const [res] = await withTimeout(tts.synthesizeSpeech({
         input: { text },
         voice: { languageCode: 'en-US', name },
         audioConfig: { audioEncoding: 'MP3', speakingRate: 1.02 },
-      });
+      }), 60_000, `speech for "${text.slice(0, 30)}"`);
       await mkdir(path.dirname(outFile), { recursive: true });
       await writeFile(outFile, res.audioContent as Buffer);
       return name;

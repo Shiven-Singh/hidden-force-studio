@@ -16,7 +16,7 @@ import { RUN_INACTIVITY_MS } from './clients/http.js';
 import { narrate } from './clients/gemini.js';
 import {
   CLIP_MODEL, NARRATOR_VOICES, STYLE, concatFilm, drawStoryboard, generateClip, mapLimit, mixNarration,
-  readRunFile, saveRunFile, synthesizeNarration, textCard, type Storyboard,
+  readRunFile, saveRunFile, synthesizeNarration, textCard, withTimeout, type Storyboard,
 } from './clients/media.js';
 import { localRunDir } from './output-folder.js';
 
@@ -224,7 +224,7 @@ async function renderAnimatic(folder: string, opts: { force?: boolean } = {}): P
   await progress({ status: 'rendering', clips: n, done_clips: 0, started_at, model: CLIP_MODEL });
 
   const beatOf = (num: number) => sp.beats.find((b) => b.number === num) ?? sp.beats[Math.min(num, sp.beats.length) - 1];
-  const lines = await narrate({
+  const lines = await withTimeout(narrate({
     name: manifest?.character ?? 'the hero',
     title: sp.title,
     logline: sp.logline,
@@ -232,7 +232,8 @@ async function renderAnimatic(folder: string, opts: { force?: boolean } = {}): P
       const b = beatOf(s.beat);
       return { shot: s.number, beat: s.beat, beat_title: b?.title ?? '', summary: b?.summary ?? '', trait_in_play: b?.trait_in_play ?? '', scene: s.scene_heading };
     }),
-  });
+  }), 4 * 60_000, 'narration lines');
+  await progress({ status: 'rendering', clips: n, done_clips: 0, started_at, model: CLIP_MODEL, narration: lines });
 
   const dir = path.join(localRunDir(folder), 'animatic');
   await mkdir(dir, { recursive: true });
@@ -242,7 +243,7 @@ async function renderAnimatic(folder: string, opts: { force?: boolean } = {}): P
     const nn = String(i + 1).padStart(2, '0');
     const rel = `animatic/clip_${nn}.mp4`;
     const clipLocal = path.join(dir, `clip_${nn}.mp4`);
-    const existing = opts.force ? undefined : await readRunFile(folder, rel);
+    const existing = opts.force ? undefined : await withTimeout(readRunFile(folder, rel), 120_000, `fetching clip ${nn}`);
     if (existing) await writeFile(clipLocal, existing);
     else {
       const prompt = `${STYLE} ${shot.prompt} Gentle camera movement. Ambient sound only, no dialogue, no narration, no lyrics.`;
@@ -251,18 +252,18 @@ async function renderAnimatic(folder: string, opts: { force?: boolean } = {}): P
     const narration = path.join(dir, `narration_${nn}.mp3`);
     voice = await synthesizeNarration(lines[i]!, narration);
     const mixed = path.join(dir, `mixed_${nn}.mp4`);
-    await mixNarration(clipLocal, narration, mixed);
+    await withTimeout(mixNarration(clipLocal, narration, mixed), 120_000, `mixing clip ${nn}`);
     doneClips += 1;
     await progress({ status: 'rendering', clips: n, done_clips: doneClips, started_at, model: CLIP_MODEL });
     return mixed;
   });
 
   const title = path.join(dir, 'title.mp4');
-  await textCard(sp.title, sp.logline, title, 4);
+  await withTimeout(textCard(sp.title, sp.logline, title, 4), 120_000, 'title card');
   const end = path.join(dir, 'end.mp4');
-  await textCard('Hidden Force Studio', `Reviewed against ${rubric?.sources.length ?? 0} cited sources. Verdict: ${manifest?.verdict ?? 'PASS'}.`, end, 4);
+  await withTimeout(textCard('Hidden Force Studio', `Reviewed against ${rubric?.sources.length ?? 0} cited sources. Verdict: ${manifest?.verdict ?? 'PASS'}.`, end, 4), 120_000, 'end card');
   const out = path.join(dir, 'animatic.mp4');
-  await concatFilm([title, ...parts, end], out);
+  await withTimeout(concatFilm([title, ...parts, end], out), 5 * 60_000, 'final cut');
   await saveRunFile(folder, 'animatic/animatic.mp4', await readFile(out), 'video/mp4');
   await saveRunFile(folder, 'animatic/narration.json', JSON.stringify({ voice, lines }, null, 2), 'application/json');
   await progress({
