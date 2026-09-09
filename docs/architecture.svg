@@ -1,88 +1,145 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 560" width="960" height="560" font-family="IBM Plex Sans, Helvetica, Arial, sans-serif" font-size="14">
-  <defs>
-    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
-      <path d="M0,0 L10,5 L0,10 z" fill="#4A5261"/>
-    </marker>
-  </defs>
-  <rect width="960" height="560" fill="#F5F6F8"/>
-
-  <!-- title -->
-  <text x="40" y="40" font-size="20" font-weight="600" fill="#1B1F26">Hidden Force Studio</text>
-  <text x="40" y="62" fill="#4A5261">One ADK SequentialAgent, fixed order. Stages 3 and 4 sit inside a LoopAgent capped at three iterations.</text>
-
-  <!-- input -->
-  <rect x="40" y="96" width="160" height="44" rx="8" fill="#FFFFFF" stroke="#D8DCE3"/>
-  <text x="120" y="123" text-anchor="middle" fill="#1B1F26">character bible (JSON)</text>
-
-  <!-- stage 1 -->
-  <rect x="40" y="170" width="160" height="60" rx="8" fill="#FFFFFF" stroke="#D8DCE3"/>
-  <text x="52" y="192" font-weight="600" fill="#1B1F26">1 · intake</text>
-  <text x="52" y="212" fill="#4A5261" font-size="12">validate, seed state</text>
-
-  <!-- stage 2 -->
-  <rect x="240" y="170" width="220" height="60" rx="8" fill="#FFFFFF" stroke="#D8DCE3"/>
-  <text x="252" y="192" font-weight="600" fill="#1B1F26">2 · research + rubric</text>
-  <text x="252" y="212" fill="#4A5261" font-size="12">Parallel Search ×2 → Gemini compiles rules</text>
-
-  <!-- partner callout -->
-  <rect x="240" y="96" width="220" height="44" rx="8" fill="#E2E8F0" stroke="#2E4057"/>
-  <text x="350" y="115" text-anchor="middle" font-weight="600" fill="#2E4057" font-size="12">Parallel Search API</text>
-  <text x="350" y="131" text-anchor="middle" fill="#2E4057" font-size="11">advocacy pool + open web, cited verbatim</text>
-  <line x1="350" y1="140" x2="350" y2="170" stroke="#2E4057" stroke-dasharray="3 3"/>
-
-  <!-- loop box -->
-  <rect x="500" y="150" width="420" height="220" rx="12" fill="#E2E8F0" stroke="#2E4057" stroke-dasharray="6 4"/>
-  <text x="516" y="172" font-size="11" font-weight="600" fill="#2E4057" letter-spacing="1">LOOPAGENT · MAX 3 · WHITE / BLUE / PINK</text>
-
-  <!-- stage 3 -->
-  <rect x="520" y="190" width="180" height="60" rx="8" fill="#FFFFFF" stroke="#D8DCE3"/>
-  <text x="532" y="212" font-weight="600" fill="#1B1F26">3 · story</text>
-  <text x="532" y="232" fill="#4A5261" font-size="12">gemini-3.5-flash → Fountain</text>
-
-  <!-- stage 4 -->
-  <rect x="720" y="190" width="180" height="60" rx="8" fill="#FFFFFF" stroke="#A8321F"/>
-  <text x="732" y="212" font-weight="600" fill="#A8321F">4 · gate</text>
-  <text x="732" y="232" fill="#4A5261" font-size="12">code checks + verified quotes</text>
-
-  <!-- gate detail -->
-  <text x="520" y="290" fill="#1B1F26" font-size="12">HF1 cure narrative · model-scored, evidence verified in code</text>
-  <text x="520" y="310" fill="#1B1F26" font-size="12">HF2 deficit voice · regex over action lines, deterministic</text>
-  <text x="520" y="330" fill="#1B1F26" font-size="12">HF3 inspiration porn · model-scored, evidence verified in code</text>
-  <text x="520" y="352" fill="#4A5261" font-size="12">PASS → exit loop · REVISE → redraft with findings · third fail → HALT</text>
-
-  <!-- loop back arrow -->
-  <path d="M 810 250 L 810 268 L 610 268 L 610 250" fill="none" stroke="#4A5261" marker-end="url(#arrow)"/>
-  <text x="710" y="264" text-anchor="middle" fill="#4A5261" font-size="11">REVISE</text>
-
-  <!-- stage 5 -->
-  <rect x="500" y="410" width="200" height="60" rx="8" fill="#FFFFFF" stroke="#D8DCE3"/>
-  <text x="512" y="432" font-weight="600" fill="#1B1F26">5 · art direction + storyboard</text>
-  <text x="512" y="452" fill="#4A5261" font-size="12">locked paragraph, shot list, 12 stills</text>
-
-  <!-- stage 6 -->
-  <rect x="720" y="410" width="200" height="60" rx="8" fill="#FFFFFF" stroke="#D8DCE3"/>
-  <text x="732" y="432" font-weight="600" fill="#1B1F26">6 · package  →  7 · film</text>
-  <text x="732" y="452" fill="#4A5261" font-size="12">files + manifest; Veo clips on request</text>
-
-  <!-- halt path -->
-  <rect x="240" y="410" width="200" height="60" rx="8" fill="#F6E0DB" stroke="#A8321F"/>
-  <text x="252" y="432" font-weight="600" fill="#A8321F">HALT</text>
-  <text x="252" y="452" fill="#4A5261" font-size="12">stage 5 refuses, manifest says why</text>
-
-  <!-- arrows -->
-  <line x1="120" y1="140" x2="120" y2="170" stroke="#4A5261" marker-end="url(#arrow)"/>
-  <line x1="200" y1="200" x2="240" y2="200" stroke="#4A5261" marker-end="url(#arrow)"/>
-  <line x1="460" y1="200" x2="520" y2="220" stroke="#4A5261" marker-end="url(#arrow)"/>
-  <line x1="700" y1="220" x2="720" y2="220" stroke="#4A5261" marker-end="url(#arrow)"/>
-  <path d="M 810 370 L 810 390 L 600 390 L 600 410" fill="none" stroke="#4A5261" marker-end="url(#arrow)"/>
-  <text x="705" y="386" text-anchor="middle" fill="#1F7A4D" font-size="11" font-weight="600">PASS</text>
-  <line x1="700" y1="440" x2="720" y2="440" stroke="#4A5261" marker-end="url(#arrow)"/>
-  <path d="M 900 370 L 900 395 L 340 395 L 340 410" fill="none" stroke="#A8321F" marker-end="url(#arrow)"/>
-  <text x="470" y="391" text-anchor="middle" fill="#A8321F" font-size="11" font-weight="600">after Pink</text>
-  <path d="M 440 440 L 480 440 L 480 520 L 780 520 L 780 470" fill="none" stroke="#A8321F" stroke-dasharray="4 3" marker-end="url(#arrow)"/>
-  <text x="630" y="536" text-anchor="middle" fill="#A8321F" font-size="11">package still writes rubric, review history, rejected draft, manifest</text>
-
-  <!-- footer -->
-  <text x="40" y="520" fill="#4A5261" font-size="12">Google Cloud: @google/adk (Agent Builder), Gemini on Vertex AI, Cloud Run, Cloud Storage.</text>
-  <text x="40" y="538" fill="#4A5261" font-size="12">Every model score must quote a line that exists verbatim in the script. Unverified quotes fail closed.</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1040" width="1600" height="1040">
+<style>@import url("https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@100..125,400..800&amp;display=swap");</style>
+<defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#0E0E0E"/></marker><marker id="r" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#F30000"/></marker></defs>
+<rect width="1600" height="1040" fill="#F6F2EA"/>
+<rect x="60" y="44" width="30" height="30" rx="4" fill="#0E0E0E"/>
+<text x="75" y="66" text-anchor="middle" font-family="Archivo, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="800" font-size="16" fill="#F6F2EA">H</text>
+<rect x="95.5" y="45.5" width="27" height="27" rx="3" fill="none" stroke="#E75227" stroke-width="3"/>
+<text x="109" y="66" text-anchor="middle" font-family="Archivo, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="800" font-size="16" fill="#E75227">F</text>
+<rect x="128" y="44" width="30" height="30" rx="4" fill="#0E0E0E"/>
+<text x="143" y="66" text-anchor="middle" font-family="Archivo, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="800" font-size="16" fill="#F6F2EA">S</text>
+<text x="176" y="70" font-family="Archivo, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="800" font-stretch="125%" font-size="30" fill="#0E0E0E" text-anchor="start" letter-spacing="0.01em">HIDDEN FORCE STUDIO · HOW IT IS BUILT</text>
+<text x="60" y="102.0" font-family="Archivo, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="400" font-size="15" fill="#3d3a35">One page, one service, one agent pipeline in a fixed order. A draft that breaks the rules goes back with the exact line. Three strikes and nothing gets made.</text>
+<rect x="60" y="140" width="560" height="130" fill="#F6F2EA" stroke="#0E0E0E" stroke-width="3"/>
+<rect x="78" y="156" width="73.39999999999999" height="20" fill="#0E0E0E"/>
+<text x="86" y="170" font-family="Archivo, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="800" font-size="11" letter-spacing="0.1em" fill="#F6F2EA">BROWSER</text>
+<text x="78" y="202" font-family="Archivo, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="800" font-stretch="125%" font-size="19" fill="#0E0E0E" text-anchor="start" letter-spacing="0.01em">THE PAGE</text>
+<text x="78" y="228.0" font-family="Archivo, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="400" font-size="13.5" fill="#0E0E0E">Next.js, static export, served by the same service. Build your own, Watch</text>
+<text x="78" y="245.55" font-family="Archivo, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="400" font-size="13.5" fill="#0E0E0E">our films, Why it passed. Every source, rule and check is one click deep.</text>
+<path d="M620,205 L700,205" fill="none" stroke="#0E0E0E" stroke-width="3" marker-end="url(#a)"/>
+<rect x="700" y="140" width="840" height="130" fill="#0E0E0E" stroke="#0E0E0E" stroke-width="3"/>
+<rect x="718" y="156" width="114.39999999999999" height="20" fill="#F3AB1F"/>
+<text x="726" y="170" font-family="Archivo, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="800" font-size="11" letter-spacing="0.1em" fill="#0E0E0E">GOOGLE CLOUD</text>
+<text x="718" y="202" font-family="Archivo, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="800" font-stretch="125%" font-size="19" fill="#F6F2EA" text-anchor="start" letter-spacing="0.01em">CLOUD RUN · EXPRESS · ADK RUNNER</text>
+<text x="718" y="228.0" font-family="Archivo, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="400" font-size="13.5" fill="#D9D4CB">One instance, min = max = 1. Owns each run as a background job, streams every file from the bucket with byte</text>
+<text x="718" y="245.55" font-family="Archivo, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="400" font-size="13.5" fill="#D9D4CB">ranges, serves the page. Parallel key from Secret Manager.</text>
+<rect x="60" y="300" width="1480" height="490" fill="none" stroke="#0E0E0E" stroke-width="3" stroke-dasharray="10 8"/>
+<rect x="78" y="286" width="600" height="28" fill="#F6F2EA"/>
+<text x="86" y="307" font-family="Archivo, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="800" font-stretch="125%" font-size="18" fill="#0E0E0E" text-anchor="start" letter-spacing="0.01em">ONE ADK SEQUENTIALAGENT, FIXED ORDER</text>
+<rect x="100" y="336" width="250" height="180" fill="#F6F2EA" stroke="#0E0E0E" stroke-width="3"/>
+<text x="118" y="376" font-family="Archivo, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="800" font-stretch="125%" font-size="19" fill="#0E0E0E" text-anchor="start" letter-spacing="0.01em">1 · INTAKE</text>
+<text x="118" y="402.0" font-family="Archivo, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="400" font-size="13.5" fill="#0E0E0E">Code. Checks the character</text>
+<text x="118" y="419.55" font-family="Archivo, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="400" font-size="13.5" fill="#0E0E0E">file against the shared zod</text>
+<text x="118" y="437.1" font-family="Archivo, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="400" font-size="13.5" fill="#0E0E0E">schema and names the run.</text>
+<path d="M350,426 L380,426" fill="none" stroke="#0E0E0E" stroke-width="3" marker-end="url(#a)"/>
+<rect x="380" y="336" width="250" height="180" fill="#F3AB1F" stroke="#0E0E0E" stroke-width="3"/>
+<text x="398" y="376" font-family="Archivo, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="800" font-stretch="125%" font-size="19" fill="#0E0E0E" text-anchor="start" letter-spacing="0.01em">2 · RESEARCH</text>
+<text x="398" y="402.0" font-family="Archivo, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="400" font-size="13.5" fill="#0E0E0E">Parallel Search API, twice:</text>
+<text x="398" y="419.55" font-family="Archivo, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="400" font-size="13.5" fill="#0E0E0E">advocacy and style-guide</text>
+<text x="398" y="437.1" font-family="Archivo, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="400" font-size="13.5" fill="#0E0E0E">domains first, then the open</text>
+<text x="398" y="454.65" font-family="Archivo, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="400" font-size="13.5" fill="#0E0E0E">web. Sources stored verbatim</text>
+<text x="398" y="472.2" font-family="Archivo, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="400" font-size="13.5" fill="#0E0E0E">with a pool label.</text>
+<path d="M630,426 L660,426" fill="none" stroke="#0E0E0E" stroke-width="3" marker-end="url(#a)"/>
+<rect x="660" y="336" width="250" height="180" fill="#272FE7" stroke="#0E0E0E" stroke-width="3"/>
+<text x="678" y="376" font-family="Archivo, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="800" font-stretch="125%" font-size="19" fill="#F6F2EA" text-anchor="start" letter-spacing="0.01em">3 · RULES</text>
+<text x="678" y="402.0" font-family="Archivo, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="400" font-size="13.5" fill="#DCDDFB">Gemini 3.1 Pro at temperature</text>
+<text x="678" y="419.55" font-family="Archivo, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="400" font-size="13.5" fill="#DCDDFB">0. Must-do and must-not-do</text>
+<text x="678" y="437.1" font-family="Archivo, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="400" font-size="13.5" fill="#DCDDFB">rules, each citing a source</text>
+<text x="678" y="454.65" font-family="Archivo, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="400" font-size="13.5" fill="#DCDDFB">index the code merges back in.</text>
+<path d="M910,426 L940,426" fill="none" stroke="#0E0E0E" stroke-width="3" marker-end="url(#a)"/>
+<rect x="940" y="314" width="580" height="224" fill="none" stroke="#0E0E0E" stroke-width="3"/>
+<rect x="950" y="302" width="310" height="24" fill="#0E0E0E"/>
+<text x="962" y="319" font-family="Archivo, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="800" font-size="12" letter-spacing="0.1em" fill="#F6F2EA">LOOPAGENT · THREE DRAFTS AT MOST</text>
+<rect x="960" y="336" width="250" height="180" fill="#272FE7" stroke="#0E0E0E" stroke-width="3"/>
+<text x="978" y="376" font-family="Archivo, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="800" font-stretch="125%" font-size="19" fill="#F6F2EA" text-anchor="start" letter-spacing="0.01em">4 · SCRIPT</text>
+<text x="978" y="402.0" font-family="Archivo, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="400" font-size="13.5" fill="#DCDDFB">Gemini 3.5 Flash. Beat sheet</text>
+<text x="978" y="419.55" font-family="Archivo, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="400" font-size="13.5" fill="#DCDDFB">and Fountain screenplay under</text>
+<text x="978" y="437.1" font-family="Archivo, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="400" font-size="13.5" fill="#DCDDFB">the rules. A revision gets the</text>
+<text x="978" y="454.65" font-family="Archivo, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="400" font-size="13.5" fill="#DCDDFB">failing lines back.</text>
+<path d="M1210,406 L1250,406" fill="none" stroke="#0E0E0E" stroke-width="3" marker-end="url(#a)"/>
+<path d="M1250,456 L1210,456" fill="none" stroke="#0E0E0E" stroke-width="3" marker-end="url(#a)"/>
+<text x="1230" y="436" text-anchor="middle" font-family="Archivo, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="800" font-size="9" letter-spacing="0.04em" fill="#0E0E0E">REVISE</text>
+<rect x="1250" y="336" width="250" height="180" fill="#E75227" stroke="#0E0E0E" stroke-width="3"/>
+<text x="1268" y="376" font-family="Archivo, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="800" font-stretch="125%" font-size="19" fill="#0E0E0E" text-anchor="start" letter-spacing="0.01em">5 · REVIEW</text>
+<text x="1268" y="402.0" font-family="Archivo, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="400" font-size="13.5" fill="#0E0E0E">Code checks the narration for</text>
+<text x="1268" y="419.55" font-family="Archivo, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="400" font-size="13.5" fill="#0E0E0E">deficit words. Gemini 3.1 Pro</text>
+<text x="1268" y="437.1" font-family="Archivo, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="400" font-size="13.5" fill="#0E0E0E">scores the rest. Every quote</text>
+<text x="1268" y="454.65" font-family="Archivo, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="400" font-size="13.5" fill="#0E0E0E">must exist verbatim in the</text>
+<text x="1268" y="472.2" font-family="Archivo, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="400" font-size="13.5" fill="#0E0E0E">script or the check fails.</text>
+<text x="1268" y="489.75" font-family="Archivo, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="400" font-size="13.5" fill="#0E0E0E">PASS, REVISE or HALT.</text>
+<path d="M1000,538 L1000,572 L225,572 L225,596" fill="none" stroke="#0E0E0E" stroke-width="3" marker-end="url(#a)"/>
+<rect x="1010" y="546" width="43.6" height="18" fill="#272FE7"/><text x="1031.8" y="559" text-anchor="middle" font-family="Archivo, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="800" font-size="10" letter-spacing="0.08em" fill="#F6F2EA">PASS</text>
+<path d="M1400,538 L1400,596" fill="none" stroke="#F30000" stroke-width="3" marker-end="url(#r)"/>
+<rect x="1410" y="546" width="43.6" height="18" fill="#F30000"/><text x="1431.8" y="559" text-anchor="middle" font-family="Archivo, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="800" font-size="10" letter-spacing="0.08em" fill="#FFFFFF">HALT</text>
+<rect x="100" y="596" width="250" height="180" fill="#272FE7" stroke="#0E0E0E" stroke-width="3"/>
+<text x="118" y="636" font-family="Archivo, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="800" font-stretch="125%" font-size="19" fill="#F6F2EA" text-anchor="start" letter-spacing="0.01em">6 · LOCK LOOK</text>
+<text x="118" y="662.0" font-family="Archivo, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="400" font-size="13.5" fill="#DCDDFB">Gemini 3.1 Pro writes one</text>
+<text x="118" y="679.55" font-family="Archivo, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="400" font-size="13.5" fill="#DCDDFB">paragraph describing the kid.</text>
+<text x="118" y="697.1" font-family="Archivo, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="400" font-size="13.5" fill="#DCDDFB">Hashed, then prepended to</text>
+<text x="118" y="714.65" font-family="Archivo, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="400" font-size="13.5" fill="#DCDDFB">every storyboard and film</text>
+<text x="118" y="732.2" font-family="Archivo, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="400" font-size="13.5" fill="#DCDDFB">prompt.</text>
+<path d="M350,686 L380,686" fill="none" stroke="#0E0E0E" stroke-width="3" marker-end="url(#a)"/>
+<rect x="380" y="596" width="250" height="180" fill="#272FE7" stroke="#0E0E0E" stroke-width="3"/>
+<text x="398" y="636" font-family="Archivo, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="800" font-stretch="125%" font-size="19" fill="#F6F2EA" text-anchor="start" letter-spacing="0.01em">7 · STORYBOARD</text>
+<text x="398" y="662.0" font-family="Archivo, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="400" font-size="13.5" fill="#DCDDFB">Code plans twelve shots.</text>
+<text x="398" y="679.55" font-family="Archivo, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="400" font-size="13.5" fill="#DCDDFB">Gemini 3.1 Flash Image draws</text>
+<text x="398" y="697.1" font-family="Archivo, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="400" font-size="13.5" fill="#DCDDFB">one frame per shot, one at a</text>
+<text x="398" y="714.65" font-family="Archivo, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="400" font-size="13.5" fill="#DCDDFB">time, with a fallback model on</text>
+<text x="398" y="732.2" font-family="Archivo, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="400" font-size="13.5" fill="#DCDDFB">quota.</text>
+<path d="M630,686 L660,686" fill="none" stroke="#0E0E0E" stroke-width="3" marker-end="url(#a)"/>
+<rect x="660" y="596" width="250" height="180" fill="#F6F2EA" stroke="#0E0E0E" stroke-width="3"/>
+<text x="678" y="636" font-family="Archivo, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="800" font-stretch="125%" font-size="19" fill="#0E0E0E" text-anchor="start" letter-spacing="0.01em">8 · PACKAGE</text>
+<text x="678" y="662.0" font-family="Archivo, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="400" font-size="13.5" fill="#0E0E0E">Code. Script, rules, review</text>
+<text x="678" y="679.55" font-family="Archivo, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="400" font-size="13.5" fill="#0E0E0E">history, art brief,</text>
+<text x="678" y="697.1" font-family="Archivo, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="400" font-size="13.5" fill="#0E0E0E">storyboard, one-sheet and</text>
+<text x="678" y="714.65" font-family="Archivo, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="400" font-size="13.5" fill="#0E0E0E">manifest, written to disk and</text>
+<text x="678" y="732.2" font-family="Archivo, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="400" font-size="13.5" fill="#0E0E0E">to the bucket.</text>
+<path d="M910,686 L940,686" fill="none" stroke="#0E0E0E" stroke-width="3" marker-end="url(#a)"/>
+<rect x="940" y="596" width="300" height="180" fill="#272FE7" stroke="#0E0E0E" stroke-width="3"/>
+<text x="958" y="636" font-family="Archivo, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="800" font-stretch="125%" font-size="19" fill="#F6F2EA" text-anchor="start" letter-spacing="0.01em">9 · FILM</text>
+<text x="958" y="662.0" font-family="Archivo, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="400" font-size="13.5" fill="#DCDDFB">Veo 3.1, eight 8-second shots from</text>
+<text x="958" y="679.55" font-family="Archivo, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="400" font-size="13.5" fill="#DCDDFB">the locked look. Cloud Text-to-Speech</text>
+<text x="958" y="697.1" font-family="Archivo, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="400" font-size="13.5" fill="#DCDDFB">narrates. ffmpeg mixes and cuts, with</text>
+<text x="958" y="714.65" font-family="Archivo, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="400" font-size="13.5" fill="#DCDDFB">a title card and an end card that</text>
+<text x="958" y="732.2" font-family="Archivo, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="400" font-size="13.5" fill="#DCDDFB">says what the review found.</text>
+<rect x="1270" y="596" width="250" height="180" fill="#F30000" stroke="#0E0E0E" stroke-width="3"/>
+<text x="1288" y="636" font-family="Archivo, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="800" font-stretch="125%" font-size="19" fill="#FFFFFF" text-anchor="start" letter-spacing="0.01em">REFUSED</text>
+<text x="1288" y="662.0" font-family="Archivo, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="400" font-size="13.5" fill="#FFE3E3">After three failing drafts:</text>
+<text x="1288" y="679.55" font-family="Archivo, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="400" font-size="13.5" fill="#FFE3E3">the rules, the review history,</text>
+<text x="1288" y="697.1" font-family="Archivo, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="400" font-size="13.5" fill="#FFE3E3">the rejected draft and a</text>
+<text x="1288" y="714.65" font-family="Archivo, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="400" font-size="13.5" fill="#FFE3E3">manifest that says HALT go to</text>
+<text x="1288" y="732.2" font-family="Archivo, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="400" font-size="13.5" fill="#FFE3E3">the bucket. No storyboard, no</text>
+<text x="1288" y="749.75" font-family="Archivo, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="400" font-size="13.5" fill="#FFE3E3">film.</text>
+<path d="M785,776 L785,836" fill="none" stroke="#0E0E0E" stroke-width="3" marker-end="url(#a)"/>
+<path d="M1090,776 L1090,800 L960,800 L960,836" fill="none" stroke="#0E0E0E" stroke-width="3" marker-end="url(#a)"/>
+<rect x="60" y="836" width="940" height="150" fill="#D7BA92" stroke="#0E0E0E" stroke-width="3"/>
+<text x="78" y="876" font-family="Archivo, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="800" font-stretch="125%" font-size="19" fill="#0E0E0E" text-anchor="start" letter-spacing="0.01em">CLOUD STORAGE BUCKET</text>
+<text x="78" y="902.0" font-family="Archivo, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="400" font-size="13.5" fill="#0E0E0E">Every run as a folder of files: rules, review history, script, storyboard frames, films, and a snapshot of live runs so a restart</text>
+<text x="78" y="919.55" font-family="Archivo, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="400" font-size="13.5" fill="#0E0E0E">loses nothing written. The page reads finished runs from here. Ten runs are also committed to the repo, unedited.</text>
+<rect x="1030" y="836" width="240" height="150" fill="#F6F2EA" stroke="#0E0E0E" stroke-width="3"/>
+<text x="1048" y="876" font-family="Archivo, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="800" font-stretch="125%" font-size="19" fill="#0E0E0E" text-anchor="start" letter-spacing="0.01em">SCHEMAS</text>
+<text x="1048" y="902.0" font-family="Archivo, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="400" font-size="13.5" fill="#0E0E0E">@hfs/schemas: zod models for</text>
+<text x="1048" y="919.55" font-family="Archivo, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="400" font-size="13.5" fill="#0E0E0E">the bible, sources, rules,</text>
+<text x="1048" y="937.1" font-family="Archivo, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="400" font-size="13.5" fill="#0E0E0E">script, review and manifest.</text>
+<text x="1048" y="954.65" font-family="Archivo, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="400" font-size="13.5" fill="#0E0E0E">The API and the page share</text>
+<text x="1048" y="972.2" font-family="Archivo, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="400" font-size="13.5" fill="#0E0E0E">them.</text>
+<rect x="1300" y="836" width="240" height="150" fill="#F6F2EA" stroke="#0E0E0E" stroke-width="3"/>
+<text x="1318" y="876" font-family="Archivo, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="800" font-stretch="125%" font-size="19" fill="#0E0E0E" text-anchor="start" letter-spacing="0.01em">SHIP</text>
+<text x="1318" y="902.0" font-family="Archivo, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="400" font-size="13.5" fill="#0E0E0E">Cloud Build builds the image,</text>
+<text x="1318" y="919.55" font-family="Archivo, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="400" font-size="13.5" fill="#0E0E0E">Cloud Run runs it,</text>
+<text x="1318" y="937.1" font-family="Archivo, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="400" font-size="13.5" fill="#0E0E0E">scripts/deploy.sh does both.</text>
+<text x="1318" y="954.65" font-family="Archivo, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="400" font-size="13.5" fill="#0E0E0E">Keys live in Secret Manager,</text>
+<text x="1318" y="972.2" font-family="Archivo, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="400" font-size="13.5" fill="#0E0E0E">never in the repo.</text>
+<rect x="60" y="1003" width="18" height="18" fill="#272FE7" stroke="#0E0E0E" stroke-width="2"/>
+<text x="86" y="1017" font-family="Archivo, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="700" font-size="12" letter-spacing="0.04em" fill="#0E0E0E">GEMINI AND VEO ON VERTEX AI</text>
+<rect x="325.2" y="1003" width="18" height="18" fill="#F3AB1F" stroke="#0E0E0E" stroke-width="2"/>
+<text x="351.2" y="1017" font-family="Archivo, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="700" font-size="12" letter-spacing="0.04em" fill="#0E0E0E">PARALLEL SEARCH API</text>
+<rect x="529.6" y="1003" width="18" height="18" fill="#E75227" stroke="#0E0E0E" stroke-width="2"/>
+<text x="555.6" y="1017" font-family="Archivo, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="700" font-size="12" letter-spacing="0.04em" fill="#0E0E0E">THE REVIEW</text>
+<rect x="665.6" y="1003" width="18" height="18" fill="#F6F2EA" stroke="#0E0E0E" stroke-width="2"/>
+<text x="691.6" y="1017" font-family="Archivo, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="700" font-size="12" letter-spacing="0.04em" fill="#0E0E0E">PLAIN CODE</text>
+<rect x="801.6" y="1003" width="18" height="18" fill="#F30000" stroke="#0E0E0E" stroke-width="2"/>
+<text x="827.6" y="1017" font-family="Archivo, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="700" font-size="12" letter-spacing="0.04em" fill="#0E0E0E">REFUSAL</text>
+<rect x="914.8" y="1003" width="18" height="18" fill="#D7BA92" stroke="#0E0E0E" stroke-width="2"/>
+<text x="940.8" y="1017" font-family="Archivo, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="700" font-size="12" letter-spacing="0.04em" fill="#0E0E0E">STORAGE</text>
 </svg>
