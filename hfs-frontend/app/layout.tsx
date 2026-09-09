@@ -1,9 +1,9 @@
 import type { Metadata, Viewport } from 'next';
 import type { ReactNode } from 'react';
-import { Inter } from 'next/font/google';
+import { Archivo } from 'next/font/google';
 import './globals.css';
 
-const inter = Inter({ subsets: ['latin'], variable: '--font-sans', display: 'swap' });
+const archivo = Archivo({ subsets: ['latin'], variable: '--font-sans', display: 'swap', axes: ['wdth'] });
 
 export const metadata: Metadata = {
   title: 'Hidden Force Studio',
@@ -11,11 +11,11 @@ export const metadata: Metadata = {
   icons: { icon: '/favicon.svg' },
 };
 
-export const viewport: Viewport = { themeColor: '#0a0d12', width: 'device-width', initialScale: 1, viewportFit: 'cover' };
+export const viewport: Viewport = { themeColor: '#F6F2EA', width: 'device-width', initialScale: 1, viewportFit: 'cover' };
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
-    <html lang="en" className={inter.variable}>
+    <html lang="en" className={archivo.variable}>
       <body>{children}</body>
     </html>
   );

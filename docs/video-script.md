@@ -15,7 +15,7 @@ In tab 4, press play on the film for a few seconds so it is cached, then pause a
 
 ## The script
 
-**0:00 to 0:15. Tab 1, the front page. Let the background play.**
+**0:00 to 0:15. Tab 1, the front page. Two halves: Build your own on the left, Watch our films on the right with the loop playing.**
 
 > This is Hidden Force Studio. Pick a kid hero, and half an hour later you have a short film where their ADHD, or their wheelchair, is the reason they save the day. And if the script gets the kid wrong, the film never gets made.
 
@@ -23,11 +23,11 @@ In tab 4, press play on the film for a few seconds so it is cached, then pause a
 
 > Shows with disabled kid leads die in review. Nobody on the team has lived it, the guidance is scattered across advocacy groups, and one miracle-cure ending kills the project. So I built the review into the studio, before a human reader ever sees a draft.
 
-**0:30 to 0:45. Click "Watch now". The page glides down to the shelf. Move the mouse slowly across the Films row.**
+**0:30 to 0:45. Click the Watch half. It opens to fill the screen. Move the mouse slowly across the Films row.**
 
 > Three films and five stories so far, every one made by the studio and left exactly as it came out. Two it refused to finish.
 
-**0:45 to 1:05. Click "Make your own" in the top bar. Click Zayan. Pause on his hidden power. Click "Make the film". The steps appear.**
+**0:45 to 1:05. Click the yellow "Build your own" strip on the left. It opens. Click Zayan. Pause on his hidden power. Click "Make the film". The steps appear.**
 
 > Making one is three clicks. It finds out how kids like Zayan should be shown, from the people who know, writes rules for this one story, writes the script, checks every line, then draws and films. That takes half an hour, so let me open one that is done.
 
