@@ -1,0 +1,74 @@
+{
+  "title": "The Rhythm of Maple Street",
+  "logline": "When a series of pedestrian crossing lights begin to fail in a decaying countdown sequence, an eight-year-old autistic girl must use her unique perception of patterns to warn the neighborhood before the busy school crossing goes completely dark.",
+  "beats": [
+    {
+      "number": 1,
+      "title": "The Quiet Goal",
+      "summary": "Aanya set out with a simple personal mission: to walk to the library courtyard and place her perfect smooth gray pebble on the stone bench.",
+      "trait_in_play": "Aanya's intense appreciation for quiet spaces and her sensory focus on the tactile feel of her totem pebble drive her goal."
+    },
+    {
+      "number": 2,
+      "title": "The Missed Beat",
+      "summary": "At the Oak Street crossing, Aanya notices the flashing orange hand signal blinks only three times instead of its usual four, cutting the walk short.",
+      "trait_in_play": "Aanya's sharp eye for environmental sequences allows her to immediately spot the rhythm change that her mom overlooks."
+    },
+    {
+      "number": 3,
+      "title": "Mapping the Grid",
+      "summary": "In her quiet bedroom, Aanya catalogs the flashing sequences of the neighborhood lights, suspecting a broader pattern is at play.",
+      "trait_in_play": "She uses her systematic thinking and love of grids to map out the mathematical intervals of the traffic lights."
+    },
+    {
+      "number": 4,
+      "title": "The Elm Street Glitch",
+      "summary": "The next morning, Aanya witnesses the Elm Street signal drop to only two blinks and pulls her classmate Toby back just in time as a car rushes through.",
+      "trait_in_play": "Her understanding of the sequence decay lets her anticipate the dangerously short crossing window before it happens."
+    },
+    {
+      "number": 5,
+      "title": "The Unheard Warning",
+      "summary": "Aanya tries to warn the school crossing guard, Mr. Henderson, about the failing countdown, but he brushes it off as a simple computer glitch.",
+      "trait_in_play": "Aanya speaks with absolute, literal clarity about the math, but the adult misinterprets her systematic focus."
+    },
+    {
+      "number": 6,
+      "title": "Sensory Storm",
+      "summary": "The overwhelming noise and flashing lights of the busy intersection trigger a sensory overload, which Aanya manages with her headphones and her totem pebble.",
+      "trait_in_play": "Aanya's sensory sensitivity is represented visually, and she uses her self-soothing strategies to ground herself."
+    },
+    {
+      "number": 7,
+      "title": "The Critical Prediction",
+      "summary": "Back home, Aanya calculates that the main school crossing on Maple Street will lose its warning blinks entirely by tomorrow morning at 8:15 AM.",
+      "trait_in_play": "She relies on her unwavering trust in mathematical patterns to find the exact moment of failure."
+    },
+    {
+      "number": 8,
+      "title": "Building the Proof",
+      "summary": "Aanya builds a working cardboard and LED model of the intersection to show the adults the physical rhythm of the failure.",
+      "trait_in_play": "She channels her focus into creating a physical, visual representation of the pattern she sees so clearly."
+    },
+    {
+      "number": 9,
+      "title": "The Demonstration",
+      "summary": "On Maple Street, Aanya sets up her model and presents her findings to Officer Davis as the school bell approaches.",
+      "trait_in_play": "Aanya's determination and strong moral compass compel her to advocate for the safety of her peers."
+    },
+    {
+      "number": 10,
+      "title": "The Zero Count",
+      "summary": "At exactly 8:14 AM, the Maple Street signal fails just as Aanya's model predicted, allowing her to stop Toby from stepping into the path of an oncoming truck.",
+      "trait_in_play": "Aanya's precise timing and quick action resolve the danger, proving her pattern-reading skills to the community."
+    },
+    {
+      "number": 11,
+      "title": "The Completed Pattern",
+      "summary": "With the city alerted and the crossing safe, Aanya finally reaches the quiet library courtyard to place her pebble in peace.",
+      "trait_in_play": "Aanya remains exactly who she is, finding comfort and joy in the quiet, predictable rhythm of her completed task."
+    }
+  ],
+  "page_estimate": 10,
+  "trait_causality_note": "Aanya's autistic focus on environmental rhythms and sequences allows her to detect a decaying signal timing pattern that non-disabled townspeople dismiss as a minor glitch."
+}

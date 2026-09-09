@@ -1,0 +1,44 @@
+{
+  "run_id": "5328d649-760",
+  "character": "Aanya",
+  "started_at": "2026-09-09T10:09:36.849Z",
+  "finished_at": "2026-09-09T10:17:47.429Z",
+  "verdict": "PASS",
+  "iterations": 2,
+  "models": {
+    "draft": "gemini-3.5-flash",
+    "review": "gemini-3.1-pro-preview",
+    "rubric": "gemini-3.1-pro-preview",
+    "lock": "gemini-3.1-pro-preview"
+  },
+  "adk_version": "2.0.0",
+  "parallel_search_ids": [
+    "search_71cd8ccec778493c08ae690741b96084",
+    "search_667da13007fae52ffaa21afea3f259a4"
+  ],
+  "source_urls": [
+    "https://ncdj.org/style-guide/",
+    "https://community.autism.org.uk/f/miscellaneous-and-chat/46904/autistic-representation-in-media-and-autistic-coded-characters",
+    "https://ncdj.org/wp-content/uploads/2018/10/NCDJ-styleguide-2018.pdf",
+    "https://community.autism.org.uk/f/adults-on-the-autistic-spectrum/1315/lisbeth-salander-the-portrayal-of-aspergers-in-the-millenium-trilogy-by-steig-larsson/8099",
+    "https://autisticadvocacy.org/wp-content/uploads/2016/06/whitepaper-Increasing-Neurodiversity-in-Disability-and-Social-Justice-Advocacy-Groups.pdf",
+    "https://www.autism.org.uk/advice-and-guidance/stories/stories-from-the-spectrum-elle-mcnicoll",
+    "https://autisticadvocacy.org/wp-content/uploads/2021/07/One-Idea-Per-Line.pdf",
+    "https://cronkite.asu.edu/ncdj/disability-language-style-guide",
+    "https://autisticnotweird.com/fiction/",
+    "https://apastyle.apa.org/style-grammar-guidelines/bias-free-language/disability",
+    "https://myfcph.org/a-disability-language-style-guide",
+    "https://www.scholarsandstorytellers.com/blog/how-to-diversify-autism-representation-in-the-media-and-why-intersectionality-matters",
+    "https://link.springer.com/article/10.1007/s12144-023-04959-6",
+    "https://adata.org/factsheet/ADANN-writing",
+    "https://service-manual.ons.gov.uk/content/language/disability"
+  ],
+  "stage_timings_ms": {
+    "intake": 1,
+    "research": 4495,
+    "gate_white": 22634,
+    "gate_blue": 25505,
+    "art_direction": 3,
+    "storyboard": 308322
+  }
+}

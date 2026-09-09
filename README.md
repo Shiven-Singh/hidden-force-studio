@@ -22,7 +22,7 @@ One ADK `SequentialAgent` runs the stages in fixed order. Stages 3 and 4 sit ins
 | 3 story | beat sheet and Fountain screenplay under the rubric | gemini-3.5-flash |
 | 4 gate | deterministic checks, model scores with verbatim evidence, verdict | code + gemini-3.1-pro-preview, t=0 |
 | 5 art direction | locked description, sha256, one prompt per shot | gemini-3.1-pro-preview for the paragraph, code for the rest |
-| 5 storyboard | one still per shot, each prompt starting with the locked description | gemini-3.1-flash-image, three at a time |
+| 5 storyboard | one still per shot, each prompt starting with the locked description | gemini-3.1-flash-image, one at a time |
 | 6 package | the files below to `outputs/` and Cloud Storage, run manifest | code |
 | 7 film | title card, eight evenly spaced shots as eight-second Veo clips with a narrator over each, end card with the verdict | veo-3.1-generate-001, Cloud Text-to-Speech, gemini-3.5-flash for the narration lines, ffmpeg |
 
@@ -40,7 +40,7 @@ Plus every must-not-do rule the rubric compiled from the sources, and soft notes
 
 Every model score must quote a line that exists verbatim in the script, checked by exact match after normalizing quotes and whitespace. A quote that does not exist turns the score to "unclear", and "unclear" fails a hard rule. The gate fails closed. Two revisions maximum, then HALT: stage 5 refuses to run and stage 6 writes the rubric, the review history, the rejected draft and a manifest that says why.
 
-Across the nine committed runs there are zero unverified quotes and zero "unclear" scores.
+Across the ten committed runs there are zero unverified quotes and zero "unclear" scores.
 
 ### Adversarial mode
 
@@ -89,6 +89,8 @@ gcloud run deploy hidden-force-studio --source . --region us-central1 \
   --set-secrets "PARALLEL_API_KEY=parallel-api-key:latest"
 ```
 
+After the first deploy, `scripts/deploy.sh` builds the image on Cloud Build and rolls it onto the service without touching the settings above.
+
 Gemini 3.x model ids are served from the `global` location on Vertex, not from a region. `gemini-2.5-pro` and `gemini-2.5-flash` are the GA fallbacks and work in `us-central1`.
 
 ## Committed runs
@@ -99,6 +101,7 @@ Every folder under [`outputs/`](outputs/) is a real run, unedited. Each has `por
 |---|---|---|---|---|
 | `zayan_20260907T201737` | Zayan and the Shifting School | PASS | 1 | the rubric citing CHADD and the NCDJ style guide; a narrated film on the live page |
 | `maya_adversarial_20260907T203300` | The Flow of Freedom | PASS | 2 | White fails on the walking line, quoted; Blue keeps the chair and passes; a film |
+| `aanya_20260909T100936` | The Rhythm of Maple Street | PASS | 2 | White sent back with quoted lines, Blue passes; the third narrated film |
 | `aanya_20260908T001847` | The Rhythm of School Street | PASS | 1 | pattern-reading as the mechanism of resolution |
 | `aanya_20260907T204844` | The Rhythm of the Lights | HALT | 3 | a genuine refusal on a hero that was not rigged: three drafts gave an eight-year-old savant-level engineering skill, against a rule the rubric took from a real source |
 | `kabir_20260907T210431` | Kabir and the Golden Gear | PASS | 1 | dyslexia named plainly |

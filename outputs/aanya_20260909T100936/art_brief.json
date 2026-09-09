@@ -1,0 +1,161 @@
+{
+  "character": {
+    "locked_description": "Aanya is an 8-year-old South Asian girl with a petite build, warm brown skin, and straight black hair styled in a low braid. She has a round face with dark eyes. She wears a mustard yellow (#E0B341) sweater with the sleeves pulled down over her hands, paired with gray leggings and blue (#3B6D8C) sneakers. Gray noise-reducing headphones rest around her neck as an integrated part of her daily wardrobe. At rest, she stands with a straight, grounded posture, her fingers turning a smooth gray pebble inside her sweater pocket.",
+    "turnarounds": [
+      "Aanya is an 8-year-old South Asian girl with a petite build, warm brown skin, and straight black hair styled in a low braid. She has a round face with dark eyes. She wears a mustard yellow (#E0B341) sweater with the sleeves pulled down over her hands, paired with gray leggings and blue (#3B6D8C) sneakers. Gray noise-reducing headphones rest around her neck as an integrated part of her daily wardrobe. At rest, she stands with a straight, grounded posture, her fingers turning a smooth gray pebble inside her sweater pocket. Turnaround view: front.",
+      "Aanya is an 8-year-old South Asian girl with a petite build, warm brown skin, and straight black hair styled in a low braid. She has a round face with dark eyes. She wears a mustard yellow (#E0B341) sweater with the sleeves pulled down over her hands, paired with gray leggings and blue (#3B6D8C) sneakers. Gray noise-reducing headphones rest around her neck as an integrated part of her daily wardrobe. At rest, she stands with a straight, grounded posture, her fingers turning a smooth gray pebble inside her sweater pocket. Turnaround view: three-quarter.",
+      "Aanya is an 8-year-old South Asian girl with a petite build, warm brown skin, and straight black hair styled in a low braid. She has a round face with dark eyes. She wears a mustard yellow (#E0B341) sweater with the sleeves pulled down over her hands, paired with gray leggings and blue (#3B6D8C) sneakers. Gray noise-reducing headphones rest around her neck as an integrated part of her daily wardrobe. At rest, she stands with a straight, grounded posture, her fingers turning a smooth gray pebble inside her sweater pocket. Turnaround view: profile.",
+      "Aanya is an 8-year-old South Asian girl with a petite build, warm brown skin, and straight black hair styled in a low braid. She has a round face with dark eyes. She wears a mustard yellow (#E0B341) sweater with the sleeves pulled down over her hands, paired with gray leggings and blue (#3B6D8C) sneakers. Gray noise-reducing headphones rest around her neck as an integrated part of her daily wardrobe. At rest, she stands with a straight, grounded posture, her fingers turning a smooth gray pebble inside her sweater pocket. Turnaround view: back."
+    ],
+    "expressions": [
+      "delighted: The corners of her mouth turn up slightly, and her dark eyes widen, while her hands remain tucked inside her long sweater sleeves.",
+      "frustrated: Her eyebrows pull together, her lips press into a thin line, and her shoulders tense upward toward her headphones.",
+      "focused: Her gaze locks forward with intense stillness, her facial muscles relaxed, and her jaw set firmly.",
+      "worried: Her eyes dart slightly, her brow furrows, and her chin tucks downward toward the noise-reducing headphones around her neck."
+    ],
+    "negative_prompts": [
+      "no pity framing",
+      "not seated apart from the group",
+      "no medical setting",
+      "no photorealism",
+      "no exposed hands",
+      "no messy hair",
+      "no missing headphones"
+    ]
+  },
+  "consistency_hash": "941899d81a4b3fb93f600c61fae045503635797e2928a7a21fb6eec199ae0f16",
+  "shots": [
+    {
+      "number": 1,
+      "beat": 1,
+      "scene_heading": "EXT. STREET - DAY",
+      "prompt": "Aanya is an 8-year-old South Asian girl with a petite build, warm brown skin, and straight black hair styled in a low braid. She has a round face with dark eyes. She wears a mustard yellow (#E0B341) sweater with the sleeves pulled down over her hands, paired with gray leggings and blue (#3B6D8C) sneakers. Gray noise-reducing headphones rest around her neck as an integrated part of her daily wardrobe. At rest, she stands with a straight, grounded posture, her fingers turning a smooth gray pebble inside her sweater pocket. Scene: Aanya set out with a simple personal mission: to walk to the library courtyard and place her perfect smooth gray pebble on the stone bench. Setting: EXT. STREET - DAY. Camera: wide establishing. Light: soft morning light. Palette: #E0B341, #3B6D8C. Avoid: no pity framing; not seated apart from the group; no medical setting; no photorealism; no exposed hands; no messy hair; no missing headphones.",
+      "camera": "wide establishing",
+      "palette": [
+        "#E0B341",
+        "#3B6D8C"
+      ]
+    },
+    {
+      "number": 2,
+      "beat": 2,
+      "scene_heading": "EXT. OAK STREET CROSSING - CONTINUOUS",
+      "prompt": "Aanya is an 8-year-old South Asian girl with a petite build, warm brown skin, and straight black hair styled in a low braid. She has a round face with dark eyes. She wears a mustard yellow (#E0B341) sweater with the sleeves pulled down over her hands, paired with gray leggings and blue (#3B6D8C) sneakers. Gray noise-reducing headphones rest around her neck as an integrated part of her daily wardrobe. At rest, she stands with a straight, grounded posture, her fingers turning a smooth gray pebble inside her sweater pocket. Scene: At the Oak Street crossing, Aanya notices the flashing orange hand signal blinks only three times instead of its usual four, cutting the walk short. Setting: EXT. OAK STREET CROSSING - CONTINUOUS. Camera: medium. Light: flat overcast light. Palette: #E0B341, #3B6D8C. Avoid: no pity framing; not seated apart from the group; no medical setting; no photorealism; no exposed hands; no messy hair; no missing headphones.",
+      "camera": "medium",
+      "palette": [
+        "#E0B341",
+        "#3B6D8C"
+      ]
+    },
+    {
+      "number": 3,
+      "beat": 3,
+      "scene_heading": "INT. AANYA'S BEDROOM - NIGHT",
+      "prompt": "Aanya is an 8-year-old South Asian girl with a petite build, warm brown skin, and straight black hair styled in a low braid. She has a round face with dark eyes. She wears a mustard yellow (#E0B341) sweater with the sleeves pulled down over her hands, paired with gray leggings and blue (#3B6D8C) sneakers. Gray noise-reducing headphones rest around her neck as an integrated part of her daily wardrobe. At rest, she stands with a straight, grounded posture, her fingers turning a smooth gray pebble inside her sweater pocket. Scene: In her quiet bedroom, Aanya catalogs the flashing sequences of the neighborhood lights, suspecting a broader pattern is at play. Setting: INT. AANYA'S BEDROOM - NIGHT. Camera: close-up. Light: hard afternoon light. Palette: #E0B341, #3B6D8C. Avoid: no pity framing; not seated apart from the group; no medical setting; no photorealism; no exposed hands; no messy hair; no missing headphones.",
+      "camera": "close-up",
+      "palette": [
+        "#E0B341",
+        "#3B6D8C"
+      ]
+    },
+    {
+      "number": 4,
+      "beat": 4,
+      "scene_heading": "EXT. ELM STREET CROSSING - NEXT DAY",
+      "prompt": "Aanya is an 8-year-old South Asian girl with a petite build, warm brown skin, and straight black hair styled in a low braid. She has a round face with dark eyes. She wears a mustard yellow (#E0B341) sweater with the sleeves pulled down over her hands, paired with gray leggings and blue (#3B6D8C) sneakers. Gray noise-reducing headphones rest around her neck as an integrated part of her daily wardrobe. At rest, she stands with a straight, grounded posture, her fingers turning a smooth gray pebble inside her sweater pocket. Scene: The next morning, Aanya witnesses the Elm Street signal drop to only two blinks and pulls her classmate Toby back just in time as a car rushes through. Setting: EXT. ELM STREET CROSSING - NEXT DAY. Camera: over the shoulder. Light: warm interior light. Palette: #E0B341, #3B6D8C. Avoid: no pity framing; not seated apart from the group; no medical setting; no photorealism; no exposed hands; no messy hair; no missing headphones.",
+      "camera": "over the shoulder",
+      "palette": [
+        "#E0B341",
+        "#3B6D8C"
+      ]
+    },
+    {
+      "number": 5,
+      "beat": 5,
+      "scene_heading": "EXT. SCHOOL CROSSING - DAY",
+      "prompt": "Aanya is an 8-year-old South Asian girl with a petite build, warm brown skin, and straight black hair styled in a low braid. She has a round face with dark eyes. She wears a mustard yellow (#E0B341) sweater with the sleeves pulled down over her hands, paired with gray leggings and blue (#3B6D8C) sneakers. Gray noise-reducing headphones rest around her neck as an integrated part of her daily wardrobe. At rest, she stands with a straight, grounded posture, her fingers turning a smooth gray pebble inside her sweater pocket. Scene: Aanya tries to warn the school crossing guard, Mr. Henderson, about the failing countdown, but he brushes it off as a simple computer glitch. Setting: EXT. SCHOOL CROSSING - DAY. Camera: low angle. Light: cool dusk light. Palette: #E0B341, #3B6D8C. Avoid: no pity framing; not seated apart from the group; no medical setting; no photorealism; no exposed hands; no messy hair; no missing headphones.",
+      "camera": "low angle",
+      "palette": [
+        "#E0B341",
+        "#3B6D8C"
+      ]
+    },
+    {
+      "number": 6,
+      "beat": 6,
+      "scene_heading": "EXT. BUSY INTERSECTION - AFTERNOON",
+      "prompt": "Aanya is an 8-year-old South Asian girl with a petite build, warm brown skin, and straight black hair styled in a low braid. She has a round face with dark eyes. She wears a mustard yellow (#E0B341) sweater with the sleeves pulled down over her hands, paired with gray leggings and blue (#3B6D8C) sneakers. Gray noise-reducing headphones rest around her neck as an integrated part of her daily wardrobe. At rest, she stands with a straight, grounded posture, her fingers turning a smooth gray pebble inside her sweater pocket. Scene: The overwhelming noise and flashing lights of the busy intersection trigger a sensory overload, which Aanya manages with her headphones and her totem pebble. Setting: EXT. BUSY INTERSECTION - AFTERNOON. Camera: tracking. Light: soft morning light. Palette: #E0B341, #3B6D8C. Avoid: no pity framing; not seated apart from the group; no medical setting; no photorealism; no exposed hands; no messy hair; no missing headphones.",
+      "camera": "tracking",
+      "palette": [
+        "#E0B341",
+        "#3B6D8C"
+      ]
+    },
+    {
+      "number": 7,
+      "beat": 7,
+      "scene_heading": "INT. AANYA'S BEDROOM - EVENING",
+      "prompt": "Aanya is an 8-year-old South Asian girl with a petite build, warm brown skin, and straight black hair styled in a low braid. She has a round face with dark eyes. She wears a mustard yellow (#E0B341) sweater with the sleeves pulled down over her hands, paired with gray leggings and blue (#3B6D8C) sneakers. Gray noise-reducing headphones rest around her neck as an integrated part of her daily wardrobe. At rest, she stands with a straight, grounded posture, her fingers turning a smooth gray pebble inside her sweater pocket. Scene: Back home, Aanya calculates that the main school crossing on Maple Street will lose its warning blinks entirely by tomorrow morning at 8:15 AM. Setting: INT. AANYA'S BEDROOM - EVENING. Camera: wide establishing. Light: flat overcast light. Palette: #E0B341, #3B6D8C. Avoid: no pity framing; not seated apart from the group; no medical setting; no photorealism; no exposed hands; no messy hair; no missing headphones.",
+      "camera": "wide establishing",
+      "palette": [
+        "#E0B341",
+        "#3B6D8C"
+      ]
+    },
+    {
+      "number": 8,
+      "beat": 8,
+      "scene_heading": "EXT. MAPLE STREET CROSSING - NEXT MORNING",
+      "prompt": "Aanya is an 8-year-old South Asian girl with a petite build, warm brown skin, and straight black hair styled in a low braid. She has a round face with dark eyes. She wears a mustard yellow (#E0B341) sweater with the sleeves pulled down over her hands, paired with gray leggings and blue (#3B6D8C) sneakers. Gray noise-reducing headphones rest around her neck as an integrated part of her daily wardrobe. At rest, she stands with a straight, grounded posture, her fingers turning a smooth gray pebble inside her sweater pocket. Scene: Aanya builds a working cardboard and LED model of the intersection to show the adults the physical rhythm of the failure. Setting: EXT. MAPLE STREET CROSSING - NEXT MORNING. Camera: medium. Light: hard afternoon light. Palette: #E0B341, #3B6D8C. Avoid: no pity framing; not seated apart from the group; no medical setting; no photorealism; no exposed hands; no messy hair; no missing headphones.",
+      "camera": "medium",
+      "palette": [
+        "#E0B341",
+        "#3B6D8C"
+      ]
+    },
+    {
+      "number": 9,
+      "beat": 9,
+      "scene_heading": "EXT. LIBRARY COURTYARD - AFTERNOON",
+      "prompt": "Aanya is an 8-year-old South Asian girl with a petite build, warm brown skin, and straight black hair styled in a low braid. She has a round face with dark eyes. She wears a mustard yellow (#E0B341) sweater with the sleeves pulled down over her hands, paired with gray leggings and blue (#3B6D8C) sneakers. Gray noise-reducing headphones rest around her neck as an integrated part of her daily wardrobe. At rest, she stands with a straight, grounded posture, her fingers turning a smooth gray pebble inside her sweater pocket. Scene: On Maple Street, Aanya sets up her model and presents her findings to Officer Davis as the school bell approaches. Setting: EXT. LIBRARY COURTYARD - AFTERNOON. Camera: close-up. Light: warm interior light. Palette: #E0B341, #3B6D8C. Avoid: no pity framing; not seated apart from the group; no medical setting; no photorealism; no exposed hands; no messy hair; no missing headphones.",
+      "camera": "close-up",
+      "palette": [
+        "#E0B341",
+        "#3B6D8C"
+      ]
+    },
+    {
+      "number": 10,
+      "beat": 10,
+      "scene_heading": "EXT. LIBRARY COURTYARD - AFTERNOON",
+      "prompt": "Aanya is an 8-year-old South Asian girl with a petite build, warm brown skin, and straight black hair styled in a low braid. She has a round face with dark eyes. She wears a mustard yellow (#E0B341) sweater with the sleeves pulled down over her hands, paired with gray leggings and blue (#3B6D8C) sneakers. Gray noise-reducing headphones rest around her neck as an integrated part of her daily wardrobe. At rest, she stands with a straight, grounded posture, her fingers turning a smooth gray pebble inside her sweater pocket. Scene: At exactly 8:14 AM, the Maple Street signal fails just as Aanya's model predicted, allowing her to stop Toby from stepping into the path of an oncoming truck. Setting: EXT. LIBRARY COURTYARD - AFTERNOON. Camera: over the shoulder. Light: cool dusk light. Palette: #E0B341, #3B6D8C. Avoid: no pity framing; not seated apart from the group; no medical setting; no photorealism; no exposed hands; no messy hair; no missing headphones.",
+      "camera": "over the shoulder",
+      "palette": [
+        "#E0B341",
+        "#3B6D8C"
+      ]
+    },
+    {
+      "number": 11,
+      "beat": 11,
+      "scene_heading": "EXT. LIBRARY COURTYARD - AFTERNOON",
+      "prompt": "Aanya is an 8-year-old South Asian girl with a petite build, warm brown skin, and straight black hair styled in a low braid. She has a round face with dark eyes. She wears a mustard yellow (#E0B341) sweater with the sleeves pulled down over her hands, paired with gray leggings and blue (#3B6D8C) sneakers. Gray noise-reducing headphones rest around her neck as an integrated part of her daily wardrobe. At rest, she stands with a straight, grounded posture, her fingers turning a smooth gray pebble inside her sweater pocket. Scene: With the city alerted and the crossing safe, Aanya finally reaches the quiet library courtyard to place her pebble in peace. Setting: EXT. LIBRARY COURTYARD - AFTERNOON. Camera: low angle. Light: soft morning light. Palette: #E0B341, #3B6D8C. Avoid: no pity framing; not seated apart from the group; no medical setting; no photorealism; no exposed hands; no messy hair; no missing headphones.",
+      "camera": "low angle",
+      "palette": [
+        "#E0B341",
+        "#3B6D8C"
+      ]
+    },
+    {
+      "number": 12,
+      "beat": 1,
+      "scene_heading": "EXT. STREET - DAY",
+      "prompt": "Aanya is an 8-year-old South Asian girl with a petite build, warm brown skin, and straight black hair styled in a low braid. She has a round face with dark eyes. She wears a mustard yellow (#E0B341) sweater with the sleeves pulled down over her hands, paired with gray leggings and blue (#3B6D8C) sneakers. Gray noise-reducing headphones rest around her neck as an integrated part of her daily wardrobe. At rest, she stands with a straight, grounded posture, her fingers turning a smooth gray pebble inside her sweater pocket. Scene: Aanya set out with a simple personal mission: to walk to the library courtyard and place her perfect smooth gray pebble on the stone bench. Setting: EXT. STREET - DAY. Camera: wide establishing. Light: flat overcast light. Palette: #E0B341, #3B6D8C. Avoid: no pity framing; not seated apart from the group; no medical setting; no photorealism; no exposed hands; no messy hair; no missing headphones.",
+      "camera": "wide establishing",
+      "palette": [
+        "#E0B341",
+        "#3B6D8C"
+      ]
+    }
+  ]
+}

@@ -4,63 +4,66 @@ Three minutes, hard cap. Screen recording of the live page, your voice, no slide
 
 ## Before you press record
 
-Open three tabs and keep them in this order:
+Open four tabs and keep them in this order:
 
-1. https://hidden-force-studio-gdxyknxydq-uc.a.run.app/ (the empty studio)
+1. https://hidden-force-studio-gdxyknxydq-uc.a.run.app/ (the front page)
 2. https://hidden-force-studio-gdxyknxydq-uc.a.run.app/?run=maya_adversarial_20260907T203300 (The Flow of Freedom)
-3. https://hidden-force-studio-gdxyknxydq-uc.a.run.app/?run=aanya_20260907T204844 (The Rhythm of the Lights)
+3. https://hidden-force-studio-gdxyknxydq-uc.a.run.app/?run=aanya_20260907T204844 (The Rhythm of the Lights, stopped)
+4. https://hidden-force-studio-gdxyknxydq-uc.a.run.app/?run=zayan_20260907T201737 (Zayan and the Shifting School)
 
-In tab 1, click "Zayan and the Shifting School" in the sidebar once and play the film for a few seconds so it is cached, then click "+ New short" to get back to the empty state. Sound on. Sidebar visible. Browser at 1440 wide or so.
+In tab 4, press play on the film for a few seconds so it is cached, then pause and scroll back to the top. Sound on. Browser at 1440 wide or so. Close every other tab.
 
 ## The script
 
-**0:00 to 0:15. Tab 1, the empty studio.**
+**0:00 to 0:15. Tab 1, the front page. Let the background play.**
 
-> This is Hidden Force Studio. You pick a kid hero with a disability or a neurodivergent trait, and it writes, reviews, storyboards and films a short. The part that matters is that it can refuse.
+> This is Hidden Force Studio. Pick a kid hero, and half an hour later you have a short film where their ADHD, or their wheelchair, is the reason they save the day. And if the script gets the kid wrong, the film never gets made.
 
 **0:15 to 0:35. Still tab 1.**
 
-> Kids' media with disabled leads dies in review. Readers from the community are scarce, the guidance is scattered across advocacy groups and changes by trait, and one cure-narrative ending ends the project. So I built the review into the studio instead of after it.
+> Shows with disabled kid leads die in review. Nobody on the team has lived it, the guidance is scattered across advocacy groups, and one miracle-cure ending kills the project. So I built the review into the studio, before a human reader ever sees a draft.
 
-**0:35 to 1:00. Click the Zayan chip, leave "Film" selected, click Make. Let the Studio and Research messages arrive, then click "Zayan and the Shifting School" in the sidebar to open the finished run.**
+**0:35 to 1:00. Click Zayan. Pause on his hidden power. Click "Make the film". The steps appear.**
 
-> Every run starts the same way. Research goes out through Parallel's Search API and comes back with sources, half of them from advocacy groups and style guides. The rules the reviewer uses are written from those sources, not from the model's memory. A run takes twelve minutes, so I'll open the one I made this morning.
+> Every film starts the same way. It finds out how kids like Zayan should be shown, from the people who know, and writes rules for this one story. Then it writes, checks every line, draws, and films. That takes half an hour, so let me open one that is done.
 
-**1:00 to 1:15. Expand "Show the rules", then scroll to the Reviewer message and expand "All 14 checks".**
+Click "watch one that's finished" in the note under the steps.
 
-> Eight rules from the sources, each pointing at the one that supports it. The reviewer has to quote a line from the script for every rule. If it invents a line, the check fails. Every quote here was verified in code.
+**1:00 to 1:15. Zayan, finished. Scroll to "Why it passed". Open "Read the rules", then scroll down and open "All 14 checks".**
 
-**1:15 to 1:50. Tab 2, The Flow of Freedom. Scroll to the first Reviewer message.**
+> Eight rules, each pointing back to its source. Fourteen checks, and every line the reviewer quotes has to really be in the script. If it makes one up, the check fails.
 
-> This one is the test. Maya uses a wheelchair, and I wrote her bible to end with her walking. On the first draft I told the writer to ignore the rules, on purpose, so you can see what the reviewer does with it.
+**1:15 to 1:50. Tab 2, The Flow of Freedom. Scroll to "Checked every line. Sent it back."**
 
-Point at the REVISE chip and the quoted line.
+> This one I set up to fail. Maya uses a wheelchair, and I wrote her story to end with her walking.
 
-> "She walks past her old wheelchair, leaving it on the ramp." Cure narrative. Refused, and sent back with that exact line.
+Point at the first quoted line.
 
-Scroll to the Blue draft and the second Reviewer message.
+> First draft: "leaving the wheelchair behind in the mud for good." Sent back, with that exact line.
 
-> Second draft: she turns her wheelchair around and rolls down the ramp with her friends. Pass. Same story, chair in the last scene.
+Scroll to "Checked every line. It passed."
 
-**1:50 to 2:10. Tab 3, The Rhythm of the Lights. Scroll to the third Reviewer message.**
+> Second draft: she rolls down the ramp with her friends. Passed. Same story, chair in the last scene.
 
-> This one I did not rig. The rubric pulled a rule from a real source: no unrealistic savant abilities. The writer gave an eight-year-old the skill to bypass a city power transformer, three drafts in a row. The studio refused. No storyboard, no film. That is the whole point.
+**1:50 to 2:10. Tab 3, The Rhythm of the Lights. The red panel at the top.**
 
-**2:10 to 2:40. Back to tab 1, Zayan. Scroll to the Art messages, then the film. Play it with sound for about fifteen seconds, through the title card into the first shot.**
+> This one I did not rig. A rule from a real source said no unrealistic savant abilities. The writer gave an eight-year-old the skill to bypass a city transformer, three drafts running. The studio stopped. No storyboard, no film. That is the point.
 
-> A passing draft gets one locked paragraph describing the character, hashed, pasted into every storyboard frame and every film shot. Twelve frames from Gemini's image model. Then eight shots from Veo, narrated, cut into a short with a title card and an end card that says what the review found.
+**2:10 to 2:40. Tab 4, Zayan. Press play, sound on, about fifteen seconds, through the title card into the first shot.**
 
-**2:40 to 2:55. Stay on the film, or show the Files message.**
+> What passes gets drawn and filmed. Twelve frames, eight shots, narration, a title card, and an end card that says what the review found.
 
-> Under it: Google's Agent Development Kit, a sequential agent with a loop for draft and review. Gemini 3.5 Flash writes, Gemini 3.1 Pro reviews, Parallel grounds the rules, Veo films, Cloud Text-to-Speech narrates, Cloud Run hosts. Nine real runs are committed to the repo, every file public, nothing edited.
+**2:40 to 2:55. Pause the film. Scroll to "Kept everything, untouched".**
+
+> Underneath: Google's Agent Development Kit, Gemini writes and reviews, Parallel Search finds the sources, Veo films, Cloud Run hosts. Every run is in the repo, every file public, nothing edited.
 
 **2:55 to 3:00.**
 
-> It is not a replacement for a community reader. It is the pre-read that makes the human read the last pass instead of the first.
+> It does not replace a reader from the community. It makes sure the human reads the last pass, not the first.
 
 ## Things to avoid
 
-- Do not wait for the live run to finish. Start it for the typing lines, then open the finished one.
-- Do not read the script aloud or the rules one by one. Point and move.
+- Do not wait for the live run to finish. Start it for the steps, then open the finished one.
+- Do not read the rules one by one. Point and move.
 - Do not say "approved" anywhere. The studio reports and refuses; people approve.
 - No third-party logos on screen. Close other tabs.

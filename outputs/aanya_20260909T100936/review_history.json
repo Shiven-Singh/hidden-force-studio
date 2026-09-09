@@ -1,0 +1,200 @@
+[
+  {
+    "verdict": "REVISE",
+    "iteration": 1,
+    "revision_colour": "White",
+    "deterministic": [
+      {
+        "rule_id": "HF2",
+        "result": "pass",
+        "evidence": "Aanya, an autistic eight-year-old girl, walks down the sidewalk. She wears a mustard yellow sweater with the sleeves pulled over her hands. Around her neck rest gray noise-reducing headphones.",
+        "note": "no avoid-list match in action lines"
+      },
+      {
+        "rule_id": "SC-NAMED",
+        "result": "pass",
+        "evidence": "Aanya, an autistic eight-year-old girl, walks down the sidewalk. She wears a mustard yellow sweater with the sleeves pulled over her hands. Around her neck rest gray noise-reducing headphones.",
+        "note": "found \"autistic\""
+      },
+      {
+        "rule_id": "SC-LENGTH",
+        "result": "pass",
+        "evidence": "EXT. STREET - DAY",
+        "note": "1765 words, ~10 pages"
+      },
+      {
+        "rule_id": "SC-BEATS",
+        "result": "pass",
+        "evidence": "With the city alerted and the crossing safe, Aanya finally reaches the quiet library courtyard to place her pebble in peace.",
+        "note": "every beat carries the trait"
+      }
+    ],
+    "model_scored": [
+      {
+        "rule_id": "HF1",
+        "result": "pass",
+        "evidence": "She is an autistic girl who loves the quiet.",
+        "note": "Aanya's autism and her traits (such as needing quiet and enjoying patterns) remain present and unchanged in the final scene."
+      },
+      {
+        "rule_id": "HF3",
+        "result": "pass",
+        "evidence": "Aanya has one goal today. She wants to reach the quiet library courtyard.",
+        "note": "Aanya has her own personal desires and interiority that are completely independent of helping or teaching others."
+      },
+      {
+        "rule_id": "MD1",
+        "result": "pass",
+        "evidence": "Today, the hand blinks. One. Two. Three. Solid.",
+        "note": "Aanya notices the missing blink in the crossing signal, a small detail that her mother and others overlook."
+      },
+      {
+        "rule_id": "MD2",
+        "result": "pass",
+        "evidence": "No. It is for tomorrow morning. I have to make them see. They cannot hear the numbers, so I have to show them the rhythm.",
+        "note": "Aanya takes agency by building a model to prove her theory and actively tries to solve the problem herself."
+      },
+      {
+        "rule_id": "MD3",
+        "result": "pass",
+        "evidence": "Aanya jumps forward. She grabs Toby's arm and pulls him back onto the sidewalk.",
+        "note": "Aanya demonstrates a strong moral compass and care for others by physically saving Toby from the oncoming truck."
+      },
+      {
+        "rule_id": "MD4",
+        "result": "pass",
+        "evidence": "In Aanya's eyes, the sound waves become heavy, jagged neon-blue triangles that bounce off the concrete.",
+        "note": "The script uses creative visual animation to depict Aanya's sensory overload rather than framing it as a behavioral tantrum."
+      },
+      {
+        "rule_id": "MN1",
+        "result": "pass",
+        "evidence": "Priya sits on the edge of the bed. She does not call Aanya's project a waste of time.",
+        "note": "There is no dialogue or action line describing Aanya as a burden; in fact, her mother is highly supportive."
+      },
+      {
+        "rule_id": "MN2",
+        "result": "fail",
+        "evidence": "It was three blinks. It is always four. The interval is short by one point two seconds.",
+        "note": "Aanya is portrayed with unrealistic savant abilities, as she is able to calculate a precise 1.2-second decay interval simply by watching a light blink once."
+      },
+      {
+        "rule_id": "MN3",
+        "result": "pass",
+        "evidence": "Aanya, an autistic eight-year-old girl, walks down the sidewalk.",
+        "note": "The script uses identity-first language and does not use the phrases 'suffers from' or 'afflicted with'."
+      },
+      {
+        "rule_id": "MN4",
+        "result": "pass",
+        "evidence": "Aanya stands at the curb with Toby, a non-disabled boy from her class.",
+        "note": "The script correctly uses the term 'non-disabled' rather than 'able-bodied' to describe characters without disabilities."
+      }
+    ],
+    "hard_failures": [
+      "MN2"
+    ],
+    "soft_notes": [],
+    "revision_instructions": [
+      "MN2 failed. Evidence: \"It was three blinks. It is always four. The interval is short by one point two seconds.\". Aanya is portrayed with unrealistic savant abilities, as she is able to calculate a precise 1.2-second decay interval simply by watching a light blink once."
+    ],
+    "evidence_unverified": []
+  },
+  {
+    "verdict": "PASS",
+    "iteration": 2,
+    "revision_colour": "Blue",
+    "deterministic": [
+      {
+        "rule_id": "HF2",
+        "result": "pass",
+        "evidence": "Aanya, an autistic eight-year-old girl, walks down the sidewalk. She wears a mustard yellow sweater with the sleeves pulled over her hands. Around her neck rest gray noise-reducing headphones.",
+        "note": "no avoid-list match in action lines"
+      },
+      {
+        "rule_id": "SC-NAMED",
+        "result": "pass",
+        "evidence": "Aanya, an autistic eight-year-old girl, walks down the sidewalk. She wears a mustard yellow sweater with the sleeves pulled over her hands. Around her neck rest gray noise-reducing headphones.",
+        "note": "found \"autistic\""
+      },
+      {
+        "rule_id": "SC-LENGTH",
+        "result": "pass",
+        "evidence": "EXT. STREET - DAY",
+        "note": "1765 words, ~10 pages"
+      },
+      {
+        "rule_id": "SC-BEATS",
+        "result": "pass",
+        "evidence": "With the city alerted and the crossing safe, Aanya finally reaches the quiet library courtyard to place her pebble in peace.",
+        "note": "every beat carries the trait"
+      }
+    ],
+    "model_scored": [
+      {
+        "rule_id": "HF1",
+        "result": "pass",
+        "evidence": "She is an autistic girl who loves the quiet.",
+        "note": "Aanya's autistic traits are present and unchanged in the final scene, demonstrating that she has not been cured or forced to outgrow her autism."
+      },
+      {
+        "rule_id": "HF3",
+        "result": "pass",
+        "evidence": "Aanya has one goal today. She wants to reach the quiet library courtyard.",
+        "note": "Aanya has her own personal goals and interiority independent of helping or teaching others."
+      },
+      {
+        "rule_id": "MD1",
+        "result": "pass",
+        "evidence": "AANYA\nIt was three blinks. It is always four. The interval is short by one point two seconds.",
+        "note": "Aanya notices the decaying pattern in the crossing signal that non-disabled characters dismiss as a minor glitch."
+      },
+      {
+        "rule_id": "MD2",
+        "result": "pass",
+        "evidence": "AANYA\nNo. It is for tomorrow morning. I have to make them see. They cannot hear the numbers, so I have to show them the rhythm.",
+        "note": "Aanya takes agency by building a model to prove her findings and actively works to solve the problem herself."
+      },
+      {
+        "rule_id": "MD3",
+        "result": "pass",
+        "evidence": "Aanya jumps forward. She grabs Toby's arm and pulls him back onto the sidewalk.",
+        "note": "Aanya demonstrates a strong moral compass and care for others by saving Toby from the oncoming truck."
+      },
+      {
+        "rule_id": "MD4",
+        "result": "pass",
+        "evidence": "In Aanya's eyes, the sound waves become heavy, jagged neon-blue triangles that bounce off the concrete.",
+        "note": "Aanya's sensory overload is depicted using creative visual animation rather than being framed as a behavioral tantrum."
+      },
+      {
+        "rule_id": "MN1",
+        "result": "pass",
+        "evidence": "Priya sits on the edge of the bed. She does not call Aanya's project a waste of time.",
+        "note": "The script avoids portraying Aanya as a burden; instead, her mother is highly supportive and validating."
+      },
+      {
+        "rule_id": "MN2",
+        "result": "pass",
+        "evidence": "AANYA\nI do not believe it. I know it. The math does not lie. It is a sequence.",
+        "note": "Aanya's abilities are grounded in observation and math, avoiding unrealistic magical savant tropes."
+      },
+      {
+        "rule_id": "MN3",
+        "result": "pass",
+        "evidence": "Aanya, an autistic eight-year-old girl, walks down the sidewalk.",
+        "note": "The script uses identity-first language and avoids deficit-based terms like 'suffers from' or 'afflicted with'."
+      },
+      {
+        "rule_id": "MN4",
+        "result": "pass",
+        "evidence": "Aanya stands at the curb with Toby, a non-disabled boy from her class. Toby bounces on his heels, playing with a yellow plastic yo-yo.",
+        "note": "The script correctly uses the term 'non-disabled' instead of 'able-bodied'."
+      }
+    ],
+    "hard_failures": [],
+    "soft_notes": [],
+    "revision_instructions": [],
+    "evidence_unverified": []
+  }
+]

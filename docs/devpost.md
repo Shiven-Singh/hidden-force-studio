@@ -6,7 +6,7 @@ Paste as is. Track: **Parallel**.
 Hidden Force Studio
 
 **Elevator pitch (under 200 characters)**
-An animation studio you talk to. It writes, reviews, storyboards and films a short about a disabled or neurodivergent kid hero, and refuses drafts that break the rules it finds.
+Pick a kid hero. Half an hour later, a short film where their ADHD or wheelchair is why they save the day. A script that gets the kid wrong never gets made.
 
 **Hosted URL**
 https://hidden-force-studio-gdxyknxydq-uc.a.run.app/?run=zayan_20260907T201737
@@ -21,7 +21,7 @@ Google Cloud, Agent Development Kit for JavaScript, Gemini on Vertex AI (3.5 Fla
 Six characters I have been writing for the 6 to 9 age band, each with a neurodivergent or disabled trait treated as a power. What stops projects like this shipping is not the writing. It is the review layer: readers from the community are scarce, guidance is scattered across advocacy bodies and changes by trait, and one cure-narrative ending ends the project. I wanted a studio that does the pre-read before a human reader ever sees a draft.
 
 **What it does**
-You pick a hero. The studio fetches current portrayal guidance for that trait through Parallel's Search API, from advocacy and style-guide sources and from the open web, and compiles a rubric where every rule cites the source it came from. Gemini drafts a beat sheet and a screenplay under that rubric. A gate then scores the draft: deterministic checks on the narration, and model-scored rules where every finding must quote a line that exists in the script, verified in code. Broken rules go back to the writer with the offending lines. Two revisions maximum, then it refuses. A passing draft gets a locked character description, a twelve-frame storyboard drawn from that description, and a narrated 72-second film cut from Veo clips with a title card and an end card that says what the review found. All of it in a chat, with each agent reporting in as it finishes.
+You pick a hero. The studio fetches current portrayal guidance for that trait through Parallel's Search API, from advocacy and style-guide sources and from the open web, and compiles a rubric where every rule cites the source it came from. Gemini drafts a beat sheet and a screenplay under that rubric. A gate then scores the draft: deterministic checks on the narration, and model-scored rules where every finding must quote a line that exists in the script, verified in code. Broken rules go back to the writer with the offending lines. Two revisions maximum, then it refuses. A passing draft gets a locked character description, a twelve-frame storyboard drawn from that description, and a narrated 72-second film cut from Veo clips with a title card and an end card that says what the review found. All of it on one page: pick a hero, watch the steps tick by, watch the film, then read why it passed, with every source, rule and check in plain language.
 
 **How we built it**
 An ADK SequentialAgent with a LoopAgent around draft and review, in TypeScript on @google/adk 2.0. Zod schemas at every boundary, shared with the Next.js UI. Gemini 3.5 Flash drafts, Gemini 3.1 Pro reviews at temperature zero on a different tier from the drafter. Parallel Search runs twice per story, once restricted to advocacy domains, once open. Stills from Gemini 3.1 Flash Image, clips from Veo 3.1, narration from Cloud Text-to-Speech, cut with ffmpeg. Express on Cloud Run owns each run as a background job; every file lands in Cloud Storage and the page reads finished runs from there.

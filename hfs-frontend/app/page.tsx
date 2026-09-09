@@ -1,11 +1,13 @@
 'use client';
 
 import { useEffect, useMemo, useRef, useState, type ReactNode } from 'react';
-import type { ArtBrief, CharacterBible, PortrayalRubric, ReviewReport, RunManifest, Source } from '@hfs/schemas';
+import type { ArtBrief, CharacterBible, PortrayalRubric, ReviewReport, RuleScore, RunManifest, Source } from '@hfs/schemas';
 
 const API = process.env.NEXT_PUBLIC_API_URL ?? '';
+const REPO = 'https://github.com/Shiven-Singh/hidden-force-studio';
 
 type Bible = CharacterBible & { id: string };
+type TestKind = 'cure' | 'refuse' | null;
 
 interface StoryboardFrame { shot: number; beat: number; file: string; prompt: string; error?: string }
 interface RenderStatus { status: 'rendering' | 'done' | 'error'; clips?: number; done_clips?: number; error?: string; narration?: string[]; voice?: string }
@@ -47,161 +49,191 @@ interface RunSummary {
   live: boolean;
 }
 
-type Dept = 'production' | 'research' | 'standards' | 'script' | 'review' | 'design' | 'film' | 'delivery';
-const DEPT_NAME: Record<Dept, string> = { production: 'Production', research: 'Research', standards: 'Standards', script: 'Script', review: 'Review', design: 'Design', film: 'Film', delivery: 'Delivery' };
-const DEPT_CODE: Record<Dept, string> = { production: 'PR', research: 'RS', standards: 'ST', script: 'SC', review: 'RV', design: 'DS', film: 'FM', delivery: 'DL' };
-
-interface Entry { id: string; role: 'user' | Dept; at?: number; body: ReactNode }
-
 const fileUrl = (folder: string | undefined, file: string) => `${API}/api/runs/${encodeURIComponent(folder ?? '')}/files/${file}`;
-const fmtTime = (ts?: number) => (ts ? new Date(ts).toLocaleTimeString('en-US', { hour12: false, hour: '2-digit', minute: '2-digit', second: '2-digit' }) : '');
-const lower = (s: string) => s.toLowerCase();
-const COLOURS = ['White', 'Blue', 'Pink'];
+const cap = (s: string) => s.charAt(0).toUpperCase() + s.slice(1);
+const ORDINAL = ['first', 'second', 'third'];
+const FIXED_RULES: Record<string, string> = {
+  HF1: 'No miracle cure. The kid keeps their trait at the end.',
+  HF2: 'No pity words in the narration.',
+  HF3: 'The kid is not there to inspire everyone else.',
+  'SC-LENGTH': 'The script is the right length.',
+  'SC-NAMED': 'The trait is named plainly at least once.',
+  'SC-BEATS': 'The trait matters in every beat of the story.',
+};
+const FILE_LABEL: Record<string, string> = {
+  'screenplay.fountain': 'The script',
+  'screenplay.rejected.fountain': 'The rejected script',
+  'screenplay.json': 'The script, as data',
+  'beat_sheet.md': 'Beat sheet',
+  'one_sheet.md': 'One-page summary',
+  'portrayal_rubric.json': 'House rules and sources',
+  'review_history.json': 'Every check, every draft',
+  'art_brief.json': 'How the kid looks, and the shot plan',
+  'storyboard.json': 'Storyboard plan',
+  'run_manifest.json': 'Run details',
+};
 
-function workingLine(run: RunView): string | null {
-  if (run.status !== 'running') return null;
-  const draftNo = run.review_history.length;
+const testKind = (b: Bible | undefined): TestKind => (!b?.adversarial ? null : b.adversarial_revisions === 'unguarded' ? 'refuse' : 'cure');
+const testKindOfFolder = (folder?: string): TestKind => (folder?.includes('adversarial_unguarded') ? 'refuse' : folder?.includes('adversarial') ? 'cure' : null);
+const resultWord = (r: RuleScore['result']) => (r === 'pass' ? 'passed' : r === 'fail' ? 'failed' : 'unclear');
+
+function liveLine(run: RunView, name: string): string {
+  const n = run.review_history.length;
   const sb = run.storyboard_progress;
   const r = run.render;
+  if (r?.status === 'rendering') return r.done_clips === undefined ? 'Writing the narration' : `Filming shot ${Math.min(r.done_clips + 1, r.clips ?? 8)} of ${r.clips ?? 8}`;
   switch (run.current) {
     case null:
-    case 'intake': return 'Reading the character bible';
-    case 'research': return 'Retrieving portrayal guidance via Parallel Search';
+    case 'intake': return `Reading ${name}'s file`;
+    case 'research': return `Finding out how kids like ${name} should be shown`;
     case 'rubric':
-    case 'rubric_merge': return 'Compiling standards from the sources';
-    case 'story': return `Writing the ${COLOURS[draftNo] ?? 'next'} draft`;
-    case 'gate': return `Reviewing the ${COLOURS[Math.max(0, draftNo)] ?? 'latest'} draft`;
-    case 'lock_character': return 'Locking the character design';
-    case 'art_direction': return 'Building the shot list';
-    case 'storyboard': return sb ? `Storyboard frame ${Math.min(sb.done + 1, sb.total)} of ${sb.total}` : 'Drawing the storyboard';
-    case 'package': return 'Writing the package';
-    case 'film': return r ? `Filming shot ${Math.min((r.done_clips ?? 0) + 1, r.clips ?? 8)} of ${r.clips ?? 8}` : 'Writing narration';
+    case 'rubric_merge': return 'Turning what it found into house rules for this story';
+    case 'story': return `Writing the ${ORDINAL[n] ?? 'next'} draft`;
+    case 'gate': return `Reading the ${ORDINAL[n] ?? 'latest'} draft against the rules`;
+    case 'lock_character': return `Pinning down exactly how ${name} looks`;
+    case 'art_direction': return 'Planning the shots';
+    case 'storyboard': return sb ? `Drawing frame ${Math.min(sb.done + 1, sb.total)} of ${sb.total}` : 'Drawing the storyboard';
+    case 'package': return 'Saving everything';
+    case 'film': return 'Writing the narration';
     default: return 'Working';
   }
 }
 
-function buildEntries(run: RunView): Entry[] {
-  const at = (author: string, nth = 0) => (run.archived ? undefined : run.events.filter((e) => e.author === author)[nth]?.ts);
-  const out: Entry[] = [];
-  out.push({ id: 'u', role: 'user', at: run.events[0]?.ts, body: <p>Production request: {run.character}. {run.film || run.animatic ? 'Script, storyboard and film.' : 'Script and storyboard.'}</p> });
-  out.push({ id: 'pr', role: 'production', at: at('intake'), body: <p>Production opened for {run.character}. Pipeline: research, standards, script, review, design, storyboard{run.film || run.animatic ? ', film' : ''}. A draft that fails review is returned with the failing lines; after three failures the production is refused.</p> });
+interface Step { key: string; label: string; sub?: string; state: 'done' | 'active' | 'todo' | 'stopped' }
+
+function buildSteps(run: RunView, name: string): Step[] {
+  const running = run.status === 'running';
+  const cur = run.current;
+  const has = (a: string) => run.events.some((e) => e.author === a);
+  const state = (keys: string[]): Step['state'] => {
+    const active = running && cur !== null && keys.includes(cur);
+    if (active) return 'active';
+    return keys.some(has) ? 'done' : 'todo';
+  };
+  const verdicts = run.review_history.map((r, i) => (r.verdict === 'PASS' ? `Draft ${i + 1} passed.` : r.verdict === 'REVISE' ? `Draft ${i + 1} went back with ${r.hard_failures.length} note${r.hard_failures.length === 1 ? '' : 's'}.` : `Draft ${i + 1} failed again.`));
+  const scriptState: Step['state'] = run.review?.verdict === 'HALT' ? 'stopped' : running && (cur === 'story' || cur === 'gate') ? 'active' : run.review?.verdict === 'PASS' ? 'done' : 'todo';
+  const filmState: Step['state'] = run.animatic || run.render?.status === 'done' ? 'done' : run.render?.status === 'rendering' || (running && cur === 'film') ? 'active' : 'todo';
+  const steps: Step[] = [
+    { key: 'research', label: `Find out how kids like ${name} should be shown`, sub: run.sources ? `${run.sources.length} sources found` : undefined, state: state(['research']) },
+    { key: 'rules', label: 'Write the house rules for this story', sub: run.rubric ? `${run.rubric.must_do.length + run.rubric.must_not_do.length} rules, each tied to a source` : undefined, state: state(['rubric', 'rubric_merge']) },
+    { key: 'script', label: 'Write the script and check it against the rules', sub: verdicts.length ? verdicts.join(' ') : undefined, state: scriptState },
+    { key: 'look', label: `Pin down how ${name} looks`, state: state(['lock_character', 'art_direction']) },
+    { key: 'board', label: 'Draw the storyboard', sub: run.storyboard_progress ? `${run.storyboard_progress.done} of ${run.storyboard_progress.total} frames` : undefined, state: state(['storyboard']) },
+    { key: 'save', label: 'Save everything', state: state(['package']) },
+  ];
+  if (run.film || run.animatic || run.render) steps.push({ key: 'film', label: 'Film it and record the narration', sub: run.render?.status === 'rendering' && run.render.done_clips !== undefined ? `${run.render.done_clips} of ${run.render.clips ?? 8} shots filmed` : undefined, state: filmState });
+  if (run.review?.verdict === 'HALT') for (const s of steps) if (s.state === 'todo') s.state = 'stopped';
+  return steps;
+}
+
+interface Chapter { id: string; tone?: 'ok' | 'warn' | 'bad' | 'live'; title: string; detail?: ReactNode; body?: ReactNode }
+
+function ruleText(id: string, rubric?: PortrayalRubric): string {
+  if (FIXED_RULES[id]) return FIXED_RULES[id];
+  const r = rubric ? [...rubric.must_do, ...rubric.must_not_do].find((x) => x.id === id) : undefined;
+  return r?.rule ?? id;
+}
+
+function buildChapters(run: RunView, hero: Bible | undefined, test: TestKind): Chapter[] {
+  const name = run.character;
+  const trait = hero?.trait ?? 'this';
+  const out: Chapter[] = [];
+  const srcOf = (idx: number) => run.rubric?.sources.find((s) => s.idx === idx);
+
+  if (test === 'cure') out.push({ id: 'test', tone: 'warn', title: 'This one was set up to fail on purpose', detail: `${name}'s story was written to end with her walking away from her wheelchair, and the writer was told to ignore the rules on the first draft. The point is to see whether the review catches it.` });
+  if (test === 'refuse') out.push({ id: 'test', tone: 'warn', title: 'This one was set up to be refused on purpose', detail: 'The writer was told to ignore the rules on every draft. The point is to see whether the studio stops after three tries instead of making the film anyway.' });
 
   if (run.sources) {
-    const adv = run.sources.filter((s) => s.pool === 'advocacy');
-    const gen = run.sources.filter((s) => s.pool === 'general');
-    out.push({ id: 'rs', role: 'research', at: at('research'), body: (
-      <>
-        <p>{run.sources.length} sources retrieved via Parallel Search API. {adv.length} from advocacy organizations and style guides, {gen.length} from the open web. Stored verbatim with pool labels.</p>
-        <details><summary>Sources</summary>
-          <div className="src-list">{run.sources.map((s) => (
-            <div key={s.idx} className="src-item"><a href={s.url} target="_blank" rel="noreferrer">[{s.idx}] {s.title}</a><div className="pub">{s.pool} · {s.publisher}{s.publish_date ? ` · ${s.publish_date}` : ''}</div></div>
-          ))}</div>
-        </details>
-      </>
+    const adv = run.sources.filter((s) => s.pool === 'advocacy').length;
+    out.push({ id: 'rs', tone: 'ok', title: `Found out how kids like ${name} should be shown, from the people who know`, detail: `${run.sources.length} sources. ${adv} are disability groups and writers' style guides, ${run.sources.length - adv} are from the rest of the web.`, body: (
+      <details><summary>See the sources</summary>
+        <ul>{run.sources.map((s) => <li key={s.idx}><a href={s.url} target="_blank" rel="noreferrer">{s.title}</a> <span className="src">{s.publisher}{s.pool === 'advocacy' ? ' · advocacy or style guide' : ''}</span></li>)}</ul>
+      </details>
     ) });
   }
 
   if (run.rubric) {
     const r = run.rubric;
-    out.push({ id: 'st', role: 'standards', at: at('rubric_merge') ?? at('rubric'), body: (
-      <>
-        <p>{r.must_do.length + r.must_not_do.length} rules compiled, each citing its source. Three fixed rules apply to every production: no cure narrative, no deficit framing in narration, no inspiration framing.</p>
-        <details><summary>Rules</summary>
-          <ul>{r.must_do.map((x) => <li key={x.id}><span className="mono">{x.id}</span> {x.rule} <span className="muted mono">[{x.source_ref}]</span></li>)}</ul>
-          <ul>{r.must_not_do.map((x) => <li key={x.id}><span className="mono">{x.id}</span> {x.rule} <span className="muted mono">[{x.source_ref}]</span></li>)}</ul>
-          {r.avoid_terms.length > 0 && <p className="small muted">Terms barred from narration: {r.avoid_terms.join(', ')}.</p>}
-        </details>
-      </>
+    out.push({ id: 'st', tone: 'ok', title: 'Set the rules this story has to keep', detail: `${r.must_do.length + r.must_not_do.length} rules, each one pointing back to where it came from. Three more never change: no miracle cures, no pity, no "so inspiring".`, body: (
+      <details><summary>Read the rules</summary>
+        <ul>{[...r.must_do, ...r.must_not_do].map((x) => { const s = srcOf(x.source_ref); return <li key={x.id}>{x.rule} {s && <span className="src"><a href={s.url} target="_blank" rel="noreferrer">{s.publisher}</a></span>}</li>; })}</ul>
+        {r.avoid_terms.length > 0 && <p className="why" style={{ marginTop: 8 }}>Words kept out of the narration: {r.avoid_terms.join(', ')}.</p>}
+      </details>
     ) });
   }
 
   run.review_history.forEach((rev, i) => {
+    const last = i === run.review_history.length - 1;
     const sp = run.screenplay;
-    out.push({ id: `sc-${i}`, role: 'script', at: at('story', i), body: (
-      <p>
-        <span className={`chip ${lower(rev.revision_colour)}`}>{rev.revision_colour} draft</span>{' '}
-        {i === 0 && sp ? <>&ldquo;{sp.title}&rdquo;. {sp.logline} {sp.beats} beats{sp.words ? `, ${sp.words.toLocaleString('en-US')} words` : ''}.</> : i === 0 ? 'Draft submitted.' : 'Redraft submitted with review notes applied.'}
-      </p>
-    ) });
-    const failed = [...rev.deterministic, ...rev.model_scored].filter((s) => rev.hard_failures.includes(s.rule_id));
-    const total = rev.deterministic.length + rev.model_scored.length;
-    out.push({ id: `rv-${i}`, role: 'review', at: at('gate', i), body: (
+    out.push({ id: `d${i}`, title: i === 0 ? 'Wrote the first draft' : `Wrote the ${ORDINAL[i] ?? 'next'} draft, using the notes`, detail: last && sp ? <>&ldquo;{sp.title}&rdquo; {sp.logline}</> : undefined });
+    const all = [...rev.deterministic, ...rev.model_scored];
+    const failed = all.filter((s) => rev.hard_failures.includes(s.rule_id));
+    const tone = rev.verdict === 'PASS' ? 'ok' : rev.verdict === 'REVISE' ? 'warn' : 'bad';
+    const title = rev.verdict === 'PASS' ? 'Checked every line. It passed.' : rev.verdict === 'REVISE' ? 'Checked every line. Sent it back.' : 'Checked every line. Stopped.';
+    const detail = rev.verdict === 'PASS'
+      ? `${all.length} checks, all clear. Every line the reviewer quoted is really in the script.`
+      : rev.verdict === 'REVISE'
+        ? `${failed.length} of ${all.length} checks failed. The exact lines went back to the writer.`
+        : `Still failing ${failed.length} of ${all.length} checks on the third draft. Nothing was drawn or filmed.`;
+    out.push({ id: `c${i}`, tone, title, detail, body: (
       <>
-        <p>
-          <span className={`chip ${lower(rev.verdict)}`}>{rev.verdict}</span>{' '}
-          {rev.verdict === 'PASS' && `${total} checks. All evidence verified against the script.`}
-          {rev.verdict === 'REVISE' && `${failed.length} of ${total} checks failed. Returned to Script with the failing lines.`}
-          {rev.verdict === 'HALT' && `Failed on the third draft. Production refused.`}
-        </p>
-        {failed.map((s) => (
-          <div key={s.rule_id}>
-            <p><span className="mono">{s.rule_id}</span> <span className={`r-${s.result}`}>{s.result}</span> <span className="muted small">{s.note}</span></p>
-            {s.evidence && <blockquote>{s.evidence}</blockquote>}
-          </div>
-        ))}
-        <details><summary>All {total} checks</summary>
-          {[...rev.deterministic, ...rev.model_scored].map((s) => (
-            <div key={s.rule_id} className="rule-row"><span className="mono">{s.rule_id}</span><span className={`r-${s.result}`}>{s.result}</span><div>{s.evidence && <blockquote>{s.evidence}</blockquote>}<div className="note">{s.note}</div></div></div>
-          ))}
+        {failed.map((s) => <div key={s.rule_id}><blockquote>{s.evidence || ruleText(s.rule_id, run.rubric)}</blockquote><div className="why">{s.note || ruleText(s.rule_id, run.rubric)}</div></div>)}
+        <details><summary>All {all.length} checks</summary>
+          <div className="checks">{all.map((s) => <div key={s.rule_id} className="row"><span className={`r ${s.result}`}>{resultWord(s.result)}</span><div>{ruleText(s.rule_id, run.rubric)}{s.evidence && <div className="ev">&ldquo;{s.evidence}&rdquo;</div>}</div></div>)}</div>
         </details>
       </>
     ) });
   });
 
   if (run.art_brief) {
-    out.push({ id: 'ds', role: 'design', at: at('art_direction'), body: (
-      <>
-        <p>Character locked. This description is prepended verbatim to all {run.art_brief.shots.length} shot prompts, every storyboard frame and every film shot.</p>
-        <div className="locked">{run.art_brief.character.locked_description}</div>
-        <div className="hash mono">sha256 {run.art_brief.consistency_hash}</div>
-      </>
-    ) });
+    out.push({ id: 'ds', tone: 'ok', title: `Made sure ${name} looks like ${name} in every frame`, detail: 'One description, used for every picture.', body: <details><summary>Read it</summary><p className="locked">{run.art_brief.character.locked_description}</p></details> });
   }
 
   const frames = run.storyboard?.frames.filter((f) => !f.error) ?? [];
-  if (frames.length > 0 || (run.status === 'running' && run.current === 'storyboard')) {
-    const sb = run.storyboard_progress;
-    out.push({ id: 'sb', role: 'design', at: at('storyboard'), body: (
-      <>
-        <p>{frames.length ? `Storyboard: ${frames.length} frames.` : sb ? `Storyboard in progress, ${sb.done} of ${sb.total}.` : 'Storyboard in progress.'}</p>
-        {frames.length > 0 && <div className="board">{frames.map((f) => <figure key={f.shot}><img src={fileUrl(run.folder, f.file)} alt={`Shot ${f.shot}`} loading="lazy" /><figcaption>{String(f.shot).padStart(2, '0')} · beat {f.beat}</figcaption></figure>)}</div>}
-      </>
-    ) });
+  if (frames.length > 0) {
+    out.push({ id: 'sb', tone: 'ok', title: 'Drew the storyboard', detail: `${frames.length} frames.`, body: <div className="board">{frames.map((f) => <figure key={f.shot}><img src={fileUrl(run.folder, f.file)} alt={`Frame ${f.shot}`} loading="lazy" /><figcaption>Frame {f.shot}</figcaption></figure>)}</div> });
   }
 
   if (run.animatic) {
-    out.push({ id: 'fm', role: 'film', at: at('film'), body: (
-      <>
-        <p>Film delivered. Title card, {run.render?.clips ?? 8} narrated shots, end card with the review result.</p>
-        <video className="film" controls preload="metadata" src={fileUrl(run.folder, run.animatic)} />
-        {run.render?.narration && <details><summary>Narration</summary><ol>{run.render.narration.map((l, i) => <li key={i}>{l}</li>)}</ol></details>}
-      </>
-    ) });
-  } else if (run.render?.status === 'rendering') {
-    out.push({ id: 'fm', role: 'film', at: at('film'), body: <p>Filming. {run.render.done_clips ?? 0} of {run.render.clips ?? 8} shots complete.</p> });
+    out.push({ id: 'fm', tone: 'ok', title: 'Filmed it', detail: `${run.render?.clips ?? 8} shots with narration, plus a title card and an end card.`, body: run.render?.narration ? <details><summary>Read the narration</summary><ol>{run.render.narration.map((l, i) => <li key={i}>{l}</li>)}</ol></details> : undefined });
   } else if (run.render?.status === 'error') {
-    out.push({ id: 'fm', role: 'film', at: at('film'), body: <p className="error">Film failed: {run.render.error}</p> });
-  } else if (run.film_skipped && run.status !== 'running') {
-    out.push({ id: 'fm', role: 'film', body: <p className="muted">{run.film_skipped}</p> });
+    out.push({ id: 'fm', tone: 'bad', title: 'The film did not get made', detail: run.render.error });
+  } else if (run.film_skipped && run.status !== 'running' && run.review?.verdict === 'PASS') {
+    out.push({ id: 'fm', title: 'No film yet', detail: cap(run.film_skipped) + '.' });
   }
 
   if (run.package) {
-    out.push({ id: 'dl', role: 'delivery', at: at('package'), body: (
-      <>
-        <p>Package written to storage. {run.package.files.length} files.</p>
-        <ul className="files">{run.package.files.map((f) => <li key={f} className="mono"><a href={fileUrl(run.folder, f)} target="_blank" rel="noreferrer">{f}</a></li>)}</ul>
-      </>
+    out.push({ id: 'dl', tone: 'ok', title: 'Kept everything, untouched', detail: 'Every file this run produced, for anyone who wants to check.', body: (
+      <div className="files">
+        {run.animatic && <a href={fileUrl(run.folder, run.animatic)} target="_blank" rel="noreferrer">The film</a>}
+        {run.package.files.filter((f) => f !== 'screenplay.json').map((f) => <a key={f} href={fileUrl(run.folder, f)} target="_blank" rel="noreferrer">{FILE_LABEL[f] ?? f}</a>)}
+      </div>
     ) });
   }
 
-  if (run.status === 'error') out.push({ id: 'err', role: 'production', body: <p className="error">Production stopped: {run.error}</p> });
+  if (run.status === 'error') out.push({ id: 'err', tone: 'bad', title: 'Something went wrong', detail: run.error });
   return out;
 }
 
-const STAGE_LABEL: Record<string, string> = {
-  intake: 'Intake', research: 'Research', rubric: 'Standards', rubric_merge: 'Standards', story: 'Script', gate: 'Review',
-  lock_character: 'Design lock', art_direction: 'Shot list', storyboard: 'Storyboard', package: 'Package', film: 'Film',
-};
+function Mark() {
+  return (
+    <svg className="mark" viewBox="0 0 34 34" aria-hidden="true">
+      <circle cx="17" cy="17" r="17" fill="#F49D70" />
+      <circle cx="17" cy="17" r="8.6" fill="#FFFFFF" />
+      <circle cx="17" cy="17" r="3.7" fill="#151519" />
+    </svg>
+  );
+}
+
+function Check() {
+  return <svg width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 6.5l2.3 2.3L9.5 3.8" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" /></svg>;
+}
+
+function Face({ b, size }: { b: Bible | undefined; size?: number }) {
+  const colour = b?.colour_palette?.[0] ?? '#3d3d3f';
+  const style = size ? { background: colour, width: size, height: size } : { background: colour };
+  return <span className="face" style={style}>{(b?.name ?? '?').charAt(0)}</span>;
+}
 
 export default function Page() {
   const [bibles, setBibles] = useState<Bible[]>([]);
@@ -209,14 +241,17 @@ export default function Page() {
   const [runId, setRunId] = useState<string | null>(null);
   const [run, setRun] = useState<RunView | null>(null);
   const [error, setError] = useState<string | null>(null);
+  const [hint, setHint] = useState<string | null>(null);
   const [withFilm, setWithFilm] = useState(true);
   const [busy, setBusy] = useState(false);
-  const [text, setText] = useState('');
   const [picked, setPicked] = useState<string | null>(null);
-  const [sideOpen, setSideOpen] = useState(false);
-  const threadRef = useRef<HTMLDivElement>(null);
+  const [how, setHow] = useState(false);
+  const [now, setNow] = useState(() => Date.now());
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const frameRef = useRef<HTMLDivElement>(null);
+  const madeRef = useRef<HTMLDivElement>(null);
 
-  const loadRecent = () => fetch(`${API}/api/runs`).then((r) => r.json()).then((rs: RunSummary[]) => setRecent([...rs].reverse())).catch(() => undefined);
+  const loadRecent = () => fetch(`${API}/api/runs`).then((r) => r.json()).then((rs: RunSummary[]) => setRecent([...rs].reverse().filter((r, i, all) => !(r.live && r.status !== 'running' && all.some((o) => !o.live && o.character === r.character && o.title === r.title))))).catch(() => undefined);
 
   useEffect(() => {
     fetch(`${API}/api/bibles`).then((r) => r.json()).then(setBibles).catch((e) => setError(String(e)));
@@ -239,8 +274,9 @@ export default function Page() {
     const tick = async () => {
       try {
         const r = await fetch(`${API}/api/runs/${runId}`);
+        if (r.status === 404) { if (!stop) { setError('That link does not point at anything we made.'); setRunId(null); } return; }
         const data = (await r.json()) as RunView;
-        if (!stop) setRun(data);
+        if (!stop) { setRun(data); setNow(Date.now()); }
         const working = data.status === 'running' || data.render?.status === 'rendering';
         if (!stop && working) setTimeout(tick, 3000);
       } catch {
@@ -251,38 +287,47 @@ export default function Page() {
     return () => { stop = true; };
   }, [runId]);
 
-  const entries = useMemo(() => (run ? buildEntries(run) : []), [run]);
-  const working = run ? workingLine(run) : null;
+  const screen: 'pick' | 'loading' | 'making' | 'result' = !runId ? 'pick' : !run ? 'loading' : run.status === 'running' || run.render?.status === 'rendering' ? 'making' : 'result';
 
   useEffect(() => {
-    const el = threadRef.current;
-    if (el && run?.status === 'running') el.scrollTop = el.scrollHeight;
-  }, [entries.length, working]);
+    const v = videoRef.current;
+    if (!v) return;
+    v.muted = true;
+    v.defaultMuted = true;
+    if (screen === 'pick') v.play().catch(() => undefined); else v.pause();
+  }, [screen]);
 
-  const start = async (bible: Bible) => {
-    setError(null);
-    setBusy(true);
-    const { id, ...body } = bible;
+  useEffect(() => { frameRef.current?.scrollTo({ top: 0 }); }, [screen, runId]);
+
+  const hero = useMemo(() => (run ? bibles.find((b) => b.name === run.character && !b.adversarial) ?? bibles.find((b) => b.name === run.character) : undefined), [run, bibles]);
+  const pickedBible = picked ? bibles.find((b) => b.id === picked) : undefined;
+  const test = run ? testKindOfFolder(run.folder) : null;
+  const chapters = useMemo(() => (run ? buildChapters(run, hero, test) : []), [run, hero, test]);
+  const steps = run ? buildSteps(run, run.character) : [];
+  const live = run ? liveLine(run, run.character) : '';
+  const startedAt = run?.events[0]?.ts ?? recent.find((r) => r.id === runId)?.started_at;
+  const minutes = startedAt ? Math.max(0, Math.floor((now - startedAt) / 60000)) : null;
+  const verdict = run?.review?.verdict;
+  const finishedFilm = recent.find((r) => r.film && r.verdict === 'PASS' && !r.live);
+
+  const goHome = (toMade = false) => {
+    setRunId(null); setRun(null); setError(null); setHint(null);
+    if (toMade) setTimeout(() => madeRef.current?.scrollIntoView({ behavior: 'smooth', block: 'end' }), 80);
+  };
+
+  const open = (id: string) => { setError(null); setRun(null); setRunId(id); };
+
+  const start = async () => {
+    if (!pickedBible) { setHint('Pick a hero first.'); return; }
+    setHint(null); setError(null); setBusy(true);
+    const { id, ...body } = pickedBible;
     void id;
     const r = await fetch(`${API}/api/runs`, { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify({ ...body, film: withFilm }) });
     setBusy(false);
-    if (!r.ok) { setError(`Could not start: ${r.status}`); return; }
+    if (!r.ok) { setError(`Could not start. The studio answered ${r.status}.`); return; }
     const { run_id } = (await r.json()) as { run_id: string };
-    setText('');
     setPicked(null);
-    setRun(null);
-    setRunId(run_id);
-    setSideOpen(false);
-  };
-
-  const submit = () => {
-    const q = text.trim().toLowerCase();
-    const byPick = picked ? bibles.find((b) => b.id === picked) : undefined;
-    const byText = q ? bibles.find((b) => q.includes(b.name.toLowerCase()) && (q.includes('halt') ? b.adversarial_revisions === 'unguarded' : q.includes('adversarial') ? b.adversarial && b.adversarial_revisions !== 'unguarded' : !b.adversarial)) : undefined;
-    const bible = byPick ?? byText;
-    if (!bible) { setError('Name a character from the roster, or select one.'); return; }
-    if (q.includes('script only') || q.includes('no film')) setWithFilm(false);
-    void start(bible);
+    open(run_id);
   };
 
   const makeFilm = async () => {
@@ -290,174 +335,193 @@ export default function Page() {
     setBusy(true);
     const r = await fetch(`${API}/api/runs/${encodeURIComponent(run.folder)}/render`, { method: 'POST' });
     setBusy(false);
-    if (!r.ok) { const b = (await r.json().catch(() => ({}))) as { error?: string }; setError(b.error ?? `Could not start the film: ${r.status}`); return; }
-    setRun(null);
-    setRunId(run.folder);
+    if (!r.ok) { const b = (await r.json().catch(() => ({}))) as { error?: string }; setError(b.error ?? `Could not start the film. The studio answered ${r.status}.`); return; }
+    open(run.folder);
   };
 
-  const verdict = run?.review?.verdict;
-  const canFilm = run && run.status !== 'running' && verdict === 'PASS' && !run.animatic && run.render?.status !== 'rendering';
-  const stageTs = (s: string) => (run?.archived ? undefined : run?.events.filter((e) => e.author === s).at(-1)?.ts);
-  const pipeline = run ? [...run.stages.filter((s) => s !== 'rubric_merge'), ...(run.animatic && !run.stages.includes('film') ? ['film'] : [])].map((s) => {
-    const done = s === 'film' ? run.render?.status === 'done' : run.events.some((e) => e.author === s) && (run.current !== s || run.status !== 'running');
-    const active = run.status === 'running' && (run.current === s || (s === 'rubric' && run.current === 'rubric_merge')) || (s === 'film' && run.render?.status === 'rendering');
-    return { key: s, label: STAGE_LABEL[s] ?? s, state: done ? 'done' : active ? 'active' : 'todo', ts: stageTs(s) };
-  }) : [];
+  const heroes = bibles.filter((b) => !b.adversarial);
+  const tests = bibles.filter((b) => b.adversarial);
+  const lastFail = run?.review && run.review.verdict !== 'PASS' ? [...run.review.deterministic, ...run.review.model_scored].find((s) => run.review!.hard_failures.includes(s.rule_id)) : undefined;
+  const summaryLabel = (r: RunSummary) => (r.live && r.status === 'running' ? 'Making now' : r.verdict === 'HALT' ? 'Stopped' : r.status === 'error' ? 'Did not finish' : r.film ? 'Film' : 'Script and storyboard');
 
   return (
-    <div className={`app${sideOpen ? ' side-open' : ''}`}>
-      <aside className="side">
-        <div className="brand"><div className="mark">HF</div><div><div className="name">Hidden Force Studio</div><div className="tag">Production pipeline</div></div></div>
-        <div className="actions"><button className="new" onClick={() => { setRunId(null); setRun(null); setError(null); setSideOpen(false); }}>New production</button></div>
-        <h4 className="label">Productions</h4>
-        <ul className="threads">
-          {recent.map((r) => (
-            <li key={r.id}>
-              <button className={runId === r.id ? 'active' : ''} onClick={() => { setRun(null); setRunId(r.id); setSideOpen(false); }}>
-                <span className="t">{r.title ?? r.character}</span>
-                <span className={`chip ${lower(r.verdict ?? r.status)}`}>{r.verdict ?? r.status}</span>
-                <span className="s">{r.character}{r.film ? ' · film' : ''} · {new Date(r.started_at).toLocaleDateString('en-US', { month: 'short', day: '2-digit' })}</span>
-              </button>
-            </li>
-          ))}
-        </ul>
-        <div className="foot">Gemini on Vertex AI · Parallel Search API · Veo 3.1 · Cloud Text-to-Speech. Every production is real and unedited.</div>
-      </aside>
+    <div className={`stage${screen !== 'pick' ? ' deep' : ''}`}>
+      <video ref={videoRef} className="stage-video" src="/loop.mp4" poster="/poster.jpg" autoPlay muted loop playsInline preload="auto" aria-hidden="true" />
+      <div className="veil" />
+      <div className="frame" ref={frameRef}>
+        <header className="nav">
+          <button className="brand" onClick={() => goHome()} aria-label="Hidden Force Studio home"><Mark /><span>Hidden Force Studio</span></button>
+          <nav className="links">
+            <button className="hide-sm" onClick={() => goHome(true)}>Finished films</button>
+            <button onClick={() => setHow(true)}>How it works</button>
+            <a className="hide-sm" href={REPO} target="_blank" rel="noreferrer">Code</a>
+            {screen !== 'pick' && <button className="cta" onClick={() => goHome()}>Make another</button>}
+          </nav>
+        </header>
 
-      <section className="main">
-        <div className="topbar">
-          <button className="btn menu-btn" onClick={() => setSideOpen((v) => !v)}>Productions</button>
-          <div>
-            <div className="title">{run ? (run.screenplay?.title ?? run.character) : 'New production'}</div>
-            <div className="sub">{run ? `${run.character}${run.folder ? ` · ${run.folder}` : ''}` : 'Select a character to open a production'}</div>
-          </div>
-          <div className="spacer" />
-          {run && verdict && <span className={`chip ${lower(verdict)}`}>{verdict}</span>}
-          {canFilm && <button className="btn" onClick={makeFilm} disabled={busy}>Render film</button>}
-        </div>
-
-        <div className="thread" ref={threadRef}>
-          {!run && (
-            <div className="roster">
-              <h1>Character roster</h1>
-              <p>Select a character to open a production. Research retrieves current portrayal guidance for the trait, Standards compiles it into cited rules, Script drafts, Review checks every rule with verified quotes, Design locks the character and draws the storyboard, Film cuts a narrated short. A draft that fails review three times is refused.</p>
-              <table>
-                <thead><tr><th>Character</th><th>Age</th><th>Trait</th><th>Premise</th><th></th></tr></thead>
-                <tbody>
-                  {bibles.map((b) => (
-                    <tr key={b.id}>
-                      <td className="n">{b.name}{b.adversarial && <span className="tag adv">{b.adversarial_revisions === 'unguarded' ? 'adversarial · refuse' : 'adversarial'}</span>}</td>
-                      <td>{b.age}</td>
-                      <td>{b.trait}</td>
-                      <td className="note">{b.adversarial ? (b.adversarial_revisions === 'unguarded' ? 'Every draft ignores the standards. Demonstrates the refusal path.' : 'First draft ignores the standards. Demonstrates review catching a cure narrative.') : b.reframe}</td>
-                      <td className="act"><button className="btn primary" disabled={busy} onClick={() => start(b)}>{withFilm ? 'Start production' : 'Script only'}</button></td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-          )}
-          {run && (
-            <div className="thread-inner">
-              {entries.map((m) => (
-                <div key={m.id} className={`entry${m.role === 'user' ? ' user' : ''}`}>
-                  {m.role !== 'user' && <div className="dept">{DEPT_CODE[m.role]}</div>}
-                  <div>
-                    <div className="meta"><span className="who">{m.role === 'user' ? 'Request' : DEPT_NAME[m.role]}</span><span className="when">{fmtTime(m.at)}</span></div>
-                    <div className="body">{m.body}</div>
+        {screen === 'pick' && (
+          <>
+            <main className="hero">
+              <h1 className="h1">A film where a kid like yours saves the day.</h1>
+              <p className="lede">Pick a hero. Half an hour later you have a short film where their ADHD, autism, deafness, anxiety, dyslexia or wheelchair is the reason they win, never the thing to fix. A script that gets the kid wrong never gets made.</p>
+              <div className="card">
+                <div>
+                  <div className="step-label"><b>1</b> Pick a hero</div>
+                  <div className="heroes">
+                    {heroes.map((b) => (
+                      <button key={b.id} className={`tile${picked === b.id ? ' on' : ''}`} onClick={() => { setPicked(b.id); setHint(null); }}>
+                        <Face b={b} />
+                        <span className="nm">{b.name}</span>
+                        <span className="tr">{b.age} · {b.trait}</span>
+                      </button>
+                    ))}
+                  </div>
+                  {tests.length > 0 && (
+                    <div className="tests">
+                      <span>Want proof it won&rsquo;t get the kid wrong?</span>
+                      {tests.map((b) => <button key={b.id} className={picked === b.id ? 'on' : ''} onClick={() => { setPicked(b.id); setHint(null); }}>{testKind(b) === 'refuse' ? 'The refusal test' : 'The cure-story test'}</button>)}
+                    </div>
+                  )}
+                </div>
+                <div>
+                  <div className="step-label"><b>2</b> Their hidden power</div>
+                  {pickedBible ? (
+                    <div className={`power${pickedBible.adversarial ? ' test' : ''}`}>
+                      {testKind(pickedBible) === 'cure' && <><div className="big">{pickedBible.name} is a wheelchair user, and this story is written to end with her walking.</div><div className="story">That is the oldest mistake in the book. The writer will be told to ignore the rules on the first draft, so you can watch the review catch it and send it back.</div></>}
+                      {testKind(pickedBible) === 'refuse' && <><div className="big">{pickedBible.name} again, but the writer ignores the rules on every draft.</div><div className="story">The studio gives a script three tries. After that it stops and makes nothing. This is the test that shows it will.</div></>}
+                      {!pickedBible.adversarial && <><div className="big">{pickedBible.name}, {pickedBible.age}, {pickedBible.trait}. {cap(pickedBible.reframe)}.</div><div className="story">The story: {pickedBible.story_premise}.</div></>}
+                    </div>
+                  ) : (
+                    <div className="power empty">Choose a hero above to see their power and their story.</div>
+                  )}
+                </div>
+                <div>
+                  <div className="step-label"><b>3</b> Make it</div>
+                  <div className="tools">
+                    <div className="chips">
+                      <button className={`chip${withFilm ? ' on' : ''}`} onClick={() => setWithFilm(true)}>Film <span className="t">ready in about 30 min</span></button>
+                      <button className={`chip${!withFilm ? ' on' : ''}`} onClick={() => setWithFilm(false)}>Script and storyboard <span className="t">ready in about 12 min</span></button>
+                    </div>
+                    <div className="right">
+                      <button className={`send${pickedBible ? '' : ' dim'}`} onClick={start} disabled={busy} aria-label={withFilm ? 'Make the film' : 'Write the script'}>
+                        {withFilm ? 'Make the film' : 'Write the script'}
+                        <span className="ic"><svg width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M6 10V2M2.5 5.5L6 2l3.5 3.5" fill="none" stroke="#fff" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" /></svg></span>
+                      </button>
+                    </div>
                   </div>
                 </div>
-              ))}
-              {working && (
-                <div className="entry">
-                  <div className="dept">PR</div>
-                  <div><div className="meta"><span className="who">Production</span></div><div className="body"><p>{working}<span className="typing"><i /><i /><i /></span></p></div></div>
-                </div>
-              )}
-              {error && <p className="error">{error}</p>}
-            </div>
-          )}
-          {!run && error && <p className="error" style={{ maxWidth: 900, margin: '12px auto' }}>{error}</p>}
-        </div>
-
-        <div className="composer">
-          <div className="composer-inner">
-            <div className="chips">
-              {bibles.map((b) => (
-                <button key={b.id} className={`${picked === b.id ? 'on' : ''}${b.adversarial ? ' adv' : ''}`} onClick={() => setPicked(picked === b.id ? null : b.id)}>
-                  {b.name}{b.adversarial ? (b.adversarial_revisions === 'unguarded' ? ' · refuse' : ' · adversarial') : ''}
-                </button>
-              ))}
-            </div>
-            <div className="box">
-              <input value={text} onChange={(e) => setText(e.target.value)} onKeyDown={(e) => { if (e.key === 'Enter') submit(); }} placeholder={picked ? `Start production: ${bibles.find((b) => b.id === picked)?.name}` : 'Start production: character name'} disabled={busy || run?.status === 'running'} />
-              <div className="seg">
-                <button className={withFilm ? 'on' : ''} onClick={() => setWithFilm(true)}>Film</button>
-                <button className={!withFilm ? 'on' : ''} onClick={() => setWithFilm(false)}>Script only</button>
+                {hint && <div className="hint">{hint}</div>}
+                {error && <div className="error">{error}</div>}
               </div>
-              <button className="btn primary" onClick={submit} disabled={busy || run?.status === 'running' || (!picked && !text.trim())}>Start</button>
-            </div>
-            <div className="hint">About 12 minutes with film, 6 without. Every statement in the log is backed by a file in storage.</div>
-          </div>
-        </div>
-      </section>
-
-      <aside className="inspector">
-        {run ? (
-          <>
-            <section>
-              <div className="label">Production</div>
-              <dl className="kv">
-                <dt>Character</dt><dd>{run.character}</dd>
-                <dt>Status</dt><dd>{verdict ? <span className={`chip ${lower(verdict)}`}>{verdict}</span> : run.status}</dd>
-                {run.screenplay && <><dt>Title</dt><dd>{run.screenplay.title}</dd></>}
-                {run.screenplay?.words && <><dt>Length</dt><dd>{run.screenplay.beats} beats · {run.screenplay.words.toLocaleString('en-US')} words</dd></>}
-                {run.review_history.length > 0 && <><dt>Drafts</dt><dd>{run.review_history.map((r) => `${r.revision_colour}: ${r.verdict}`).join(' · ')}</dd></>}
-                {run.folder && <><dt>Folder</dt><dd className="mono">{run.folder}</dd></>}
-              </dl>
-            </section>
-            <section>
-              <div className="label">Pipeline</div>
-              <ul className="pipeline">
-                {pipeline.map((p) => <li key={p.key} className={p.state}><span className="dot" /><span>{p.label}</span><span className="t">{p.state === 'done' ? fmtTime(p.ts) : p.state === 'active' ? 'running' : ''}</span></li>)}
-              </ul>
-            </section>
-            {(run.animatic || run.storyboard || run.package) && (
-              <section>
-                <div className="label">Deliverables</div>
-                <ul className="assets">
-                  {run.animatic && <li><span className="k">Film</span><a href={fileUrl(run.folder, run.animatic)} target="_blank" rel="noreferrer">animatic.mp4</a></li>}
-                  {run.storyboard && <li><span className="k">Storyboard</span><span>{run.storyboard.frames.filter((f) => !f.error).length} frames</span></li>}
-                  {run.package?.files.includes('screenplay.fountain') && <li><span className="k">Screenplay</span><a href={fileUrl(run.folder, 'screenplay.fountain')} target="_blank" rel="noreferrer">screenplay.fountain</a></li>}
-                  {run.package?.files.includes('screenplay.rejected.fountain') && <li><span className="k">Rejected draft</span><a href={fileUrl(run.folder, 'screenplay.rejected.fountain')} target="_blank" rel="noreferrer">screenplay.rejected.fountain</a></li>}
-                  {run.package?.files.includes('review_history.json') && <li><span className="k">Review</span><a href={fileUrl(run.folder, 'review_history.json')} target="_blank" rel="noreferrer">review_history.json</a></li>}
-                  {run.package?.files.includes('portrayal_rubric.json') && <li><span className="k">Standards</span><a href={fileUrl(run.folder, 'portrayal_rubric.json')} target="_blank" rel="noreferrer">portrayal_rubric.json</a></li>}
-                  {run.package?.files.includes('run_manifest.json') && <li><span className="k">Manifest</span><a href={fileUrl(run.folder, 'run_manifest.json')} target="_blank" rel="noreferrer">run_manifest.json</a></li>}
-                </ul>
-              </section>
-            )}
-            {run.manifest && (
-              <section>
-                <div className="label">Models</div>
-                <dl className="kv">
-                  <dt>Draft</dt><dd className="mono">{run.manifest.models.draft}</dd>
-                  <dt>Review</dt><dd className="mono">{run.manifest.models.review}</dd>
-                  <dt>ADK</dt><dd className="mono">{run.manifest.adk_version}</dd>
-                  <dt>Sources</dt><dd>{run.manifest.source_urls.length} cited</dd>
-                </dl>
-              </section>
+            </main>
+            {recent.length > 0 && (
+              <div className="made" ref={madeRef}>
+                <div className="lbl">Watch one now</div>
+                <div className="strip">
+                  {recent.map((r) => (
+                    <button key={r.id} className="poster" onClick={() => open(r.id)}>
+                      {r.verdict === 'PASS' && !(r.live && r.status === 'running') ? <img className="img" src={fileUrl(r.id, 'storyboard/shot_01.jpg')} alt="" loading="lazy" onError={(e) => { (e.currentTarget as HTMLImageElement).style.visibility = 'hidden'; }} /> : <div className={`ph${r.verdict === 'HALT' ? ' bad' : r.live && r.status === 'running' ? ' live' : ''}`}>{summaryLabel(r)}</div>}
+                      <div className="cap"><div className="tt">{r.title ?? `${r.character}'s story`}</div><div className="ss">{r.character} · {summaryLabel(r)}</div></div>
+                    </button>
+                  ))}
+                </div>
+              </div>
             )}
           </>
-        ) : (
-          <section>
-            <div className="label">Pipeline</div>
-            <ul className="pipeline">
-              {['Intake', 'Research', 'Standards', 'Script', 'Review', 'Design lock', 'Shot list', 'Storyboard', 'Package', 'Film'].map((s) => <li key={s} className="todo"><span className="dot" /><span>{s}</span><span className="t" /></li>)}
-            </ul>
-            <p className="small muted">Review returns a draft with the failing lines. Two revisions maximum, then the production is refused.</p>
-          </section>
         )}
-      </aside>
+
+        {screen === 'loading' && (
+          <main className="hero"><div className="card center">Opening&hellip;</div></main>
+        )}
+
+        {screen === 'making' && run && (
+          <main className="hero">
+            <h1 className="h1 title">{run.review?.verdict === 'PASS' && run.screenplay ? run.screenplay.title : `${run.character}'s ${run.film ? 'film' : 'story'} is on its way`}</h1>
+            <div className="card">
+              <div className="who">
+                <Face b={hero} size={38} />
+                <div><div className="t1">{live}&hellip;</div><div className="t2">{hero ? `${run.character}, ${hero.age}, ${hero.trait}. ${cap(hero.reframe)}.` : run.character}</div></div>
+                {minutes !== null && <div className="clock">{minutes < 1 ? 'Just started' : `${minutes} min in`}</div>}
+              </div>
+              <ol className="steps">
+                {steps.map((s) => <li key={s.key} className={s.state}><span className="ic">{s.state === 'done' ? <Check /> : s.state === 'stopped' ? '×' : null}</span><div>{s.label}{s.sub && <div className="sub">{s.sub}</div>}</div></li>)}
+              </ol>
+              <p className="note">
+                {run.film ? 'The script and storyboard take about 12 minutes, the film another 15 or so.' : 'This takes about 12 minutes.'} You can leave and come back, this link will still be here.
+                {finishedFilm && <> Or <button onClick={() => open(finishedFilm.id)}>watch one that&rsquo;s finished</button> while you wait.</>}
+              </p>
+            </div>
+          </main>
+        )}
+
+        {screen === 'result' && run && (
+          <main className="hero">
+            <div className="result-head">
+              <span className={`status${verdict === 'PASS' ? ' pass' : verdict === 'HALT' ? ' halt' : ''}`}>{verdict === 'HALT' ? 'Stopped' : run.status === 'error' ? 'Did not finish' : run.animatic ? 'Ready to watch' : 'Ready to read'}</span>
+              <h1 className="h1 title">{run.screenplay?.title ?? `${run.character}'s story`}</h1>
+              <div className="kicker">{hero ? `${run.character}, ${hero.age}, ${hero.trait}. ${cap(hero.reframe)}.` : run.character}</div>
+            </div>
+            <div className="card wide">
+              {run.animatic && <div className="player"><video controls preload="metadata" src={fileUrl(run.folder, run.animatic)} poster={fileUrl(run.folder, 'storyboard/shot_01.jpg')} /></div>}
+              {!run.animatic && verdict === 'PASS' && run.status !== 'error' && (
+                <div className="still">
+                  <img src={fileUrl(run.folder, 'storyboard/shot_01.jpg')} alt="" />
+                  <div className="over">
+                    <p>The script and storyboard are done. The film takes about 15 minutes more.</p>
+                    <button className="send" onClick={makeFilm} disabled={busy}>Make the film<span className="ic"><svg width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M6 10V2M2.5 5.5L6 2l3.5 3.5" fill="none" stroke="#fff" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" /></svg></span></button>
+                    {error && <div className="error">{error}</div>}
+                  </div>
+                </div>
+              )}
+              {verdict === 'HALT' && (
+                <div className="panel bad">
+                  <h3>The studio said no.</h3>
+                  <p>Three drafts, three failures. It stopped here and did not draw or film anything.{lastFail?.note ? ` The last one: ${lastFail.note}` : ''}</p>
+                  {lastFail?.evidence && <blockquote>{lastFail.evidence}</blockquote>}
+                </div>
+              )}
+              {run.status === 'error' && verdict !== 'HALT' && (
+                <div className="panel bad"><h3>Something went wrong.</h3><p>{run.error}</p></div>
+              )}
+              {run.screenplay && verdict === 'PASS' && <p style={{ color: 'var(--ink-2)' }}>{run.screenplay.logline}</p>}
+              <div>
+                <div className="sect" style={{ marginBottom: 8 }}>{verdict === 'PASS' ? 'Why it passed' : verdict === 'HALT' ? 'Why it was stopped' : 'What happened'}</div>
+                <ol className="story">
+                  {chapters.map((c) => (
+                    <li key={c.id} className={c.tone ?? ''}>
+                      <span className="n">{c.tone === 'ok' ? <Check /> : c.tone === 'bad' ? '×' : c.tone === 'warn' ? '!' : ''}</span>
+                      <div>
+                        <h4>{c.title}</h4>
+                        {c.detail && <div className="d">{c.detail}</div>}
+                        {c.body}
+                      </div>
+                    </li>
+                  ))}
+                </ol>
+              </div>
+              <div className="foot-actions">
+                <button className="ghost" onClick={() => goHome()}>Make another</button>
+                {finishedFilm && finishedFilm.id !== runId && <button className="ghost" onClick={() => open(finishedFilm.id)}>Watch a finished film</button>}
+              </div>
+            </div>
+          </main>
+        )}
+      </div>
+
+      {how && (
+        <div className="sheet" onClick={() => setHow(false)} role="dialog" aria-modal="true">
+          <div className="box" onClick={(e) => e.stopPropagation()}>
+            <h2>How it works</h2>
+            <ol>
+              <li>Pick a hero. Six kids whose ADHD, autism, deafness, anxiety, dyslexia or wheelchair is their power, not their problem.</li>
+              <li>The studio finds out how that kid should be shown, from disability groups and writers&rsquo; guides, and turns it into rules for this one story.</li>
+              <li>It writes the script and checks every line against those rules. A line that breaks one goes back with the reason. Three strikes and nothing gets made.</li>
+              <li>What passes gets drawn and filmed. Half an hour, start to finish, and everything it kept is there for you to read.</li>
+            </ol>
+            <div className="foot"><span>Built on Google Cloud with Gemini, Veo and Parallel Search.</span><a href={REPO} target="_blank" rel="noreferrer">The code</a></div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }

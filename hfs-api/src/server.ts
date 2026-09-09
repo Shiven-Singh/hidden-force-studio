@@ -456,7 +456,7 @@ app.get('/api/runs', async (_req, res) => {
   const live = [...RUNS.entries()].map(([id, r]) => {
     const folder = typeof r.state['output_folder'] === 'string' ? (r.state['output_folder'] as string) : undefined;
     return {
-      id, status: r.status, character: r.character, started_at: r.startedAt, live: true,
+      id, folder, status: r.status, character: r.character, started_at: r.startedAt, live: true,
       verdict: (r.state['review'] as { verdict?: string } | undefined)?.verdict,
       title: (r.state['screenplay'] as { title?: string } | undefined)?.title,
       film: folder ? RENDER_STATUS.get(folder)?.status === 'done' : false,
@@ -466,7 +466,10 @@ app.get('/api/runs', async (_req, res) => {
     id: r.id, status: r.status, character: r.character, verdict: r.verdict, title: r.title, started_at: r.started_at, live: false,
     film: r.files.includes('animatic/animatic.mp4'),
   }));
-  res.json([...archived, ...live]);
+  // A finished live run is already in the archive under its folder name. List it once.
+  const archivedIds = new Set(archived.map((r) => r.id));
+  const liveOnly = live.filter((r) => r.status === 'running' || !r.folder || !archivedIds.has(r.folder));
+  res.json([...archived, ...liveOnly.map(({ folder, ...r }) => { void folder; return r; })]);
 });
 
 /** Redraw the frames a finished run's storyboard is missing. Idempotent; sequential; safe to call twice. */
@@ -545,11 +548,34 @@ app.get(['/api/runs/:id/files/:name', '/api/runs/:id/files/:dir/:name'], async (
   if (storage && BUCKET) {
     // Stream, so a film is not held in memory and Cloud Run's buffered-response cap does not apply.
     const file = storage.bucket(BUCKET).file(`${id}/${rel}`);
-    const [exists] = await file.exists();
-    if (!exists) {
+    let size: number | undefined;
+    try {
+      const [meta] = await file.getMetadata();
+      size = Number(meta.size);
+    } catch {
       res.status(404).json({ error: 'no such file' });
       return;
     }
+    // Byte ranges, so the browser can seek in a film and loop a clip without downloading all of it first.
+    res.setHeader('Accept-Ranges', 'bytes');
+    const range = /^bytes=(\d*)-(\d*)$/.exec(req.headers.range ?? '');
+    if (range && Number.isFinite(size) && size > 0) {
+      let start = range[1] ? Number(range[1]) : 0;
+      let end = range[2] ? Number(range[2]) : size - 1;
+      if (!range[1] && range[2]) { start = Math.max(0, size - Number(range[2])); end = size - 1; }
+      end = Math.min(end, size - 1);
+      if (start > end || start >= size) {
+        res.setHeader('Content-Range', `bytes */${size}`);
+        res.status(416).end();
+        return;
+      }
+      res.status(206);
+      res.setHeader('Content-Range', `bytes ${start}-${end}/${size}`);
+      res.setHeader('Content-Length', String(end - start + 1));
+      file.createReadStream({ start, end }).on('error', () => res.destroy()).pipe(res);
+      return;
+    }
+    if (Number.isFinite(size)) res.setHeader('Content-Length', String(size));
     file.createReadStream().on('error', () => res.destroy()).pipe(res);
     return;
   }
