@@ -19,21 +19,25 @@ In tab 4, press play on the film for a few seconds so it is cached, then pause a
 
 > This is Hidden Force Studio. Pick a kid hero, and half an hour later you have a short film where their ADHD, or their wheelchair, is the reason they save the day. And if the script gets the kid wrong, the film never gets made.
 
-**0:15 to 0:35. Still tab 1.**
+**0:15 to 0:30. Still tab 1.**
 
 > Shows with disabled kid leads die in review. Nobody on the team has lived it, the guidance is scattered across advocacy groups, and one miracle-cure ending kills the project. So I built the review into the studio, before a human reader ever sees a draft.
 
-**0:35 to 1:00. Click Zayan. Pause on his hidden power. Click "Make the film". The steps appear.**
+**0:30 to 0:45. Click "Watch now". The page glides down to the shelf. Move the mouse slowly across the Films row.**
 
-> Every film starts the same way. It finds out how kids like Zayan should be shown, from the people who know, and writes rules for this one story. Then it writes, checks every line, draws, and films. That takes half an hour, so let me open one that is done.
+> Three films and five stories so far, every one made by the studio and left exactly as it came out. Two it refused to finish.
+
+**0:45 to 1:05. Click "Make your own" in the top bar. Click Zayan. Pause on his hidden power. Click "Make the film". The steps appear.**
+
+> Making one is three clicks. It finds out how kids like Zayan should be shown, from the people who know, writes rules for this one story, writes the script, checks every line, then draws and films. That takes half an hour, so let me open one that is done.
 
 Click "watch one that's finished" in the note under the steps.
 
-**1:00 to 1:15. Zayan, finished. Scroll to "Why it passed". Open "Read the rules", then scroll down and open "All 14 checks".**
+**1:05 to 1:20. Zayan, finished. Scroll to "Why it passed". Open "Read the rules", then scroll down and open "All 14 checks".**
 
 > Eight rules, each pointing back to its source. Fourteen checks, and every line the reviewer quotes has to really be in the script. If it makes one up, the check fails.
 
-**1:15 to 1:50. Tab 2, The Flow of Freedom. Scroll to "Checked every line. Sent it back."**
+**1:20 to 1:50. Tab 2, The Flow of Freedom. Scroll to "Checked every line. Sent it back."**
 
 > This one I set up to fail. Maya uses a wheelchair, and I wrote her story to end with her walking.
 
