@@ -1,5 +1,7 @@
 # Hidden Force Studio
 
+![Hidden Force Studio](docs/logo.png)
+
 A deterministic pipeline that turns a character bible for a neurodivergent or disabled child hero into an animated short: a storyboard, a screenplay in Fountain, a beat sheet, a locked character sheet with a shot list, an audit manifest, and on request a 60-second film cut from Veo clips. Between drafting and packaging sits a gate that scores the draft against a rubric compiled from live, cited advocacy sources, and refuses to ship a draft that fails.
 
 Built for the Agentic Cinema hackathon, Parallel track. The first user is the builder: the six Hidden Force characters are my own, and this is the tool I wanted for producing them.

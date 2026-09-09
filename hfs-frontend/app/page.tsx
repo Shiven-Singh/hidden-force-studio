@@ -215,14 +215,12 @@ function buildChapters(run: RunView, hero: Bible | undefined, test: TestKind): C
   return out;
 }
 
-function Mark() {
-  return (
-    <svg className="mark" viewBox="0 0 34 34" aria-hidden="true">
-      <circle cx="17" cy="17" r="17" fill="#F49D70" />
-      <circle cx="17" cy="17" r="8.6" fill="#FFFFFF" />
-      <circle cx="17" cy="17" r="3.7" fill="#151519" />
-    </svg>
-  );
+function Tiles() {
+  return <span className="tiles" aria-hidden="true"><b>H</b><i>F</i><b>S</b></span>;
+}
+
+function Play({ size = 14 }: { size?: number }) {
+  return <svg width={size} height={size} viewBox="0 0 14 14" aria-hidden="true"><path d="M3.5 2.2v9.6a.6.6 0 0 0 .9.5l7.4-4.8a.6.6 0 0 0 0-1L4.4 1.7a.6.6 0 0 0-.9.5z" fill="currentColor" /></svg>;
 }
 
 function Check() {
@@ -247,9 +245,13 @@ export default function Page() {
   const [picked, setPicked] = useState<string | null>(null);
   const [how, setHow] = useState(false);
   const [now, setNow] = useState(() => Date.now());
+  const [featured, setFeatured] = useState<{ id: string; title: string; logline?: string } | null>(null);
+  const [wantPlay, setWantPlay] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
   const frameRef = useRef<HTMLDivElement>(null);
-  const madeRef = useRef<HTMLDivElement>(null);
+  const watchRef = useRef<HTMLElement>(null);
+  const makeRef = useRef<HTMLElement>(null);
+  const go = (to: 'watch' | 'make') => (to === 'watch' ? watchRef : makeRef).current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
 
   const loadRecent = () => fetch(`${API}/api/runs`).then((r) => r.json()).then((rs: RunSummary[]) => setRecent([...rs].reverse().filter((r, i, all) => !(r.live && r.status !== 'running' && all.some((o) => !o.live && o.character === r.character && o.title === r.title))))).catch(() => undefined);
 
@@ -267,6 +269,12 @@ export default function Page() {
   }, [runId]);
 
   useEffect(() => { if (run && run.status !== 'running') void loadRecent(); }, [run?.status]);
+
+  useEffect(() => {
+    const f = recent.find((r) => r.film && r.verdict === 'PASS' && !(r.live && r.status === 'running'));
+    if (!f || featured?.id === f.id) return;
+    fetch(`${API}/api/runs/${f.id}`).then((r) => r.json()).then((v: RunView) => setFeatured({ id: f.id, title: v.screenplay?.title ?? f.title ?? `${f.character}'s story`, logline: v.screenplay?.logline })).catch(() => setFeatured({ id: f.id, title: f.title ?? `${f.character}'s story` }));
+  }, [recent]);
 
   useEffect(() => {
     if (!runId) { setRun(null); return; }
@@ -299,6 +307,11 @@ export default function Page() {
 
   useEffect(() => { frameRef.current?.scrollTo({ top: 0 }); }, [screen, runId]);
 
+  useEffect(() => {
+    const h = window.location.hash.replace('#', '');
+    if (screen === 'pick' && (h === 'watch' || h === 'make')) setTimeout(() => go(h), 250);
+  }, [screen, recent.length]);
+
   const hero = useMemo(() => (run ? bibles.find((b) => b.name === run.character && !b.adversarial) ?? bibles.find((b) => b.name === run.character) : undefined), [run, bibles]);
   const pickedBible = picked ? bibles.find((b) => b.id === picked) : undefined;
   const test = run ? testKindOfFolder(run.folder) : null;
@@ -310,12 +323,12 @@ export default function Page() {
   const verdict = run?.review?.verdict;
   const finishedFilm = recent.find((r) => r.film && r.verdict === 'PASS' && !r.live);
 
-  const goHome = (toMade = false) => {
-    setRunId(null); setRun(null); setError(null); setHint(null);
-    if (toMade) setTimeout(() => madeRef.current?.scrollIntoView({ behavior: 'smooth', block: 'end' }), 80);
+  const goHome = (to?: 'watch' | 'make') => {
+    setRunId(null); setRun(null); setError(null); setHint(null); setWantPlay(false);
+    if (to) setTimeout(() => go(to), 60);
   };
 
-  const open = (id: string) => { setError(null); setRun(null); setRunId(id); };
+  const open = (id: string, play = false) => { setError(null); setRun(null); setWantPlay(play); setRunId(id); };
 
   const start = async () => {
     if (!pickedBible) { setHint('Pick a hero first.'); return; }
@@ -342,6 +355,14 @@ export default function Page() {
   const heroes = bibles.filter((b) => !b.adversarial);
   const tests = bibles.filter((b) => b.adversarial);
   const lastFail = run?.review && run.review.verdict !== 'PASS' ? [...run.review.deterministic, ...run.review.model_scored].find((s) => run.review!.hard_failures.includes(s.rule_id)) : undefined;
+  const finished = recent.filter((r) => !(r.live && r.status === 'running'));
+  const rows = [
+    { title: 'Films', items: finished.filter((r) => r.film && r.verdict === 'PASS') },
+    { title: 'Scripts and storyboards', items: finished.filter((r) => !r.film && r.verdict === 'PASS') },
+    { title: 'Stopped by the studio', items: finished.filter((r) => r.verdict === 'HALT') },
+    { title: 'Making now', items: recent.filter((r) => r.live && r.status === 'running') },
+  ];
+  const heroOf = (name: string) => bibles.find((b) => b.name === name && !b.adversarial);
   const summaryLabel = (r: RunSummary) => (r.live && r.status === 'running' ? 'Making now' : r.verdict === 'HALT' ? 'Stopped' : r.status === 'error' ? 'Did not finish' : r.film ? 'Film' : 'Script and storyboard');
 
   return (
@@ -350,9 +371,10 @@ export default function Page() {
       <div className="veil" />
       <div className="frame" ref={frameRef}>
         <header className="nav">
-          <button className="brand" onClick={() => goHome()} aria-label="Hidden Force Studio home"><Mark /><span>Hidden Force Studio</span></button>
+          <button className="brand" onClick={() => goHome()} aria-label="Hidden Force Studio home"><Tiles /><span>Hidden Force Studio</span></button>
           <nav className="links">
-            <button className="hide-sm" onClick={() => goHome(true)}>Finished films</button>
+            <button className="hide-sm" onClick={() => goHome('watch')}>Watch</button>
+            <button className="hide-sm" onClick={() => goHome('make')}>Make your own</button>
             <button onClick={() => setHow(true)}>How it works</button>
             <a className="hide-sm" href={REPO} target="_blank" rel="noreferrer">Code</a>
             {screen !== 'pick' && <button className="cta" onClick={() => goHome()}>Make another</button>}
@@ -361,9 +383,59 @@ export default function Page() {
 
         {screen === 'pick' && (
           <>
-            <main className="hero">
+            <main className="hero land">
               <h1 className="h1">A film where a kid like yours saves the day.</h1>
               <p className="lede">Pick a hero. Half an hour later you have a short film where their ADHD, autism, deafness, anxiety, dyslexia or wheelchair is the reason they win, never the thing to fix. A script that gets the kid wrong never gets made.</p>
+              <div className="choices">
+                <button className="choice" onClick={() => go('watch')}>
+                  <span className="ci"><Play size={16} /></span>
+                  <span className="ct">Watch now</span>
+                  <span className="cs">{rows[0].items.length} films and {rows[1].items.length} stories, ready to play</span>
+                </button>
+                <button className="choice alt" onClick={() => go('make')}>
+                  <span className="ci">+</span>
+                  <span className="ct">Make your own</span>
+                  <span className="cs">Pick a hero, get a film in about half an hour</span>
+                </button>
+              </div>
+            </main>
+
+            <section className="shelf" ref={watchRef}>
+              {featured && (
+                <div className="featured">
+                  <img src={fileUrl(featured.id, 'storyboard/shot_01.jpg')} alt="" />
+                  <div className="f-veil" />
+                  <div className="f-body">
+                    <span className="tag">Newest film</span>
+                    <h2>{featured.title}</h2>
+                    {featured.logline && <p>{featured.logline}</p>}
+                    <div className="f-actions">
+                      <button className="send" onClick={() => open(featured.id, true)}>Play<span className="ic"><Play size={11} /></span></button>
+                      <button className="ghost" onClick={() => open(featured.id)}>Why it passed</button>
+                    </div>
+                  </div>
+                </div>
+              )}
+              {rows.map((row) => row.items.length > 0 && (
+                <div className="row" key={row.title}>
+                  <h3>{row.title}</h3>
+                  <div className="rail">
+                    {row.items.map((r) => {
+                      const h = heroOf(r.character);
+                      return (
+                        <button key={r.id} className="tile-f" onClick={() => open(r.id, Boolean(r.film))}>
+                          {r.verdict === 'PASS' && !(r.live && r.status === 'running') ? <img src={fileUrl(r.id, 'storyboard/shot_01.jpg')} alt="" loading="lazy" onError={(e) => { (e.currentTarget as HTMLImageElement).style.visibility = 'hidden'; }} /> : <div className={`ph${r.verdict === 'HALT' ? ' bad' : r.live && r.status === 'running' ? ' live' : ''}`}>{summaryLabel(r)}</div>}
+                          <div className="cap"><div className="tt">{r.title ?? `${r.character}'s story`}</div><div className="ss">{r.character}{h ? `, ${h.age} · ${h.trait}` : ''}</div></div>
+                        </button>
+                      );
+                    })}
+                  </div>
+                </div>
+              ))}
+            </section>
+
+            <section className="maker" ref={makeRef}>
+              <div className="maker-head"><h2>Make your own</h2><p>Three steps. The studio does the rest.</p></div>
               <div className="card">
                 <div>
                   <div className="step-label"><b>1</b> Pick a hero</div>
@@ -413,20 +485,7 @@ export default function Page() {
                 {hint && <div className="hint">{hint}</div>}
                 {error && <div className="error">{error}</div>}
               </div>
-            </main>
-            {recent.length > 0 && (
-              <div className="made" ref={madeRef}>
-                <div className="lbl">Watch one now</div>
-                <div className="strip">
-                  {recent.map((r) => (
-                    <button key={r.id} className="poster" onClick={() => open(r.id)}>
-                      {r.verdict === 'PASS' && !(r.live && r.status === 'running') ? <img className="img" src={fileUrl(r.id, 'storyboard/shot_01.jpg')} alt="" loading="lazy" onError={(e) => { (e.currentTarget as HTMLImageElement).style.visibility = 'hidden'; }} /> : <div className={`ph${r.verdict === 'HALT' ? ' bad' : r.live && r.status === 'running' ? ' live' : ''}`}>{summaryLabel(r)}</div>}
-                      <div className="cap"><div className="tt">{r.title ?? `${r.character}'s story`}</div><div className="ss">{r.character} · {summaryLabel(r)}</div></div>
-                    </button>
-                  ))}
-                </div>
-              </div>
-            )}
+            </section>
           </>
         )}
 
@@ -462,7 +521,7 @@ export default function Page() {
               <div className="kicker">{hero ? `${run.character}, ${hero.age}, ${hero.trait}. ${cap(hero.reframe)}.` : run.character}</div>
             </div>
             <div className="card wide">
-              {run.animatic && <div className="player"><video controls preload="metadata" src={fileUrl(run.folder, run.animatic)} poster={fileUrl(run.folder, 'storyboard/shot_01.jpg')} /></div>}
+              {run.animatic && <div className="player"><video controls autoPlay={wantPlay} preload="metadata" src={fileUrl(run.folder, run.animatic)} poster={fileUrl(run.folder, 'storyboard/shot_01.jpg')} /></div>}
               {!run.animatic && verdict === 'PASS' && run.status !== 'error' && (
                 <div className="still">
                   <img src={fileUrl(run.folder, 'storyboard/shot_01.jpg')} alt="" />

@@ -7,7 +7,8 @@ const inter = Inter({ subsets: ['latin'], variable: '--font-sans', display: 'swa
 
 export const metadata: Metadata = {
   title: 'Hidden Force Studio',
-  description: 'Pick a kid hero with a hidden power. The studio writes the story, checks it against real guidance on how to show that kid right, then draws and films it. If a script gets the kid wrong, it says no.',
+  description: 'A film where a kid like yours saves the day. Pick a hero, and half an hour later their ADHD, autism, deafness, anxiety, dyslexia or wheelchair is the reason they win. A script that gets the kid wrong never gets made.',
+  icons: { icon: '/favicon.svg' },
 };
 
 export const viewport: Viewport = { themeColor: '#0a0d12', width: 'device-width', initialScale: 1, viewportFit: 'cover' };
