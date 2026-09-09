@@ -5,8 +5,11 @@ Paste as is. Track: **Parallel**.
 **Project name**
 Hidden Force Studio
 
+**Tagline**
+A film where a kid like yours saves the day.
+
 **Elevator pitch (under 200 characters)**
-Pick a kid hero. Half an hour later, a short film where their ADHD or wheelchair is why they save the day. A script that gets the kid wrong never gets made.
+A short film where a kid like yours is the hero, not the lesson. Pick one of six kids and it is ready to watch in half an hour. If the script gets the kid wrong, it never gets made.
 
 **Hosted URL**
 https://hidden-force-studio-gdxyknxydq-uc.a.run.app/?run=zayan_20260907T201737
