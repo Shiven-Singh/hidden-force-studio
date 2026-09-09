@@ -9,7 +9,7 @@ Hidden Force Studio
 Short animated films where a kid's disability is the superpower.
 
 **Elevator pitch (under 200 characters)**
-Pick a kid hero with ADHD, autism, dyslexia, anxiety, deafness or a wheelchair. Thirty minutes later you have a short animated film where that trait is their superpower. If the script gets the kid wrong, the studio refuses to make it.
+Pick a kid hero with ADHD, autism, dyslexia, anxiety, deafness or a wheelchair. Half an hour later you have a short animated film where that trait is their superpower. Get the kid wrong and it refuses.
 
 **Hosted URL**
 https://hidden-force-studio-gdxyknxydq-uc.a.run.app/?run=zayan_20260907T201737
