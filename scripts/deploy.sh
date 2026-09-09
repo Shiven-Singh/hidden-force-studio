@@ -27,7 +27,11 @@ while :; do
 done
 echo
 echo "deploying"
-gcloud run deploy "$SERVICE" --project "$PROJECT" --region "$REGION" --image "$IMAGE" --quiet
+for attempt in 1 2 3; do
+  if gcloud run deploy "$SERVICE" --project "$PROJECT" --region "$REGION" --image "$IMAGE" --quiet; then break; fi
+  [ "$attempt" = 3 ] && { echo "deploy failed three times; the image is built, retry by hand: gcloud run deploy $SERVICE --region $REGION --image $IMAGE"; exit 1; }
+  echo "deploy attempt $attempt failed, retrying in 20s"; sleep 20
+done
 URL="$(gcloud run services describe "$SERVICE" --project "$PROJECT" --region "$REGION" --format='value(status.url)')"
 echo "live: $URL"
 curl -s -o /dev/null -w 'front page %{http_code}\n' "$URL/"
