@@ -49,7 +49,7 @@ img, svg, video { display: block; }
 .links .cta:hover { background: var(--clay); color: var(--black); }
 
 /* ---------- split front ---------- */
-.split { display: flex; min-height: calc(100vh - var(--nav)); min-height: calc(100dvh - var(--nav)); align-items: stretch; }
+.split { display: flex; flex-shrink: 0; min-height: calc(100vh - var(--nav)); min-height: calc(100dvh - var(--nav)); align-items: stretch; }
 .half { position: relative; flex: 0 0 50%; display: flex; flex-direction: column; overflow: hidden; transition: flex-basis 0.6s var(--e); cursor: pointer; }
 .half.make { background: var(--sun); color: var(--black); }
 .half.watch { background: var(--water); color: var(--cream); }
