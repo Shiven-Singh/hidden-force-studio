@@ -20,9 +20,11 @@ Pick a kid hero with ADHD, autism, dyslexia, anxiety, deafness or a wheelchair. 
 ```markdown
 ## Inspiration
 
-I have six kid characters I have been writing for the six-to-nine age group. Each of them has something the world calls a problem: ADHD, autism, dyslexia, anxiety, deafness, a wheelchair. In their stories it is the reason they win.
+My cousin is autistic, on the severe end, and cartoons are his favourite thing in the world. He will watch the same one twenty times. In all those hours I have never seen him watch a kid like himself. The few times a show tries, that kid is either the problem that gets fixed by the last scene or the lesson the other kids learn from.
 
-What kills projects like this is not the writing. It is the review. Nobody on a small team has lived the trait, the guidance is scattered across advocacy groups and changes from one trait to the next, and a single "miracle cure" ending sinks the whole thing. I wanted a studio that gets the kid right before a human reader ever sees a draft, and that says no when it cannot.
+So I started writing six kid characters for the six-to-nine age group. Each has something the world calls a problem: ADHD, autism, dyslexia, anxiety, deafness, a wheelchair. In their stories it is the reason they win.
+
+What kills projects like this is not the writing. It is the review. Nobody on a small team has lived the trait, the guidance is scattered across advocacy groups and changes from one trait to the next, and a single "miracle cure" ending sinks the whole thing. I wanted a studio that gets the kid right before a human reader ever sees a draft, and that says no when it cannot. I wanted my cousin to have a hero who thinks like him.
 
 ## What it does
 
