@@ -189,6 +189,9 @@ async function archivedView(id: string) {
 const RENDER_SHOTS = Number(process.env.RENDER_SHOTS ?? 8);
 /** Each film is eight Veo clips on a real bill. Cap how many this instance will start. */
 const RENDER_LIMIT = Number(process.env.RENDER_LIMIT ?? 3);
+/** New runs accepted per rolling day. Each costs real money in images and model calls, and the button is public. */
+const RUN_DAILY_CAP = Number(process.env.RUN_DAILY_CAP ?? 8);
+const DAY_MS = 24 * 60 * 60 * 1000;
 let rendersStarted = 0;
 const RENDERING = new Set<string>();
 
@@ -444,6 +447,11 @@ app.post('/api/runs', (req: Request, res: Response) => {
   const parsed = CharacterBible.safeParse(body);
   if (!parsed.success) {
     res.status(400).json({ error: parsed.error.flatten() });
+    return;
+  }
+  const startedToday = [...RUNS.values()].filter((r) => Date.now() - r.startedAt < DAY_MS).length;
+  if (startedToday >= RUN_DAILY_CAP) {
+    res.status(429).json({ error: 'The studio has taken on all the work it can for today. Watch one that is finished, or come back tomorrow.' });
     return;
   }
   const runId = randomUUID().slice(0, 12);

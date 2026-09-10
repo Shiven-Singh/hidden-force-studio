@@ -93,6 +93,8 @@ gcloud run deploy hidden-force-studio --source . --region us-central1 \
 
 After the first deploy, `scripts/deploy.sh` builds the image on Cloud Build and rolls it onto the service without touching the settings above.
 
+Two cost guards are on by default because the buttons are public: `RENDER_LIMIT` films per server instance (3) and `RUN_DAILY_CAP` new runs per rolling day (8). A Veo film is by far the most expensive thing the studio does.
+
 Gemini 3.x model ids are served from the `global` location on Vertex, not from a region. `gemini-2.5-pro` and `gemini-2.5-flash` are the GA fallbacks and work in `us-central1`.
 
 ## Committed runs

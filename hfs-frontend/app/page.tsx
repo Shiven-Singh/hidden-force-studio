@@ -343,7 +343,7 @@ export default function Page() {
     void id;
     const r = await fetch(`${API}/api/runs`, { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify({ ...body, film: withFilm }) });
     setBusy(false);
-    if (!r.ok) { setError(`Could not start. The studio answered ${r.status}.`); return; }
+    if (!r.ok) { const b = (await r.json().catch(() => ({}))) as { error?: string }; setError(b.error ?? `Could not start. The studio answered ${r.status}.`); return; }
     const { run_id } = (await r.json()) as { run_id: string };
     setPicked(null);
     open(run_id);
